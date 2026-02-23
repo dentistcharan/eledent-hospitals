@@ -97,24 +97,21 @@ export default function ServicesFaq(): JSX.Element {
                     aria-controls={panelId}
                     onClick={() => toggleFaq(faq.id)}
                     className={`flex w-full items-start sm:items-center justify-between gap-3 px-4 sm:px-6 py-4 sm:py-[18px] text-left text-sm font-semibold transition-colors
-                    ${
-                      isOpen
+                    ${isOpen
                         ? "bg-[#f47200] text-white"
                         : "bg-white text-[#374151]"
-                    }`}
+                      }`}
                   >
                     <span className="flex min-w-0 items-start gap-2">
                       <span
-                        className={`shrink-0 ${
-                          isOpen ? "text-white" : "text-[#9CA3AF]"
-                        }`}
+                        className={`shrink-0 ${isOpen ? "text-white" : "text-[#9CA3AF]"
+                          }`}
                       >
                         {faq.id}.
                       </span>
                       <span
-                        className={`leading-5 break-words ${
-                          isOpen ? "text-white" : "text-[#374151]"
-                        }`}
+                        className={`leading-5 break-words ${isOpen ? "text-white" : "text-[#374151]"
+                          }`}
                       >
                         {faq.question}
                       </span>
@@ -123,11 +120,10 @@ export default function ServicesFaq(): JSX.Element {
                     {/* +/- square */}
                     <span
                       className={`grid h-8 w-8 sm:h-9 sm:w-9 shrink-0 place-items-center rounded-md sm:rounded-[6px] text-base leading-none
-                      ${
-                        isOpen
+                      ${isOpen
                           ? "bg-[#111827] text-white"
                           : "bg-[#f47200] text-white"
-                      }`}
+                        }`}
                     >
                       {isOpen ? "−" : "+"}
                     </span>
