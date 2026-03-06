@@ -37,7 +37,7 @@ export default async function Blog() {
     <div>
       <Navbar />
       <main>
-        <BlogHero title={hero?.title} subtitle={hero?.subtitle} />
+        <BlogHero />
 
         <BlogListingSection
           blogsPerPage={listingSection?.blogsPerPage}
@@ -57,7 +57,6 @@ export default async function Blog() {
           backgroundImage={faqSection?.backgroundImage}
           items={faqSection?.items || []}
         />
-
         <Footer />
       </main>
     </div>
