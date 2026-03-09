@@ -7,16 +7,17 @@ import LocationHero from "@/app/components/location/location-hero";
 import LocationServices from "@/app/components/location/location-services";
 import LocationTrust from "@/app/components/location/location-trust";
 import Navbar from "@/app/components/Navbar";
-import { getLocationBySlug } from "@/data/locations";
+import { getLocationBySlug } from "@/lib/location-api";
 import { notFound } from "next/navigation";
 
-export default async function LocationPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params; // ✅ unwrap params
-  const location = getLocationBySlug(slug);
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function LocationPage({ params }: Props) {
+  const location = await getLocationBySlug(params.slug);
 
   if (!location) notFound();
 
@@ -31,22 +32,25 @@ export default async function LocationPage({
         />
 
         <LocationAbout location={location} />
+
         <LocationServices services={location.services} />
 
         <LocationTrust
           city={location.city}
           trustHeading={location.trustHeading}
-          trustCards={location.trustCards}
+          trustCards={location.trustCards.map((c) => ({ ...c, variant: c.variant as any }))}
         />
 
         <BookingAportment />
 
         <LocationGallery gallery={location.gallery} />
 
-        <LocationFaq faqs={location.faqs} introText={location.faqIntroText} />
-
-        <Footer />
+        <LocationFaq
+          faqs={location.faqs}
+          introText={location.faqIntroText}
+        />
       </main>
+      <Footer />
     </div>
   );
 }

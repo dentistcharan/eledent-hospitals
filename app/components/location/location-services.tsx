@@ -13,7 +13,7 @@ import {
   Pill,
   type LucideIcon,
 } from "lucide-react";
-import type { LocationService } from "@/lib/location-api";
+import type { LocationService } from "../../../lib/location-api";
 
 const ICONS = {
   Sparkles,
