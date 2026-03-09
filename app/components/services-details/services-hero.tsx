@@ -26,7 +26,7 @@ export default function ServicesHero({ data }: Props) {
           <div className="absolute inset-0 rounded-3xl bg-black/35" />
 
           <div className="absolute lg:inset-0 z-20 flex flex-col items-center justify-center px-6 text-center lg:mb-10">
-            <h1 className="text-2xl font-semibold leading-tight text-white lg:text-5xl">
+            <h1 className="text-xl font-semibold leading-tight text-white lg:text-5xl">
               {data.title}
             </h1>
 

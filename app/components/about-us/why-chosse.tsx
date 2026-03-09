@@ -92,7 +92,7 @@ export default function WhyChoose(): JSX.Element {
     ];
 
     return (
-        <section className="w-full bg-white py-10 sm:py-12">
+        <section className="w-full bg-white py-3 pt-4 lg:pt-10 sm:py-12">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-6">
                 {/* ================= WHY CHOOSE CARD SECTION ================= */}
                 <div className="rounded-t-[22px] bg-[#e9eaeb] px-4 py-10 shadow-[0_18px_45px_-30px_rgba(15,23,42,0.35)] sm:px-8 sm:py-12">
@@ -108,7 +108,7 @@ export default function WhyChoose(): JSX.Element {
                     </div>
 
                     {/* MOBILE/TABLET CENTER IMAGE */}
-                    <div className="mt-8 flex justify-center lg:hidden">
+                    <div className="mt-8 flex justify-center hidden">
                         <div className="relative h-[320px] w-[240px] sm:h-[380px] sm:w-[300px]">
                             <Image
                                 src="/about-us/why-chose-doctor.png"
@@ -157,7 +157,7 @@ export default function WhyChoose(): JSX.Element {
                         <div className="flex h-full items-center justify-center bg-[#2a2a2a] px-5 py-10 text-white sm:px-8 lg:px-10 lg:py-4">
                             <div className="text-center lg:text-left">
                                 <p className="mb-2 text-lg text-orange-500 sm:text-xl">Our Value</p>
-                                <h3 className="text-2xl font-semibold leading-snug sm:text-3xl">
+                                <h3 className="lg:text-2xl text-lg font-semibold leading-snug sm:text-3xl">
                                     We Have A Unique Value
                                     <br className="hidden sm:block" />
                                     This Sets Us Apart From
@@ -165,7 +165,7 @@ export default function WhyChoose(): JSX.Element {
                                     Others
                                 </h3>
 
-                                <p className="mt-4 max-w-md text-sm leading-relaxed text-white sm:text-base">
+                                <p className="mt-4 max-w-md text-xs leading-relaxed text-white sm:text-base">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua. Quis ipsum suscipit
                                 </p>

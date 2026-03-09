@@ -99,7 +99,7 @@ const AboutDetails: FC = () => {
 
             {/* QUALITY DENTAL CARE BOX */}
             <div className="absolute left-6 bottom-6 right-6 sm:right-auto sm:w-[360px]">
-              <div className="relative overflow-hidden rounded-2xl shadow-xl px-5 py-10 flex gap-4 items-center">
+              <div className="relative overflow-hidden rounded-2xl shadow-xl px-5 lg:py-10 py-4 flex gap-4 items-center">
                 {/* Background image for the box */}
                 <Image
                   src="/about-us/about-2bg.png"
@@ -121,47 +121,46 @@ const AboutDetails: FC = () => {
                       width={112}
                       height={112}
                       priority
-                      className="w-14 h-14 object-contain"
+                      className="lg:w-14 lg:h-14 w-10 h-10 object-contain"
                     />
                   </div>
 
                   <div className="min-w-0">
-                    <p className="text-xl font-semibold text-orange-600 leading-tight">
+                    <p className="lg:text-xl text-lg font-semibold text-orange-600 leading-tight">
                       Quality Dental care
                     </p>
-                    <p className="text-[15px] text-black mt-1 leading-snug">
+                    <p className="lg:text-[15px] text-sm text-black mt-1 leading-snug">
                       Facilisis nulla lacus at ultrices us praesent fringilla scelerisque.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            {/* /QUALITY DENTAL CARE BOX */}
+
           </div>
         </div>
 
-        {/* RIGHT */}
         <div>
           <div className="inline-flex items-center bg-orange-500 text-white px-3 py-1 text-base font-semibold mb-5">
             About us
           </div>
 
-          <h2 className="text-3xl lg:text-[40px] font-bold text-orange-600 leading-tight">
+          <h2 className="text-2xl lg:text-[40px] font-bold text-orange-600 leading-tight">
             Who &amp; Where we are
           </h2>
 
-          <p className="text-gray-800 text-lg font-semibold mt-2">
+          <p className="text-gray-800 lg:text-lg text-sm font-semibold mt-2">
             World-Renowned Dentistry Right At Your Neighborhood!
           </p>
 
-          <p className="text-gray-500 text-base leading-relaxed mt-4 max-w-xl">
+          <p className="text-gray-500 lg:text-base text-sm leading-relaxed mt-4 max-w-xl">
             Located in the core of Kondapur and Kukatpally – Hyderabad, Eledent Dental Hospital is the one-stop
             solution for all your dental needs. Our primary goal is always to offer you comprehensive dental
             treatment in relaxed and stylish surroundings. You will notice the difference the moment you enter
             the clinic.
           </p>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
             {STATS.map((item) => (
               <StatCard
                 key={item.id}

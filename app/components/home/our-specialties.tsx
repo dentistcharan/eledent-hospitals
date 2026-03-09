@@ -55,7 +55,7 @@ export default function OurSpecialties() {
 
     return (
         <section className="pb-2 lg:pt-24 pt-4 px-4 sm:px-8 lg:px-20 relative">
-            <div className=" overflow-hidden bg-[#f9fbff] px-6 py-10 rounded-3xl">
+            <div className=" overflow-hidden lg:bg-[#f9fbff] lg:px-6 lg:py-10 py-6 rounded-3xl">
 
                 <div className="pointer-events-none absolute right-0 -bottom-10 h-full w-[75%]">
                     <Image
@@ -68,7 +68,7 @@ export default function OurSpecialties() {
                 </div>
 
                 <div className="relative max-w-[1240px] mx-auto">
-                    <div className="grid lg:grid-cols-[380px_1fr] gap-12">
+                    <div className="grid lg:grid-cols-[380px_1fr] lg:gap-12 gap-6">
                         <div className="relative rounded-2xl overflow-hidden shadow-xl lg:h-[700px] h-[350px] bg-white">
                             <Image
                                 src="/home/special-img.png"
@@ -79,15 +79,15 @@ export default function OurSpecialties() {
                                 priority
                             />
 
-                            <div className="absolute bottom-10 left-6 right-6 bg-[#e67735] text-white rounded-[16px] px-6 py-5">
-                                <p className="text-center lg:text-2xl text-lg leading-snug font-medium">
+                            <div className="absolute lg:bottom-10 bottom-5 left-6 right-6 bg-[#e67735] text-white rounded-[16px] px-6 lg:py-5 py-3">
+                                <p className="text-center lg:text-2xl text-base leading-snug font-medium">
                                     We Are A Full Service <br /> Clinic With Modern <br /> Technology
                                 </p>
                             </div>
                         </div>
 
                         <div>
-                            <h2 className="text-3xl font-bold text-[#484847]">
+                            <h2 className="lg:text-3xl text-2xl font-bold text-[#484847]">
                                 Our Specialties
                             </h2>
 

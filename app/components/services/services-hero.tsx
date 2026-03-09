@@ -9,7 +9,7 @@ export default function ServicesHero() {
         <div className="lg:mt-12 mt-6 px-4">
             <div className="mx-auto w-full max-w-6xl lg:pb-16 pb-4">
 
-                <section className="relative h-[360px] w-full overflow-visible rounded-3xl md:h-[420px]">
+                <section className="relative h-[330px] w-full overflow-visible rounded-3xl md:h-[420px]">
                 
                     <Image
                         src="/services-main/our-services.png"

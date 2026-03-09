@@ -13,8 +13,8 @@ export default function LocationHero({
   bannerSrc = "/location/location-main.png",
 }: LocationHeroProps) {
   return (
-    <div className="lg:my-12 my-9 lg:mx-24 mx-4">
-      <section className="relative z-0 lg:h-[440px] h-[350px] w-full overflow-hidden lg:rounded-3xl rounded-2xl">
+    <div className="lg:my-12 my-6 lg:mx-24 mx-4">
+      <section className="relative z-0 lg:h-[440px] h-[330px] w-full overflow-hidden lg:rounded-3xl rounded-2xl">
         <Image
           src={bannerSrc}
           alt={`${city} banner`}

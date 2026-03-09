@@ -231,7 +231,7 @@ export default function Navbar() {
                         <Image
                             src="/White-Logo.webp"
                             alt="Eledent logo"
-                            className=" w-20 lg:w-40 sm:w-32 "
+                            className=" w-28 lg:w-40 sm:w-28 "
                             width={500}
                             height={500}
                             priority
@@ -393,7 +393,14 @@ export default function Navbar() {
                             }`}
                     >
                         <div className="flex items-center justify-between p-4 border-b border-gray-200">
-                            <span className="text-lg font-semibold text-gray-800">Menu</span>
+                            <Image
+                                src="/White-Logo.webp"
+                                alt="Eledent logo"
+                                className=" w-24 "
+                                width={500}
+                                height={500}
+                                priority
+                            />
                             <button
                                 onClick={() => setMobileMenuOpen(false)}
                                 className="p-2 rounded-lg hover:bg-gray-100 transition-colors"

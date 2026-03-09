@@ -77,7 +77,7 @@ const BlogCard: FC<{ post: BlogPost }> = ({ post }) => {
         <div>
           <p className="text-sm text-black">{formatDate(post.date)}</p>
 
-          <h3 className="mt-2 max-w-[420px] text-lg leading-[1.1] text-[#f47c20] lg:text-[26px] lg:font-semibold">
+          <h3 className="mt-2 max-w-[420px] text-xl leading-[1.1] text-[#f47c20] lg:text-[26px] font-semibold">
             {post.title}
           </h3>
 

@@ -86,7 +86,7 @@ const TourismAbout: FC = () => {
               <div key={sec.id} className="space-y-0 lg:space-y-8">
                 {/* Block 1: Title + Intro + Image */}
                 {hasIntro && (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10 items-center">
                     {/* Text */}
                     <div className={sec.flip ? "order-2 lg:order-2" : ""}>
                       <h2 className="text-2xl lg:text-4xl font-semibold leading-tight text-[#f37021]">
@@ -141,7 +141,7 @@ const TourismAbout: FC = () => {
                       />
                     </div>
 
-                    <div className="mt-10 lg:mt-0">
+                    <div className="mt-6 lg:mt-0">
                       <h3 className="text-2xl lg:text-4xl font-bold text-gray-800">
                         {sec.pointsTitle ?? sec.titleLine1}
                       </h3>

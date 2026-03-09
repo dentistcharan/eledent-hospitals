@@ -134,7 +134,7 @@ export default function HomeTestimonial() {
                 <div className="mt-12 flex justify-center">
                     <div className="w-full max-w-5xl">
                         <div
-                            className={`flex flex-col items-center justify-center gap-10 ${activeTab === "video" ? "" : "md:flex-row md:gap-12"
+                            className={`flex flex-col items-center justify-center gap-4 ${activeTab === "video" ? "" : "md:flex-row md:gap-12"
                                 }`}
                         >
                             {activeTab === "text" && (
@@ -153,10 +153,10 @@ export default function HomeTestimonial() {
                                     <div className="absolute lg:bottom-3 bottom-0 lg:-right-8 right-0 z-20 lg:rounded-lg bg-[#e96a14] px-6 py-4 shadow-[0_10px_25px_rgba(0,0,0,0.12)] backdrop-blur">
                                         <div className="flex items-end gap-4 items-center">
                                             <div>
-                                                <span className="text-[30px] font-extrabold text-white">
+                                                <span className="lg:text-[30px] text-2xl font-extrabold text-white">
                                                     {textTestimonials[safeIndex].rating.toFixed(1)}
                                                 </span>
-                                                <span className="text-[30px] font-extrabold text-white">
+                                                <span className="lg:text-[30px] text-2xl font-extrabold text-white">
                                                     /5
                                                 </span>
                                             </div>
@@ -176,7 +176,7 @@ export default function HomeTestimonial() {
                                                     ))}
                                                 </div>
 
-                                                <p className="mt-1 text-sm font-medium text-white">
+                                                <p className="mt-1 lg:text-sm text-xs font-medium text-white">
                                                     for excellence services
                                                 </p>
                                             </div>
