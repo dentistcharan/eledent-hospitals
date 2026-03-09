@@ -140,12 +140,12 @@ export default function AboutAppointment({
           <div className="space-y-6">
             {/* Orange card */}
             <div className="overflow-hidden rounded-[22px] bg-[#F47A20] shadow-[0_18px_45px_rgba(0,0,0,0.10)]">
-              <div className="px-6 py-10">
+              <div className="px-6 lg:py-10 py-6">
                 <p className="text-[12px] font-semibold text-white/85">
                   Lorem Ipsum
                 </p>
 
-                <h2 className="mt-3 text-[26px] font-extrabold leading-[1.15] text-white">
+                <h2 className="mt-3 lg:text-[26px] text-xl lg:font-extrabold font-semibold leading-[1.15] text-white">
                   Lorem ipsum dolor sit amet,
                   <br />
                   consectetur adipiscing elit,
@@ -157,7 +157,6 @@ export default function AboutAppointment({
               </div>
             </div>
 
-            {/* White card */}
             <div className="relative overflow-hidden rounded-[22px] bg-white shadow-[0_18px_45px_rgba(0,0,0,0.15)]">
               <div className="absolute inset-x-0 bottom-0 h-[105px]">
                 <Image

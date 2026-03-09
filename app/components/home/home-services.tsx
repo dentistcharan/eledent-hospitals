@@ -130,7 +130,7 @@ export default function HomeServicesStatic() {
     return (
         <section className="relative w-full bg-white overflow-hidden lg:pt-14 pt-4">
             <div className="lg:pb-6 pb-2">
-                <div className="mx-auto max-w-7xl px-6">
+                <div className="mx-auto max-w-7xl lg:px-6 px-4">
                     <div className="relative rounded-[22px] bg-[#f7f9fc] home-servic-bg border border-slate-200/60 overflow-hidden">
                         <div className="absolute inset-0 opacity-[0.08] hex-pattern" />
 

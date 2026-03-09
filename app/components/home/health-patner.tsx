@@ -134,26 +134,26 @@ export default function HealthPatner(): JSX.Element {
     return (
         <section className="w-full bg-white lg:pt-16 pt-4">
             <div className="mx-auto max-w-7xl lg:px-6 px-4">
-                <div className="relative overflow-hidden rounded-t-[22px] border border-slate-100 bg-[#f9fbff] pt-10 lg:pb-5 pb-12">
+                <div className="relative overflow-hidden rounded-t-[22px] border border-slate-100 bg-[#f9fbff] pt-10 lg:pb-5 pb-0">
 
                     <div className="relative px-6 py-0 sm:px-10">
                         <div className="text-center">
 
-                            <p className=" w-fit mx-auto text-slate-400  px-5 py-1 text-sm bg-[#f36d00] text-white font-semibold ">WHY CHOOSE US</p>
-                            <h2 className="mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+                            <p className=" w-fit mx-auto text-slate-400  lg:px-5 px-3 py-1 text-sm bg-[#f36d00] text-white font-semibold ">WHY CHOOSE US</p>
+                            <h2 className="mt-3 text-xl font-semibold text-slate-900 sm:text-3xl">
                                 The Health Partner You&apos;ve Been Looking For
                             </h2>
                         </div>
 
-                        <div className="mt-12 grid grid-cols-1 items-center gap-10 lg:grid-cols-3">
+                        <div className="lg:mt-12 mt-8 grid grid-cols-1 items-center gap-10 lg:grid-cols-3">
 
 
-                            <div className="space-y-8">
+                            <div className="space-y-8 order-1">
                                 {rightItems.map((it, idx) => (
                                     <FeatureRow key={`r-${idx}`} {...it} align="right" />
                                 ))}
                             </div>
-                            <div className="relative mx-auto w-full max-w-[360px]">
+                            <div className="relative mx-auto w-full max-w-[360px] lg:order-2 order-3">
                                 <div className="relative mx-auto aspect-[3/4] w-[260px] sm:w-[300px]">
                                     <Image
                                         src="/about-us/why-chose-doctor.png"
@@ -167,7 +167,7 @@ export default function HealthPatner(): JSX.Element {
 
                             </div>
 
-                            <div className="space-y-8">
+                            <div className="space-y-8 lg:order-3 order-2">
                                 {leftItems.map((it, idx) => (
                                     <FeatureRow key={`l-${idx}`} {...it} align="left" />
                                 ))}

@@ -12,7 +12,11 @@ export default function Technology() {
       <main>
         <TechnologyHero />
         <TechnologyAbout />
-        <BookingAportment />
+      
+        <div className="lg:mt-12 mt-14">
+      <BookingAportment />
+        </div>
+      
         <TechnologyFaq />
         <Footer />
       </main>

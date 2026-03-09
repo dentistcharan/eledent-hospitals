@@ -66,7 +66,7 @@ export default function AboutUs() {
                             </p>
                         </div>
 
-                        <button className="bg-primary text-white px-4 py-2 rounded-sm font-medium text-sm uppercase flex items-center gap-2 group w-full sm:w-fit justify-center sm:justify-start">
+                        <button className="bg-primary text-white px-4 py-2 rounded-sm font-medium text-sm uppercase flex items-center gap-2 group w-fit justify-center sm:justify-start">
                             Know More
                             <ChevronRight className="w-6 h-6 bg-white text-primary p-[1px] rounded-full group-hover:translate-x-1 transition-transform" />
                         </button>

@@ -37,11 +37,9 @@ export default function TechnologyFaq(): JSX.Element {
     const toggleFaq = (id: number) => setOpenId((p) => (p === id ? null : id));
 
     return (
-        <section className="relative w-full overflow-hidden bg-white lg:py-24 py-6">
-            {/* bottom thin orange line */}
+        <section className="relative w-full overflow-hidden bg-white lg:py-24 py-8">
             <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#f47200]" />
 
-            {/* LEFT BACKGROUND IMAGE + FADE (same as screenshot) */}
             <div className="absolute inset-0 z-0">
                 <div className="relative h-full w-[58%]">
                     <Image
@@ -51,27 +49,27 @@ export default function TechnologyFaq(): JSX.Element {
                         priority
                         className="object-cover"
                     />
-                    {/* make bg very subtle + fade into white on right */}
+
                     <div className="absolute inset-0 " />
 
                 </div>
             </div>
 
             <div className="relative z-10 mx-auto max-w-[1120px] px-6">
-                <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-                    {/* LEFT CONTENT */}
+                <div className="grid grid-cols-1 items-center lg:gap-16 gap-8 lg:grid-cols-2">
+
                     <div className="max-w-[520px]">
                         <p className="text-[11px] font-semibold tracking-[0.28em] text-[#f47200]">
                             FAQ
                         </p>
 
-                        <h2 className="mt-4 text-[38px] font-extrabold leading-[1.12] text-[#111827]">
+                        <h2 className="mt-4 lg:text-[38px] text-2xl font-extrabold leading-[1.12] text-[#111827]">
                             Need Answer? We’re
                             <br />
                             Here to Help
                         </h2>
 
-                        <p className="mt-6 max-w-[430px] text-[13px] leading-6 text-[#6B7280]">
+                        <p className="lg:mt-6 mt-2 max-w-[430px] text-[13px] leading-6 text-[#6B7280]">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
                         </p>
@@ -129,7 +127,6 @@ export default function TechnologyFaq(): JSX.Element {
                 </div>
             </div>
 
-            {/* MOBILE: keep it clean (still same look) */}
             <style jsx>{`
         @media (max-width: 1023px) {
           section :global(div[style]) {

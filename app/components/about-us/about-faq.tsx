@@ -65,13 +65,13 @@ export default function AboutFaq(): JSX.Element {
                             FAQ
                         </p>
 
-                        <h2 className="mt-4 text-[38px] font-extrabold leading-[1.12] text-[#111827]">
+                        <h2 className="mt-4 lg:text-[38px] text-xl font-extrabold leading-[1.12] text-[#111827]">
                             Need Answer? We’re
                             <br />
                             Here to Help
                         </h2>
 
-                        <p className="mt-6 max-w-[430px] text-[13px] leading-6 text-[#6B7280]">
+                        <p className="lg:mt-6 mt-2 max-w-[430px] text-[13px] leading-6 text-[#6B7280]">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
                         </p>

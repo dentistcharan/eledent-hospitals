@@ -50,7 +50,7 @@ const FACILITY_BLOCKS: FacilityBlock[] = [
       width: 1200,
       height: 900,
       className: "w-full  object-cover",
-      wrapperClassName: "relative overflow-hidden rounded-[26px] bg-gray-100 shadow-xl",
+      wrapperClassName: "relative overflow-hidden lg:rounded-[26px] rounded-lg bg-gray-100 shadow-xl",
     },
     layout: "text-image",
   },
@@ -81,7 +81,7 @@ const FACILITY_BLOCKS: FacilityBlock[] = [
       width: 1400,
       height: 1000,
       className: "w-full  object-cover",
-      wrapperClassName: "relative overflow-hidden rounded-[26px] bg-gray-100 shadow-xl",
+      wrapperClassName: "relative overflow-hidden lg:rounded-[26px] rounded-lg bg-gray-100 shadow-xl",
     },
     layout: "image-text",
   },
@@ -134,7 +134,7 @@ const DotBullets: FC<{ items: Bullet[]; className?: string }> = ({ items, classN
 
 const FacilitiesAbouts: FC = () => {
   return (
-    <section className="mx-4 sm:mx-8 lg:mx-24 py-4 mb-10">
+    <section className="mx-4 sm:mx-8 lg:mx-24 lg:py-4 py-0 mb-10">
       <div className="max-w-7xl mx-auto">
         {FACILITY_BLOCKS.map((block) => {
           const hasTitle = !!block.title;
@@ -142,8 +142,8 @@ const FacilitiesAbouts: FC = () => {
           const hasBullets = (block.bullets?.length || 0) > 0;
           const img = block.image;
 
-          const rowBase = "grid grid-cols-1 lg:grid-cols-2 gap-10 items-center";
-          const rowGap = block.id === "row-1" ? "" : "mt-16";
+          const rowBase = "grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-6 items-center";
+          const rowGap = block.id === "row-1" ? "" : "lg:mt-16 mt-8";
 
           if (block.layout === "text-image") {
             return (

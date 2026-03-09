@@ -99,7 +99,7 @@ const SECTIONS: TechSection[] = [
 
 const TechnologyAbout: FC = () => {
   return (
-    <section className="bg-white py-6 lg:py-10 px-4 sm:px-8 lg:px-24">
+    <section className="bg-white py-1 lg:py-10 px-4 sm:px-8 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="space-y-10 lg:space-y-14">
           {SECTIONS.map((sec) => {

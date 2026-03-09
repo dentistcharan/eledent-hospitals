@@ -71,8 +71,8 @@ const highlights = [
 const TourismWhy: FC = () => {
     return (
         <section className="w-full py-12">
-            <div className="mx-auto max-w-7xl px-6">
-                <div className="bg-[#f4f5f7] rounded-3xl p-6 shadow-lg">
+            <div className="mx-auto max-w-7xl lg:px-6 px-4  ">
+                <div className="lg:bg-[#f4f5f7] bg-[#e0e4ed] rounded-3xl p-6 shadow-lg">
                     {/* TOP: Why section */}
                     <div className="rounded-2xl md:p-10">
                         <div className="grid items-start gap-10 md:grid-cols-2">
@@ -138,10 +138,10 @@ const TourismWhy: FC = () => {
                                         key={idx}
                                         className="bg-white rounded-2xl shadow-md lg:px-6 px-4 py-7 text-center"
                                     >
-                                        <div className="mx-auto mb-5 flex h-18 w-18 items-center justify-center rounded-xl bg-[#fff7ed]">
-                                            <Icon className="h-10 w-10 text-[#f97316]" />
+                                        <div className="mx-auto mb-5 flex lg:h-18 lg:w-18 h-14 w-14 items-center justify-center rounded-xl bg-[#fff7ed]">
+                                            <Icon className="h-8 w-8 lg:h-10 lg:w-10 text-[#f97316]" />
                                         </div>
-                                        <p className="text-base leading-relaxed text-gray-700 line-clamp-4">
+                                        <p className="lg:text-base text-sm leading-relaxed text-gray-700 line-clamp-4">
                                             {item.text}
                                         </p>
                                     </div>

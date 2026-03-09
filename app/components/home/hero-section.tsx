@@ -18,7 +18,7 @@ export default function HeroSection() {
                             width={1600}
                             height={900}
                             priority
-                            className="h-full w-full object-cover rounded-4xl"
+                            className="h-full w-full object-cover rounded-2xl"
                         />
                     </div>
                 </Link>

@@ -37,8 +37,8 @@ export default function BlogMain(): JSX.Element {
     ];
 
     return (
-        <section className="w-full bg-white py-8">
-            <div className="mx-auto max-w-[1120px] px-6">
+        <section className="w-full bg-white lg:py-8 lg:pt-8 pt-0">
+            <div className="mx-auto max-w-[1120px] lg:px-6 px-4">
                 {/* Heading */}
                 <div className="text-center">
                     <span className="inline-flex items-center justify-center bg-[#f47200] px-[10px] py-[6px] text-sm font-semibold leading-none text-white">
@@ -52,9 +52,8 @@ export default function BlogMain(): JSX.Element {
                     {cards.map((c, idx) => (
                         <article
                             key={idx}
-                            className="rounded-[10px] bg-white shadow-[0_18px_50px_-34px_rgba(15,23,42,0.35)]"
+                            className="rounded-[10px] bg-white lg:shadow-[0_18px_50px_-34px_rgba(15,23,42,0.35)] shadow-[0_18px_50px_-34px_rgba(15,30,42,0.85)]"
                         >
-                            {/* Image block (with inner padding like screenshot) */}
                             <div>
                                 <div className="relative overflow-hidden rounded-[10px]">
                                     <div className="relative h-[220px] w-full">

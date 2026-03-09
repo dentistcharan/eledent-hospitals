@@ -50,7 +50,7 @@ function LocationMapCard({ city, addressLines, mapEmbedSrc, href }: LocationCard
           <span className="text-sm lg:text-2xl">{city}</span>
         </div>
 
-        <div className="my-2 text-[11px] leading-4 text-white/90 sm:text-sm">
+        <div className="my-2 text-xs leading-4 text-white/90 lg:text-sm">
           {addressLines.map((line, idx) => (
             <div key={idx}>{line}</div>
           ))}

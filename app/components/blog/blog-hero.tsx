@@ -7,7 +7,7 @@ export default function BlogHero() {
   return (
     <div className="lg:my-12 my-4 lg:mx-24 mx-6">
 
-      <section className="relative z-0 lg:h-[450px] h-[350px] w-full overflow-hidden rounded-3xl">
+      <section className="relative z-0 lg:h-[450px] h-[320px] w-full overflow-hidden rounded-3xl">
         <Image
           src="/blog/blog-banner.png"
           alt="Blog banner"
