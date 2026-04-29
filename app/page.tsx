@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getMetadataByPath } from "@/lib/metadata";
-
 import Navbar from "./components/Navbar";
+import FaqSchema from "./components/FaqSchema";
 import HeroSection from "./components/home/hero-section";
 import AboutUs from "./components/home/about-us";
 import OurSpecialties from "./components/home/our-specialties";
@@ -21,6 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Home() {
   return (
     <div>
+      <FaqSchema path="/" />
       <Navbar />
       <main>
         <HeroSection />

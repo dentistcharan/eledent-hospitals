@@ -56,7 +56,7 @@ export default function HomeTestimonial() {
                 title: "Comfortable treatment experience",
                 author: "Ananya Verma",
                 role: "Hyderabad",
-                youtubeId: "piyFy6CCCao",
+                youtubeId: "oGFZWgHvW",
                 image: "/testimonials/testimonial-video-1.jpg",
             },
             {

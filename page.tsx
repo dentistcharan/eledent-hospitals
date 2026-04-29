@@ -13,8 +13,6 @@ import CommanTestimonial from "@/app/components/comman/comman-testimonial";
 import RelatedBlogsSection from "@/app/components/services-details/dental-implant-plan";
 import OverValue from "@/app/components/services-details/value";
 import { getMetadataByPath } from "@/lib/metadata";
-import JsonLd from "@/app/components/JsonLd";
-import { buildServiceFaqSchema, faqSchemas } from "@/lib/faq-schemas";
 
 type PageProps = {
   params: Promise<{
@@ -94,14 +92,8 @@ export default async function ServicesDetailsPage({ params }: PageProps) {
 
   const currentCategorySlug = service?.category?.slug ?? "";
 
-  const faqSchema =
-    service.faq?.items && service.faq.items.length > 0
-      ? buildServiceFaqSchema(service.faq.items)
-      : faqSchemas[`/services/${slug}`] ?? null;
-
   return (
     <div>
-      {faqSchema && <JsonLd data={faqSchema} />}
       <Navbar />
 
       <main>

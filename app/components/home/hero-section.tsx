@@ -50,7 +50,7 @@ export default function HeroSection() {
                 <div className="absolute inset-0 z-10 pointer-events-none" />
 
                 <Link href="/" className="block h-full">
-                    <div className="relative z-20 h-full max-w-7xl mx-auto flex items-center justify-center">
+                    <div className="relative z-20 h-full lg:max-w-7xl mx-auto flex items-center justify-center">
                         <Swiper
                             modules={[Autoplay]}
                             slidesPerView={1}

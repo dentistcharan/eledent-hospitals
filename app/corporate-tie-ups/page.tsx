@@ -11,7 +11,7 @@ import BookingAportment from "../components/comman/booking-aportment";
 import Image from "next/image";
 import WhyPartner from "../components/corporate-dental/corporate-partner";
 export async function generateMetadata(): Promise<Metadata> {
-  return await getMetadataByPath("/about-us");
+  return await getMetadataByPath("/corporate-tie-ups");
 }
 
 export default function CorporateDental() {
