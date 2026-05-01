@@ -109,3 +109,4 @@ vite.config.ts.timestamp-*
 .vscode-test
 .lock-wscript
 lib-cov
+Archive.zip
