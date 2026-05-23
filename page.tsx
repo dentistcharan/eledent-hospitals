@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import ServicesHero from "../../components/services-details/services-hero";
-import DentalImplants from "../../components/services-details/dental-implants";
-import ServicesAportment from "../../components/services-details/services-aportment";
-import ServicesCount from "../../components/services-details/services-count";
+
+import Footer from "./app/components/Footer";
+import ServicesHero from "./app/components/services-details/services-hero";
+import DentalImplants from "./app/components/services-details/dental-implants";
+import ServicesAportment from "./app/components/services-details/services-aportment";
+import ServicesCount from "./app/components/services-details/services-count";
 import PlacementProcedure from "@/app/components/services-details/placement-procedure";
 import CommanTopRated from "@/app/components/services-details/make-appointment";
 import ServicesFaq from "@/app/components/services-details/services-faq";
@@ -13,6 +13,7 @@ import CommanTestimonial from "@/app/components/comman/comman-testimonial";
 import RelatedBlogsSection from "@/app/components/services-details/dental-implant-plan";
 import OverValue from "@/app/components/services-details/value";
 import { getMetadataByPath } from "@/lib/metadata";
+import Navbar from "./app/components/Navbar";
 
 type PageProps = {
   params: Promise<{
