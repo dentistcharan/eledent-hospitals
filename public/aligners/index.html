@@ -2,14 +2,17 @@
 <html lang="en">
 
 <head>
+    <base href="/aligners/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <title>Invisalign, Clear Aligners &amp; Braces in Hyderabad | Eledent</title>
-    <meta name="description" content="Straighten your teeth at Eledent - Invisalign, clear aligners &amp; braces across 5 Hyderabad clinics. Free 3D smile preview. From Rs 30,000. 9,500+ smiles created." />
+    <meta name="description"
+        content="Straighten your teeth at Eledent - Invisalign, clear aligners &amp; braces across 5 Hyderabad clinics. Free 3D smile preview. From Rs 30,000. 9,500+ smiles created." />
     <meta name="robots" content="noindex, follow" />
     <link rel="canonical" href="https://eledenthospitals.com/clear-aligners-braces" />
     <meta property="og:title" content="Invisalign, Clear Aligners &amp; Braces in Hyderabad - Eledent" />
-    <meta property="og:description" content="Free 3D smile preview at 5 Eledent clinics across Hyderabad. From Rs 30,000 with" />
+    <meta property="og:description"
+        content="Free 3D smile preview at 5 Eledent clinics across Hyderabad. From Rs 30,000 with" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://eledenthospitals.com/clear-aligners-braces" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -201,60 +204,80 @@
                 padding-bottom: calc(56px + env(safe-area-inset-bottom));
             }
         }
-    
-/* ── Treatment slider (mobile) ── */
-#treatment-slider {
-    display: grid;
-    gap: 20px;
-}
-.treatment-dots { display: none; }
-@media (max-width: 639px) {
-    #treatment-slider {
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 16px;
-        padding-bottom: 16px;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-    #treatment-slider::-webkit-scrollbar { display: none; }
-    #treatment-slider > div {
-        min-width: 80%;
-        scroll-snap-align: start;
-        flex-shrink: 0;
-    }
-    .treatment-dots {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        padding-top: 16px;
-    }
-    .treatment-dots span {
-        display: block;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #d1d5db;
-        cursor: pointer;
-        transition: all 0.2s;
-    }
-    .treatment-dots span.active {
-        background: #e87733;
-        transform: scale(1.3);
-    }
-}
-@media (min-width: 640px) {
-    #treatment-slider { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 768px) {
-    #treatment-slider { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 1280px) {
-    #treatment-slider { grid-template-columns: repeat(4, 1fr); }
-}
+
+        /* ── Treatment slider (mobile) ── */
+        #treatment-slider {
+            display: grid;
+            gap: 20px;
+        }
+
+        .treatment-dots {
+            display: none;
+        }
+
+        @media (max-width: 639px) {
+            #treatment-slider {
+                display: flex;
+                flex-direction: row;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 16px;
+                padding-bottom: 16px;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            #treatment-slider::-webkit-scrollbar {
+                display: none;
+            }
+
+            #treatment-slider>div {
+                min-width: 80%;
+                scroll-snap-align: start;
+                flex-shrink: 0;
+            }
+
+            .treatment-dots {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                padding-top: 16px;
+            }
+
+            .treatment-dots span {
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #d1d5db;
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+
+            .treatment-dots span.active {
+                background: #e87733;
+                transform: scale(1.3);
+            }
+        }
+
+        @media (min-width: 640px) {
+            #treatment-slider {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            #treatment-slider {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            #treatment-slider {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
     </style>
     <!-- GTM: Connect GTM-W49C7DC before launch -->
 </head>
@@ -327,225 +350,488 @@
         <div class="max-w-7xl mx-auto px-4 py-12 w-full">
             <div class="grid lg:grid-cols-[2.2fr_1.8fr] gap-10 items-center">
                 <div>
-                    <div class="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">5 Clinics Across Hyderabad - Free 3D Smile Preview</div>
-                    <h1 class="text-3xl lg:text-[38px] font-extrabold text-white leading-tight mb-4">Invisalign, Clear Aligners &amp; Braces in Hyderabad - Straighten Your Teeth Invisibly</h1>
-                    <p class="text-base sm:text-lg text-gray-100 mb-6 leading-relaxed">Looking for clear aligners or braces near you? Free 3D smile preview before you start. Doctor-designed treatment at 5 Eledent clinics across Hyderabad - Kondapur, Kukatpally, Banjara Hills, Manikonda &amp; Kompally. <strong>From Rs 30,000 with</strong></p>
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                        5 Clinics Across Hyderabad - Free 3D Smile Preview</div>
+                    <h1 class="text-3xl lg:text-[38px] font-extrabold text-white leading-tight mb-4">Invisalign, Clear
+                        Aligners &amp; Braces in Hyderabad - Straighten Your Teeth Invisibly</h1>
+                    <p class="text-base sm:text-lg text-gray-100 mb-6 leading-relaxed">Looking for clear aligners or
+                        braces near you? Free 3D smile preview before you start. Doctor-designed treatment at 5 Eledent
+                        clinics across Hyderabad - Kondapur, Kukatpally, Banjara Hills, Manikonda &amp; Kompally.
+                        <strong>From Rs 30,000 with</strong></p>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-7">
-                        <div class="flex items-center gap-2 bg-white rounded-xl shadow-sm border border-gray-100 px-3 py-2"><span class="text-brand font-bold text-lg">9,500+</span><span class="text-xs text-gray-600">Smiles aligned</span></div>
-                        <div class="flex items-center gap-2 bg-white rounded-xl shadow-sm border border-gray-100 px-3 py-2"><span class="text-brand font-bold text-sm">3D</span><span class="text-xs text-gray-600">Free preview</span></div>
-                        <div class="flex items-center gap-2 bg-white rounded-xl shadow-sm border border-gray-100 px-3 py-2"><span class="text-brand font-bold text-sm">Rs</span><span class="text-xs text-gray-600">From Rs 30,000</span></div>
-                        
-                        <div class="flex items-center gap-2 bg-white rounded-xl shadow-sm border border-gray-100 px-3 py-2 col-span-2 sm:col-span-1"><span class="text-yellow-400 font-bold">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="text-xs text-gray-600">4.9 Rated</span></div>
+                        <div
+                            class="flex items-center gap-2 bg-white rounded-xl shadow-sm border border-gray-100 px-3 py-2">
+                            <span class="text-brand font-bold text-lg">9,500+</span><span
+                                class="text-xs text-gray-600">Smiles aligned</span></div>
+                        <div
+                            class="flex items-center gap-2 bg-white rounded-xl shadow-sm border border-gray-100 px-3 py-2">
+                            <span class="text-brand font-bold text-sm">3D</span><span class="text-xs text-gray-600">Free
+                                preview</span></div>
+                        <div
+                            class="flex items-center gap-2 bg-white rounded-xl shadow-sm border border-gray-100 px-3 py-2">
+                            <span class="text-brand font-bold text-sm">Rs</span><span class="text-xs text-gray-600">From
+                                Rs 30,000</span></div>
+
+                        <div
+                            class="flex items-center gap-2 bg-white rounded-xl shadow-sm border border-gray-100 px-3 py-2 col-span-2 sm:col-span-1">
+                            <span class="text-yellow-400 font-bold">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span
+                                class="text-xs text-gray-600">4.9 Rated</span></div>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <button onclick="scrollToForm()" class="bg-white text-black font-bold px-7 py-3.5 rounded-full shadow-lg hover:bg-brand-dark hover:text-white transition-all text-base">Book My Free Smile Preview</button>
-                        <a href="tel:+917799719994" class="flex items-center justify-center gap-2 border-2 border-white text-white font-semibold px-5 py-3.5 rounded-full hover:bg-white hover:text-brand transition-all text-sm" onclick="trackEvent('phone_click')">Or call us now: +91 77997 19994</a>
+                        <button onclick="scrollToForm()"
+                            class="bg-white text-black font-bold px-7 py-3.5 rounded-full shadow-lg hover:bg-brand-dark hover:text-white transition-all text-base">Book
+                            My Free Smile Preview</button>
+                        <a href="tel:+917799719994"
+                            class="flex items-center justify-center gap-2 border-2 border-white text-white font-semibold px-5 py-3.5 rounded-full hover:bg-white hover:text-brand transition-all text-sm"
+                            onclick="trackEvent('phone_click')">Or call us now: +91 77997 19994</a>
                     </div>
                 </div>
                 <div id="hero-form" class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-8">
                     <h2 class="text-xl font-bold text-gray-900 mb-1">Get Your Free 3D Smile Preview</h2>
-                    <p class="text-sm text-gray-500 mb-5">See your future smile before you commit. Book a free assessment - our team calls within 30 minutes during clinic hours.</p>
-                    <p style="text-align:center;margin-bottom:12px;font-size:13px;color:#333;">Get <strong style="color:#f37326;">10% Discount</strong> on all Dental Treatments</p>
+                    <p class="text-sm text-gray-500 mb-5">See your future smile before you commit. Book a free
+                        assessment - our team calls within 30 minutes during clinic hours.</p>
+                    <p style="text-align:center;margin-bottom:12px;font-size:13px;color:#333;">Get <strong
+                            style="color:#f37326;">10% Discount</strong> on all Dental Treatments</p>
                     <form id="consultation-form" novalidate>
                         <div class="space-y-4">
-                            <div><label class="block text-sm font-medium text-gray-700 mb-1" for="name">Your Name *</label><input type="text" id="name" name="name" required minlength="2" placeholder="Full name" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition" /><p class="text-red-500 text-xs mt-1 hidden" id="name-err">Please enter your name (min 2 characters).</p></div>
-                            <div><label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Mobile Number *</label><input type="tel" id="phone" name="phone" required placeholder="10-digit mobile number" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition" /><p class="text-red-500 text-xs mt-1 hidden" id="phone-err">Please enter a valid 10-digit Indian mobile number.</p></div>
-                            <div><label class="block text-sm font-medium text-gray-700 mb-1" for="clinic">Preferred Clinic *</label><select id="clinic" name="clinic" required class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition bg-white"><option value="">Select clinic</option><option>Kondapur</option><option>Kukatpally KPHB</option><option>Banjara Hills</option><option>Manikonda</option><option>Kompally</option></select><p class="text-red-500 text-xs mt-1 hidden" id="clinic-err">Please select a clinic.</p></div>
-                            <div><label class="block text-sm font-medium text-gray-700 mb-1" for="interest">I'm Interested In *</label><select id="interest" name="interest" required class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition bg-white"><option value="">Select treatment</option><option>Invisalign</option><option>Clear aligners</option><option>Metal braces</option><option>Ceramic braces</option><option>Not sure</option></select><p class="text-red-500 text-xs mt-1 hidden" id="interest-err">Please select an option.</p></div>
-                            <div><label class="block text-sm font-medium text-gray-700 mb-1" for="pref-date">Preferred Date <span class="text-gray-400">(optional)</span></label><input type="date" id="pref-date" name="pref_date" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition" /></div>
+                            <div><label class="block text-sm font-medium text-gray-700 mb-1" for="name">Your Name
+                                    *</label><input type="text" id="name" name="name" required minlength="2"
+                                    placeholder="Full name"
+                                    class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition" />
+                                <p class="text-red-500 text-xs mt-1 hidden" id="name-err">Please enter your name (min 2
+                                    characters).</p>
+                            </div>
+                            <div><label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Mobile Number
+                                    *</label><input type="tel" id="phone" name="phone" required
+                                    placeholder="10-digit mobile number"
+                                    class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition" />
+                                <p class="text-red-500 text-xs mt-1 hidden" id="phone-err">Please enter a valid 10-digit
+                                    Indian mobile number.</p>
+                            </div>
+                            <div><label class="block text-sm font-medium text-gray-700 mb-1" for="clinic">Preferred
+                                    Clinic *</label><select id="clinic" name="clinic" required
+                                    class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition bg-white">
+                                    <option value="">Select clinic</option>
+                                    <option>Kondapur</option>
+                                    <option>Kukatpally KPHB</option>
+                                    <option>Banjara Hills</option>
+                                    <option>Manikonda</option>
+                                    <option>Kompally</option>
+                                </select>
+                                <p class="text-red-500 text-xs mt-1 hidden" id="clinic-err">Please select a clinic.</p>
+                            </div>
+                            <div><label class="block text-sm font-medium text-gray-700 mb-1" for="interest">I'm
+                                    Interested In *</label><select id="interest" name="interest" required
+                                    class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition bg-white">
+                                    <option value="">Select treatment</option>
+                                    <option>Invisalign</option>
+                                    <option>Clear aligners</option>
+                                    <option>Metal braces</option>
+                                    <option>Ceramic braces</option>
+                                    <option>Not sure</option>
+                                </select>
+                                <p class="text-red-500 text-xs mt-1 hidden" id="interest-err">Please select an option.
+                                </p>
+                            </div>
+                            <div><label class="block text-sm font-medium text-gray-700 mb-1" for="pref-date">Preferred
+                                    Date <span class="text-gray-400">(optional)</span></label><input type="date"
+                                    id="pref-date" name="pref_date"
+                                    class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition" />
+                            </div>
                             <input type="hidden" id="page-url" name="page_url" />
                             <input type="hidden" id="utm-source" name="utm_source" />
                             <input type="hidden" id="utm-medium" name="utm_medium" />
                             <input type="hidden" id="utm-campaign" name="utm_campaign" />
                             <input type="hidden" id="utm-term" name="utm_term" />
                             <input type="hidden" id="utm-content" name="utm_content" />
-                            <input type="text" id="website" name="website" class="hidden" tabindex="-1" autocomplete="off" />
+                            <input type="text" id="website" name="website" class="hidden" tabindex="-1"
+                                autocomplete="off" />
                         </div>
-                        <div id="form-success" class="hidden mt-4 bg-green-50 border border-green-200 rounded-xl px-4 py-3 text-sm text-green-800"><strong>Thanks!</strong> Our team will call within 30 minutes during clinic hours (8 AM-9 PM) to book your free 3D smile preview.</div>
-                        <div id="form-error" class="hidden mt-4 bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-700">Something went wrong. Please try again or call us directly.</div>
-                        <button type="submit" id="form-submit-btn" class="w-full mt-5 bg-brand text-white font-bold py-3.5 rounded-full shadow hover:bg-brand-dark transition-all text-base">Book My Free Smile Preview</button>
+                        <div id="form-success"
+                            class="hidden mt-4 bg-green-50 border border-green-200 rounded-xl px-4 py-3 text-sm text-green-800">
+                            <strong>Thanks!</strong> Our team will call within 30 minutes during clinic hours (8 AM-9
+                            PM) to book your free 3D smile preview.</div>
+                        <div id="form-error"
+                            class="hidden mt-4 bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-700">
+                            Something went wrong. Please try again or call us directly.</div>
+                        <button type="submit" id="form-submit-btn"
+                            class="w-full mt-5 bg-brand text-white font-bold py-3.5 rounded-full shadow hover:bg-brand-dark transition-all text-base">Book
+                            My Free Smile Preview</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <section class="py-10 bg-orange-100"><div class="max-w-7xl mx-auto px-4"><div class="mb-10"><span class="text-xs font-bold tracking-widest uppercase text-brand">Treatment Options</span><h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2 tracking-tight">Your Teeth-Straightening Options at Eledent</h2><div class="w-12 h-1 bg-brand rounded mt-3"></div></div><div id="treatment-slider" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
-                    <div class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">1</div>
+    <section class="py-10 bg-orange-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mb-10"><span class="text-xs font-bold tracking-widest uppercase text-brand">Treatment
+                    Options</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2 tracking-tight">Your Teeth-Straightening
+                    Options at Eledent</h2>
+                <div class="w-12 h-1 bg-brand rounded mt-3"></div>
+            </div>
+            <div id="treatment-slider" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div
+                        class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">
+                        1</div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Invisalign Comprehensive</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Premium clear aligners for all case complexities. Most popular for adults.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Premium clear aligners for all case
+                        complexities. Most popular for adults.</p>
                     <p class="text-brand font-bold text-sm mb-3">From <span class="text-lg">Rs 1,50,000</span></p>
-                    <button onclick="scrollToForm()" class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get free preview</button>
+                    <button onclick="scrollToForm()"
+                        class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get
+                        free preview</button>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
-                    <div class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">2</div>
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div
+                        class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">
+                        2</div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Invisalign Lite / Express</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">For minor crowding or relapse correction. Fewer aligners, lower cost.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">For minor crowding or relapse
+                        correction. Fewer aligners, lower cost.</p>
                     <p class="text-brand font-bold text-sm mb-3">From <span class="text-lg">Rs 80,000</span></p>
-                    <button onclick="scrollToForm()" class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get free preview</button>
+                    <button onclick="scrollToForm()"
+                        class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get
+                        free preview</button>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
-                    <div class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">3</div>
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div
+                        class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">
+                        3</div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Clear Aligners (Eledent)</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Doctor-designed clear aligners - value option, same clinical oversight.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Doctor-designed clear aligners - value
+                        option, same clinical oversight.</p>
                     <p class="text-brand font-bold text-sm mb-3">From <span class="text-lg">Rs 30,000</span></p>
-                    <button onclick="scrollToForm()" class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get free preview</button>
+                    <button onclick="scrollToForm()"
+                        class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get
+                        free preview</button>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
-                    <div class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">4</div>
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div
+                        class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">
+                        4</div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Quick 6-Month Aligners</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Mild front-teeth crowding only. Fast cosmetic correction.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Mild front-teeth crowding only. Fast
+                        cosmetic correction.</p>
                     <p class="text-brand font-bold text-sm mb-3">From <span class="text-lg">Rs 30,000</span></p>
-                    <button onclick="scrollToForm()" class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get free preview</button>
+                    <button onclick="scrollToForm()"
+                        class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get
+                        free preview</button>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
-                    <div class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">5</div>
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div
+                        class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">
+                        5</div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Ceramic Braces</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Tooth-colored brackets - less visible than metal, fixed.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Tooth-colored brackets - less visible
+                        than metal, fixed.</p>
                     <p class="text-brand font-bold text-sm mb-3">From <span class="text-lg">Rs 40,000</span></p>
-                    <button onclick="scrollToForm()" class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get free preview</button>
+                    <button onclick="scrollToForm()"
+                        class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get
+                        free preview</button>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
-                    <div class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">6</div>
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div
+                        class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">
+                        6</div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Metal Braces</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Most affordable fixed orthodontics. Reliable for complex cases.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Most affordable fixed orthodontics.
+                        Reliable for complex cases.</p>
                     <p class="text-brand font-bold text-sm mb-3">From <span class="text-lg">Rs 30,000</span></p>
-                    <button onclick="scrollToForm()" class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get free preview</button>
+                    <button onclick="scrollToForm()"
+                        class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get
+                        free preview</button>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
-                    <div class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">7</div>
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div
+                        class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">
+                        7</div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Self-Ligating Braces</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Fewer adjustment visits, faster than conventional braces.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Fewer adjustment visits, faster than
+                        conventional braces.</p>
                     <p class="text-brand font-bold text-sm mb-3">From <span class="text-lg">Rs 55,000</span></p>
-                    <button onclick="scrollToForm()" class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get free preview</button>
+                    <button onclick="scrollToForm()"
+                        class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get
+                        free preview</button>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
-                    <div class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">8</div>
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div
+                        class="w-10 h-10 bg-brand-light rounded-xl flex items-center justify-center mb-4 text-brand font-bold">
+                        8</div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Lingual Braces</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Fixed braces behind the teeth - completely hidden.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4">Fixed braces behind the teeth -
+                        completely hidden.</p>
                     <p class="text-brand font-bold text-sm mb-3">From <span class="text-lg">Rs 1,20,000</span></p>
-                    <button onclick="scrollToForm()" class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get free preview</button>
-                </div></div>
-<div class="treatment-dots" id="treatment-dots">
-    <span class="active" data-idx="0"></span>
-    <span data-idx="1"></span>
-    <span data-idx="2"></span>
-    <span data-idx="3"></span>
-    <span data-idx="4"></span>
-    <span data-idx="5"></span>
-    <span data-idx="6"></span>
-    <span data-idx="7"></span>
-</div></div></section>
-    <section class="py-10 bg-white"><div class="max-w-7xl mx-auto px-4"><div class="grid lg:grid-cols-2 gap-8 items-center"><div><span class="text-xs font-bold tracking-widest uppercase text-brand">Free 3D Smile Preview</span><h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2 mb-4">See Your New Smile Before You Start - Free 3D Preview</h2><p class="text-gray-600 leading-relaxed mb-6">Most patients hesitate because they can't picture the result. At Eledent, a free 3D intraoral scan shows you exactly how your teeth will look at the end of treatment - before you pay anything. Book the free preview at any of our 5 Hyderabad clinics. No obligation.</p><button onclick="scrollToForm()" class="bg-brand text-white font-bold px-7 py-3 rounded-full shadow hover:bg-brand-dark transition-all">Book My Free 3D Preview</button></div><div class="overflow-hidden rounded-2xl shadow-lg bg-gray-100"><img src="https://images.unsplash.com/photo-1777793636393-a0fec488f3fb?auto=format&fit=crop&q=80&w=1100" alt="Close-up of clear dental aligner fitted on teeth" class="w-full h-[360px] object-cover" loading="lazy"></div></div></div></section>
-    <section class="py-10 bg-gray-100"><div class="max-w-6xl mx-auto px-4"><div class="text-center mb-10"><h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">Your Smile Journey in 3 Steps</h2></div><div class="grid md:grid-cols-3 gap-6"><div class="bg-white rounded-2xl p-7 border border-gray-100"><div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm mb-4">1</div><h3 class="font-bold text-gray-900 mb-2">Free 3D scan &amp; smile preview</h3><p class="text-gray-600 text-sm">A quick intraoral scan. See your projected result and get a doctor-designed plan with transparent pricing.</p></div><div class="bg-white rounded-2xl p-7 border border-gray-100"><div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm mb-4">2</div><h3 class="font-bold text-gray-900 mb-2">Your custom aligners or braces</h3><p class="text-gray-600 text-sm">Aligners delivered in sets (changed every 1-2 weeks at home) or braces fitted and adjusted in-clinic.</p></div><div class="bg-white rounded-2xl p-7 border border-gray-100"><div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm mb-4">3</div><h3 class="font-bold text-gray-900 mb-2">Final result + retainer</h3><p class="text-gray-600 text-sm">Treatment completes; a retainer locks in your new smile. Follow-up reviews included.</p></div></div></div></section>
-    <section class="py-10 bg-white"><div class="max-w-7xl mx-auto px-4"><div class="mb-10"><span class="text-xs font-bold tracking-widest uppercase text-brand">Why Us</span><h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2 tracking-tight">Why 9,500+ Patients Chose Eledent to Straighten Their Teeth</h2><div class="w-12 h-1 bg-brand rounded mt-3"></div></div><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"><div class="bg-gray-100 rounded-2xl p-6"><h3 class="font-bold text-gray-900 mb-1">Doctor-designed, not algorithm-only</h3><p class="text-gray-500 text-sm">Every plan is designed and supervised by an orthodontist - not just software.</p></div><div class="bg-gray-100 rounded-2xl p-6"><h3 class="font-bold text-gray-900 mb-1">Free 3D smile preview</h3><p class="text-gray-500 text-sm">See your result before you pay. No other decision tool matters more.</p></div><div class="bg-gray-100 rounded-2xl p-6"><h3 class="font-bold text-gray-900 mb-1">9,500+ smiles created</h3><p class="text-gray-500 text-sm">One of Hyderabad's highest-volume orthodontic practices.</p></div><div class="bg-gray-100 rounded-2xl p-6"><h3 class="font-bold text-gray-900 mb-1">All options under one roof</h3><p class="text-gray-500 text-sm">Invisalign, clear aligners, and every type of braces - at one clinic.</p></div><div class="bg-gray-100 rounded-2xl p-6"><h3 class="font-bold text-gray-900 mb-1">5 clinics across Hyderabad</h3><p class="text-gray-500 text-sm">Kondapur, Kukatpally, Banjara Hills, Manikonda, Kompally.</p></div></div></div></section>
-    
+                    <button onclick="scrollToForm()"
+                        class="w-full border-2 border-brand text-brand font-semibold py-2 rounded-full text-sm hover:bg-brand hover:text-white transition-all">Get
+                        free preview</button>
+                </div>
+            </div>
+            <div class="treatment-dots" id="treatment-dots">
+                <span class="active" data-idx="0"></span>
+                <span data-idx="1"></span>
+                <span data-idx="2"></span>
+                <span data-idx="3"></span>
+                <span data-idx="4"></span>
+                <span data-idx="5"></span>
+                <span data-idx="6"></span>
+                <span data-idx="7"></span>
+            </div>
+        </div>
+    </section>
+    <section class="py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <div><span class="text-xs font-bold tracking-widest uppercase text-brand">Free 3D Smile Preview</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2 mb-4">See Your New Smile Before
+                        You Start - Free 3D Preview</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">Most patients hesitate because they can't picture the
+                        result. At Eledent, a free 3D intraoral scan shows you exactly how your teeth will look at the
+                        end of treatment - before you pay anything. Book the free preview at any of our 5 Hyderabad
+                        clinics. No obligation.</p><button onclick="scrollToForm()"
+                        class="bg-brand text-white font-bold px-7 py-3 rounded-full shadow hover:bg-brand-dark transition-all">Book
+                        My Free 3D Preview</button>
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg bg-gray-100"><img
+                        src="https://images.unsplash.com/photo-1777793636393-a0fec488f3fb?auto=format&fit=crop&q=80&w=1100"
+                        alt="Close-up of clear dental aligner fitted on teeth" class="w-full h-[360px] object-cover"
+                        loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+    <section class="py-10 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">Your Smile Journey in 3 Steps</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-7 border border-gray-100">
+                    <div
+                        class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm mb-4">
+                        1</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Free 3D scan &amp; smile preview</h3>
+                    <p class="text-gray-600 text-sm">A quick intraoral scan. See your projected result and get a
+                        doctor-designed plan with transparent pricing.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-7 border border-gray-100">
+                    <div
+                        class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm mb-4">
+                        2</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Your custom aligners or braces</h3>
+                    <p class="text-gray-600 text-sm">Aligners delivered in sets (changed every 1-2 weeks at home) or
+                        braces fitted and adjusted in-clinic.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-7 border border-gray-100">
+                    <div
+                        class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center font-bold text-sm mb-4">
+                        3</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Final result + retainer</h3>
+                    <p class="text-gray-600 text-sm">Treatment completes; a retainer locks in your new smile. Follow-up
+                        reviews included.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mb-10"><span class="text-xs font-bold tracking-widest uppercase text-brand">Why Us</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2 tracking-tight">Why 9,500+ Patients Chose
+                    Eledent to Straighten Their Teeth</h2>
+                <div class="w-12 h-1 bg-brand rounded mt-3"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-100 rounded-2xl p-6">
+                    <h3 class="font-bold text-gray-900 mb-1">Doctor-designed, not algorithm-only</h3>
+                    <p class="text-gray-500 text-sm">Every plan is designed and supervised by an orthodontist - not just
+                        software.</p>
+                </div>
+                <div class="bg-gray-100 rounded-2xl p-6">
+                    <h3 class="font-bold text-gray-900 mb-1">Free 3D smile preview</h3>
+                    <p class="text-gray-500 text-sm">See your result before you pay. No other decision tool matters
+                        more.</p>
+                </div>
+                <div class="bg-gray-100 rounded-2xl p-6">
+                    <h3 class="font-bold text-gray-900 mb-1">9,500+ smiles created</h3>
+                    <p class="text-gray-500 text-sm">One of Hyderabad's highest-volume orthodontic practices.</p>
+                </div>
+                <div class="bg-gray-100 rounded-2xl p-6">
+                    <h3 class="font-bold text-gray-900 mb-1">All options under one roof</h3>
+                    <p class="text-gray-500 text-sm">Invisalign, clear aligners, and every type of braces - at one
+                        clinic.</p>
+                </div>
+                <div class="bg-gray-100 rounded-2xl p-6">
+                    <h3 class="font-bold text-gray-900 mb-1">5 clinics across Hyderabad</h3>
+                    <p class="text-gray-500 text-sm">Kondapur, Kukatpally, Banjara Hills, Manikonda, Kompally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-10 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-10">
                 <span class="text-xs font-bold tracking-widest uppercase text-brand">Our Locations</span>
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2 tracking-tight">Clear Aligners, Invisalign &amp; Braces Near You - 5 Eledent Clinics in Hyderabad</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2 tracking-tight">Clear Aligners, Invisalign
+                    &amp; Braces Near You - 5 Eledent Clinics in Hyderabad</h2>
                 <div class="w-12 h-1 bg-brand rounded mt-3"></div>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
                     <div class="flex items-start justify-between mb-4">
-                        <span class="inline-flex bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-full">Kondapur</span>
-                        <span class="w-9 h-9 bg-brand-light rounded-xl flex items-center justify-center text-brand"><i class="fa-solid fa-location-dot"></i></span>
+                        <span
+                            class="inline-flex bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-full">Kondapur</span>
+                        <span class="w-9 h-9 bg-brand-light rounded-xl flex items-center justify-center text-brand"><i
+                                class="fa-solid fa-location-dot"></i></span>
                     </div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Clear Aligners &amp; Braces in Kondapur</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Get Invisalign, clear aligners, or braces at Eledent Kondapur. Book a free 3D smile preview at our Kondapur clinic and see your result before you start - doctor-designed treatment from Rs 30,000.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Get Invisalign, clear aligners, or braces at
+                        Eledent Kondapur. Book a free 3D smile preview at our Kondapur clinic and see your result before
+                        you start - doctor-designed treatment from Rs 30,000.</p>
                     <div class="flex items-start gap-2 text-sm text-gray-600 mb-3">
                         <i class="fa-solid fa-location-dot text-brand mt-1"></i>
-                        <span>3rd floor, K1 Primo Building, Bus Stop, above Ratnadeep Super Market, Hanuman Nagar, Kondapur, Hyderabad, Telangana 500084</span>
+                        <span>3rd floor, K1 Primo Building, Bus Stop, above Ratnadeep Super Market, Hanuman Nagar,
+                            Kondapur, Hyderabad, Telangana 500084</span>
                     </div>
                     <div class="flex items-center gap-2 text-sm text-gray-600 mb-8">
                         <i class="fa-regular fa-clock text-brand"></i>
                         <span>Mon-Sat 9 AM - 9 PM &middot; Sun 9 AM - 8 PM</span>
                     </div>
                     <div class="grid grid-cols-2 gap-2 mt-auto">
-                        <a href="https://maps.app.goo.gl/ad8UwqCV9JXWM7J38" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 border border-brand text-brand font-semibold py-2.5 rounded-full text-sm hover:bg-brand-light transition-all"><i class="fa-solid fa-location-dot text-xs"></i>Directions</a>
-                        <a href="tel:+917557188078" class="inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-2.5 rounded-full text-sm hover:bg-brand-dark transition-all"><i class="fa-solid fa-phone text-xs"></i>Call</a>
+                        <a href="https://maps.app.goo.gl/ad8UwqCV9JXWM7J38" target="_blank" rel="noopener"
+                            class="inline-flex items-center justify-center gap-2 border border-brand text-brand font-semibold py-2.5 rounded-full text-sm hover:bg-brand-light transition-all"><i
+                                class="fa-solid fa-location-dot text-xs"></i>Directions</a>
+                        <a href="tel:+917557188078"
+                            class="inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-2.5 rounded-full text-sm hover:bg-brand-dark transition-all"><i
+                                class="fa-solid fa-phone text-xs"></i>Call</a>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
                     <div class="flex items-start justify-between mb-4">
-                        <span class="inline-flex bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-full">Kukatpally KPHB</span>
-                        <span class="w-9 h-9 bg-brand-light rounded-xl flex items-center justify-center text-brand"><i class="fa-solid fa-location-dot"></i></span>
+                        <span
+                            class="inline-flex bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-full">Kukatpally
+                            KPHB</span>
+                        <span class="w-9 h-9 bg-brand-light rounded-xl flex items-center justify-center text-brand"><i
+                                class="fa-solid fa-location-dot"></i></span>
                     </div>
-                    <h3 class="font-bold text-gray-900 text-base mb-3">Clear Aligners &amp; Braces in Kukatpally KPHB</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Straighten your teeth at Eledent Kukatpally KPHB with Invisalign, clear aligners, or braces. Free 3D smile preview at our KPHB branch - no obligation. Transparent pricing available.</p>
+                    <h3 class="font-bold text-gray-900 text-base mb-3">Clear Aligners &amp; Braces in Kukatpally KPHB
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Straighten your teeth at Eledent Kukatpally
+                        KPHB with Invisalign, clear aligners, or braces. Free 3D smile preview at our KPHB branch - no
+                        obligation. Transparent pricing available.</p>
                     <div class="flex items-start gap-2 text-sm text-gray-600 mb-3">
                         <i class="fa-solid fa-location-dot text-brand mt-1"></i>
-                        <span>1st Floor, MIG-160, Rd Number 1, opp. Holisitic Hospital, above Lenskart, Kukatpally Housing Board Colony, K P H B Phase 1, Kukatpally, Hyderabad, Telangana 500072</span>
+                        <span>1st Floor, MIG-160, Rd Number 1, opp. Holisitic Hospital, above Lenskart, Kukatpally
+                            Housing Board Colony, K P H B Phase 1, Kukatpally, Hyderabad, Telangana 500072</span>
                     </div>
                     <div class="flex items-center gap-2 text-sm text-gray-600 mb-8">
                         <i class="fa-regular fa-clock text-brand"></i>
                         <span>Mon-Sat 9 AM - 9 PM &middot; Sun 9 AM - 8 PM</span>
                     </div>
                     <div class="grid grid-cols-2 gap-2 mt-auto">
-                        <a href="https://maps.app.goo.gl/UthgyMuwCHMbuA5L7" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 border border-brand text-brand font-semibold py-2.5 rounded-full text-sm hover:bg-brand-light transition-all"><i class="fa-solid fa-location-dot text-xs"></i>Directions</a>
-                        <a href="tel:+917557188081" class="inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-2.5 rounded-full text-sm hover:bg-brand-dark transition-all"><i class="fa-solid fa-phone text-xs"></i>Call</a>
+                        <a href="https://maps.app.goo.gl/UthgyMuwCHMbuA5L7" target="_blank" rel="noopener"
+                            class="inline-flex items-center justify-center gap-2 border border-brand text-brand font-semibold py-2.5 rounded-full text-sm hover:bg-brand-light transition-all"><i
+                                class="fa-solid fa-location-dot text-xs"></i>Directions</a>
+                        <a href="tel:+917557188081"
+                            class="inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-2.5 rounded-full text-sm hover:bg-brand-dark transition-all"><i
+                                class="fa-solid fa-phone text-xs"></i>Call</a>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
                     <div class="flex items-start justify-between mb-4">
-                        <span class="inline-flex bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-full">Banjara Hills</span>
-                        <span class="w-9 h-9 bg-brand-light rounded-xl flex items-center justify-center text-brand"><i class="fa-solid fa-location-dot"></i></span>
+                        <span
+                            class="inline-flex bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-full">Banjara
+                            Hills</span>
+                        <span class="w-9 h-9 bg-brand-light rounded-xl flex items-center justify-center text-brand"><i
+                                class="fa-solid fa-location-dot"></i></span>
                     </div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Clear Aligners &amp; Braces in Banjara Hills</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Eledent Banjara Hills offers Invisalign, clear aligners, and all types of braces. Book your free 3D smile preview in Banjara Hills and get a doctor-designed plan with upfront pricing and</p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Eledent Banjara Hills offers Invisalign, clear
+                        aligners, and all types of braces. Book your free 3D smile preview in Banjara Hills and get a
+                        doctor-designed plan with upfront pricing and</p>
                     <div class="flex items-start gap-2 text-sm text-gray-600 mb-3">
                         <i class="fa-solid fa-location-dot text-brand mt-1"></i>
-                        <span>Eledent International, Raichandani Construction, Rd Number 12, Sri Ram Nagar Colony, Banjara Hills, Hyderabad, Telangana 500034</span>
+                        <span>Eledent International, Raichandani Construction, Rd Number 12, Sri Ram Nagar Colony,
+                            Banjara Hills, Hyderabad, Telangana 500034</span>
                     </div>
                     <div class="flex items-center gap-2 text-sm text-gray-600 mb-8">
                         <i class="fa-regular fa-clock text-brand"></i>
                         <span>Mon-Sat 9 AM - 9 PM &middot; Sun 9 AM - 8 PM</span>
                     </div>
                     <div class="grid grid-cols-2 gap-2 mt-auto">
-                        <a href="https://maps.app.goo.gl/PYssQqFKMvH5mnLe9" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 border border-brand text-brand font-semibold py-2.5 rounded-full text-sm hover:bg-brand-light transition-all"><i class="fa-solid fa-location-dot text-xs"></i>Directions</a>
-                        <a href="tel:+917557188082" class="inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-2.5 rounded-full text-sm hover:bg-brand-dark transition-all"><i class="fa-solid fa-phone text-xs"></i>Call</a>
+                        <a href="https://maps.app.goo.gl/PYssQqFKMvH5mnLe9" target="_blank" rel="noopener"
+                            class="inline-flex items-center justify-center gap-2 border border-brand text-brand font-semibold py-2.5 rounded-full text-sm hover:bg-brand-light transition-all"><i
+                                class="fa-solid fa-location-dot text-xs"></i>Directions</a>
+                        <a href="tel:+917557188082"
+                            class="inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-2.5 rounded-full text-sm hover:bg-brand-dark transition-all"><i
+                                class="fa-solid fa-phone text-xs"></i>Call</a>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
                     <div class="flex items-start justify-between mb-4">
-                        <span class="inline-flex bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-full">Manikonda</span>
-                        <span class="w-9 h-9 bg-brand-light rounded-xl flex items-center justify-center text-brand"><i class="fa-solid fa-location-dot"></i></span>
+                        <span
+                            class="inline-flex bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-full">Manikonda</span>
+                        <span class="w-9 h-9 bg-brand-light rounded-xl flex items-center justify-center text-brand"><i
+                                class="fa-solid fa-location-dot"></i></span>
                     </div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Clear Aligners &amp; Braces in Manikonda</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Looking for an orthodontist in Manikonda? Eledent Manikonda provides Invisalign, clear aligners, and braces with a free 3D smile preview. See your future smile before you commit - from Rs 30,000.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Looking for an orthodontist in Manikonda?
+                        Eledent Manikonda provides Invisalign, clear aligners, and braces with a free 3D smile preview.
+                        See your future smile before you commit - from Rs 30,000.</p>
                     <div class="flex items-start gap-2 text-sm text-gray-600 mb-3">
                         <i class="fa-solid fa-location-dot text-brand mt-1"></i>
-                        <span>1st Floor, Sunshine Regulas building, Manikonda Rd, above KFC, Muppas Panchavati Colony, Hyderabad, Telangana 500089</span>
+                        <span>1st Floor, Sunshine Regulas building, Manikonda Rd, above KFC, Muppas Panchavati Colony,
+                            Hyderabad, Telangana 500089</span>
                     </div>
                     <div class="flex items-center gap-2 text-sm text-gray-600 mb-8">
                         <i class="fa-regular fa-clock text-brand"></i>
                         <span>Mon-Sat 9 AM - 9 PM &middot; Sun 9 AM - 8 PM</span>
                     </div>
                     <div class="grid grid-cols-2 gap-2 mt-auto">
-                        <a href="https://maps.app.goo.gl/SWhjt5rDWA8ViMt86" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 border border-brand text-brand font-semibold py-2.5 rounded-full text-sm hover:bg-brand-light transition-all"><i class="fa-solid fa-location-dot text-xs"></i>Directions</a>
-                        <a href="tel:+917557188079" class="inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-2.5 rounded-full text-sm hover:bg-brand-dark transition-all"><i class="fa-solid fa-phone text-xs"></i>Call</a>
+                        <a href="https://maps.app.goo.gl/SWhjt5rDWA8ViMt86" target="_blank" rel="noopener"
+                            class="inline-flex items-center justify-center gap-2 border border-brand text-brand font-semibold py-2.5 rounded-full text-sm hover:bg-brand-light transition-all"><i
+                                class="fa-solid fa-location-dot text-xs"></i>Directions</a>
+                        <a href="tel:+917557188079"
+                            class="inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-2.5 rounded-full text-sm hover:bg-brand-dark transition-all"><i
+                                class="fa-solid fa-phone text-xs"></i>Call</a>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
                     <div class="flex items-start justify-between mb-4">
-                        <span class="inline-flex bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-full">Kompally</span>
-                        <span class="w-9 h-9 bg-brand-light rounded-xl flex items-center justify-center text-brand"><i class="fa-solid fa-location-dot"></i></span>
+                        <span
+                            class="inline-flex bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-full">Kompally</span>
+                        <span class="w-9 h-9 bg-brand-light rounded-xl flex items-center justify-center text-brand"><i
+                                class="fa-solid fa-location-dot"></i></span>
                     </div>
                     <h3 class="font-bold text-gray-900 text-base mb-3">Clear Aligners &amp; Braces in Kompally</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Eledent Kompally offers teeth straightening with Invisalign, clear aligners, and braces. Book a free 3D smile preview at our Kompally clinic - doctor-designed treatment, transparent pricing</p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Eledent Kompally offers teeth straightening
+                        with Invisalign, clear aligners, and braces. Book a free 3D smile preview at our Kompally clinic
+                        - doctor-designed treatment, transparent pricing</p>
                     <div class="flex items-start gap-2 text-sm text-gray-600 mb-3">
                         <i class="fa-solid fa-location-dot text-brand mt-1"></i>
                         <span>GF2H+M9, Ramraju Nagar, Jeedimetla, Hyderabad, Secunderabad, Telangana 500067</span>
@@ -555,23 +841,48 @@
                         <span>Mon-Sat 9 AM - 9 PM &middot; Sun 9 AM - 8 PM</span>
                     </div>
                     <div class="grid grid-cols-2 gap-2 mt-auto">
-                        <a href="https://maps.app.goo.gl/nVKQ3zWe4J5EqsF1A" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 border border-brand text-brand font-semibold py-2.5 rounded-full text-sm hover:bg-brand-light transition-all"><i class="fa-solid fa-location-dot text-xs"></i>Directions</a>
-                        <a href="tel:+917557188080" class="inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-2.5 rounded-full text-sm hover:bg-brand-dark transition-all"><i class="fa-solid fa-phone text-xs"></i>Call</a>
+                        <a href="https://maps.app.goo.gl/nVKQ3zWe4J5EqsF1A" target="_blank" rel="noopener"
+                            class="inline-flex items-center justify-center gap-2 border border-brand text-brand font-semibold py-2.5 rounded-full text-sm hover:bg-brand-light transition-all"><i
+                                class="fa-solid fa-location-dot text-xs"></i>Directions</a>
+                        <a href="tel:+917557188080"
+                            class="inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-2.5 rounded-full text-sm hover:bg-brand-dark transition-all"><i
+                                class="fa-solid fa-phone text-xs"></i>Call</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-10 bg-gray-100"><div class="max-w-7xl mx-auto px-4"><div class="mb-10"><span class="text-xs font-bold tracking-widest uppercase text-brand">FAQ</span><h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2 tracking-tight">Frequently Asked Questions</h2><div class="w-12 h-1 bg-brand rounded mt-3"></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-3 items-start" id="faq-list">
+    <section class="py-10 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mb-10"><span class="text-xs font-bold tracking-widest uppercase text-brand">FAQ</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2 tracking-tight">Frequently Asked Questions
+                </h2>
+                <div class="w-12 h-1 bg-brand rounded mt-3"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 items-start" id="faq-list">
                 <div class="space-y-3">
-                
+
                 </div>
 
-                
-                </div>
-                </div></div></div></section>
-    <section class="py-10 bg-brand-light"><div class="max-w-3xl mx-auto px-4 text-center"><h2 class="text-2xl sm:text-3xl font-extrabold text-black mb-3">Ready to See Your Future Smile?</h2><p class="text-gray-500 text-sm sm:text-base mb-8 leading-relaxed">Book your free 3D smile preview at your nearest Eledent branch in Hyderabad. Get a doctor-designed plan and exact cost before you decide.</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><button onclick="scrollToForm()" class="bg-white text-brand font-bold px-8 py-4 rounded-full shadow-lg hover:bg-blue-50 transition-all text-base">Book Free 3D Preview</button><a href="tel:+917799719994" class="border-2 border-white text-white font-bold px-8 py-4 rounded-full bg-black transition-all text-base flex items-center justify-center gap-2" onclick="trackEvent('phone_click')">Call +91 77997 19994</a></div></div></section>
+
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+    <section class="py-10 bg-brand-light">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-black mb-3">Ready to See Your Future Smile?</h2>
+            <p class="text-gray-500 text-sm sm:text-base mb-8 leading-relaxed">Book your free 3D smile preview at your
+                nearest Eledent branch in Hyderabad. Get a doctor-designed plan and exact cost before you decide.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center"><button onclick="scrollToForm()"
+                    class="bg-white text-brand font-bold px-8 py-4 rounded-full shadow-lg hover:bg-blue-50 transition-all text-base">Book
+                    Free 3D Preview</button><a href="tel:+917799719994"
+                    class="border-2 border-white text-white font-bold px-8 py-4 rounded-full bg-black transition-all text-base flex items-center justify-center gap-2"
+                    onclick="trackEvent('phone_click')">Call +91 77997 19994</a></div>
+        </div>
+    </section>
 
     <!-- ===================== FOOTER ===================== -->
     <footer class="bg-[#e87733] text-white lg:pt-12 pt-8 pb-6">
@@ -881,13 +1192,20 @@
   "paymentAccepted": "Cash, Card"
 }
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Invisalign Clear Aligner Treatment", "alternateName": "Clear Aligner Orthodontics", "description": "Doctor-designed Invisalign and clear aligner treatment at 5 Eledent clinics across Hyderabad. Free 3D smile preview before treatment.", "procedureType": "Therapeutic", "bodyLocation": "Teeth", "preparation": "Free 3D intraoral scan and orthodontic assessment.", "followup": "Aligners changed every 1-2 weeks; periodic clinic reviews; retainer after completion."}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Clear Aligners", "description": "Doctor-designed clear aligners at Eledent Hyderabad with free 3D smile preview.", "procedureType": "Therapeutic", "bodyLocation": "Teeth"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Metal Braces", "description": "Fixed metal braces for reliable orthodontic correction at Eledent Hyderabad.", "procedureType": "Therapeutic", "bodyLocation": "Teeth"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Ceramic Braces", "description": "Tooth-colored ceramic braces at Eledent Hyderabad.", "procedureType": "Therapeutic", "bodyLocation": "Teeth"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Self-Ligating Braces", "description": "Self-ligating braces with fewer adjustment visits at Eledent Hyderabad.", "procedureType": "Therapeutic", "bodyLocation": "Teeth"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Lingual Braces", "description": "Hidden braces placed behind the teeth at Eledent Hyderabad.", "procedureType": "Therapeutic", "bodyLocation": "Teeth"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much do clear aligners cost in Hyderabad?", "acceptedAnswer": {"@type": "Answer", "text": "At Eledent, clear aligners start at Rs 30,000 and go up based on case complexity. Invisalign Comprehensive ranges Rs 1,50,000-3,00,000. You get an exact quote in writing after your free 3D assessment."}}, {"@type": "Question", "name": "What's the difference between Invisalign and other clear aligners?", "acceptedAnswer": {"@type": "Answer", "text": "Invisalign is a specific premium aligner brand with the widest case range and proprietary technology. Eledent's clear aligners are a value option with the same doctor oversight, suited to mild-to-moderate cases. At your free preview, the orthodontist recommends the right fit for your teeth and budget."}}, {"@type": "Question", "name": "Are aligners better than braces?", "acceptedAnswer": {"@type": "Answer", "text": "Neither is universally better. Aligners are removable and nearly invisible - ideal for adults and mild-to-moderate cases. Braces are fixed and often better for complex corrections. Your free 3D assessment determines which suits your case."}}, {"@type": "Question", "name": "How long does treatment take?", "acceptedAnswer": {"@type": "Answer", "text": "Quick aligners for mild cases: about 6 months. Average aligner or braces treatment: 12-18 months. Complex cases: up to 24 months. You see the projected timeline at your free preview."}}, {"@type": "Question", "name": "Will aligners affect my speech?", "acceptedAnswer": {"@type": "Answer", "text": "There may be a slight lisp for the first few days as you adjust. It resolves quickly for almost all patients and is far less noticeable than with braces."}}, {"@type": "Question", "name": "Can adults get aligners or braces?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A large share of Eledent's orthodontic patients are adults aged 25-45. Teeth can be moved at any age with a healthy jaw and gums."}}, {"@type": "Question", "name": "What is the free 3D smile preview?", "acceptedAnswer": {"@type": "Answer", "text": "A quick intraoral scan that simulates your teeth at the end of treatment - so you see the result before committing or paying. It's free and available at all 5 Eledent clinics, with no obligation."}}, {"@type": "Question", "name": "What if I lose an aligner?", "acceptedAnswer": {"@type": "Answer", "text": "Contact your Eledent clinic immediately. Depending on your stage, you'll either move to the next set or get a replacement. Keep your previous set as a backup until the new one fits."}}, {"@type": "Question", "name": "Which Eledent branch should I visit?", "acceptedAnswer": {"@type": "Answer", "text": "Orthodontic treatment is available at all 5 branches - Kondapur, Kukatpally KPHB, Banjara Hills, Manikonda, and Kompally. Choose whichever is convenient; your treatment plan transfers across branches if you relocate."}}, {"@type": "Question", "name": "Where can I get clear aligners or Invisalign near me in Hyderabad?", "acceptedAnswer": {"@type": "Answer", "text": "Eledent has 5 clinics across Hyderabad offering Invisalign, clear aligners, and braces - Kondapur, Kukatpally KPHB, Banjara Hills, Manikonda, and Kompally. Book a free 3D smile preview at whichever location is nearest you."}}, {"@type": "Question", "name": "Do you offer braces and teeth straightening in Kondapur and Kukatpally?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Both Eledent Kondapur and Eledent Kukatpally KPHB offer the full range - metal braces, ceramic braces, clear aligners, and Invisalign - with a free 3D smile preview. Banjara Hills, Manikonda, and Kompally branches offer the same."}}]}</script>
+    <script
+        type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Invisalign Clear Aligner Treatment", "alternateName": "Clear Aligner Orthodontics", "description": "Doctor-designed Invisalign and clear aligner treatment at 5 Eledent clinics across Hyderabad. Free 3D smile preview before treatment.", "procedureType": "Therapeutic", "bodyLocation": "Teeth", "preparation": "Free 3D intraoral scan and orthodontic assessment.", "followup": "Aligners changed every 1-2 weeks; periodic clinic reviews; retainer after completion."}</script>
+    <script
+        type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Clear Aligners", "description": "Doctor-designed clear aligners at Eledent Hyderabad with free 3D smile preview.", "procedureType": "Therapeutic", "bodyLocation": "Teeth"}</script>
+    <script
+        type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Metal Braces", "description": "Fixed metal braces for reliable orthodontic correction at Eledent Hyderabad.", "procedureType": "Therapeutic", "bodyLocation": "Teeth"}</script>
+    <script
+        type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Ceramic Braces", "description": "Tooth-colored ceramic braces at Eledent Hyderabad.", "procedureType": "Therapeutic", "bodyLocation": "Teeth"}</script>
+    <script
+        type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Self-Ligating Braces", "description": "Self-ligating braces with fewer adjustment visits at Eledent Hyderabad.", "procedureType": "Therapeutic", "bodyLocation": "Teeth"}</script>
+    <script
+        type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalProcedure", "name": "Lingual Braces", "description": "Hidden braces placed behind the teeth at Eledent Hyderabad.", "procedureType": "Therapeutic", "bodyLocation": "Teeth"}</script>
+    <script
+        type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much do clear aligners cost in Hyderabad?", "acceptedAnswer": {"@type": "Answer", "text": "At Eledent, clear aligners start at Rs 30,000 and go up based on case complexity. Invisalign Comprehensive ranges Rs 1,50,000-3,00,000. You get an exact quote in writing after your free 3D assessment."}}, {"@type": "Question", "name": "What's the difference between Invisalign and other clear aligners?", "acceptedAnswer": {"@type": "Answer", "text": "Invisalign is a specific premium aligner brand with the widest case range and proprietary technology. Eledent's clear aligners are a value option with the same doctor oversight, suited to mild-to-moderate cases. At your free preview, the orthodontist recommends the right fit for your teeth and budget."}}, {"@type": "Question", "name": "Are aligners better than braces?", "acceptedAnswer": {"@type": "Answer", "text": "Neither is universally better. Aligners are removable and nearly invisible - ideal for adults and mild-to-moderate cases. Braces are fixed and often better for complex corrections. Your free 3D assessment determines which suits your case."}}, {"@type": "Question", "name": "How long does treatment take?", "acceptedAnswer": {"@type": "Answer", "text": "Quick aligners for mild cases: about 6 months. Average aligner or braces treatment: 12-18 months. Complex cases: up to 24 months. You see the projected timeline at your free preview."}}, {"@type": "Question", "name": "Will aligners affect my speech?", "acceptedAnswer": {"@type": "Answer", "text": "There may be a slight lisp for the first few days as you adjust. It resolves quickly for almost all patients and is far less noticeable than with braces."}}, {"@type": "Question", "name": "Can adults get aligners or braces?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A large share of Eledent's orthodontic patients are adults aged 25-45. Teeth can be moved at any age with a healthy jaw and gums."}}, {"@type": "Question", "name": "What is the free 3D smile preview?", "acceptedAnswer": {"@type": "Answer", "text": "A quick intraoral scan that simulates your teeth at the end of treatment - so you see the result before committing or paying. It's free and available at all 5 Eledent clinics, with no obligation."}}, {"@type": "Question", "name": "What if I lose an aligner?", "acceptedAnswer": {"@type": "Answer", "text": "Contact your Eledent clinic immediately. Depending on your stage, you'll either move to the next set or get a replacement. Keep your previous set as a backup until the new one fits."}}, {"@type": "Question", "name": "Which Eledent branch should I visit?", "acceptedAnswer": {"@type": "Answer", "text": "Orthodontic treatment is available at all 5 branches - Kondapur, Kukatpally KPHB, Banjara Hills, Manikonda, and Kompally. Choose whichever is convenient; your treatment plan transfers across branches if you relocate."}}, {"@type": "Question", "name": "Where can I get clear aligners or Invisalign near me in Hyderabad?", "acceptedAnswer": {"@type": "Answer", "text": "Eledent has 5 clinics across Hyderabad offering Invisalign, clear aligners, and braces - Kondapur, Kukatpally KPHB, Banjara Hills, Manikonda, and Kompally. Book a free 3D smile preview at whichever location is nearest you."}}, {"@type": "Question", "name": "Do you offer braces and teeth straightening in Kondapur and Kukatpally?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Both Eledent Kondapur and Eledent Kukatpally KPHB offer the full range - metal braces, ceramic braces, clear aligners, and Invisalign - with a free 3D smile preview. Banjara Hills, Manikonda, and Kompally branches offer the same."}}]}</script>
 
     <!-- ===================== FLOATING SIDEBAR ===================== -->
     <div id="floating-sidebar" class="fixed right-0 top-1/2 z-50 -translate-y-1/2 flex-col items-end gap-0">
@@ -969,30 +1287,30 @@
         </div>
     </div>
 
-<script>
-window.addEventListener('message', function(event) {
-    if (Array.isArray(event.data) && event.data[0] === 'set-sticky-contacts') {
-        window.location.href = 'thankyou.html';
-    }
-});
-</script>
-<script>
-(function() {
-    var slider = document.getElementById('treatment-slider');
-    var dots = document.querySelectorAll('#treatment-dots span');
-    if (!slider || !dots.length) return;
-    slider.addEventListener('scroll', function() {
-        var idx = Math.round(slider.scrollLeft / slider.clientWidth);
-        dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
-    });
-    dots.forEach(function(dot) {
-        dot.addEventListener('click', function() {
-            var idx = parseInt(this.getAttribute('data-idx'));
-            slider.scrollTo({ left: idx * slider.clientWidth, behavior: 'smooth' });
+    <script>
+        window.addEventListener('message', function (event) {
+            if (Array.isArray(event.data) && event.data[0] === 'set-sticky-contacts') {
+                window.location.href = '/aligners/thankyou.html';
+            }
         });
-    });
-})();
-</script>
+    </script>
+    <script>
+        (function () {
+            var slider = document.getElementById('treatment-slider');
+            var dots = document.querySelectorAll('#treatment-dots span');
+            if (!slider || !dots.length) return;
+            slider.addEventListener('scroll', function () {
+                var idx = Math.round(slider.scrollLeft / slider.clientWidth);
+                dots.forEach(function (d, i) { d.classList.toggle('active', i === idx); });
+            });
+            dots.forEach(function (dot) {
+                dot.addEventListener('click', function () {
+                    var idx = parseInt(this.getAttribute('data-idx'));
+                    slider.scrollTo({ left: idx * slider.clientWidth, behavior: 'smooth' });
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>

@@ -333,6 +333,30 @@ const nextConfig: NextConfig = {
         source: "/kukatpally-generic",
         destination: "/kukatpally-generic/index.html",
       },
+      {
+        source: "/aligners",
+        destination: "/aligners/index.html",
+      },
+      {
+        source: "/implant",
+        destination: "/implant/index.html",
+      },
+      {
+        source: "/generic",
+        destination: "/generic/index.html",
+      },
+      {
+        source: "/kondapur-kukatpally-generic",
+        destination: "/kondapur-kukatpally-generic/index.html",
+      },
+      {
+        source: "/banjara-hills-manikonda-generic",
+        destination: "/banjara-hills-manikonda-generic/index.html",
+      },
+      {
+        source: "/a-kompally-generic",
+        destination: "/a-kompally-generic/index.html",
+      },
     ];
   },
 };
