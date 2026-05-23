@@ -1525,6 +1525,33 @@
     </div>
     <div class="h-16 md:hidden"></div>
 
+    <!-- ===================== SCROLL POPUP MODAL ===================== -->
+    <div id="scroll-popup-overlay"
+        style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;padding:16px;">
+        <div
+            style="background:#fff;border-radius:16px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+            <div
+                style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #f0f0f0;">
+                <div>
+                    <p style="font-size:13px;color:#e87733;font-weight:700;margin:0;">Get 10% Discount</p>
+                    <h3 style="font-size:17px;font-weight:800;color:#111;margin:2px 0 0;">Book Your Free Consultation</h3>
+                </div>
+                <button onclick="closeScrollPopup()"
+                    style="background:none;border:none;cursor:pointer;color:#666;font-size:24px;line-height:1;padding:4px 8px;">&times;</button>
+            </div>
+            <div style="padding:16px 20px 20px;">
+                <iframe src="https://api.leadconnectorhq.com/widget/form/Fw5Wqmb2kOFhFSTEdFy3"
+                    style="width:100%;border:none;border-radius:8px;min-height:640px;" id="popup-Fw5Wqmb2kOFhFSTEdFy3"
+                    data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+                    data-activation-type="alwaysActivated" data-activation-value=""
+                    data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Dental Implant"
+                    data-height="706" data-layout-iframe-id="popup-Fw5Wqmb2kOFhFSTEdFy3"
+                    data-form-id="Fw5Wqmb2kOFhFSTEdFy3" title="Dental Implant">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
     <!-- ===================== JAVASCRIPT ===================== -->
     <script>
         // Sticky header shadow on scroll
@@ -1636,29 +1663,31 @@
             checkStrip();
         })();
 
-        // Scroll popup — show at 40% page scroll, once per session
+        // Scroll popup — show at 40% page scroll, once per page load
         (function () {
             var overlay = document.getElementById('scroll-popup-overlay');
-            if (!overlay || sessionStorage.getItem('scrollPopupShown')) return;
+            if (!overlay) return;
+            var shown = false;
             function checkPopup() {
-                var scrolled = window.pageYOffset + window.innerHeight;
-                var total = document.documentElement.scrollHeight;
-                if (scrolled / total >= 0.4) {
+                if (shown) return;
+                var scrolled = window.pageYOffset;
+                var total = document.documentElement.scrollHeight - window.innerHeight;
+                if (total > 0 && scrolled / total >= 0.4) {
+                    shown = true;
                     overlay.style.display = 'flex';
-                    sessionStorage.setItem('scrollPopupShown', '1');
                     window.removeEventListener('scroll', checkPopup);
                 }
             }
             window.addEventListener('scroll', checkPopup, { passive: true });
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeScrollPopup();
+            });
         })();
 
         function closeScrollPopup() {
             var overlay = document.getElementById('scroll-popup-overlay');
             if (overlay) overlay.style.display = 'none';
         }
-        document.getElementById('scroll-popup-overlay').addEventListener('click', function (e) {
-            if (e.target === this) closeScrollPopup();
-        });
 
         // Call modal
         function openCallModal() {
@@ -1770,34 +1799,6 @@
                 <path d="M16 18h.01"></path>
             </svg>
         </button>
-    </div>
-
-    <!-- ===================== SCROLL POPUP MODAL ===================== -->
-    <div id="scroll-popup-overlay"
-        style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;padding:16px;">
-        <div
-            style="background:#fff;border-radius:16px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
-            <div
-                style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #f0f0f0;">
-                <div>
-                    <p style="font-size:13px;color:#e87733;font-weight:700;margin:0;">Get 10% Discount</p>
-                    <h3 style="font-size:17px;font-weight:800;color:#111;margin:2px 0 0;">Book Your Free Consultation
-                    </h3>
-                </div>
-                <button onclick="closeScrollPopup()"
-                    style="background:none;border:none;cursor:pointer;color:#666;font-size:24px;line-height:1;padding:4px 8px;">&times;</button>
-            </div>
-            <div style="padding:16px 20px 20px;">
-                <iframe src="https://api.leadconnectorhq.com/widget/form/Fw5Wqmb2kOFhFSTEdFy3"
-                    style="width:100%;border:none;border-radius:8px;min-height:640px;" id="popup-Fw5Wqmb2kOFhFSTEdFy3"
-                    data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
-                    data-activation-type="alwaysActivated" data-activation-value=""
-                    data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Dental Implant"
-                    data-height="706" data-layout-iframe-id="popup-Fw5Wqmb2kOFhFSTEdFy3"
-                    data-form-id="Fw5Wqmb2kOFhFSTEdFy3" title="Dental Implant">
-                </iframe>
-            </div>
-        </div>
     </div>
 
     <!-- ===================== CALL MODAL ===================== -->

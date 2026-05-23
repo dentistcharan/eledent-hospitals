@@ -278,10 +278,21 @@
             }
         }
     </style>
-    <!-- GTM: Connect GTM-W49C7DC before launch -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W49C7DC');</script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body class="font-sans text-gray-800 bg-white antialiased">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W49C7DC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- ===================== STICKY HEADER ===================== -->
     <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300">
@@ -1328,11 +1339,61 @@
         </div>
     </div>
 
+    <!-- ===================== SCROLL POPUP MODAL ===================== -->
+    <div id="scroll-popup-overlay" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;padding:16px;">
+        <div style="background:#fff;border-radius:16px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #f0f0f0;">
+                <div>
+                    <p style="font-size:13px;color:#e87733;font-weight:700;margin:0;">Get 10% Discount</p>
+                    <h3 style="font-size:17px;font-weight:800;color:#111;margin:2px 0 0;">Book Your Free Consultation</h3>
+                </div>
+                <button onclick="closeScrollPopup()" style="background:none;border:none;cursor:pointer;color:#666;font-size:24px;line-height:1;padding:4px 8px;">&times;</button>
+            </div>
+            <div style="padding:16px 20px 20px;">
+                <iframe src="https://api.leadconnectorhq.com/widget/form/OL00jqx0uad1lQkgc422"
+                    style="width:100%;border:none;border-radius:8px;min-height:640px;"
+                    id="popup-OL00jqx0uad1lQkgc422"
+                    data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+                    data-activation-type="alwaysActivated" data-activation-value=""
+                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                    data-form-name="Dental Aligner" data-height="706"
+                    data-layout-iframe-id="popup-OL00jqx0uad1lQkgc422" data-form-id="OL00jqx0uad1lQkgc422"
+                    title="Dental Aligner">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
     <script>
         window.addEventListener('message', function (event) {
             if (Array.isArray(event.data) && event.data[0] === 'set-sticky-contacts') {
                 window.location.href = '/aligners/thankyou.html';
             }
+        });
+    </script>
+    <script>
+        // Scroll popup — show at 40% page scroll, once per session
+        (function () {
+            var overlay = document.getElementById('scroll-popup-overlay');
+            if (!overlay || sessionStorage.getItem('scrollPopupShown')) return;
+            function checkPopup() {
+                var scrolled = window.pageYOffset + window.innerHeight;
+                var total = document.documentElement.scrollHeight;
+                if (scrolled / total >= 0.4) {
+                    overlay.style.display = 'flex';
+                    sessionStorage.setItem('scrollPopupShown', '1');
+                    window.removeEventListener('scroll', checkPopup);
+                }
+            }
+            window.addEventListener('scroll', checkPopup, { passive: true });
+        })();
+
+        function closeScrollPopup() {
+            var overlay = document.getElementById('scroll-popup-overlay');
+            if (overlay) overlay.style.display = 'none';
+        }
+        document.getElementById('scroll-popup-overlay').addEventListener('click', function (e) {
+            if (e.target === this) closeScrollPopup();
         });
     </script>
     <script>
