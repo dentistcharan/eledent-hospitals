@@ -137,11 +137,26 @@
       }
     }
   
-    /* ── Treatment pricing mobile scroll ── */
-    @media (max-width: 639px) {
-        #treatments .grid.md\:grid-cols-2 {
-            display: block;
-        }
+    /* ── Treatment section — mobile swipe slider ── */
+    #treat-slider-wrap {
+      overflow: hidden;
+    }
+    #treat-track {
+      width: 100%;
+      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .treat-nav-wrap { display: none; }
+
+    @media (max-width: 767px) {
+      #treat-track { display: flex; }
+      .treat-slide { min-width: 100%; width: 100%; flex-shrink: 0; box-sizing: border-box; }
+      .treat-slide > .grid { border-bottom: none !important; padding-top: 1.5rem !important; padding-bottom: 0.5rem !important; }
+      .treat-slide img { height: 13rem !important; }
+      .treat-nav-wrap { display: flex; }
+    }
+    @media (min-width: 768px) {
+      #treat-track { display: block; }
+      .treat-slide { display: block; min-width: unset; }
     }
 
     </style>
@@ -798,7 +813,14 @@
       </div>
 
 
-      <!-- Row 01: RCT -->
+
+      <!-- Treatment slider: mobile = 1-up swipe; desktop = stacked list -->
+      <div id="treat-slider-wrap">
+        <div id="treat-track">
+
+          <!-- Slide 01: RCT -->
+          <div class="treat-slide">
+            <!-- Row 01: RCT -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-8 border-b border-gray-200">
         <div class="relative">
           <img src="rct-treat-img.png" alt="Root Canal Treatment at Eledent Banjara Hills & Manikonda" loading="lazy"
@@ -834,10 +856,7 @@
               completed
               at Eledent</li>
           </ul>
-          <div class="flex flex-wrap gap-4 text-sm shadow-lg text-gray-500 bg-white rounded-lg px-4 py-3 mb-5">
-            <span class="flex items-center gap-1.5"><strong class="text-gray-800">45–90 min</strong> · single visit</span>
-            <span class="flex items-center gap-1.5">Starting <strong class="text-gray-800">₹4,500</strong> per tooth</span>
-          </div>
+
           <a href="#booking-form-card"
             class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
             Get RCT Quote <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -847,9 +866,11 @@
           </a>
         </div>
       </div>
+          </div>
 
-
-      <!-- Row 02: Extraction (reversed) -->
+          <!-- Slide 02: Extraction -->
+          <div class="treat-slide">
+            <!-- Row 02: Extraction (reversed) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14 border-b border-gray-200">
         <div class="md:order-2 relative">
           <img src="wisdom.jpg" alt="Root Canal Treatment at Eledent Banjara Hills & Manikonda" loading="lazy"
@@ -883,11 +904,7 @@
                 class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Detailed aftercare instructions and
               follow-up</li>
           </ul>
-          <div class="flex flex-wrap gap-4 text-sm shadow-lg text-gray-500 bg-white rounded-lg px-4 py-3 mb-5">
-            <span class="flex items-center gap-1.5"><strong class="text-gray-800">30–90 min</strong></span>
-            <span class="flex items-center gap-1.5">From <strong class="text-gray-800">₹3,000</strong> · Wisdom tooth <strong
-                class="text-gray-800">₹5,000</strong></span>
-          </div>
+
           <a href="#booking-form-card"
             class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
             Book Extraction Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -898,8 +915,11 @@
           </a>
         </div>
       </div>
+          </div>
 
-      <!-- Row 03: Whitening -->
+          <!-- Slide 03: Whitening -->
+          <div class="treat-slide">
+            <!-- Row 03: Whitening -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14 border-b border-gray-200">
         <div class="relative">
           <img src="white-teeth-.png" alt="Root Canal Treatment at Eledent Banjara Hills & Manikonda" loading="lazy"
@@ -932,10 +952,7 @@
                 class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Combine with scaling &amp; polishing for
               maximum effect</li>
           </ul>
-          <div class="flex flex-wrap gap-4 text-sm shadow-lg text-gray-500 bg-white rounded-lg px-4 py-3 mb-5">
-            <span><strong class="text-gray-800">60–90 min</strong> · single visit</span>
-            <span>Starting <strong class="text-gray-800">₹5,000</strong></span>
-          </div>
+
           <a href="#booking-form-card"
             class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
             Brighten Your Smile with Professional Teeth Whitening <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"
@@ -946,8 +963,11 @@
           </a>
         </div>
       </div>
+          </div>
 
-      <!-- Row 04: Crowns (reversed) -->
+          <!-- Slide 04: Crowns -->
+          <div class="treat-slide">
+            <!-- Row 04: Crowns (reversed) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14 border-b border-gray-200">
         <div class="md:order-2 relative">
           <img src="dental-crowns.jpg" alt="Root Canal Treatment at Eledent Banjara Hills & Manikonda" loading="lazy"
@@ -981,11 +1001,7 @@
                 class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Backed by Eledent's standard restoration
               warranty</li>
           </ul>
-          <div class="flex flex-wrap gap-4 text-sm shadow-lg text-gray-500 bg-white rounded-lg px-4 py-3 mb-5">
-            <span><strong class="text-gray-800">90 min</strong> same-day</span>
-            <span>From <strong class="text-gray-800">₹6,000</strong> · Zirconia from <strong
-                class="text-gray-800">₹8,000</strong></span>
-          </div>
+
           <a href="#booking-form-card"
             class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
             Book Crown Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -996,8 +1012,11 @@
           </a>
         </div>
       </div>
+          </div>
 
-      <!-- Row 05: Fillings -->
+          <!-- Slide 05: Fillings -->
+          <div class="treat-slide">
+            <!-- Row 05: Fillings -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14 border-b border-gray-200">
         <div class="relative">
           <img src="dental-fillings.jpg" alt="Root Canal Treatment at Eledent Banjara Hills & Manikonda" loading="lazy"
@@ -1026,10 +1045,7 @@
             <li class="flex items-start gap-3 text-base text-gray-700"><span
                 class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Safe for sensitive teeth</li>
           </ul>
-          <div class="flex flex-wrap gap-4 text-sm shadow-lg text-gray-500 bg-white rounded-lg px-4 py-3 mb-5">
-            <span><strong class="text-gray-800">30–60 min</strong> per tooth</span>
-            <span>Starting <strong class="text-gray-800">₹1,500</strong> per tooth</span>
-          </div>
+
           <a href="#booking-form-card"
             class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
             Book Filling Appointment <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1040,8 +1056,11 @@
           </a>
         </div>
       </div>
+          </div>
 
-      <!-- Row 06: Scaling / GBT (reversed) -->
+          <!-- Slide 06: Scaling / GBT -->
+          <div class="treat-slide">
+            <!-- Row 06: Scaling / GBT (reversed) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14 border-b border-gray-200">
         <div class="md:order-2 relative">
           <img src="teeth-cleaning-scaling.jpg" alt="Teeth Cleaning and Scaling at Eledent Banjara Hills & Manikonda"
@@ -1073,11 +1092,7 @@
                 class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Combine with whitening for full smile
               refresh</li>
           </ul>
-          <div class="flex flex-wrap gap-4 text-sm shadow-lg text-gray-500 bg-white rounded-lg px-4 py-3 mb-5">
-            <span><strong class="text-gray-800">30–45 min</strong></span>
-            <span>From <strong class="text-gray-800">₹1,500</strong> · GBT from <strong
-                class="text-gray-800">₹2,500</strong></span>
-          </div>
+
           <a href="#booking-form-card"
             class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
             Book Cleaning Appointment <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1088,8 +1103,11 @@
           </a>
         </div>
       </div>
+          </div>
 
-      <!-- Row 07: Checkup -->
+          <!-- Slide 07: Checkup -->
+          <div class="treat-slide">
+            <!-- Row 07: Checkup -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14">
         <div class="relative">
           <img src="dental-checkups.jpg" alt="Dental Checkups at Eledent Banjara Hills & Manikonda" loading="lazy"
@@ -1122,10 +1140,7 @@
               procedures
             </li>
           </ul>
-          <div class="flex flex-wrap gap-4 text-sm shadow-lg text-gray-500 bg-white rounded-lg px-4 py-3 mb-5">
-            <span><strong class="text-gray-800">20–30 min</strong></span>
-            <span><strong class="text-gray-800">Free</strong> first consultation</span>
-          </div>
+
           <a href="#booking-form-card"
             class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
             Book Free Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1136,7 +1151,31 @@
           </a>
         </div>
       </div>
+          </div>
 
+        </div><!-- /treat-track -->
+      </div><!-- /treat-slider-wrap -->
+
+      <!-- Mobile slider nav: prev · dots · next (hidden on desktop) -->
+      <div class="treat-nav-wrap items-center justify-center gap-4 mt-5 mb-2">
+        <button id="treat-prev" aria-label="Previous treatment"
+          class="w-10 h-10 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6" /></svg>
+        </button>
+        <div class="flex items-center gap-2">
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-primary transition-colors" data-i="0" aria-label="Slide 1"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="1" aria-label="Slide 2"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="2" aria-label="Slide 3"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="3" aria-label="Slide 4"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="4" aria-label="Slide 5"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="5" aria-label="Slide 6"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="6" aria-label="Slide 7"></button>
+        </div>
+        <button id="treat-next" aria-label="Next treatment"
+          class="w-10 h-10 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6" /></svg>
+        </button>
+      </div>
 
     </div>
   </section>
@@ -1775,6 +1814,57 @@ window.addEventListener('message', function(event) {
     }
 });
 </script>
+  <!-- Treatment section mobile slider -->
+  <script>
+    (function () {
+      var track = document.getElementById('treat-track');
+      var navWrap = document.querySelector('.treat-nav-wrap');
+      if (!track || !navWrap) return;
+
+      var slides = track.querySelectorAll('.treat-slide');
+      var dots = document.querySelectorAll('.treat-dot');
+      var total = slides.length;
+      var current = 0;
+      var isMobile = false;
+
+      function goTo(n) {
+        current = (n + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function (d, i) {
+          d.classList.toggle('bg-primary', i === current);
+          d.classList.toggle('bg-gray-300', i !== current);
+        });
+      }
+
+      function checkMode() {
+        var mobile = window.innerWidth < 768;
+        if (mobile !== isMobile) {
+          isMobile = mobile;
+          if (!mobile) {
+            track.style.transform = '';
+          } else {
+            goTo(current);
+          }
+        }
+      }
+
+      document.getElementById('treat-prev').addEventListener('click', function () { goTo(current - 1); });
+      document.getElementById('treat-next').addEventListener('click', function () { goTo(current + 1); });
+      dots.forEach(function (d, i) {
+        d.addEventListener('click', function () { goTo(i); });
+      });
+
+      var touchStartX = 0;
+      track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', function (e) {
+        var diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+      });
+
+      checkMode();
+      window.addEventListener('resize', checkMode);
+    })();
+  </script>
 </body>
 
 </html>
