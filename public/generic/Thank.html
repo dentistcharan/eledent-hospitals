@@ -1,238 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <base href="/implant/" />
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thank You – Partha Dental Clinic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+  <title>Dental Implants & Dentures in Hyderabad | Eledent</title>
+
+  <meta name="description"
+    content="Permanent dental implants and dentures at Eledent — 5 Hyderabad clinics. Single, full-mouth & All-on-4 implants. Free consultation. From Rs 15,000. 22,000+ implants placed." />
+
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://eledenthospitals.com/dental-implants-dentures" />
+
+  <meta property="og:title" content="Dental Implants & Dentures in Hyderabad — Eledent" />
+  <meta property="og:description"
+    content="Permanent tooth replacement at 5 Eledent clinics across Hyderabad. Implants from Rs 15,000 Free consultation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eledenthospitals.com/dental-implants-dentures" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
-    html, body { height: 100%; }
 
-    /* ── Animations ── */
-    @keyframes spinSlow   { to { transform: rotate(360deg); } }
-    @keyframes checkPop   { 0%{transform:scale(0);opacity:0} 65%{transform:scale(1.12)} 100%{transform:scale(1);opacity:1} }
-    @keyframes fadeInUp   { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
-    @keyframes dotBounce  { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    .spin      { animation: spinSlow 10s linear infinite; transform-origin: 50% 50%; }
-    .check-pop { animation: checkPop 0.5s cubic-bezier(.4,.2,.2,1.2) both 0.25s; }
-    .fu        { animation: fadeInUp 0.65s ease both; }
-    .fu.d1     { animation-delay: 0.1s; }
-    .fu.d2     { animation-delay: 0.25s; }
-    .fu.d3     { animation-delay: 0.38s; }
-    .fu.d4     { animation-delay: 0.5s; }
-
-    .db1 { animation: dotBounce 2s ease-in-out infinite 0s; }
-    .db2 { animation: dotBounce 2s ease-in-out infinite .3s; }
-    .db3 { animation: dotBounce 2s ease-in-out infinite .6s; }
-    .db4 { animation: dotBounce 2s ease-in-out infinite .9s; }
-    .db5 { animation: dotBounce 2s ease-in-out infinite 1.2s; }
-
-    /* Floating buttons */
-    .wa-float {
-      position: fixed; bottom: 20px; left: 16px; z-index: 9999;
-      display: flex; align-items: center; gap: 8px;
-      background: #25d366; color: #fff; font-weight: 700; font-size: 13px;
-      padding: 9px 16px; border-radius: 50px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.22); text-decoration: none;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#e87733',
+              dark: '#094f85',
+              light: '#fff7ed',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
     }
-    .call-float {
-      position: fixed; bottom: 20px; right: 16px; z-index: 9999;
-      width: 50px; height: 50px; border-radius: 50%;
-      background: #e8671a; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.22); text-decoration: none;
-    }
-
-    /* page layout */
-    .page { display: flex; flex-direction: column; min-height: 100vh; }
-    @media(min-width:768px){ .page { flex-direction: row; } }
-
-    /* LEFT */
-    .left {
-      background: #3d1a04;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 56px 32px; position: relative; overflow: hidden;
-      min-height: 340px;
-    }
-    @media(min-width:768px){ .left { width: 45%; min-height: 100vh; } }
-
-    /* RIGHT */
-    .right {
-      background: #f4f4f4;
-      flex: 1; display: flex; align-items: center; justify-content: center;
-      padding: 56px 40px; position: relative;
-    }
-    @media(max-width:767px){ .right { padding: 48px 24px; } }
-  </style>
+  </script>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W49C7DC');</script>
-<!-- End Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+              'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+          })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');</script>
+  <!-- End Google Tag Manager -->
+
 </head>
-<body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W49C7DC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<div class="page">
+<body class="font-sans bg-[#fff7ed] min-h-screen">
 
-  <!-- ══════════ LEFT PANEL ══════════ -->
-  <div class="left">
-    <!-- decorative sparkle dots -->
-    <span style="position:absolute;top:15%;left:18%;width:7px;height:7px;border-radius:50%;background:#e8671a;opacity:.45;"></span>
-    <span style="position:absolute;top:10%;left:58%;width:5px;height:5px;border-radius:50%;background:#e8671a;opacity:.28;"></span>
-    <span style="position:absolute;top:28%;left:84%;width:5px;height:5px;border-radius:50%;background:#e8671a;opacity:.28;"></span>
-    <span style="position:absolute;top:68%;left:8%;width:4px;height:4px;border-radius:50%;background:#e8671a;opacity:.28;"></span>
-    <span style="position:absolute;top:82%;left:78%;width:6px;height:6px;border-radius:50%;background:#e8671a;opacity:.38;"></span>
-    <span style="position:absolute;top:52%;left:92%;width:4px;height:4px;border-radius:50%;background:#e8671a;opacity:.22;"></span>
-    <span style="position:absolute;top:38%;left:3%;width:4px;height:4px;border-radius:50%;background:#e8671a;opacity:.22;"></span>
-    <span style="position:absolute;top:90%;left:35%;width:5px;height:5px;border-radius:50%;background:#e8671a;opacity:.18;"></span>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W49C7DC" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <!-- ── Animated check circle ── -->
-    <div class="check-pop" style="position:relative;width:140px;height:140px;margin-bottom:32px;display:flex;align-items:center;justify-content:center;">
-      <!-- spinning dashed outer ring (matches lottie rays) -->
-      <svg class="spin" style="position:absolute;inset:0;" width="140" height="140" viewBox="0 0 140 140">
-        <!-- 8 short rays like the lottie source -->
-        <g stroke="#e8671a" stroke-width="2.5" stroke-linecap="round" opacity="0.55">
-          <line x1="70" y1="4"  x2="70" y2="14"/>
-          <line x1="70" y1="126" x2="70" y2="136"/>
-          <line x1="4"  y1="70" x2="14" y2="70"/>
-          <line x1="126" y1="70" x2="136" y2="70"/>
-          <line x1="22.2" y1="22.2" x2="29.5" y2="29.5"/>
-          <line x1="110.5" y1="110.5" x2="117.8" y2="117.8"/>
-          <line x1="117.8" y1="22.2" x2="110.5" y2="29.5"/>
-          <line x1="29.5"  y1="110.5" x2="22.2" y2="117.8"/>
-        </g>
-        <!-- dashed ring -->
-        <circle cx="70" cy="70" r="62" stroke="#e8671a" stroke-width="1.2" stroke-dasharray="5 7" fill="none" opacity="0.4"/>
-      </svg>
-      <!-- inner subtle border ring -->
-      <div style="width:116px;height:116px;border-radius:50%;border:1.5px solid rgba(232,103,26,.18);display:flex;align-items:center;justify-content:center;">
-        <!-- main orange circle -->
-        <div style="width:96px;height:96px;border-radius:50%;background:#e8671a;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(232,103,26,.45);">
-          <!-- checkmark -->
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-            <polyline points="10,22 19,31 34,14" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+  <section class="relative overflow-hidden py-10 sm:py-14">
+
+    <div class="absolute inset-0 opacity-[0.04]">
+      <div
+        class="h-full w-full bg-[radial-gradient(circle_at_top_left,_#E87733_0,_transparent_35%),radial-gradient(circle_at_bottom_right,_#e46d2b_0,_transparent_35%)]">
+      </div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div
+        class="mx-auto max-w-5xl rounded-2xl border border-[#f2d4c3] bg-white shadow-[0_20px_60px_rgba(232,119,51,0.12)] lg:rounded-[28px]">
+
+        <div
+          class="rounded-t-2xl bg-gradient-to-r from-[#e46d2b] to-[#E87733] px-6 py-6 text-white sm:px-10 lg:rounded-t-[28px]">
+          <div class="flex flex-col items-center text-center">
+
+            <div class="mb-2 flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm">
+              <i class="fa-solid fa-circle-check text-5xl"></i>
+            </div>
+
+            <h1 class="text-xl font-semibold leading-tight sm:text-3xl">
+              Thank You! Appointment Request Submitted
+            </h1>
+
+          </div>
         </div>
+
+        <div class="px-6 py-8 sm:px-10 sm:py-6">
+
+          <div class="grid gap-4 sm:grid-cols-3">
+
+            <div class="rounded-2xl border border-[#f3e1d6] bg-[#fffaf7] p-5 text-center">
+              <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#E87733]/10">
+                <i class="fa-solid fa-calendar-days text-xl text-[#E87733]"></i>
+              </div>
+              <h2 class="text-base font-semibold text-[#1f2937]">
+                Request Received
+              </h2>
+              <p class="mt-2 text-sm leading-6 text-[#6b7280]">
+                Your form has been submitted successfully to our team.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-[#f3e1d6] bg-[#fffaf7] p-5 text-center">
+              <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#E87733]/10">
+                <i class="fa-solid fa-phone text-xl text-[#E87733]"></i>
+              </div>
+              <h2 class="text-base font-semibold text-[#1f2937]">
+                Quick Follow-Up
+              </h2>
+              <p class="mt-2 text-sm leading-6 text-[#6b7280]">
+                Our support team will call you during working hours.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-[#f3e1d6] bg-[#fffaf7] p-5 text-center">
+              <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#E87733]/10">
+                <i class="fa-solid fa-house text-xl text-[#E87733]"></i>
+              </div>
+              <h2 class="text-base font-semibold text-[#1f2937]">
+                Visit Anytime
+              </h2>
+              <p class="mt-2 text-sm leading-6 text-[#6b7280]">
+                Explore our services, doctors, and clinic locations meanwhile.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-[#f3e1d6] bg-[#fffaf7] p-6 text-center">
+            <h3 class="text-xl font-semibold text-[#1f2937]">
+              Need immediate assistance?
+            </h3>
+
+            <p class="mt-2 text-sm leading-6 text-[#6b7280] sm:text-base">
+              For urgent queries, feel free to call us directly during clinic hours from
+              <span class="font-medium text-[#374151]">09:00 AM to 09:00 PM</span>.
+            </p>
+
+            <div class="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+
+              <a href="tel:+917799619994"
+                class="inline-flex items-center justify-center rounded-xl bg-[#E87733] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#d96728]">
+                <i class="fa-solid fa-phone mr-2"></i>
+                Call Now
+              </a>
+
+              <a href="/"
+                class="inline-flex items-center justify-center rounded-xl border border-[#E87733] px-6 py-3 text-sm font-semibold text-[#E87733] transition hover:bg-[#fff1e8]">
+                <i class="fa-solid fa-house mr-2"></i>
+                Back To Home
+              </a>
+
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-sm text-[#6b7280]">
+              Thank you for choosing
+              <a href="/" class="font-semibold text-[#E87733]">
+                Eledent Hospitals
+              </a>.
+              We look forward to helping you smile better.
+            </p>
+          </div>
+
+        </div>
+
       </div>
     </div>
 
-    <!-- Text under check -->
-    <p class="fu d1" style="color:rgba(255,255,255,.82);font-size:15px;text-align:center;margin-bottom:8px;">
-      Thank you for booking your appointment at
-    </p>
-    <h2 class="fu d2" style="color:#e8671a;font-size:28px;font-weight:700;text-align:center;">
-      Partha Dental Clinic
-    </h2>
-  </div>
-
-  <!-- ══════════ RIGHT PANEL ══════════ -->
-  <div class="right">
-
-    <!-- Animated colored dots — top right (matches lottie dots from source) -->
-    <div style="position:absolute;top:28px;right:36px;display:flex;align-items:center;gap:8px;">
-      <span class="db1" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#e47d33;"></span>
-      <span class="db2" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#b0e7fd;"></span>
-      <span class="db3" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#986c4c;"></span>
-      <span class="db4" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ffb886;"></span>
-      <span class="db5" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#f66803;"></span>
-    </div>
-
-    <!-- Main content -->
-    <div style="width:100%;max-width:500px;">
-
-      <!-- H2 heading -->
-      <h2 class="fu d1" style="font-size:24px;font-weight:700;color:#1a1a1a;margin-bottom:14px;line-height:1.3;">
-        We look forward to seeing you soon
-      </h2>
-
-      <!-- Sub heading (orange) -->
-      <p class="fu d2" style="color:#e8671a;font-weight:600;font-size:13.5px;margin-bottom:18px;">
-        In the meantime, here's some helpful information:
-      </p>
-
-      <!-- Bullet list with arrow icons — exact from source -->
-      <ul class="fu d3" style="list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:24px;">
-        <li style="display:flex;align-items:flex-start;gap:10px;">
-          <!-- FontAwesome long-arrow-alt-right (exact path from source) -->
-          <svg style="width:17px;height:17px;min-width:17px;fill:#e8671a;margin-top:3px;" viewBox="0 0 448 512">
-            <path d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"/>
-          </svg>
-          <span style="color:#444;font-size:13.5px;line-height:1.65;">
-            Visit our website for more information about our services, locations, and team
-            <a href="http://parthadental.com" target="_blank" style="color:#e8671a;font-weight:800;text-decoration:none;"> Partha Dental</a>
-          </span>
-        </li>
-        <li style="display:flex;align-items:flex-start;gap:10px;">
-          <svg style="width:17px;height:17px;min-width:17px;fill:#e8671a;margin-top:3px;" viewBox="0 0 448 512">
-            <path d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"/>
-          </svg>
-          <span style="color:#444;font-size:13.5px;line-height:1.65;">
-            We have over 125+ locations across major states like Andhra Pradesh, Chennai, and Telangana, making it convenient for you to find a clinic near you.
-          </span>
-        </li>
-        <li style="display:flex;align-items:flex-start;gap:10px;">
-          <svg style="width:17px;height:17px;min-width:17px;fill:#e8671a;margin-top:3px;" viewBox="0 0 448 512">
-            <path d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"/>
-          </svg>
-          <span style="color:#444;font-size:13.5px;line-height:1.65;">
-            We offer a wide range of treatments, including hair, and skin care.
-          </span>
-        </li>
-      </ul>
-
-      <!-- Chat with us now -->
-      <div class="fu d4" style="text-align:center;font-weight:700;font-size:14.5px;color:#111;margin-bottom:26px;">
-        Chat with us now:
-        <a href="https://wa.me/9429422020?text=Hi%20I%20just%20submitted%20a%20form%20on%20your%20website.%20Please%20assist."
-           target="_blank"
-           style="color:#111;text-decoration:none;display:inline-flex;align-items:center;gap:5px;font-weight:700;vertical-align:middle;margin-left:4px;">
-          <svg style="width:20px;height:20px;" viewBox="0 0 24 24" fill="#25d366">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.215a.75.75 0 00.916.99l5.538-1.453A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.735 9.735 0 01-4.964-1.358l-.356-.211-3.687.968.984-3.594-.231-.369A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-          </svg>
-          942 942 2020
-        </a>
-      </div>
-
-      <!-- Two buttons — full width like source -->
-      <div class="fu d4" style="display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="https://parthadental.in/"
-           style="flex:1;min-width:140px;display:block;text-align:center;background:#e8671a;color:#fff;font-weight:600;font-size:14px;padding:13px 16px;border-radius:4px;text-decoration:none;">
-          Back to home
-        </a>
-        <a href="https://parthadental.com/" target="_blank"
-           style="flex:1;min-width:140px;display:block;text-align:center;background:#3d1a04;color:#fff;font-weight:600;font-size:14px;padding:13px 16px;border-radius:4px;text-decoration:none;">
-          Go to main website
-        </a>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- ── WhatsApp floating ── -->
-<a href="https://wa.me/9429422020?text=Hi%20I%20just%20submitted%20a%20form%20on%20your%20website.%20Please%20assist." target="_blank" class="wa-float">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.215a.75.75 0 00.916.99l5.538-1.453A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.735 9.735 0 01-4.964-1.358l-.356-.211-3.687.968.984-3.594-.231-.369A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-  </svg>
-  WhatsApp Us
-</a>
-
-<!-- ── Call floating ── -->
-<a href="tel:9429422020" class="call-float">
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
-  </svg>
-</a>
+  </section>
 
 </body>
+
 </html>

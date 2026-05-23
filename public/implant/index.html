@@ -297,10 +297,24 @@
         }
     </style>
     <!-- GTM: Connect GTM-W49C7DC before launch -->
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');</script>
+    <!-- End Google Tag Manager -->
+
 </head>
 
 <body class="font-sans text-gray-800 bg-white antialiased">
 
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W49C7DC" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- ===================== STICKY HEADER ===================== -->
     <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300">
         <div class="max-w-7xl mx-auto px-4 py-3 h-full flex items-center justify-between">
@@ -428,73 +442,16 @@
                         calls within 30 minutes during clinic hours.</p>
                     <p style="text-align:center;margin-bottom:12px;font-size:13px;color:#333;">Get <strong
                             style="color:#f37326;">10% Discount</strong> on all Dental Treatments</p>
-                    <form id="consultation-form" novalidate>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1" for="name">Your Name
-                                    *</label>
-                                <input type="text" id="name" name="name" required minlength="2" placeholder="Full name"
-                                    class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition" />
-                                <p class="text-red-500 text-xs mt-1 hidden" id="name-err">Please enter your name (min 2
-                                    characters).</p>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Mobile Number
-                                    *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="10-digit mobile number"
-                                    class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition" />
-                                <p class="text-red-500 text-xs mt-1 hidden" id="phone-err">Please enter a valid 10-digit
-                                    Indian mobile number.</p>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1" for="interest">I'm
-                                    Interested In *</label>
-                                <select id="interest" name="interest" required
-                                    class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition bg-white">
-                                    <option value="">Select treatment</option>
-                                    <option>Single implant</option>
-                                    <option>Multiple implants</option>
-                                    <option>Full-mouth</option>
-                                    <option>All-on-4</option>
-                                    <option>Dentures</option>
-                                    <option>Not sure</option>
-                                </select>
-                                <p class="text-red-500 text-xs mt-1 hidden" id="interest-err">Please select an option.
-                                </p>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1" for="missing">Missing Teeth
-                                    *</label>
-                                <select id="missing" name="missing" required
-                                    class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition bg-white">
-                                    <option value="">Select</option>
-                                    <option>1 tooth</option>
-                                    <option>2-4 teeth</option>
-                                    <option>5+ teeth</option>
-                                    <option>All teeth</option>
-                                    <option>Not sure</option>
-                                </select>
-                                <p class="text-red-500 text-xs mt-1 hidden" id="missing-err">Please select an option.
-                                </p>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1" for="pref-date">Preferred
-                                    Date <span class="text-gray-400">(optional)</span></label>
-                                <input type="date" id="pref-date" name="pref_date"
-                                    class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition" />
-                            </div>
-                        </div>
-                        <div id="form-success"
-                            class="hidden mt-4 bg-green-50 border border-green-200 rounded-xl px-4 py-3 text-sm text-green-800">
-                            <strong>Thanks!</strong> Our team will call within 30 minutes during clinic hours, 8 AM–9
-                            PM, to book your free consultation.
-                        </div>
-                        <button type="submit" id="form-submit-btn"
-                            class="w-full mt-5 bg-brand text-white font-bold py-3.5 rounded-full shadow hover:bg-brand-dark transition-all text-base">
-                            Book My Free Consultation
-                        </button>
-                    </form>
+                    <iframe src="https://api.leadconnectorhq.com/widget/form/Fw5Wqmb2kOFhFSTEdFy3"
+                        style="width:100%;height:100%;border:none;border-radius:8px" id="inline-Fw5Wqmb2kOFhFSTEdFy3"
+                        data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+                        data-activation-type="alwaysActivated" data-activation-value=""
+                        data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                        data-form-name="Dental Implant" data-height="706"
+                        data-layout-iframe-id="inline-Fw5Wqmb2kOFhFSTEdFy3" data-form-id="Fw5Wqmb2kOFhFSTEdFy3"
+                        title="Dental Implant">
+                    </iframe>
+                    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
                 </div>
             </div>
         </div>
@@ -1570,13 +1527,13 @@
 
     <!-- ===================== JAVASCRIPT ===================== -->
     <script>
-            // Sticky header shadow on scroll
-            (function () {
-                var header = document.getElementById('site-header');
-                window.addEventListener('scroll', function () {
-                    header.classList.toggle('shadow-md', window.scrollY > 10);
-                }, { passive: true });
-            })();
+        // Sticky header shadow on scroll
+        (function () {
+            var header = document.getElementById('site-header');
+            window.addEventListener('scroll', function () {
+                header.classList.toggle('shadow-md', window.scrollY > 10);
+            }, { passive: true });
+        })();
 
         // Smooth scroll to hero form
         function scrollToForm() {
@@ -1678,6 +1635,30 @@
             window.addEventListener('scroll', checkStrip, { passive: true });
             checkStrip();
         })();
+
+        // Scroll popup — show at 40% page scroll, once per session
+        (function () {
+            var overlay = document.getElementById('scroll-popup-overlay');
+            if (!overlay || sessionStorage.getItem('scrollPopupShown')) return;
+            function checkPopup() {
+                var scrolled = window.pageYOffset + window.innerHeight;
+                var total = document.documentElement.scrollHeight;
+                if (scrolled / total >= 0.4) {
+                    overlay.style.display = 'flex';
+                    sessionStorage.setItem('scrollPopupShown', '1');
+                    window.removeEventListener('scroll', checkPopup);
+                }
+            }
+            window.addEventListener('scroll', checkPopup, { passive: true });
+        })();
+
+        function closeScrollPopup() {
+            var overlay = document.getElementById('scroll-popup-overlay');
+            if (overlay) overlay.style.display = 'none';
+        }
+        document.getElementById('scroll-popup-overlay').addEventListener('click', function (e) {
+            if (e.target === this) closeScrollPopup();
+        });
 
         // Call modal
         function openCallModal() {
@@ -1789,6 +1770,34 @@
                 <path d="M16 18h.01"></path>
             </svg>
         </button>
+    </div>
+
+    <!-- ===================== SCROLL POPUP MODAL ===================== -->
+    <div id="scroll-popup-overlay"
+        style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;padding:16px;">
+        <div
+            style="background:#fff;border-radius:16px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+            <div
+                style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #f0f0f0;">
+                <div>
+                    <p style="font-size:13px;color:#e87733;font-weight:700;margin:0;">Get 10% Discount</p>
+                    <h3 style="font-size:17px;font-weight:800;color:#111;margin:2px 0 0;">Book Your Free Consultation
+                    </h3>
+                </div>
+                <button onclick="closeScrollPopup()"
+                    style="background:none;border:none;cursor:pointer;color:#666;font-size:24px;line-height:1;padding:4px 8px;">&times;</button>
+            </div>
+            <div style="padding:16px 20px 20px;">
+                <iframe src="https://api.leadconnectorhq.com/widget/form/Fw5Wqmb2kOFhFSTEdFy3"
+                    style="width:100%;border:none;border-radius:8px;min-height:640px;" id="popup-Fw5Wqmb2kOFhFSTEdFy3"
+                    data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+                    data-activation-type="alwaysActivated" data-activation-value=""
+                    data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Dental Implant"
+                    data-height="706" data-layout-iframe-id="popup-Fw5Wqmb2kOFhFSTEdFy3"
+                    data-form-id="Fw5Wqmb2kOFhFSTEdFy3" title="Dental Implant">
+                </iframe>
+            </div>
+        </div>
     </div>
 
     <!-- ===================== CALL MODAL ===================== -->
