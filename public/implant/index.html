@@ -161,6 +161,97 @@
             }
         }
 
+        /* ── Services & Reviews slider (mobile) ── */
+        #services-slider,
+        #reviews-slider {
+            display: grid;
+            gap: 20px;
+        }
+
+        .services-dots,
+        .reviews-dots {
+            display: none;
+        }
+
+        @media (max-width: 639px) {
+
+            #services-slider,
+            #reviews-slider {
+                display: flex;
+                flex-direction: row;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 16px;
+                padding-bottom: 16px;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            #services-slider::-webkit-scrollbar,
+            #reviews-slider::-webkit-scrollbar {
+                display: none;
+            }
+
+            #services-slider>div,
+            #reviews-slider>div {
+                min-width: 80%;
+                scroll-snap-align: start;
+                flex-shrink: 0;
+            }
+
+            .services-dots,
+            .reviews-dots {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                padding-top: 16px;
+            }
+
+            .services-dots span,
+            .reviews-dots span {
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #d1d5db;
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+
+            .services-dots span.active,
+            .reviews-dots span.active {
+                background: #e87733;
+                transform: scale(1.3);
+            }
+        }
+
+        @media (min-width: 640px) {
+            #services-slider {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #reviews-slider {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            #services-slider {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            #reviews-slider {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            #services-slider {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
         @media (max-width: 639px) {
             #phone-strip-wrapper {
                 display: none !important;
@@ -286,7 +377,8 @@
                     </h1>
                     <p class="text-base sm:text-lg text-gray-100 mb-6 leading-relaxed">
                         Missing teeth? Get dental implants or dentures near you at 5 Eledent clinics across Hyderabad —
-                        Kondapur, Kukatpally, Banjara Hills, Manikonda &amp; Kompally. painless procedure, free consultation. <strong>From Rs 15,000 with</strong>
+                        Kondapur, Kukatpally, Banjara Hills, Manikonda &amp; Kompally. painless procedure, free
+                        consultation.
                     </p>
                     <!-- Trust Strip -->
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-7">
@@ -295,7 +387,7 @@
                             <span class="text-brand font-bold text-lg">22K+</span>
                             <span class="text-xs text-gray-600">Implants Placed</span>
                         </div>
-                        
+
                         <div
                             class="flex items-center gap-2 bg-white rounded-xl shadow-sm border border-gray-100 px-3 py-2">
                             <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -305,7 +397,7 @@
                             </svg>
                             <span class="text-xs text-gray-600">Free Consultation</span>
                         </div>
-                        
+
                         <div
                             class="flex items-center gap-2 bg-white rounded-xl shadow-sm border border-gray-100 px-3 py-2 col-span-2 sm:col-span-1">
                             <span class="text-yellow-400 font-bold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -334,7 +426,8 @@
                     <h2 class="text-xl font-bold text-gray-900 mb-1">Book Your Free Consultation</h2>
                     <p class="text-sm text-gray-500 mb-5">Get a personalized tooth-replacement plan and quote. Our team
                         calls within 30 minutes during clinic hours.</p>
-                    <p style="text-align:center;margin-bottom:12px;font-size:13px;color:#333;">Get <strong style="color:#f37326;">10% Discount</strong> on all Dental Treatments</p>
+                    <p style="text-align:center;margin-bottom:12px;font-size:13px;color:#333;">Get <strong
+                            style="color:#f37326;">10% Discount</strong> on all Dental Treatments</p>
                     <form id="consultation-form" novalidate>
                         <div class="space-y-4">
                             <div>
@@ -712,7 +805,7 @@
                 <p class="text-gray-500 text-sm sm:text-base max-w-2xl mt-3">From a single missing tooth to full-mouth
                     rehabilitation — we have a solution for every case and budget.</p>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            <div id="services-slider" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 
                 <!-- Single Tooth Implant -->
                 <div
@@ -889,6 +982,15 @@
                         Free Quote</button>
                 </div>
 
+            </div>
+            <div class="services-dots" id="services-dots">
+                <span class="active" data-idx="0"></span>
+                <span data-idx="1"></span>
+                <span data-idx="2"></span>
+                <span data-idx="3"></span>
+                <span data-idx="4"></span>
+                <span data-idx="5"></span>
+                <span data-idx="6"></span>
             </div>
         </div>
     </section>
@@ -1119,7 +1221,7 @@
                     <span class="text-gray-500 text-sm">4.9 average &middot; Google Reviews</span>
                 </div>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div id="reviews-slider" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm border-l-4 border-l-brand">
                     <div class="flex text-yellow-400 mb-3 text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -1217,12 +1319,20 @@
                 </div>
 
             </div>
+            <div class="reviews-dots" id="reviews-dots">
+                <span class="active" data-idx="0"></span>
+                <span data-idx="1"></span>
+                <span data-idx="2"></span>
+                <span data-idx="3"></span>
+                <span data-idx="4"></span>
+                <span data-idx="5"></span>
+            </div>
         </div>
     </section>
 
 
     <!-- ===================== PAYMENT / INSURANCE SECTION ===================== -->
-    
+
 
     <!-- ===================== FAQ ACCORDION SECTION ===================== -->
     <section class="py-10 bg-white">
@@ -1233,26 +1343,21 @@
                 </h2>
                 <div class="w-12 h-1 bg-brand rounded mt-3"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="faq-list">
-
-                
-                </div>
+            <div class="space-y-3">
 
                 <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
                     <button
                         class="faq-trigger bg-gray-100 w-full flex items-center justify-between px-5 py-4 text-left gap-3 hover:bg-gray-100 transition-colors"
                         aria-expanded="false">
-                        <span class="font-semibold text-sm text-gray-800 leading-snug">How long does the full implant
-                            process take?</span>
-                        <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <span class="font-semibold text-sm text-gray-800 leading-snug">What is the cost of dental implants in Hyderabad?</span>
+                        <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2.5">
                             <path d="m6 9 6 6 6-6" />
                         </svg>
                     </button>
                     <div class="faq-body">
-                        <div class="px-5 pb-4 text-sm text-gray-500 leading-relaxed">From placement to final crown, the
-                            process typically takes a few weeks to a few months depending on healing and bone condition.
-                            Immediate/same-day implants allow faster loading for eligible patients in a single visit.
+                        <div class="px-5 pb-4 text-sm text-gray-500 leading-relaxed">
+                            Single-implant fees (per unit): Noris ₹22,999 &middot; Alphabio ₹24,999 &middot; Dio ₹28,999 &middot; Osstem ₹29,999 &middot; Nobel Replace ₹39,499 &middot; Nobel Active ₹49,999 &middot; Straumann BLX ₹36,999 &middot; Straumann Roxolid ₹48,999. Final estimate is shared after clinical and radiographic evaluation (abutment/crown and any adjuncts assessed at consult).
                         </div>
                     </div>
                 </div>
@@ -1261,21 +1366,72 @@
                     <button
                         class="faq-trigger bg-gray-100 w-full flex items-center justify-between px-5 py-4 text-left gap-3 hover:bg-gray-100 transition-colors"
                         aria-expanded="false">
-                        <span class="font-semibold text-sm text-gray-800 leading-snug">Where can I get dental implants
-                            near me in Hyderabad?</span>
-                        <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <span class="font-semibold text-sm text-gray-800 leading-snug">What are the All-on-4 / All-on-6 full-arch costs?</span>
+                        <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2.5">
                             <path d="m6 9 6 6 6-6" />
                         </svg>
                     </button>
                     <div class="faq-body">
-                        <div class="px-5 pb-4 text-sm text-gray-500 leading-relaxed">Eledent has 5 clinics across
-                            Hyderabad — Kondapur, Kukatpally KPHB, Banjara Hills, Manikonda and Kompally. All branches
-                            offer single, full-mouth and All-on-4 implants with free consultation and</div>
+                        <div class="px-5 pb-4 text-sm text-gray-500 leading-relaxed">
+                            Per arch (All-on-4 / All-on-6): Noris ₹91,996 / ₹1,37,994 &middot; Alphabio ₹99,996 / ₹1,49,994 &middot; Dio ₹1,15,996 / ₹1,73,994 &middot; Osstem ₹1,19,996 / ₹1,79,994 &middot; Nobel Replace ₹1,57,996 / ₹2,36,994 &middot; Nobel Active ₹1,99,996 / ₹2,99,996 &middot; Straumann BLX ₹1,47,996 / ₹2,21,994 &middot; Straumann Roxolid ₹1,95,996 / ₹2,93,994. Your surgeon will confirm prosthetic type and staging after planning.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
+                    <button
+                        class="faq-trigger bg-gray-100 w-full flex items-center justify-between px-5 py-4 text-left gap-3 hover:bg-gray-100 transition-colors"
+                        aria-expanded="false">
+                        <span class="font-semibold text-sm text-gray-800 leading-snug">Am I a candidate for implants, and how do I start if I'm searching for a "dental implant near me"?</span>
+                        <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="faq-body">
+                        <div class="px-5 pb-4 text-sm text-gray-500 leading-relaxed">
+                            Most adults with adequate bone and healthy gums qualify. We check medical history, CBCT/X-rays, and bite, then plan grafts or sinus lifts only if required. Book a consultation at just ₹300 and we'll map your personalised implant plan, timeline, and total costs.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
+                    <button
+                        class="faq-trigger bg-gray-100 w-full flex items-center justify-between px-5 py-4 text-left gap-3 hover:bg-gray-100 transition-colors"
+                        aria-expanded="false">
+                        <span class="font-semibold text-sm text-gray-800 leading-snug">What is the step-by-step process at Eledent Dental Hospital?</span>
+                        <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="faq-body">
+                        <div class="px-5 pb-4 text-sm text-gray-500 leading-relaxed">
+                            Records &amp; CBCT &rarr; digital planning &rarr; guided placement (when indicated) &rarr; healing/osseointegration &rarr; abutment + crown. The same protocol is followed for dental implants in Kondapur and dental implants in Kukatpally at Eledent Dental Hospital, with clear milestones and review visits.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
+                    <button
+                        class="faq-trigger bg-gray-100 w-full flex items-center justify-between px-5 py-4 text-left gap-3 hover:bg-gray-100 transition-colors"
+                        aria-expanded="false">
+                        <span class="font-semibold text-sm text-gray-800 leading-snug">How long do implants last, and which Eledent branches place them?</span>
+                        <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="faq-body">
+                        <div class="px-5 pb-4 text-sm text-gray-500 leading-relaxed">
+                            With good hygiene and regular reviews, implants are designed for long-term function. You can book at branches offering dental implants in Banjara Hills and dental implants in Manikonda; our specialist team focuses on precision, comfort, and predictable outcomes — delivering some of the best dental implants in Hyderabad. Call us at 77996 19994 to book your appointment.
+                        </div>
                     </div>
                 </div>
 
             </div>
+
         </div>
     </section>
 
@@ -1681,13 +1837,34 @@
         </div>
     </div>
 
-<script>
-window.addEventListener('message', function(event) {
-    if (Array.isArray(event.data) && event.data[0] === 'set-sticky-contacts') {
-        window.location.href = '/implant/thankyou.html';
-    }
-});
-</script>
+    <script>
+        window.addEventListener('message', function (event) {
+            if (Array.isArray(event.data) && event.data[0] === 'set-sticky-contacts') {
+                window.location.href = '/implant/thankyou.html';
+            }
+        });
+    </script>
+    <script>
+        (function () {
+            function initSlider(sliderId, dotsId) {
+                var slider = document.getElementById(sliderId);
+                var dots = document.querySelectorAll('#' + dotsId + ' span');
+                if (!slider || !dots.length) return;
+                slider.addEventListener('scroll', function () {
+                    var idx = Math.round(slider.scrollLeft / slider.clientWidth);
+                    dots.forEach(function (d, i) { d.classList.toggle('active', i === idx); });
+                });
+                dots.forEach(function (dot) {
+                    dot.addEventListener('click', function () {
+                        var idx = parseInt(this.getAttribute('data-idx'));
+                        slider.scrollTo({ left: idx * slider.clientWidth, behavior: 'smooth' });
+                    });
+                });
+            }
+            initSlider('services-slider', 'services-dots');
+            initSlider('reviews-slider', 'reviews-dots');
+        })();
+    </script>
 </body>
 
 </html>
