@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <base href="/a-generic/" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Eledent Hospital</title>
@@ -3936,14 +3937,12 @@
 
 
             <div class="iframe-wrapper">
-                <iframe src="https://api.leadconnectorhq.com/widget/form/mGkQibyoza9fOGsR8UE2"
-                    style="width:100%;height:100%;border:none;border-radius:8px" id="inline-mGkQibyoza9fOGsR8UE2"
+                <iframe src="" style="width:100%;height:100%;border:none;border-radius:8px" id="popupFormIframe"
                     data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
                     data-activation-type="alwaysActivated" data-activation-value=""
                     data-deactivation-type="neverDeactivate" data-deactivation-value=""
-                    data-form-name="Eledent Link Page" data-height="706"
-                    data-layout-iframe-id="inline-mGkQibyoza9fOGsR8UE2" data-form-id="mGkQibyoza9fOGsR8UE2"
-                    title="Eledent Link Page">
+                    data-form-name="Eledent Link Page" data-height="706" data-layout-iframe-id="popupFormIframe"
+                    data-form-id="mGkQibyoza9fOGsR8UE2" title="Eledent Link Page">
                 </iframe>
                 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
             </div>
@@ -4066,7 +4065,7 @@
 
             function showPopup() {
                 if (!iframeLoaded) {
-                    document.getElementById('popupFormIframe').setAttribute('src', 'https://api.leadconnectorhq.com/widget/form/pDce9nK7M2lAZoylmNVC');
+                    document.getElementById('popupFormIframe').setAttribute('src', 'https://api.leadconnectorhq.com/widget/form/mGkQibyoza9fOGsR8UE2');
                     iframeLoaded = true;
                 }
                 /* Use flex display (not block) and animate opacity */
@@ -4085,7 +4084,7 @@
                 let winHeight = $(window).height();
                 let scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
-                if (scrollPercent >= 50 && !shown) {
+                if (scrollPercent >= 40 && !shown) {
                     showPopup();
                     shown = true;
                 }
@@ -4251,6 +4250,14 @@
         }
     </script>
 
+    <!-- LeadConnector form submission → redirect to thank you page -->
+    <script>
+        window.addEventListener('message', function (event) {
+            if (Array.isArray(event.data) && event.data[0] === 'set-sticky-contacts') {
+                window.location.href = '/a-generic/thankyou.html';
+            }
+        });
+    </script>
 
 </body>
 
