@@ -1,0 +1,4258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eledent Hospital</title>
+    <meta name="description"
+        content="Experience exceptional dental care at our best clinic in Hyderabad. Skilled professionals, advanced treatments, and a healthy, confident smile awaits you." />
+    <META NAME="robots" CONTENT="noindex,nofollow">
+    <link rel="icon" href="images/fav-icon.png" sizes="32x32" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+        rel="stylesheet">
+
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Tailwind CSS (preflight disabled to avoid Bootstrap conflicts) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { corePlugins: { preflight: false } }</script>
+
+    <!-- Google Tag Manager -->
+    <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');
+    </script>
+
+    <!-- End Google Tag Manager -->
+
+    <style>
+        .dis-section {
+            padding: 80px 0 0px 0px !important;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .dis-section {
+                padding: 20px 0 0px 0px !important;
+            }
+
+            .nt-us-mobile a {
+                font-size: 15px !important;
+            }
+        }
+
+        /* Smooth scroll with sticky header + nav offset */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 130px;
+        }
+
+        @media (max-width: 991px) {
+            html {
+                scroll-padding-top: 70px;
+            }
+        }
+
+        /* Mobile drawer link items */
+        a.et-dacc-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none !important;
+            color: inherit;
+        }
+
+        a.et-dacc-trigger:visited {
+            color: #fff;
+        }
+    </style>
+
+    <script>
+        /* Unified nav: smooth scroll to section + update URL hash */
+        function etNavTo(e, hash) {
+            e.preventDefault();
+            /* Update URL without page jump */
+            history.pushState(null, '', hash);
+            var target = document.querySelector(hash);
+            if (!target) return;
+            /* Calculate offset: header + treatment nav heights */
+            var offset = 0;
+            var header = document.querySelector('.header-area');
+            var nav = document.getElementById('et-treatment-nav');
+            if (header && header.offsetParent !== null) offset += header.offsetHeight;
+            if (nav && nav.offsetParent !== null) offset += nav.offsetHeight;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+
+        /* Mobile: close drawer then scroll */
+        function etNavToMobile(e, hash) {
+            e.preventDefault();
+            etCloseDrawer();
+            history.pushState(null, '', hash);
+            setTimeout(function () {
+                var target = document.querySelector(hash);
+                if (!target) return;
+                var offset = 0;
+                var header = document.querySelector('.header-area');
+                if (header && header.offsetParent !== null) offset += header.offsetHeight;
+                var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }, 320);
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W49C7DC" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ===== RIGHT DRAWER STYLES ===== -->
+    <style>
+        /* Hamburger button – desktop hidden, mobile visible */
+        .et-ham-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 6px 8px;
+            z-index: 10002;
+        }
+
+        .et-ham-btn span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: #fff;
+            border-radius: 3px;
+        }
+
+        /* Backdrop overlay */
+        .et-drawer-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.55);
+            z-index: 10000;
+            backdrop-filter: blur(2px);
+        }
+
+        .et-drawer-backdrop.open {
+            display: block;
+        }
+
+        /* Right-side drawer */
+        .et-mob-drawer {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 300px;
+            max-width: 85vw;
+            height: 100vh;
+            background: #0f172a;
+            z-index: 10001;
+            transition: right 0.36s cubic-bezier(.4, 0, .2, 1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .et-mob-drawer.open {
+            right: 0;
+            z-index: 9999999;
+        }
+
+        /* Drawer header */
+        .et-drawer-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            flex-shrink: 0;
+        }
+
+        .et-drawer-head-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #f37326;
+        }
+
+        .et-drawer-close {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: rgba(243, 115, 38, 0.12);
+            border: none;
+            color: #f37326;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .et-drawer-close:hover {
+            background: rgba(243, 115, 38, 0.24);
+        }
+
+        /* Drawer scrollable body */
+        .et-drawer-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px 0 24px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(243, 115, 38, 0.3) transparent;
+        }
+
+        /* Accordion item */
+        .et-dacc-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .et-dacc-trigger {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            background: transparent;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #e2e8f0;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .et-dacc-trigger:hover {
+            color: #f37326;
+            background: rgba(243, 115, 38, 0.05);
+        }
+
+        .et-dacc-trigger.active {
+            color: #f37326;
+            background: rgba(243, 115, 38, 0.06);
+        }
+
+        .et-dacc-trigger-lft {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+        }
+
+        .et-dacc-trigger-lft i {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(243, 115, 38, 0.12);
+            color: #f37326;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+
+        .et-dacc-trigger.active .et-dacc-trigger-lft i {
+            background: rgba(243, 115, 38, 0.22);
+        }
+
+        .et-dacc-chevron {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            transition: transform 0.28s ease, color 0.2s;
+        }
+
+        .et-dacc-trigger.active .et-dacc-chevron {
+            transform: rotate(180deg);
+            color: #f37326;
+        }
+
+        /* Accordion panel */
+        .et-dacc-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(.4, 0, .2, 1);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .et-dacc-panel.open {
+            max-height: 400px;
+        }
+
+        .et-dacc-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px 10px 64px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, 0.55);
+            text-decoration: none !important;
+            border-left: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+        }
+
+        .et-dacc-link:hover {
+            color: #f37326;
+            border-left-color: #f37326;
+            background: rgba(243, 115, 38, 0.04);
+        }
+
+        .et-dacc-link::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(243, 115, 38, 0.5);
+            flex-shrink: 0;
+        }
+
+        /* Group labels inside drawer */
+        .et-dacc-group-label {
+            padding: 10px 20px 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: rgba(243, 115, 38, 0.7);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .et-dacc-group-label i {
+            font-size: 10px;
+        }
+
+        /* Direct-link rows (no accordion expand) */
+        .et-dacc-link-row {
+            text-decoration: none !important;
+        }
+
+        /* CTA at drawer bottom */
+        .et-drawer-cta {
+            margin: 16px 16px 10px;
+            background: linear-gradient(135deg, #f37326, #de5503);
+            color: #fff !important;
+            text-decoration: none !important;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 14px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-shrink: 0;
+            transition: filter 0.2s;
+        }
+
+        .et-drawer-cta:hover {
+            filter: brightness(1.08);
+        }
+
+        @media (max-width: 991px) {
+
+            /* Show hamburger, hide sticky desktop nav on mobile */
+            .et-ham-btn {
+                display: flex;
+            }
+
+            #et-treatment-nav {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- ===== BACKDROP ===== -->
+    <div class="et-drawer-backdrop" id="etBackdrop" onclick="etCloseDrawer()"></div>
+
+    <!-- ===== RIGHT DRAWER ===== -->
+    <div class="et-mob-drawer" id="etMobDrawer">
+        <div class="et-drawer-head">
+            <span class="et-drawer-head-title">
+                <i class="fa-solid fa-bars" style="margin-right:8px;font-size:11px;"></i> Quick Navigate
+            </span>
+            <button class="et-drawer-close" onclick="etCloseDrawer()" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="et-drawer-body">
+
+            <!-- ---- GROUP LABEL: Treatments ---- -->
+            <div class="et-dacc-group-label">
+                <i class="fa-solid fa-tooth"></i> Treatments
+            </div>
+
+            <!-- Root Canal -->
+            <div class="et-dacc-item">
+                <a href="#et-root-canal" class="et-dacc-trigger" onclick="etNavToMobile(event,'#et-root-canal')">
+                    <span class="et-dacc-trigger-lft">
+                        <i class="fa-solid fa-microscope"></i> Root Canal
+                    </span>
+                </a>
+            </div>
+
+            <!-- Teeth Whitening -->
+            <div class="et-dacc-item">
+                <a href="#et-whitening" class="et-dacc-trigger" onclick="etNavToMobile(event,'#et-whitening')">
+                    <span class="et-dacc-trigger-lft">
+                        <i class="fa-solid fa-star"></i> Teeth Whitening
+                    </span>
+                </a>
+            </div>
+
+            <!-- Dental Crown -->
+            <div class="et-dacc-item">
+                <a href="#et-crown" class="et-dacc-trigger" onclick="etNavToMobile(event,'#et-crown')">
+                    <span class="et-dacc-trigger-lft">
+                        <i class="fa-solid fa-crown"></i> Dental Crown
+                    </span>
+                </a>
+            </div>
+
+            <!-- Wisdom Tooth -->
+            <div class="et-dacc-item">
+                <a href="#et-wisdom" class="et-dacc-trigger" onclick="etNavToMobile(event,'#et-wisdom')">
+                    <span class="et-dacc-trigger-lft">
+                        <i class="fa-solid fa-syringe"></i> Wisdom Tooth
+                    </span>
+                </a>
+            </div>
+
+            <!-- Kids Dentistry -->
+            <div class="et-dacc-item">
+                <a href="#et-paediatric" class="et-dacc-trigger" onclick="etNavToMobile(event,'#et-paediatric')">
+                    <span class="et-dacc-trigger-lft">
+                        <i class="fa-solid fa-child-reaching"></i> Kids Dentistry
+                    </span>
+                </a>
+            </div>
+
+
+        </div><!-- end body -->
+
+        <a href="#book-appointment" class="et-drawer-cta" onclick="etCloseDrawer()">
+            <i class="fa-solid fa-calendar-check"></i> Book Appointment
+        </a>
+    </div><!-- end drawer -->
+
+    <section id="et-treatment-nav"
+        style="padding:15px 0; background:#fff7f0; border-bottom:1px solid rgba(0,0,0,0.05); position:sticky;top:0;z-index:9999;">
+
+        <style>
+            .et-nav-inner {
+                display: flex;
+                justify-content: center;
+                gap: 25px;
+                flex-wrap: wrap;
+                font-family: Arial, sans-serif;
+            }
+
+            .et-nav-link {
+                color: #f37326 !important;
+                text-decoration: none;
+                font-size: 15px;
+                font-weight: 600;
+                transition: 0.2s ease;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .et-nav-link i {
+                color: #f37326;
+                font-size: 14px;
+            }
+
+            .et-nav-link:hover {
+                color: #d85f1f;
+            }
+
+            @media (max-width: 768px) {
+                .et-nav-inner {
+                    gap: 15px;
+                    justify-content: flex-start;
+                    padding: 0 10px;
+                }
+
+                .dis-icon-wrap img {
+                    width: 30px !important;
+                }
+
+                .dis-card-text h4 {
+                    font-size: 13px !important;
+                }
+
+                .header-area {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 1000;
+                    background: #df660b;
+                }
+
+            }
+        </style>
+
+        <div class="et-nav-inner et-nav-innermain">
+
+            <a href="#et-root-canal" class="et-nav-link" onclick="etNavTo(event,'#et-root-canal')">
+                <i class="fa-solid fa-microscope"></i> Root Canal
+            </a>
+
+            <a href="#et-whitening" class="et-nav-link" onclick="etNavTo(event,'#et-whitening')">
+                <i class="fa-solid fa-star"></i> Teeth Whitening
+            </a>
+
+            <a href="#et-crown" class="et-nav-link" onclick="etNavTo(event,'#et-crown')">
+                <i class="fa-solid fa-tooth"></i> Dental Crown
+            </a>
+
+            <a href="#et-wisdom" class="et-nav-link" onclick="etNavTo(event,'#et-wisdom')">
+                <i class="fa-solid fa-syringe"></i> Wisdom Tooth
+            </a>
+
+            <a href="#et-paediatric" class="et-nav-link" onclick="etNavTo(event,'#et-paediatric')">
+                <i class="fa-solid fa-child-reaching"></i> Kids Dentistry
+            </a>
+
+        </div>
+
+    </section>
+
+    <header class="header-area">
+        <div class="container">
+            <div class="header-inner">
+                <div class="top-lft-logo"><img src="images/logo.png" class="img-fluid"></div>
+
+                <div class="appointment-header" style="display:flex;align-items:center;gap:12px;">
+                    <div class="apt-contact">
+                        <p class="apt-call-info">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+91 77997 19994">+91 77997 19994</a>
+                        </p>
+                    </div>
+                    <!-- Hamburger — mobile only -->
+
+                </div>
+
+                <button class="et-ham-btn" id="etHamBtn" aria-label="Open treatment menu" onclick="etOpenDrawer()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function etOpenDrawer() {
+            document.getElementById('etMobDrawer').classList.add('open');
+            document.getElementById('etBackdrop').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function etCloseDrawer() {
+            document.getElementById('etMobDrawer').classList.remove('open');
+            document.getElementById('etBackdrop').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function etDAccToggle(btn) {
+            var panel = btn.nextElementSibling;
+            var isOpen = panel.classList.contains('open');
+            /* Close all panels */
+            document.querySelectorAll('.et-dacc-panel').forEach(function (p) { p.classList.remove('open'); });
+            document.querySelectorAll('.et-dacc-trigger').forEach(function (b) { b.classList.remove('active'); });
+            /* Open clicked if it was closed */
+            if (!isOpen) {
+                panel.classList.add('open');
+                btn.classList.add('active');
+            }
+        }
+
+        /* Move CTA button to last (after dis-section) on mobile */
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.innerWidth < 992) {
+                document.querySelectorAll('.et-section').forEach(function (section) {
+                    var btn = section.querySelector('.et-btn');
+                    var container = section.querySelector('.et-container');
+                    if (btn && container) {
+                        btn.classList.add('et-btn-moved');
+                        container.appendChild(btn);
+                    }
+                });
+            }
+        });
+    </script>
+
+    <section class="home-banner-area banner-down ">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+
+                    <div class="banner-img mob-view">
+                        <img src="images/Eledent-dental-generic-offer.jpg" alt="Banner" class="img-fluid w-100">
+                    </div>
+
+                    <!-- <div class="banner-lft-cnt text-left" data-aos="fade-right" data-aos-duration="1000">
+    <h2>Join Eledent’s ₹499 Annual Plan <br>
+
+    </h2>
+    <h3>
+        Unlock ₹25,000+ Worth of Benefits Instantly!</h3>
+
+    <h4>Get Advanced Smile Correction Done Within 12 Hours! </h4>
+
+
+    <ul>
+        <li>Unlimited Consultations + Free X-Rays*</li>
+        <li> Exclusive Member Discounts on Implants & Aligners*</li>
+    </ul>
+
+    <div class="appointment-header appoint-head">
+        <div class="apt-contact">
+            <p class="apt-call-info mb-0 text-white"> <a href="#book-appointment">Book Now</a></p>
+        </div>
+    </div>
+
+</div> -->
+
+                </div>
+                <div class="col-lg-5">
+                    <div id="book-appointment" class="book-appointment booking-form-card">
+                        <h2>Book an Appointment</h2>
+                        <p>Fill the form </p>
+
+                        <p class="discount-info"> Get <span> 10% Discount </span> on all Dental Treatments </p>
+
+
+                        <iframe src="https://api.leadconnectorhq.com/widget/form/mGkQibyoza9fOGsR8UE2"
+                            style="width:100%;height:100%;border:none;border-radius:8px"
+                            id="inline-mGkQibyoza9fOGsR8UE2" data-layout="{'id':'INLINE'}"
+                            data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated"
+                            data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                            data-form-name="Eledent Link Page" data-height="706"
+                            data-layout-iframe-id="inline-mGkQibyoza9fOGsR8UE2" data-form-id="mGkQibyoza9fOGsR8UE2"
+                            title="Eledent Link Page">
+                        </iframe>
+                        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TREATMENT SECTION NAV BAR ===== -->
+
+    <section id="eledent-treatments" aria-label="Eledent Dental Treatments">
+
+
+        <div id="et-root-canal" class="et-section" style="background:#ffffff; padding:88px 0;">
+
+            <!-- Decorative blobs -->
+            <div class="et-blob"
+                style="width:480px;height:480px;background:radial-gradient(circle,rgba(243,115,38,.12),transparent);top:-140px;right:-120px;">
+            </div>
+
+            <div class="et-blob"
+                style="width:320px;height:320px;background:radial-gradient(circle,rgba(243,115,38,.08),transparent);bottom:-80px;left:-60px;">
+            </div>
+
+            <div class="et-container et-inner">
+
+                <div class="et-grid">
+
+                    <!-- Left: Image -->
+                    <div class="et-order-1" data-aos="fade-right" data-aos-duration="900">
+                        <div class="et-img-card">
+                            <img src="images/root-canal.jpg" class="w-full" alt="Root Canal Treatment" />
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="et-order-2" data-aos="fade-left" data-aos-duration="900">
+
+                        <div class="et-badge et-badge-blue">
+                            <i class="fa-solid fa-tooth" style="font-size:12px;"></i>
+                            Advanced Endodontics
+                        </div>
+
+                        <div class="et-accent-line"
+                            style="background:linear-gradient(90deg,#f37326,rgba(243,115,38,.3));">
+                        </div>
+
+                        <h2 class="et-h2 et-h2-dark">
+                            What is <span style="color:#f37326;">Root Canal Treatment?</span>
+                        </h2>
+
+                        <p class="et-body et-body-gray">
+                            Root Canal Treatment (RCT) is a restorative procedure used to save a badly
+                            decayed or infected tooth by removing the damaged pulp. At Eledent, we perform
+                            microscopic RCTs using high-definition magnification and rotary endodontics.
+                            This ensures a precision-led, pain-free experience that effectively eliminates
+                            bacteria and seals the canal, preventing future reinfection while preserving
+                            your natural tooth structure.
+                        </p>
+
+                        <a href="#book-appointment" class="et-btn et-btn-blue">
+                            Book Your Pain-Free RCT Today
+                            <i class="fa-solid fa-arrow-right et-btn-arrow"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Signs Section -->
+                <section class="dis-section">
+
+                    <style>
+                        .dis-section {
+                            padding: 20px 0 0px 0px;
+                            font-family: 'Montserrat', sans-serif;
+                        }
+
+                        .dis-section .heading h2 span {
+                            color: #f37326;
+                        }
+
+                        .dis-layout {
+                            display: grid;
+                            grid-template-columns: 1fr 300px 1fr;
+                            gap: 48px;
+                            align-items: center;
+                        }
+
+                        .dis-col {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 12px;
+                        }
+
+                        .dis-card {
+                            display: flex;
+                            gap: 16px;
+                            align-items: center;
+                        }
+
+                        .dis-icon-wrap {
+                            width: 64px;
+                            height: 64px;
+                            min-width: 64px;
+                            background: transparent;
+                            border: none;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 48px;
+                            line-height: 1;
+                            transition: transform 0.25s ease;
+                        }
+
+                        .dis-icon-wrap img {
+                            width: 40px;
+                        }
+
+                        .dis-card:hover .dis-icon-wrap {
+                            transform: scale(1.12);
+                        }
+
+                        .dis-card-text h4 {
+                            font-size: 15px;
+                            font-weight: 700;
+                            color: #1e293b;
+                            letter-spacing: 0.8px;
+                            text-transform: uppercase;
+                            margin-bottom: 8px;
+                            line-height: 1.4;
+                        }
+
+                        .dis-card-text p {
+                            font-size: 13px;
+                            color: #6b7280;
+                            line-height: 1.75;
+                            margin: 0;
+                        }
+
+                        .dis-center-col {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        .dis-img-ring {
+                            position: relative;
+                            width: 280px;
+                            height: 280px;
+                            border-radius: 50%;
+                        }
+
+                        .dis-img-ring img {
+                            width: 280px;
+                            height: 280px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            border: 3px solid rgba(243, 115, 38, 0.20);
+                            box-shadow: 0 12px 40px rgba(243, 115, 38, 0.15);
+                        }
+
+                        .dis-dot {
+                            position: absolute;
+                            width: 13px;
+                            height: 13px;
+                            background: #f37326;
+                            border-radius: 50%;
+                            box-shadow: 0 0 0 4px rgba(243, 115, 38, 0.22);
+                            z-index: 2;
+                        }
+
+                        .dis-dot-tl {
+                            top: 16%;
+                            left: 7%;
+                        }
+
+                        .dis-dot-tr {
+                            top: 16%;
+                            right: 7%;
+                        }
+
+                        .dis-dot-ml {
+                            top: 50%;
+                            left: -5px;
+                            transform: translateY(-50%);
+                        }
+
+                        .dis-dot-mr {
+                            top: 50%;
+                            right: -5px;
+                            transform: translateY(-50%);
+                        }
+
+                        .dis-dot-bl {
+                            bottom: 16%;
+                            left: 7%;
+                        }
+
+                        .dis-dot-br {
+                            bottom: 16%;
+                            right: 7%;
+                        }
+
+                        @media (max-width: 991px) {
+                            .dis-layout {
+                                grid-template-columns: 1fr;
+                                gap: 12px;
+                            }
+
+                            .dis-center-col {
+                                order: -1;
+                            }
+
+                            .dis-img-ring,
+                            .dis-img-ring img {
+                                width: 220px;
+                                height: 220px;
+                            }
+                        }
+                    </style>
+
+                    <div class="container">
+
+                        <div class="heading text-center mb-5">
+                            <h2>
+                                Signs You May Need a
+                                <span>Root Canal</span>
+                            </h2>
+                        </div>
+
+                        <div class="dis-layout">
+
+                            <!-- LEFT COLUMN -->
+                            <div class="dis-col">
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img src="images/sign-icon/Severe pain while biting.png"
+                                            alt="Severe Pain While Biting"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Severe Pain While Biting</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Extreme heat_cold sensitivity.png"
+                                            alt="Extreme Heat or Cold Sensitivity"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Extreme Heat or Cold Sensitivity</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img src="images/sign-icon/Swollen or inflamed gums.png"
+                                            alt="Swollen or Inflamed Gums"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Swollen or Inflamed Gums</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img src="images/sign-icon/Darkening of the tooth.png"
+                                            alt="Darkening of the Tooth"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Darkening of the Tooth</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- CENTER IMAGE -->
+                            <div class="dis-center-col">
+
+                                <div class="dis-img-ring">
+
+                                    <span class="dis-dot dis-dot-tl"></span>
+                                    <span class="dis-dot dis-dot-tr"></span>
+                                    <span class="dis-dot dis-dot-ml"></span>
+                                    <span class="dis-dot dis-dot-mr"></span>
+                                    <span class="dis-dot dis-dot-bl"></span>
+                                    <span class="dis-dot dis-dot-br"></span>
+
+                                    <img src="images/rct-e.jpg" alt="Root Canal Treatment">
+
+                                </div>
+
+                            </div>
+
+                            <!-- RIGHT COLUMN -->
+                            <div class="dis-col">
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Deep, visible dental cavities.png"
+                                            alt="Deep Visible Dental Cavities"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Deep Visible Dental Cavities</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img src="images/sign-icon/Pimple-like sores on gums.png"
+                                            alt="Pimple-Like Sores on Gums"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Pimple-Like Sores on Gums</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Spontaneous, sharp jaw pain.png"
+                                            alt="Spontaneous Sharp Jaw Pain"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Spontaneous Sharp Jaw Pain</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+
+        <div id="et-whitening" class="et-section"
+            style="background:linear-gradient(160deg,#fff7f0 0%,#fff3e8 100%); padding:55px 0;">
+
+            <div class="et-blob"
+                style="width:420px;height:420px;background:radial-gradient(circle,rgba(243,115,38,.14),transparent);top:-100px;left:-100px;">
+            </div>
+
+            <div class="et-blob"
+                style="width:280px;height:280px;background:radial-gradient(circle,rgba(222,85,3,.09),transparent);bottom:-60px;right:-40px;">
+            </div>
+
+            <div class="et-container et-inner">
+
+                <div class="et-grid">
+
+                    <!-- Left Content -->
+                    <div class="et-order-1" data-aos="fade-right" data-aos-duration="900">
+
+                        <div class="et-badge et-badge-indigo">
+                            <i class="fa-solid fa-star-of-life" style="font-size:12px;"></i>
+                            Cosmetic Dentistry & Smile Enhancement
+                        </div>
+
+                        <div class="et-accent-line"
+                            style="background:linear-gradient(90deg,#f37326,rgba(243,115,38,.3));">
+                        </div>
+
+                        <h2 class="et-h2 et-h2-dark">
+                            What is <span style="color:#f37326;">Teeth Whitening?</span>
+                        </h2>
+
+                        <p class="et-body et-body-gray">
+                            Teeth whitening is a professional cosmetic procedure designed to lighten the shade of your
+                            teeth
+                            and remove deep-seated stains. Eledent utilises advanced Zoom technology and laser systems
+                            to
+                            provide immediate, dramatic results in a single appointment. Our clinical approach is safer
+                            than
+                            home kits, as our specialists protect your gums and enamel while ensuring a bright, even and
+                            natural-looking finish.
+                        </p>
+
+                        <a href="#book-appointment" class="et-btn et-btn-indigo">
+                            Brighten Your Smile with Professional Teeth Whitening
+                            <i class="fa-solid fa-arrow-right et-btn-arrow"></i>
+                        </a>
+
+                    </div>
+
+                    <!-- Right Image -->
+                    <div class="et-order-2" data-aos="fade-left" data-aos-duration="900">
+
+                        <div class="et-img-card">
+                            <img src="images/teeth-whitening.jpg" class="w-full" alt="Professional Teeth Whitening" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Signs Section -->
+                <section class="dis-section">
+
+                    <style>
+                        .dis-section {
+                            padding: 20px 0 0px 0px;
+                            font-family: 'Montserrat', sans-serif;
+                        }
+
+                        .dis-section .heading h2 span {
+                            color: #f37326;
+                        }
+
+                        .dis-layout {
+                            display: grid;
+                            grid-template-columns: 1fr 300px 1fr;
+                            gap: 48px;
+                            align-items: center;
+                        }
+
+                        .dis-col {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 12px;
+                        }
+
+                        .dis-card {
+                            display: flex;
+                            gap: 16px;
+                            align-items: center;
+                        }
+
+                        .dis-icon-wrap {
+                            width: 64px;
+                            height: 64px;
+                            min-width: 64px;
+                            background: transparent;
+                            border: none;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 48px;
+                            line-height: 1;
+                            transition: transform 0.25s ease;
+                        }
+
+                        .dis-card:hover .dis-icon-wrap {
+                            transform: scale(1.12);
+                        }
+
+                        .dis-card-text h4 {
+                            font-size: 15px;
+                            font-weight: 700;
+                            color: #1e293b;
+                            letter-spacing: 0.8px;
+                            text-transform: uppercase;
+                            margin-bottom: 8px;
+                            line-height: 1.4;
+                        }
+
+                        .dis-center-col {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        .dis-img-ring {
+                            position: relative;
+                            width: 280px;
+                            height: 280px;
+                            border-radius: 50%;
+                        }
+
+                        .dis-img-ring img {
+                            width: 280px;
+                            height: 280px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            border: 3px solid rgba(243, 115, 38, 0.20);
+                            box-shadow: 0 12px 40px rgba(243, 115, 38, 0.15);
+                        }
+
+                        .dis-dot {
+                            position: absolute;
+                            width: 13px;
+                            height: 13px;
+                            background: #f37326;
+                            border-radius: 50%;
+                            box-shadow: 0 0 0 4px rgba(243, 115, 38, 0.22);
+                            z-index: 2;
+                        }
+
+                        .dis-dot-tl {
+                            top: 16%;
+                            left: 7%;
+                        }
+
+                        .dis-dot-tr {
+                            top: 16%;
+                            right: 7%;
+                        }
+
+                        .dis-dot-ml {
+                            top: 50%;
+                            left: -5px;
+                            transform: translateY(-50%);
+                        }
+
+                        .dis-dot-mr {
+                            top: 50%;
+                            right: -5px;
+                            transform: translateY(-50%);
+                        }
+
+                        .dis-dot-bl {
+                            bottom: 16%;
+                            left: 7%;
+                        }
+
+                        .dis-dot-br {
+                            bottom: 16%;
+                            right: 7%;
+                        }
+
+                        .collapse {
+                            visibility: visible;
+                        }
+
+                        @media (max-width: 991px) {
+                            .dis-layout {
+                                grid-template-columns: 1fr;
+                                gap: 12px;
+                            }
+
+                            .dis-center-col {
+                                order: -1;
+                            }
+
+                            .dis-img-ring,
+                            .dis-img-ring img {
+                                width: 220px;
+                                height: 220px;
+                            }
+                        }
+                    </style>
+
+                    <div class="container">
+
+                        <div class="heading text-center mb-5">
+                            <h2>Signs You May Need <span>Teeth Whitening:</span></h2>
+                        </div>
+
+                        <div class="dis-layout">
+
+                            <!-- LEFT COLUMN -->
+                            <div class="dis-col">
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Yellow or brown discolouration.png"
+                                            alt="Yellow or Brown Discolouration"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Yellow or Brown Discolouration</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img src="images/sign-icon/Stains from coffee or tea.png"
+                                            alt="Stains from Coffee or Tea"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Stains from Coffee or Tea</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Dull, aged enamel appearance.png"
+                                            alt="Dull or Aged Enamel Appearance"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Dull or Aged Enamel Appearance</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img src="images/sign-icon/Tobacco or smoking stains.png"
+                                            alt="Tobacco or Smoking Stains"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Tobacco or Smoking Stains</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- CENTER IMAGE -->
+                            <div class="dis-center-col">
+
+                                <div class="dis-img-ring">
+
+                                    <span class="dis-dot dis-dot-tl"></span>
+                                    <span class="dis-dot dis-dot-tr"></span>
+                                    <span class="dis-dot dis-dot-ml"></span>
+                                    <span class="dis-dot dis-dot-mr"></span>
+                                    <span class="dis-dot dis-dot-bl"></span>
+                                    <span class="dis-dot dis-dot-br"></span>
+
+                                    <img src="images/teeth-white.jpg" alt="Teeth Whitening Treatment">
+
+                                </div>
+
+                            </div>
+
+                            <!-- RIGHT COLUMN -->
+                            <div class="dis-col">
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img src="images/sign-icon/Uneven tooth colouration_.png"
+                                            alt="Uneven Tooth Colouration"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Uneven Tooth Colouration</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Visible white or dark spots.png"
+                                            alt="Visible White or Dark Spots"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Visible White or Dark Spots</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Loss of self-confidence when smiling_.png"
+                                            alt="Loss of Self-Confidence While Smiling"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Loss of Self-Confidence While Smiling</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+        <!-- ====================================================
+           SECTION 1 — DENTAL CROWN  |  White BG  |  Img Left
+           ==================================================== -->
+        <div id="et-crown" class="et-section" style="background:#ffffff; padding:88px 0;">
+
+            <!-- Decorative blobs -->
+            <div class="et-blob"
+                style="width:480px;height:480px;background:radial-gradient(circle,rgba(243,115,38,.12),transparent);top:-140px;right:-120px;">
+            </div>
+            <div class="et-blob"
+                style="width:320px;height:320px;background:radial-gradient(circle,rgba(243,115,38,.08),transparent);bottom:-80px;left:-60px;">
+            </div>
+
+            <div class="et-container et-inner">
+
+                <div class="et-grid">
+
+                    <!-- Left: Image Placeholder -->
+                    <div class="et-order-1" data-aos="fade-right" data-aos-duration="900">
+                        <div class="et-img-card">
+                            <img src="images/dental-crown.jpg" class="w-full" alt="Dental Crown Treatment" />
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="et-order-2" data-aos="fade-left" data-aos-duration="900">
+                        <div class="et-badge et-badge-blue">
+                            <i class="fa-solid fa-certificate" style="font-size:12px;"></i>
+                            Restorative Dentistry
+                        </div>
+
+                        <div class="et-accent-line"
+                            style="background:linear-gradient(90deg,#f37326,rgba(243,115,38,.3));"></div>
+
+                        <h2 class="et-h2 et-h2-dark">
+                            What is a <span style="color:#f37326;">Dental Crown?</span>
+                        </h2>
+
+                        <p class="et-body et-body-gray">
+                            A dental crown is a custom-made "cap" placed over a tooth to restore its shape, size, and
+                            structural strength. At Eledent, we use CAD/CAM technology and premium materials like
+                            Zirconia to offer <strong style="color:#1e293b;">"Same Day Crowns."</strong> Our
+                            precision-milled restorations match the natural translucency of your teeth perfectly,
+                            providing long-lasting protection for teeth that are weakened, broken, or heavily filled.
+                        </p>
+
+
+                        <a href="#book-appointment" class="et-btn et-btn-blue">
+                            Get Same-Day Dental Crowns
+                            <i class="fa-solid fa-arrow-right et-btn-arrow"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <section class="dis-section">
+                    <style>
+                        .dis-section {
+                            padding: 20px 0 0px 0px;
+                            font-family: 'Montserrat', sans-serif;
+                        }
+
+                        .dis-section .heading h2 span {
+                            color: #f37326;
+                        }
+
+                        .dis-layout {
+                            display: grid;
+                            grid-template-columns: 1fr 300px 1fr;
+                            gap: 48px;
+                            align-items: center;
+                        }
+
+                        .dis-col {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 12px;
+                        }
+
+                        .dis-card {
+                            display: flex;
+                            gap: 16px;
+                            align-items: center;
+                        }
+
+                        .dis-icon-wrap {
+                            width: 64px;
+                            height: 64px;
+                            min-width: 64px;
+                            background: transparent;
+                            border: none;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 48px;
+                            line-height: 1;
+                            transition: transform 0.25s ease;
+                        }
+
+                        .dis-card:hover .dis-icon-wrap {
+                            transform: scale(1.12);
+                        }
+
+                        .dis-card-text h4 {
+                            font-size: 15px;
+                            font-weight: 700;
+                            color: #1e293b;
+                            letter-spacing: 0.8px;
+                            text-transform: uppercase;
+                            margin-bottom: 8px;
+                            line-height: 1.4;
+                        }
+
+                        .dis-card-text p {
+                            font-size: 13px;
+                            color: #6b7280;
+                            line-height: 1.75;
+                            margin: 0;
+                        }
+
+                        .dis-center-col {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        .dis-img-ring {
+                            position: relative;
+                            width: 280px;
+                            height: 280px;
+                            border-radius: 50%;
+                        }
+
+                        .dis-img-ring img {
+                            width: 280px;
+                            height: 280px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            border: 3px solid rgba(243, 115, 38, 0.20);
+                            box-shadow: 0 12px 40px rgba(243, 115, 38, 0.15);
+                        }
+
+                        .dis-dot {
+                            position: absolute;
+                            width: 13px;
+                            height: 13px;
+                            background: #f37326;
+                            border-radius: 50%;
+                            box-shadow: 0 0 0 4px rgba(243, 115, 38, 0.22);
+                            z-index: 2;
+                        }
+
+                        .dis-dot-tl {
+                            top: 16%;
+                            left: 7%;
+                        }
+
+                        .dis-dot-tr {
+                            top: 16%;
+                            right: 7%;
+                        }
+
+                        .dis-dot-ml {
+                            top: 50%;
+                            left: -5px;
+                            transform: translateY(-50%);
+                        }
+
+                        .dis-dot-mr {
+                            top: 50%;
+                            right: -5px;
+                            transform: translateY(-50%);
+                        }
+
+                        .dis-dot-bl {
+                            bottom: 16%;
+                            left: 7%;
+                        }
+
+                        .dis-dot-br {
+                            bottom: 16%;
+                            right: 7%;
+                        }
+
+                        @media (max-width: 991px) {
+                            .dis-layout {
+                                grid-template-columns: 1fr;
+                                gap: 12px;
+                            }
+
+                            .dis-center-col {
+                                order: -1;
+                            }
+
+                            .dis-img-ring,
+                            .dis-img-ring img {
+                                width: 220px;
+                                height: 220px;
+                            }
+                        }
+                    </style>
+
+                    <div class="container">
+                        <div class="heading text-center mb-5">
+                            <h2>Signs You May Need a <span> Dental Crown:</span></h2>
+                        </div>
+
+                        <div class="dis-layout">
+
+                            <!-- LEFT COLUMN -->
+                            <div class="dis-col">
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Covering a visible dental implant.png"
+                                            alt="Missing One or More Teeth"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Missing One or More Teeth</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Difficulty chewing or biting correctly_.png"
+                                            alt="Difficulty Chewing or Eating"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Difficulty Chewing or Eating</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Large, failing dental fillings.png"
+                                            alt="Loose or Uncomfortable Dentures"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Loose or Uncomfortable Dentures</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CENTER IMAGE -->
+                            <div class="dis-center-col">
+                                <div class="dis-img-ring">
+                                    <span class="dis-dot dis-dot-tl"></span>
+                                    <span class="dis-dot dis-dot-tr"></span>
+                                    <span class="dis-dot dis-dot-ml"></span>
+                                    <span class="dis-dot dis-dot-mr"></span>
+                                    <span class="dis-dot dis-dot-bl"></span>
+                                    <span class="dis-dot dis-dot-br"></span>
+                                    <img src="images/dental=crown.jpg" alt="Dental Implant">
+                                </div>
+                            </div>
+
+                            <!-- RIGHT COLUMN -->
+                            <div class="dis-col">
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Protection after a root canal_.png"
+                                            alt="Bone Loss in the Jaw"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Bone Loss in the Jaw</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Cracked or fractured enamel_.png"
+                                            alt="Severely Cracked or Broken Teeth"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Severely Cracked or Broken Teeth</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Decayed, weak tooth structure.png"
+                                            alt="Chronic Dental Infections or Severe Tooth Decay"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Chronic Dental Infections or Severe Tooth Decay</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
+
+        <!-- Subtle divider -->
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#e2e8f0,transparent);"></div>
+
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#e2e8f0,transparent);"></div>
+
+        <!-- ================================================================
+           SECTION 3 — WISDOM TOOTH REMOVAL  |  Dark Navy BG  |  Img Left
+           ================================================================ -->
+        <div id="et-wisdom" class="et-section"
+            style="background:linear-gradient(145deg,#0f172a 0%,#1e293b 100%); padding:88px 0;">
+
+            <div class="et-blob"
+                style="width:500px;height:500px;background:radial-gradient(circle,rgba(243,115,38,.18),transparent);top:-120px;right:-100px;opacity:0.7;">
+            </div>
+            <div class="et-blob"
+                style="width:340px;height:340px;background:radial-gradient(circle,rgba(222,85,3,.14),transparent);bottom:-80px;left:-60px;opacity:0.6;">
+            </div>
+
+            <div class="et-container et-inner">
+                <div class="et-grid">
+
+                    <!-- Left: Image Placeholder -->
+                    <div class="et-order-1" data-aos="fade-right" data-aos-duration="900">
+                        <div class="et-img-card">
+
+                            <div class="et-img-card">
+                                <img src="images/wisdom-tooth-removal.jpg" class="w-full" alt="Wisdom Tooth Removal" />
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="et-order-2" data-aos="fade-left" data-aos-duration="900">
+                        <div class="et-badge et-badge-white">
+                            <i class="fa-solid fa-scalpel" style="font-size:12px;"></i>
+                            Oral Surgery
+                        </div>
+
+                        <div class="et-accent-line"
+                            style="background:linear-gradient(90deg,#f37326,rgba(243,115,38,.3));"></div>
+
+                        <h2 class="et-h2 et-h2-white">
+                            What is <span style="color:#fcc89a;">Wisdom Tooth Removal?</span>
+                        </h2>
+
+                        <p class="et-body et-body-white">
+                            Wisdom tooth removal is the surgical extraction of the third molars, which often lack enough
+                            space to emerge properly. At Eledent, our oral surgeons use <strong
+                                style="color:#e2e8f0;">3D CBCT imaging</strong> to plan extractions with surgical
+                            precision, avoiding sensitive nerves. We prioritise a "painless" approach with sedation
+                            options, ensuring the removal of impacted teeth is smooth and the recovery period is quick.
+                        </p>
+
+
+                        <a href="#book-appointment" class="et-btn et-btn-white">
+                            Get Instant Relief from Wisdom Tooth Pain
+                            <i class="fa-solid fa-arrow-right et-btn-arrow" style="color:#f37326;"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <section class="dis-section">
+                    <style>
+                        .dis-section {
+                            padding: 20px 0 0px 0px;
+                            font-family: 'Montserrat', sans-serif;
+                        }
+
+                        .dis-section .heading h2 span {
+                            color: #f37326;
+                        }
+
+                        .dis-layout {
+                            display: grid;
+                            grid-template-columns: 1fr 300px 1fr;
+                            gap: 48px;
+                            align-items: center;
+                        }
+
+                        .dis-col {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 12px;
+                        }
+
+                        .dis-card {
+                            display: flex;
+                            gap: 16px;
+                            align-items: center;
+                        }
+
+                        .dis-icon-wrap {
+                            width: 64px;
+                            height: 64px;
+                            min-width: 64px;
+                            background: transparent;
+                            border: none;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 48px;
+                            line-height: 1;
+                            transition: transform 0.25s ease;
+                        }
+
+                        .dis-card:hover .dis-icon-wrap {
+                            transform: scale(1.12);
+                        }
+
+                        .dis-card-text h4 {
+                            font-size: 15px;
+                            font-weight: 700;
+                            color: #fff;
+                            letter-spacing: 0.8px;
+                            text-transform: uppercase;
+                            margin-bottom: 8px;
+                            line-height: 1.4;
+                        }
+
+                        .dis-card-img {
+                            color: #fff !important;
+                        }
+
+                        .dis-center-col {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        .dis-img-ring {
+                            position: relative;
+                            width: 280px;
+                            height: 280px;
+                            border-radius: 50%;
+                        }
+
+                        .dis-img-ring img {
+                            width: 280px;
+                            height: 280px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            border: 3px solid rgba(243, 115, 38, 0.20);
+                            box-shadow: 0 12px 40px rgba(243, 115, 38, 0.15);
+                        }
+
+                        .dis-dot {
+                            position: absolute;
+                            width: 13px;
+                            height: 13px;
+                            background: #f37326;
+                            border-radius: 50%;
+                            box-shadow: 0 0 0 4px rgba(243, 115, 38, 0.22);
+                            z-index: 2;
+                        }
+
+                        .dis-dot-tl {
+                            top: 16%;
+                            left: 7%;
+                        }
+
+                        .dis-dot-tr {
+                            top: 16%;
+                            right: 7%;
+                        }
+
+                        .dis-dot-ml {
+                            top: 50%;
+                            left: -5px;
+                            transform: translateY(-50%);
+                        }
+
+                        .dis-dot-mr {
+                            top: 50%;
+                            right: -5px;
+                            transform: translateY(-50%);
+                        }
+
+                        .dis-dot-bl {
+                            bottom: 16%;
+                            left: 7%;
+                        }
+
+                        .dis-dot-br {
+                            bottom: 16%;
+                            right: 7%;
+                        }
+
+                        @media (max-width: 991px) {
+                            .dis-layout {
+                                grid-template-columns: 1fr;
+                                gap: 12px;
+                            }
+
+                            .dis-center-col {
+                                order: -1;
+                            }
+
+                            .dis-img-ring,
+                            .dis-img-ring img {
+                                width: 220px;
+                                height: 220px;
+                            }
+                        }
+                    </style>
+
+                    <div class="container">
+                        <div class="heading text-center mb-5">
+                            <h2 class="dis-card-img">Signs You May Need <span>Wisdom Tooth Removal:</span></h2>
+                        </div>
+
+                        <div class="dis-layout">
+
+                            <!-- LEFT COLUMN -->
+                            <div class="dis-col">
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Sharp pain behind the molars.png"
+                                            alt="Sharp Pain Behind the Molars"></div>
+                                    <div class="dis-card-text">
+                                        <h4 class="dis-card-img">Sharp Pain Behind the Molars</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Swollen, red, or bleeding gums.png"
+                                            alt="Swollen, Red, or Bleeding Gums"></div>
+                                    <div class="dis-card-text">
+                                        <h4 class="dis-card-img">Swollen, Red, or Bleeding Gums</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Persistent bad breath or taste.png"
+                                            alt="Persistent Bad Breath or Taste"></div>
+                                    <div class="dis-card-text">
+                                        <h4 class="dis-card-img">Persistent Bad Breath or Taste</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Stiffness or pain in the jaw_.png"
+                                            alt="Stiffness or Pain in the Jaw"></div>
+                                    <div class="dis-card-text">
+                                        <h4 class="dis-card-img">Stiffness or Pain in the Jaw</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- CENTER IMAGE -->
+                            <div class="dis-center-col">
+                                <div class="dis-img-ring">
+                                    <span class="dis-dot dis-dot-tl"></span>
+                                    <span class="dis-dot dis-dot-tr"></span>
+                                    <span class="dis-dot dis-dot-ml"></span>
+                                    <span class="dis-dot dis-dot-mr"></span>
+                                    <span class="dis-dot dis-dot-bl"></span>
+                                    <span class="dis-dot dis-dot-br"></span>
+
+                                    <img src="images/wisdom-tooth.jpg" alt="Wisdom Tooth Removal">
+                                </div>
+                            </div>
+
+                            <!-- RIGHT COLUMN -->
+                            <div class="dis-col">
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Difficulty opening your mouth fully_.png"
+                                            alt="Difficulty Opening Your Mouth Fully"></div>
+                                    <div class="dis-card-text">
+                                        <h4 class="dis-card-img">Difficulty Opening Your Mouth Fully</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Cysts forming around the jawbone.png"
+                                            alt="Cysts Forming Around the Jawbone"></div>
+                                    <div class="dis-card-text">
+                                        <h4 class="dis-card-img">Cysts Forming Around the Jawbone</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Sudden overcrowding of front teeth.png"
+                                            alt="Sudden Overcrowding of Front Teeth"></div>
+                                    <div class="dis-card-text">
+                                        <h4 class="dis-card-img">Sudden Overcrowding of Front Teeth</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Subtle divider -->
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#1e293b,transparent);"></div>
+
+        <!-- ==================================================================
+           SECTION 4 — PAEDIATRIC DENTISTRY  |  Teal-50 BG  |  Img Right
+           ================================================================== -->
+        <div id="et-paediatric" class="et-section"
+            style="background:linear-gradient(155deg,#fff7f0 0%,#fff3e8 50%,#fff7f0 100%); padding:88px 0;">
+
+            <div class="et-blob"
+                style="width:460px;height:460px;background:radial-gradient(circle,rgba(243,115,38,.13),transparent);top:-110px;right:-100px;">
+            </div>
+            <div class="et-blob"
+                style="width:300px;height:300px;background:radial-gradient(circle,rgba(222,85,3,.09),transparent);bottom:-70px;left:-50px;">
+            </div>
+
+            <div class="et-container et-inner">
+                <div class="et-grid">
+
+                    <!-- Left: Content -->
+                    <div class="et-order-1" data-aos="fade-right" data-aos-duration="900">
+                        <div class="et-badge et-badge-teal">
+                            <i class="fa-solid fa-child-reaching" style="font-size:12px;"></i>
+                            Kids Dental Care
+                        </div>
+
+                        <div class="et-accent-line"
+                            style="background:linear-gradient(90deg,#f37326,rgba(243,115,38,.3));"></div>
+
+                        <h2 class="et-h2 et-h2-dark">
+                            What is <span style="color:#f37326;">Paediatric Dentistry?</span>
+                        </h2>
+
+                        <p class="et-body et-body-gray">
+                            Paediatric dentistry focuses on the unique oral health needs of children from infancy
+                            through their teenage years. Our <strong style="color:#1e293b;">"Growing Smiles"</strong>
+                            wing at Eledent is a dedicated, kid-friendly space designed to make dental visits fun and
+                            fear-free. Our specialists focus on preventive care, such as sealants and fluoride
+                            treatments, alongside habit-breaking appliances to ensure your child develops a healthy,
+                            confident smile.
+                        </p>
+
+
+                        <a href="#book-appointment" class="et-btn et-btn-teal">
+                            Book a Kid-Friendly Dental Visit
+                            <i class="fa-solid fa-arrow-right et-btn-arrow"></i>
+                        </a>
+                    </div>
+
+                    <!-- Right: Image Placeholder -->
+                    <div class="et-order-2" data-aos="fade-left" data-aos-duration="900">
+                        <div class="et-img-card">
+                            <div class="et-img-card">
+                                <img src="images/paediatric-dentistry.jpg" class="w-full" alt="Paediatric Dentistry" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <section class="dis-section">
+
+                    <style>
+                        .dis-section {
+                            padding: 20px 0 0px 0px;
+                            font-family: 'Montserrat', sans-serif;
+                        }
+
+                        .dis-section .heading h2 span {
+                            color: #f37326;
+                        }
+
+                        .dis-layout {
+                            display: grid;
+                            grid-template-columns: 1fr 300px 1fr;
+                            gap: 48px;
+                            align-items: center;
+                        }
+
+                        .dis-col {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 12px;
+                        }
+
+                        .dis-card {
+                            display: flex;
+                            gap: 16px;
+                            align-items: center;
+                        }
+
+                        .dis-icon-wrap {
+                            width: 64px;
+                            height: 64px;
+                            min-width: 64px;
+                            background: transparent;
+                            border: none;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 48px;
+                            line-height: 1;
+                            transition: transform 0.25s ease;
+                        }
+
+                        .dis-card:hover .dis-icon-wrap {
+                            transform: scale(1.12);
+                        }
+
+                        .dis-card-text h4 {
+                            font-size: 15px;
+                            font-weight: 700;
+                            color: #000;
+                            letter-spacing: 0.8px;
+                            text-transform: uppercase;
+                            margin-bottom: 8px;
+                            line-height: 1.4;
+                        }
+
+                        .dis-center-col {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        .dis-img-ring {
+                            position: relative;
+                            width: 280px;
+                            height: 280px;
+                            border-radius: 50%;
+                        }
+
+                        .dis-img-ring img {
+                            width: 280px;
+                            height: 280px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            border: 3px solid rgba(243, 115, 38, 0.20);
+                            box-shadow: 0 12px 40px rgba(243, 115, 38, 0.15);
+                        }
+
+                        .dis-dot {
+                            position: absolute;
+                            width: 13px;
+                            height: 13px;
+                            background: #f37326;
+                            border-radius: 50%;
+                            box-shadow: 0 0 0 4px rgba(243, 115, 38, 0.22);
+                            z-index: 2;
+                        }
+
+                        .dis-dot-tl {
+                            top: 16%;
+                            left: 7%;
+                        }
+
+                        .dis-dot-tr {
+                            top: 16%;
+                            right: 7%;
+                        }
+
+                        .dis-dot-ml {
+                            top: 50%;
+                            left: -5px;
+                            transform: translateY(-50%);
+                        }
+
+                        .dis-dot-mr {
+                            top: 50%;
+                            right: -5px;
+                            transform: translateY(-50%);
+                        }
+
+                        .dis-dot-bl {
+                            bottom: 16%;
+                            left: 7%;
+                        }
+
+                        .dis-dot-br {
+                            bottom: 16%;
+                            right: 7%;
+                        }
+
+                        @media (max-width: 991px) {
+                            .dis-layout {
+                                grid-template-columns: 1fr;
+                                gap: 12px;
+                            }
+
+                            .dis-center-col {
+                                order: -1;
+                            }
+
+                            .dis-img-ring,
+                            .dis-img-ring img {
+                                width: 220px;
+                                height: 220px;
+                            }
+                        }
+                    </style>
+
+
+                    <div class="container">
+                        <div class="heading text-center mb-5">
+                            <h2>Signs Your Child Needs a <span>Dentist:</span></h2>
+                        </div>
+
+                        <div class="dis-layout">
+
+                            <!-- LEFT COLUMN -->
+                            <div class="dis-col">
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Chalky white or brown spots.png"
+                                            alt="Chalky White or Brown Spots"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Chalky White or Brown Spots</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Frequent thumb-sucking habits.png"
+                                            alt="Frequent Thumb-Sucking Habits"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Frequent Thumb-Sucking Habits</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Early loss of primary teeth.png"
+                                            alt="Early Loss of Primary Teeth"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Early Loss of Primary Teeth</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Complaints of mouth or tooth pain.png"
+                                            alt="Complaints of Mouth or Tooth Pain"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Complaints of Mouth or Tooth Pain</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- CENTER IMAGE -->
+                            <div class="dis-center-col">
+                                <div class="dis-img-ring">
+                                    <span class="dis-dot dis-dot-tl"></span>
+                                    <span class="dis-dot dis-dot-tr"></span>
+                                    <span class="dis-dot dis-dot-ml"></span>
+                                    <span class="dis-dot dis-dot-mr"></span>
+                                    <span class="dis-dot dis-dot-bl"></span>
+                                    <span class="dis-dot dis-dot-br"></span>
+
+                                    <img src="images/paediatric=dentistry.jpg" alt="Child Dental Care">
+                                </div>
+                            </div>
+
+                            <!-- RIGHT COLUMN -->
+                            <div class="dis-col">
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Chronic bad breath (halitosis)_.png"
+                                            alt="Chronic Bad Breath (Halitosis)"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Chronic Bad Breath (Halitosis)</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Crooked adult teeth emerging.png"
+                                            alt="Crooked Adult Teeth Emerging"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Crooked Adult Teeth Emerging</h4>
+                                    </div>
+                                </div>
+
+                                <div class="dis-card">
+                                    <div class="dis-icon-wrap"><img
+                                            src="images/sign-icon/Sensitivity to cold or sweet foods.png"
+                                            alt="Sensitivity to Cold or Sweet Foods"></div>
+                                    <div class="dis-card-text">
+                                        <h4>Sensitivity to Cold or Sweet Foods</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+    </section>
+    <!-- ===================================================
+         END ELEDENT TREATMENT DETAIL SECTIONS
+         =================================================== -->
+
+    <section class="offer-area" id="offer-section">
+        <div class="container">
+            <div class="heading text-center mb-5">
+                <h2>Save Big on Implants <strong>&</strong> Invisalign</h2>
+                <h3>Best Quality Dental - Now at 30% Less Cost</h3>
+                <h4>Hurry Up - Offers Ending Soon</h4>
+                <h5>Just <span>43</span> Slots Left!</h5>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="offer-img">
+                        <img src="images/ED_Implants_offer.jpg" alt="Implant Offer" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="offer-img">
+                        <img src="images/ED_Invisalign.jpg" alt="Implant Offer" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="wd-nbn">
+
+        <a href="tel:+91 77997 19994" class="talk-to-cd">
+            <img src="images/call_icon.png" alt="">
+            <div>
+                <p>Need help? Talk to our dentists</p>
+                <span>+91 77997 19994</span>
+            </div>
+
+        </a>
+    </div>
+
+    <section class="section-70 indabout">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 col-md-7">
+                    <div class="image1" data-aos="fade-right" data-aos-duration="1000">
+                        <a class="practoratings" href="https://maps.app.goo.gl/i3pruv34yKCXJtiNA" target="_blank">
+                            <ul>
+                                <li>
+                                    <img src="https://inwhitedental.in/wp-content/uploads/2024/11/google.png" alt="">
+                                </li>
+                                <li>
+                                    Google Ratings
+                                    <span>
+                                        <strong>
+                                            4.9
+                                        </strong>
+                                        <i class="fa fa-star">
+                                        </i>
+                                        <i class="fa fa-star">
+                                        </i>
+                                        <i class="fa fa-star">
+                                        </i>
+                                        <i class="fa fa-star">
+                                        </i>
+                                        <i class="fa fa-star">
+                                        </i>
+                                    </span>
+                                </li>
+                            </ul>
+                        </a>
+                        <img src="images/dr-ashok-image.png" alt="Doctor" class="img-fluid">
+
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="heading">
+                        <h2>
+                            4.8★ Rated Dental Care in Hyderabad
+                        </h2>
+
+                        <h5 class="mb-3" style="font-weight: 700;">
+                            Single-Visit | Painless | Precision-Driven
+                        </h5>
+
+                    </div>
+
+                    <p>
+                        At Eledent Dental Hospital, with 5 branches in kondapur, Kukatpally, Banjara Hills, Manikonda
+                        and Kompally, our MDS-qualified dentists at Eledent Dental Hospital offer comprehensive range of
+                        dental services, including dental implants, microscopic root canals, laser gum treatments, and
+                        clear aligners.
+                        <br><br>Our dental hospital integrates advanced diagnostic tools such as CBCT 3D imaging,
+                        intraoral scanners, and CAD/CAM technology for efficient, single-day crowns. Beyond our clinical
+                        expertise, our facility also features modern amenities like recreation rooms and VR games to
+                        relieve dental anx iety.
+                        <br><br>
+                        Your search for a dental hospital near me ends here, with Eledent.
+                    </p>
+                    <div class="cnt-us-btn nt-us-mobile">
+                        <a href="#book-appointment">Book Your Free Appointment Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-area" id="why-choose-section">
+        <div class="container">
+            <div class="heading text-center" data-aos="fade-up" data-aos-duration="1000">
+                <h2> Rated 4.8★ <br> Precision Comfort Care </h2>
+
+                <hr style="margin: 18px auto 20px;">
+
+                <p> Single-Sitting Dentistry <br> Experience Painless, Advanced & Precision-Driven <br>Dental Care in
+                    Hyderabad. </p>
+            </div>
+            <div class="row why-choose-row align-items-center">
+                <div class="col-lg-6">
+                    <div class="row justify-content-center">
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-1.png" alt="" class="img-fluid">
+                                <p>4.8★<br>Google Rating</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-2.png" alt="" class="img-fluid">
+                                <p>30K+<br>Dental Cases Treated</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-3.png" alt="" class="img-fluid">
+                                <p>27K+<br>Root Canals Done</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-4.png" alt="" class="img-fluid">
+                                <p>22K+<br>Dental Implants Done</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-5.png" alt="" class="img-fluid">
+                                <p>5K+<br>Digital Smile Designing Done</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-6.png" alt="" class="img-fluid">
+                                <p>9.5K+<br>Braces Delivered</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-7.png" alt="" class="img-fluid">
+                                <p>Single-Visit<br>Dentistry</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-8.png" alt="" class="img-fluid">
+                                <p>Touchless<br>Scaling</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-9.png" alt="" class="img-fluid">
+                                <p>Microscopic &<br>Guided-Precision</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-lg-6">
+                    <div class="why-rgt-img" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="images/Dental Service.jpg" alt="why choose" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .docs-owl .owl-nav {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .docs-owl .owl-nav button.owl-next,
+        .docs-owl .owl-nav button.owl-prev {
+            width: 35px;
+            height: 35px;
+            border: solid 1px #000;
+            border-radius: 100px;
+            margin-left: 10px;
+        }
+    </style>
+
+    <!-- ===================================================
+         ELEDENT PREMIUM TREATMENT DETAIL SECTIONS
+         =================================================== -->
+
+    <style>
+        /* ---- Shared Treatment Section Styles ---- */
+        .et-section {
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .et-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .et-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        /* Blob decorations */
+        .et-blob {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(70px);
+            opacity: 0.55;
+            z-index: 0;
+        }
+
+        .et-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Badge */
+        .et-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 7px 16px;
+            border-radius: 100px;
+            margin-bottom: 18px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .et-badge-blue {
+            background: rgba(243, 115, 38, .08);
+            border: 1.5px solid rgba(243, 115, 38, .22);
+            color: #d45f00;
+        }
+
+        .et-badge-indigo {
+            background: rgba(243, 115, 38, .08);
+            border: 1.5px solid rgba(243, 115, 38, .22);
+            color: #d45f00;
+        }
+
+        .et-badge-white {
+            background: rgba(255, 255, 255, .12);
+            border: 1.5px solid rgba(255, 255, 255, .28);
+            color: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(10px);
+        }
+
+        .et-badge-teal {
+            background: rgba(243, 115, 38, .08);
+            border: 1.5px solid rgba(243, 115, 38, .22);
+            color: #d45f00;
+        }
+
+        /* Headings */
+        .et-h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(26px, 3vw, 38px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .et-h2-dark {
+            color: #0f172a;
+        }
+
+        .et-h2-white {
+            color: #ffffff;
+        }
+
+        .et-body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            line-height: 1.85;
+            margin-bottom: 24px;
+        }
+
+        .et-body-gray {
+            color: #6b7280;
+        }
+
+        .et-body-white {
+            color: rgba(255, 255, 255, .80);
+        }
+
+        /* Signs subheading */
+        .et-signs-heading {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .et-signs-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .et-signs-icon-blue {
+            background: linear-gradient(135deg, #f37326, #de5503);
+        }
+
+        .et-signs-icon-indigo {
+            background: linear-gradient(135deg, #f37326, #de5503);
+        }
+
+        .et-signs-icon-white {
+            background: rgba(255, 255, 255, .2);
+            border: 1px solid rgba(255, 255, 255, .3);
+        }
+
+        .et-signs-icon-teal {
+            background: linear-gradient(135deg, #f37326, #de5503);
+        }
+
+        /* Check list */
+        .et-checks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 16px;
+            margin-bottom: 32px;
+            list-style: none !important;
+            padding-left: 0 !important;
+        }
+
+        .et-checks li,
+        .et-check-item {
+            list-style: none !important;
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            padding: 5px 0;
+        }
+
+        .et-checks li::before,
+        .et-checks li::marker {
+            display: none !important;
+            content: none !important;
+        }
+
+        .et-dot {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 9px;
+        }
+
+        .et-dot-blue {
+            background: rgba(243, 115, 38, .12);
+            color: #f37326;
+        }
+
+        .et-dot-indigo {
+            background: rgba(243, 115, 38, .12);
+            color: #f37326;
+        }
+
+        .et-dot-white {
+            background: rgba(255, 255, 255, .15);
+            color: rgba(255, 255, 255, .9);
+        }
+
+        .et-dot-teal {
+            background: rgba(243, 115, 38, .12);
+            color: #f37326;
+        }
+
+        .et-check-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .et-check-text-gray {
+            color: #4b5563;
+        }
+
+        .et-check-text-white {
+            color: rgba(255, 255, 255, .82);
+        }
+
+        .et-check-text-dark {
+            color: #374151;
+        }
+
+        /* CTA Buttons */
+        .et-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none !important;
+            transition: all .3s cubic-bezier(.4, 0, .2, 1);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: .3px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .et-btn-arrow {
+            transition: transform .3s ease;
+            font-size: 11px;
+        }
+
+        .et-btn:hover .et-btn-arrow {
+            transform: translateX(5px);
+        }
+
+        .et-btn-blue {
+            background: linear-gradient(135deg, #f37326, #de5503);
+            color: #fff !important;
+            box-shadow: 0 8px 28px rgba(243, 115, 38, .38);
+        }
+
+        .et-btn-blue:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(243, 115, 38, .50);
+            filter: brightness(1.06);
+            color: #fff !important;
+        }
+
+        .et-btn-white {
+            background: #fff;
+            color: #d45f00 !important;
+            box-shadow: 0 8px 28px rgba(255, 255, 255, .18);
+            border: 2px solid rgba(255, 255, 255, .3);
+        }
+
+        .et-btn-white:hover {
+            transform: translateY(-3px);
+            background: #fff7f0;
+            color: #f37326 !important;
+            box-shadow: 0 16px 40px rgba(255, 255, 255, .25);
+        }
+
+        .et-btn-indigo {
+            background: linear-gradient(135deg, #f37326, #de5503);
+            color: #fff !important;
+            box-shadow: 0 8px 28px rgba(243, 115, 38, .38);
+        }
+
+        .et-btn-indigo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(243, 115, 38, .50);
+            filter: brightness(1.06);
+            color: #fff !important;
+        }
+
+        .et-btn-teal {
+            background: linear-gradient(135deg, #f37326, #de5503);
+            color: #fff !important;
+            box-shadow: 0 8px 28px rgba(243, 115, 38, .38);
+        }
+
+        .et-btn-teal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(243, 115, 38, .50);
+            filter: brightness(1.07);
+            color: #fff !important;
+        }
+
+        /* Image card */
+        .et-img-card {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .12);
+            transition: transform .4s cubic-bezier(.4, 0, .2, 1), box-shadow .4s ease;
+            position: relative;
+        }
+
+        .et-img-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 32px 80px rgba(0, 0, 0, .18);
+        }
+
+        /* Pulse dot */
+        @keyframes et-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, .5)
+            }
+
+            70% {
+                box-shadow: 0 0 0 8px rgba(34, 197, 94, 0)
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0)
+            }
+        }
+
+        .et-pulse-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #22c55e;
+            animation: et-pulse 2s infinite;
+        }
+
+        /* Glassmorphism badge on image */
+        .et-img-badge {
+            position: absolute;
+            bottom: 18px;
+            left: 18px;
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(14px);
+            border-radius: 14px;
+            padding: 10px 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: #374151;
+            white-space: nowrap;
+        }
+
+        /* Dark section img badge */
+        .et-img-badge-dark {
+            background: rgba(15, 23, 42, .7);
+            color: rgba(255, 255, 255, .9);
+        }
+
+        /* Accent line */
+        .et-accent-line {
+            width: 50px;
+            height: 4px;
+            border-radius: 100px;
+            margin-bottom: 22px;
+        }
+
+        /* ---- Treatment Nav Bar ---- */
+        #et-treatment-nav {
+            position: sticky;
+            top: 0;
+            z-index: 990;
+            box-shadow: 0 4px 20px rgba(243, 115, 38, .12);
+        }
+
+        .et-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .et-nav-innermain {
+            max-width: 1600px !important;
+            padding: 0px;
+            gap: 0px;
+
+        }
+
+        .et-nav-innermain .et-nav-link {
+            font-size: 16px;
+            padding: 16px 20px;
+        }
+
+        .et-nav-inner::-webkit-scrollbar {
+            display: none;
+        }
+
+        .et-nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 26px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none !important;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            transition: all .25s ease;
+            letter-spacing: .3px;
+            margin-bottom: -2px;
+        }
+
+        .et-nav-link i {
+            font-size: 14px;
+            transition: transform .25s ease;
+        }
+
+        .et-nav-link:hover {
+            color: #f37326;
+            border-bottom-color: #f37326;
+            background: rgba(243, 115, 38, .04);
+        }
+
+        .et-nav-link:hover i {
+            transform: scale(1.15);
+        }
+
+        .et-nav-link.et-nav-active {
+            color: #f37326;
+            border-bottom-color: #f37326;
+            background: rgba(243, 115, 38, .05);
+        }
+
+        /* ---- Content-specific icon box ---- */
+        .et-icon-box {
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 14px;
+            transition: transform .2s ease;
+        }
+
+        .et-icon-orange {
+            background: rgba(243, 115, 38, .1);
+            color: #f37326;
+        }
+
+        .et-icon-white {
+            background: rgba(255, 255, 255, .14);
+            color: rgba(255, 255, 255, .92);
+            border: 1px solid rgba(255, 255, 255, .2);
+        }
+
+        .et-check-item:hover .et-icon-box {
+            transform: scale(1.12);
+        }
+
+        /* scroll offset for sticky nav */
+        #et-crown,
+        #et-braces,
+        #et-wisdom,
+        #et-paediatric {
+            scroll-margin-top: 70px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 991px) {
+            .et-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .et-checks {
+                grid-template-columns: 1fr;
+            }
+
+            /* Default: both come in HTML order */
+            .et-order-1 {
+                order: 1;
+            }
+
+            .et-order-2 {
+                order: 2;
+            }
+
+            /* Sections where content is et-order-1 and image is et-order-2
+               → swap so image always appears first on mobile */
+            #et-whitening .et-order-1,
+            #et-braces .et-order-1,
+            #et-paediatric .et-order-1 {
+                order: 2;
+            }
+
+            #et-whitening .et-order-2,
+            #et-braces .et-order-2,
+            #et-paediatric .et-order-2 {
+                order: 1;
+            }
+
+            .et-section {
+                padding: 64px 0 !important;
+            }
+
+            .et-btn.et-btn-moved {
+                display: flex;
+                width: 100%;
+                margin: 32px 0 0;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .et-btn {
+                padding: 14px 24px;
+                font-size: 13px;
+            }
+
+            .et-h2 {
+                font-size: 24px;
+            }
+
+            .et-nav-link {
+                padding: 13px 14px;
+                font-size: 11px;
+                gap: 6px;
+            }
+
+            .et-nav-link i {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+    <section class="clinic-near-you">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Left Column: Clinic Details -->
+                <div class="col-lg-6">
+                    <div class="find-dental-near-bx">
+
+                        <div class="heading">
+                            <h2>Book Your Consultation at Eledent International <br>Digital Dentistry!</h2>
+                            <hr>
+                        </div>
+
+                        <!-- 🔽 Location Dropdown (added, no design change) -->
+                        <div class="mb-3 location-select ">
+                            <label for="locationSelect" class="form-label text-white">Choose clinic location</label>
+                            <select id="locationSelect" class="form-select" aria-label="Select clinic location">
+                                <option value="lok1" selected>Kondapur</option>
+                                <option value="lok2">Kukatpally</option>
+                                <option value="lok3">Banjara Hills</option>
+                                <option value="lok4">Manikonda, Hyderabad</option>
+                                <option value="lok5"> Kompally, Hyderabad </option>
+                            </select>
+                        </div>
+
+                        <div class="clinic-address mt-4">
+                            <div class="info-add mb-3">
+                                <a id="emailLink" href="mailto:contact@eledenthospitals.com">
+                                    <p><i class="fas fa-envelope me-2"></i> contact@eledenthospitals.com</p>
+                                </a>
+                            </div>
+
+                            <div class="info-add mb-3">
+                                <a id="phoneLink" href="tel:+91 77997 19994">
+                                    <p><i class="fa-solid fa-phone me-2"></i> +91 77997 19994</p>
+                                </a>
+                            </div>
+
+                            <div class="info-add">
+                                <p id="addressText">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    Kondapur, Kukatpally, Banjara Hills & <br>Manikonda, Hyderabad
+                                </p>
+                            </div>
+
+                            <div class="cnt-us-btn">
+                                <a href="#book-appointment">Contact Us</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Column: Map (DESIGN UNCHANGED) -->
+                <div class="col-lg-6">
+                    <div class="loc-map" id="Inwhite_map">
+                        <iframe id="mapFrame"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2826547225085!2d78.3607!3d17.4507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93b2e879b8a9%3A0x69c92f2f8ecbc30f!2sEledent%20Dental%20Hospital!5e0!3m2!1sen!2sin!4v1730873999024!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section class="section-70 indtestimonials mt-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <h2>Our Patient Says</h2>
+                    <p>
+                        Discover what our patients have to say about their exceptional experiences
+                        at Dr. Ruchi’s Multispeciality Dental Clinic
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="ind-testi-owl owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="indtestimonials1">
+                                <p class="add-read-more show-less-content">
+                                    “I highly recommend this dental clinic for anyone seeking expert dental care and
+                                    transformative results. I recently underwent a smile transformation treatment, and I
+                                    am extremely satisfied with the outcome and feeling super confident with my new
+                                    smile.”
+                                    <span class="read-more"></span>
+                                    <span class="read-less"></span>
+                                </p>
+
+                                <h5>
+                                    Pavithra Astra
+
+                                    <span>
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                            class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="indtestimonials1">
+                                <p class="add-read-more show-less-content">
+                                    “Hands down one of the best dental clinics out there!! I was extremely traumatized
+                                    by my previous dental experience to a point where i endured the pain. When it got
+                                    overwhelming i came across Dr. Ruchi’s dental clinic. She empathised with my
+                                    situation and made this whole journey a pleasant experience. I got my wisdom tooth
+                                    pulled, did my root canal and fillings.”
+                                    <span class="read-more"></span>
+                                    <span class="read-less"></span>
+                                </p>
+
+                                <h5>
+                                    Jothika
+                                    <span>
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                            class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="indtestimonials1">
+                                <p class="add-read-more show-less-content">
+                                    “I had an outstanding experience with Dr. Ruchi, who is truly an excellent dentist.
+                                    Her professionalism, expertise, and gentle approach made my dental visit incredibly
+                                    comfortable. She takes the time to explain every procedure, ensuring that her
+                                    patients feel informed and at ease. “
+                                    <span class="read-more"></span>
+                                    <span class="read-less"></span>
+                                </p>
+
+                                <h5>
+                                    Sriridhanya Balakrishnan
+                                    <span>
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                            class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="indtestimonials1">
+                                <p class="add-read-more show-less-content">
+                                    “I had an incredible experience at Dr. Ruchi’s Dental Care with Dr. Ruchi and Dr.
+                                    Anu. Their expertise in Invisalign treatment and smile makeover is truly
+                                    commendable. From the very first consultation, they explained every step in detail,
+                                    ensuring I was comfortable and well-informed.”
+                                    <span class="read-more"></span>
+                                    <span class="read-less"></span>
+                                </p>
+
+                                <h5>
+                                    Kiruthika Nagaraj
+                                    <span>
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                            class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <div class="wd-nbn">
+
+        <a href="tel:+91 77997 19994" class="talk-to-cd">
+            <img src="images/call_icon.png" alt="">
+            <div>
+                <p>Need help? Talk to our dentists</p>
+                <span>+91 77997 19994</span>
+            </div>
+
+        </a>
+    </div>
+
+    <section class="gogle-review" id="testimonial-section">
+        <div class="container">
+            <div class="heading text-center">
+                <div class="image1 gogle-review-img" data-aos="fade-right" data-aos-duration="1000">
+                    <a class="practoratings" href="https://maps.app.goo.gl/i3pruv34yKCXJtiNA" target="_blank">
+                        <ul>
+                            <li>
+                                <img src="https://inwhitedental.in/wp-content/uploads/2024/11/google.png" alt="">
+                            </li>
+                            <li>
+                                Google Ratings
+                                <span>
+                                    <strong>
+                                        4.9
+                                    </strong>
+                                    <i class="fa fa-star">
+                                    </i>
+                                    <i class="fa fa-star">
+                                    </i>
+                                    <i class="fa fa-star">
+                                    </i>
+                                    <i class="fa fa-star">
+                                    </i>
+                                    <i class="fa fa-star">
+                                    </i>
+                                </span>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <h2 data-aos="fade-up" data-aos-duration="1000">You Can hear about us from our <br>Happy Patient's</h2>
+            </div>
+            <div class="row">
+                <div class="owl-carousel gogle-review-owl">
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-1.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-2.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-3.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-4.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-5.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-6.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-about-plan-area faq-inner aos-init aos-animate" id="faq-section" data-aos="fade-up"
+        data-aos-duration="1000">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="blog-faq">
+                        <div class="heading text-center">
+                            <h2>FAQ’S</h2>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                            <!-- Question 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        1. Can I Get My Dental Treatment Done in a Single Visit in Hyderabad?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes, at <strong>Eledent</strong>, many dental procedures can be completed in a
+                                        single visit.
+                                        Our clinics in Kondapur, Kukatpally, Banjara Hills, and Manikonda use digital
+                                        scanning,
+                                        CAD-CAM technology, and same-day chairside systems to complete treatments like
+                                        root canals,
+                                        crowns, and fillings quickly and accurately. The approach saves time while
+                                        ensuring comfort
+                                        and precision, so you can walk out smiling the same day.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 2 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        2. Are Dental Treatments at Eledent Really Painless?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes. <strong>Eledent</strong> uses microscopic dentistry, conscious sedation,
+                                        and computer-guided anesthesia to make each procedure safe and virtually
+                                        pain-free.
+                                        Our dentists are trained to use gentle techniques that minimize anxiety, making
+                                        your experience
+                                        calm, comfortable, and stress-free from start to finish.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 3 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        3. What Makes Eledent Different from Other Dental Clinics in Hyderabad?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Eledent</strong> combines American implant systems, microscopic
+                                        precision,
+                                        and guided biofilm therapy (GBT) in a fully digital setup. Every treatment is
+                                        personalized,
+                                        transparent, and affordable, handled by experienced MDS dentists using
+                                        world-class technology.
+                                        With same-day treatments, suture-free implants, and pain-free care, Eledent sets
+                                        new standards
+                                        in modern dentistry.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 4 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        4. What Is Guided Biofilm Therapy (GBT)?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Guided Biofilm Therapy is an advanced, touchless tooth-cleaning technique that
+                                        removes plaque
+                                        and stains using controlled air-flow and gentle water pressure. It’s safer for
+                                        enamel and gums,
+                                        making it ideal for sensitive patients or those seeking a deep clean without
+                                        discomfort.
+                                        <strong>Eledent</strong> uses GBT for preventive cleaning, gum health, and
+                                        long-term oral hygiene.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 5 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFive" aria-expanded="false"
+                                        aria-controls="collapseFive">
+                                        5. What Should I Expect During My First Dental Visit at Eledent?
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Your first visit includes a complete oral check-up, digital X-rays, and a
+                                        personalized treatment plan
+                                        prepared by your dentist. You’ll understand every step before treatment begins.
+                                        If suitable, some
+                                        procedures can even be completed during the same visit, thanks to
+                                        <strong>Eledent’s</strong> digital
+                                        workflow and single-visit technology.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-area" style=" background-color: #f37326; ">
+        <div class="container-fluid">
+            <div class="bottom-footer">
+                <div class="inner-foot-botm">
+                    <div class="foot-prcy">
+                        <p>Copyright ©
+                            2026 Dental. All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal popup -->
+
+    <!-- ========== Sticy Btn ========== -->
+
+    <style>
+        /* ===== Mobile bottom bar ===== */
+        .mob-bottom-bar {
+            display: none;
+        }
+
+        @media (max-width: 991px) {
+            .mob-bottom-bar {
+                display: flex;
+                position: fixed;
+                bottom: -1px;
+                left: 0;
+                right: 0;
+                z-index: 9999;
+                box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .mob-bottom-bar .mob-btn {
+                text-align: center;
+                color: #fff;
+                width: 100%;
+                font-size: 10px;
+                padding: 12px 5px;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                border: none;
+                cursor: pointer;
+                font-family: inherit;
+                text-decoration: none;
+                display: block;
+                align-items: center;
+            }
+
+            .mob-bottom-bar .mob-btn i {
+                font-size: 18px;
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            .mob-btn-appointment {
+                background: linear-gradient(135deg, #f37326, #d45f00);
+                border-top-left-radius: 10px;
+            }
+
+            .mob-btn-whatsapp {
+                background: linear-gradient(135deg, #25d366, #128c7e);
+            }
+
+            .mob-btn-call {
+                background: linear-gradient(135deg, #f37326, #d45f00);
+                border-top-right-radius: 10px;
+            }
+
+            .mob-btn-appointment:hover,
+            .mob-btn-whatsapp:hover,
+            .mob-btn-call:hover {
+                filter: brightness(1.1);
+            }
+        }
+
+        /* ===== Desktop right-side CTA stack ===== */
+        .right-cta-stack {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9998;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right-cta-stack .rcta-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 68px;
+            padding: 14px 8px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            line-height: 1.3;
+            transition: filter 0.2s;
+        }
+
+        .right-cta-stack .rcta-btn i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .right-cta-stack .rcta-call {
+            background: linear-gradient(180deg, #f37326, #d45f00);
+            border-radius: 10px 0 0 0;
+        }
+
+        .right-cta-stack .rcta-whatsapp {
+            background: linear-gradient(180deg, #25d366, #128c7e);
+        }
+
+        .right-cta-stack .rcta-book {
+            background: linear-gradient(180deg, #1e88e5, #1255a3);
+            border-radius: 0 0 0 10px;
+        }
+
+        .right-cta-stack .rcta-btn:hover {
+            filter: brightness(1.12);
+        }
+
+        @media (max-width: 991px) {
+            .right-cta-stack {
+                display: none;
+            }
+        }
+
+        /* ===== Phone strip — desktop auto-show on scroll ===== */
+        #phone-strip-wrapper {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 87px;
+            z-index: 9999;
+            background: #ffffff;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
+            transform: translateY(-110%);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.38s ease, opacity 0.38s ease;
+            border-radius: 0px 0px 15px 15px;
+            width: 60%;
+            margin: auto;
+        }
+
+        #phone-strip-wrapper.is-sticky {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #phone-strip-wrapper .sidebar-bx-inr {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        #phone-strip-wrapper .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 180px;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-right: 1px solid #eeeeee;
+            color: #222222;
+            background: #ffffff;
+            transition: background 0.25s ease;
+        }
+
+        #phone-strip-wrapper .item:last-child {
+            border-right: none;
+        }
+
+        #phone-strip-wrapper .item:hover {
+            background: #fff4ed;
+        }
+
+        #phone-strip-wrapper .strip-location {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #E87733;
+            text-transform: uppercase;
+        }
+
+        #phone-strip-wrapper .strip-number-row {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-top: 4px;
+        }
+
+        #phone-strip-wrapper .strip-number {
+            font-size: 15px;
+            font-weight: 700;
+            color: #222222;
+        }
+
+        #phone-strip-wrapper .strip-number-row i {
+            color: #e14b4b;
+            font-size: 13px;
+        }
+
+        #phone-strip-wrapper .strip-close-btn {
+            display: none;
+        }
+
+        @media (max-width: 991px) {
+            #phone-strip-wrapper {
+                display: none !important;
+            }
+        }
+
+        /* ===== Call branch modal ===== */
+        .cbm-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.52);
+            z-index: 100000;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .cbm-overlay.open {
+            display: flex;
+        }
+
+        .cbm-box {
+            background: #fff;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 480px;
+            overflow: hidden;
+            animation: cbmIn 0.28s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+        }
+
+        @keyframes cbmIn {
+            from {
+                transform: translateY(-24px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .cbm-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 20px 20px 16px;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .cbm-title {
+            font-size: 19px;
+            font-weight: 700;
+            color: #111111;
+            line-height: 1.3;
+        }
+
+        .cbm-subtitle {
+            font-size: 13px;
+            color: #999999;
+            margin-top: 3px;
+        }
+
+        .cbm-close {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+            color: #555555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-left: 14px;
+            margin-top: 2px;
+            transition: background 0.2s;
+        }
+
+        .cbm-close:hover {
+            background: #e0e0e0;
+        }
+
+        .cbm-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            border-bottom: 1px solid #f3f3f3;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .cbm-item:last-child {
+            border-bottom: none;
+        }
+
+        .cbm-item:hover {
+            background: #fdf5ef;
+        }
+
+        .cbm-branch {
+            font-size: 15px;
+            font-weight: 700;
+            color: #111111;
+        }
+
+        .cbm-number {
+            font-size: 13px;
+            color: #999999;
+            margin-top: 2px;
+        }
+
+        .cbm-call-btn {
+            background: #d94848;
+            color: #ffffff;
+            border-radius: 50px;
+            padding: 9px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .cbm-call-btn i {
+            font-size: 13px;
+        }
+    </style>
+
+    <!-- ===== PHONE NUMBER STRIP (desktop top / mobile bottom sheet) ===== -->
+    <div id="phone-strip-wrapper">
+        <div class="sidebar-bx-inr">
+
+            <a href="tel:07557188078" class="item">
+                <span class="strip-location">Kondapur</span>
+                <div class="strip-number-row">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="strip-number">075 5718 8078</span>
+                </div>
+            </a>
+
+            <a href="tel:07557188079" class="item">
+                <span class="strip-location">Manikonda</span>
+                <div class="strip-number-row">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="strip-number">075 5718 8079</span>
+                </div>
+            </a>
+
+            <a href="tel:07557188080" class="item">
+                <span class="strip-location">Kompally</span>
+                <div class="strip-number-row">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="strip-number">075 5718 8080</span>
+                </div>
+            </a>
+
+            <a href="tel:07557188081" class="item">
+                <span class="strip-location">KPHB</span>
+                <div class="strip-number-row">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="strip-number">075 5718 8081</span>
+                </div>
+            </a>
+
+            <a href="tel:07557188082" class="item">
+                <span class="strip-location">Banjara Hills</span>
+                <div class="strip-number-row">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="strip-number">075 5718 8082</span>
+                </div>
+            </a>
+
+        </div>
+        <button class="strip-close-btn" onclick="closePhoneStrip()">Close</button>
+    </div>
+
+    <!-- ===== DESKTOP RIGHT-SIDE CTA STACK ===== -->
+    <div class="right-cta-stack">
+        <button class="rcta-btn rcta-call" onclick="openCallModal()">
+            <i class="fa-solid fa-phone"></i>
+            Call
+        </button>
+        <a href="https://wa.me/917799739994" target="_blank" class="rcta-btn rcta-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            WhatsApp
+        </a>
+        <a href="#book-appointment" class="rcta-btn rcta-book">
+            <i class="fa-solid fa-calendar-check"></i>
+            Book
+        </a>
+    </div>
+
+    <!-- ===== MOBILE BOTTOM BAR ===== -->
+    <div class="mob-bottom-bar">
+
+        <a href="#book-appointment" class="mob-btn mob-btn-appointment">
+            <i class="fa-solid fa-calendar-check"></i>
+            Book Appointment
+        </a>
+
+        <a href="https://wa.me/917799739994" target="_blank" class="mob-btn mob-btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            WhatsApp
+        </a>
+
+        <button class="mob-btn mob-btn-call" onclick="openCallModal()">
+            <i class="fa-solid fa-phone"></i>
+            Call Us
+        </button>
+
+    </div>
+
+
+    <!-- ===== SCRIPT ===== -->
+    <script>
+        // Auto-show top strip after 3% scroll (desktop only)
+        window.addEventListener('scroll', function () {
+            var strip = document.getElementById('phone-strip-wrapper');
+            if (!strip) return;
+            var scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+            if (scrolled >= 3) {
+                strip.classList.add('is-sticky');
+            } else {
+                strip.classList.remove('is-sticky');
+            }
+        }, { passive: true });
+
+        // Call branch modal
+        function openCallModal() {
+            document.getElementById('callBranchModal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCallModal() {
+            document.getElementById('callBranchModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function cbmCloseOnOverlay(e) {
+            if (e.target === document.getElementById('callBranchModal')) {
+                closeCallModal();
+            }
+        }
+    </script>
+
+    <!-- ===== CALL BRANCH MODAL ===== -->
+    <div class="cbm-overlay" id="callBranchModal" onclick="cbmCloseOnOverlay(event)">
+        <div class="cbm-box">
+
+            <div class="cbm-header">
+                <div>
+                    <div class="cbm-title">Choose a Branch to Call</div>
+                    <div class="cbm-subtitle">Tap any location to call directly</div>
+                </div>
+                <button class="cbm-close" onclick="closeCallModal()">&#x2715;</button>
+            </div>
+
+            <a href="tel:07557188078" class="cbm-item">
+                <div>
+                    <div class="cbm-branch">Kondapur</div>
+                    <div class="cbm-number">075 5718 8078</div>
+                </div>
+                <div class="cbm-call-btn"><i class="fa-solid fa-phone"></i> Call</div>
+            </a>
+
+            <a href="tel:07557188079" class="cbm-item">
+                <div>
+                    <div class="cbm-branch">Manikonda</div>
+                    <div class="cbm-number">075 5718 8079</div>
+                </div>
+                <div class="cbm-call-btn"><i class="fa-solid fa-phone"></i> Call</div>
+            </a>
+
+            <a href="tel:07557188080" class="cbm-item">
+                <div>
+                    <div class="cbm-branch">Kompally</div>
+                    <div class="cbm-number">075 5718 8080</div>
+                </div>
+                <div class="cbm-call-btn"><i class="fa-solid fa-phone"></i> Call</div>
+            </a>
+
+            <a href="tel:07557188081" class="cbm-item">
+                <div>
+                    <div class="cbm-branch">KPHB</div>
+                    <div class="cbm-number">075 5718 8081</div>
+                </div>
+                <div class="cbm-call-btn"><i class="fa-solid fa-phone"></i> Call</div>
+            </a>
+
+            <a href="tel:07557188082" class="cbm-item">
+                <div>
+                    <div class="cbm-branch">Banjara Hills</div>
+                    <div class="cbm-number">075 5718 8082</div>
+                </div>
+                <div class="cbm-call-btn"><i class="fa-solid fa-phone"></i> Call</div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- ========== Sticy Btn End ========== -->
+
+
+    <!-- Popup HTML -->
+    <div id="book-popup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <h2>Book an Appointment</h2>
+            <p>Fill the form </p>
+
+            <p class="discount-info"> Get <span> 10% Discount </span> on all Dental Treatments </p>
+
+
+            <div class="iframe-wrapper">
+                <iframe src="https://api.leadconnectorhq.com/widget/form/mGkQibyoza9fOGsR8UE2"
+                    style="width:100%;height:100%;border:none;border-radius:8px" id="inline-mGkQibyoza9fOGsR8UE2"
+                    data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+                    data-activation-type="alwaysActivated" data-activation-value=""
+                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                    data-form-name="Eledent Link Page" data-height="706"
+                    data-layout-iframe-id="inline-mGkQibyoza9fOGsR8UE2" data-form-id="mGkQibyoza9fOGsR8UE2"
+                    title="Eledent Link Page">
+                </iframe>
+                <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup CSS -->
+    <style>
+        /* Overlay background */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Popup box */
+        .popup-content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px 20px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            /* never exceed screen height */
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: popIn 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        div#book-popup h2 {
+            color: #f37326;
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        div#book-popup p {
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+
+        /* Scroll area inside popup */
+        .iframe-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            min-height: 400px;
+            max-height: calc(90vh - 160px);
+            border-radius: 6px;
+        }
+
+        /* Hide default scroll bar */
+        .iframe-wrapper::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .iframe-wrapper::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+
+        /* Iframe fills wrapper */
+        .iframe-wrapper iframe {
+            width: 100%;
+            min-height: 500px;
+            border: none;
+            border-radius: 6px;
+            display: block;
+        }
+
+        /* Close button */
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 26px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        /* Animation */
+        @keyframes popIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive adjustment */
+        @media (max-width: 600px) {
+            .popup-content {
+                padding: 15px;
+            }
+
+            .iframe-wrapper {
+                max-height: 65vh;
+            }
+        }
+    </style>
+
+    <!-- Popup jQuery Logic -->
+    <script>
+        $(document).ready(function () {
+            let shown = false;
+            let iframeLoaded = false;
+
+            function showPopup() {
+                if (!iframeLoaded) {
+                    document.getElementById('popupFormIframe').setAttribute('src', 'https://api.leadconnectorhq.com/widget/form/pDce9nK7M2lAZoylmNVC');
+                    iframeLoaded = true;
+                }
+                /* Use flex display (not block) and animate opacity */
+                $('#book-popup').css({ display: 'flex', opacity: 0 }).animate({ opacity: 1 }, 400);
+            }
+
+            function hidePopup() {
+                $('#book-popup').animate({ opacity: 0 }, 300, function () {
+                    $(this).css('display', 'none');
+                });
+            }
+
+            $(window).on('scroll', function () {
+                let scrollTop = $(window).scrollTop();
+                let docHeight = $(document).height();
+                let winHeight = $(window).height();
+                let scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+                if (scrollPercent >= 50 && !shown) {
+                    showPopup();
+                    shown = true;
+                }
+            });
+
+            $('.popup-close').click(function () {
+                hidePopup();
+            });
+
+            /* Also close on backdrop click */
+            $('#book-popup').click(function (e) {
+                if (e.target === this) hidePopup();
+            });
+        });
+    </script>
+
+    <!-- Modal popup end -->
+
+
+    <!-- <div class="support-icon"> <a
+            href="https://api.whatsapp.com/send/?phone=919025227544&text&type=phone_number&app_absent=0"
+            target="blank"><img src="images/whatsapp.webp" alt="whatsapp logo"></a>
+    </div> -->
+    <style>
+        .support-icon {
+            position: fixed;
+            right: 20px;
+            z-index: 99;
+            bottom: 50px;
+            transition: all 1s;
+            width: 60px;
+            height: 60px;
+        }
+
+        .support-icon img {
+            width: 100%;
+        }
+    </style>
+
+
+    <!-- ===== Treatment Nav: Smooth Scroll + Active State ===== -->
+    <script>
+        (function () {
+            var navLinks = document.querySelectorAll('#et-treatment-nav .et-nav-link');
+            var sectionIds = ['et-crown', 'et-braces', 'et-wisdom', 'et-paediatric'];
+
+            // Smooth scroll
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var targetId = this.getAttribute('href').replace('#', '');
+                    var target = document.getElementById(targetId);
+                    if (!target) return;
+                    var navEl = document.getElementById('et-treatment-nav');
+                    var offset = navEl ? navEl.offsetHeight + 10 : 70;
+                    var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                });
+            });
+
+            // Active state on scroll
+            function setActive() {
+                var navEl = document.getElementById('et-treatment-nav');
+                var offset = navEl ? navEl.offsetHeight + 20 : 80;
+                var current = '';
+                sectionIds.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el && el.getBoundingClientRect().top <= offset) current = id;
+                });
+                navLinks.forEach(function (link) {
+                    link.classList.remove('et-nav-active');
+                    if (link.getAttribute('href') === '#' + current) link.classList.add('et-nav-active');
+                });
+            }
+            window.addEventListener('scroll', setActive, { passive: true });
+        })();
+    </script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/style.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        const locations = {
+            lok1: {
+                name: "Kondapur",
+                email: "contact@eledenthospitals.com",
+                phoneDisplay: "+91 77997 19994",
+                phoneHref: "+91 77997 19994",
+                address: "3rd floor, K1 Primo Building, Bus Stop, above Ratnadeep Super Market, Hanuman Nagar, Kondapur, Hyderabad, Telangana 500084",
+                mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.914913802494!2d78.36494657341167!3d17.46378610060324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93b416b4bccf%3A0x15b1ff8695f6c6bc!2sEledent%20Hospitals!5e0!3m2!1sen!2sin!4v1762769669064!5m2!1sen!2sin"
+            },
+            lok2: {
+                name: "Kukatpally",
+                email: "contact@eledenthospitals.com",
+                phoneDisplay: "+91 77997 19994",
+                phoneHref: "+91 77997 19994",
+                address: "1st Floor, MIG-160, Rd Number 1, opp. Holisitic Hospital, above Lenskart, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072",
+                mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.3937135040715!2d78.40010300000002!3d17.4887093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9168e7312983%3A0xa5487cc1cfe97883!2sEledent%20Dental%20Hospitals%20%7C%20Best%20Dental%20Clinic%20in%20Kukatpally%20%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1762423645447!5m2!1sen!2sin"
+
+
+            },
+            lok3: {
+                name: "Banjara Hills",
+                email: "contact@eledenthospitals.com",
+                phoneDisplay: "+91 77997 19994",
+                phoneHref: "+91 77997 19994",
+                address: "Eledent International, Raichandani Construction, Road No. 12, Sri Ram Nagar Colony, Banjara Hills, Hyderabad, Telangana 500028",
+                mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.0825709648816!2d78.44431209999999!3d17.407824599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb972b403a6e6b%3A0xaa8b6579aef62687!2sEledent%20Dental%20Hospitals%20%7C%20Best%20Dental%20Clinic%20In%20Banjara%20Hills%20%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1762423583687!5m2!1sen!2sin"
+            },
+            lok4: {
+                name: "Manikonda, Hyderabad",
+                email: "contact@eledenthospitals.com",
+                phoneDisplay: "+91 77997 19994",
+                phoneHref: "+91 77997 19994",
+                address: "1st Floor, Sunshine Regulas building, Manikonda Rd, above KFC, Muppas Panchavati Colony, Hyderabad, Telangana 500089",
+                mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.1012388783433!2d78.38461989999999!3d17.4069285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb974deee7daeb%3A0x1429e2d8eef72393!2sEledent%20Dental%20Hospital%20%7C%20Advanced%20Dental%20Implant%20clinic%20in%20Manikonda%20%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1762423722569!5m2!1sen!2sin"
+
+            },
+            lok5: {
+                name: "Kompally, Hyderabad",
+                email: "contact@eledenthospitals.com",
+                phoneDisplay: "+91 77997 69994",
+                phoneHref: "+91 77997 69994",
+                address: "GF2H+M9, Ramraju Nagar, Jeedimetla, Hyderabad, Secunderabad, Telangana 500067 ",
+                mapSrc: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7610.244531607014!2d78.47839!3d17.501676!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910742dffe69%3A0x77ec8dc5e6302755!2sEledent%20international%20digital%20dentistry!5e0!3m2!1sen!2sin!4v1770377326859!5m2!1sen!2sin"
+
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const select = document.getElementById("locationSelect");
+            select.addEventListener("change", onLocationChange);
+            select.value = "lok1"; // Default Kondapur
+            onLocationChange();
+        });
+
+        function onLocationChange() {
+            const select = document.getElementById("locationSelect");
+            const key = select.value;
+            const data = locations[key];
+            if (!data) return;
+
+            document.getElementById("emailLink").href = "mailto:" + data.email;
+            document.getElementById("emailLink").querySelector("p").innerHTML =
+                '<i class="fas fa-envelope me-2"></i> ' + data.email;
+
+            const phoneLink = document.getElementById("phoneLink");
+            phoneLink.href = "tel:" + data.phoneHref;
+            phoneLink.querySelector("p").innerHTML =
+                '<i class="fa-solid fa-phone me-2"></i> ' + data.phoneDisplay;
+
+            const addressText = document.getElementById("addressText");
+            addressText.innerHTML =
+                '<i class="fas fa-map-marker-alt me-2"></i> ' + data.address;
+
+            // ✅ Update map (no design change)
+            document.getElementById("mapFrame").src = data.mapSrc;
+        }
+    </script>
+
+
+</body>
+
+</html>

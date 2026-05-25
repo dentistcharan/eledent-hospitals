@@ -357,6 +357,10 @@ const nextConfig: NextConfig = {
         source: "/a-kompally-generic",
         destination: "/a-kompally-generic/index.html",
       },
+      {
+        source: "/a-kompally-generic",
+        destination: "/a-kompally-generic/index.html",
+      },
     ];
   },
 };
