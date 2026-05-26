@@ -240,18 +240,33 @@ const SidebarCard: FC<{ title: string; children: ReactNode }> = ({
   </div>
 );
 
-const CategoriesList: FC<{ categories: CategoryItem[] }> = ({ categories }) => (
+const CategoriesList: FC<{
+  categories: CategoryItem[];
+  selectedCategory: string | null;
+  onCategorySelect: (slug: string | null) => void;
+}> = ({ categories, selectedCategory, onCategorySelect }) => (
   <SidebarCard title="Categories">
     <ul className="space-y-2">
+      <li>
+        <button
+          type="button"
+          onClick={() => onCategorySelect(null)}
+          className={`flex w-full items-start gap-2 text-base leading-[1.4] text-white transition hover:opacity-85 ${!selectedCategory ? "font-bold underline" : ""}`}
+        >
+          <span className="mt-[7px] block h-[4px] w-[4px] flex-shrink-0 rounded-full bg-white" />
+          <span>All</span>
+        </button>
+      </li>
       {categories.map((category) => (
         <li key={category.id}>
-          <Link
-            href={normalizeBlogHref(category.href)}
-            className="flex items-start gap-2 text-base leading-[1.4] text-white transition hover:opacity-85"
+          <button
+            type="button"
+            onClick={() => onCategorySelect(category.slug)}
+            className={`flex w-full items-start gap-2 text-base leading-[1.4] text-white transition hover:opacity-85 ${selectedCategory === category.slug ? "font-bold underline" : ""}`}
           >
             <span className="mt-[7px] block h-[4px] w-[4px] flex-shrink-0 rounded-full bg-white" />
             <span>{category.label}</span>
-          </Link>
+          </button>
         </li>
       ))}
     </ul>
@@ -289,16 +304,26 @@ const BlogListingSection: FC<BlogListingSectionProps> = ({
   blogsPerPage = DEFAULT_BLOGS_PER_PAGE,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const perPage =
     blogsPerPage && blogsPerPage > 0 ? blogsPerPage : DEFAULT_BLOGS_PER_PAGE;
 
-  const totalPages = Math.ceil(posts.length / perPage);
+  const filteredPosts = useMemo(() => {
+    if (!selectedCategory) return posts;
+    return posts.filter(
+      (post) =>
+        post.category?.slug === selectedCategory ||
+        post.category?.id === selectedCategory
+    );
+  }, [posts, selectedCategory]);
+
+  const totalPages = Math.ceil(filteredPosts.length / perPage);
 
   const currentBlogs = useMemo(() => {
     const start = (currentPage - 1) * perPage;
-    return posts.slice(start, start + perPage);
-  }, [currentPage, posts, perPage]);
+    return filteredPosts.slice(start, start + perPage);
+  }, [currentPage, filteredPosts, perPage]);
 
   useEffect(() => {
     if (currentPage > totalPages && totalPages > 0) {
@@ -309,6 +334,14 @@ const BlogListingSection: FC<BlogListingSectionProps> = ({
   const handlePageChange = (page: number) => {
     if (page < 1 || page > totalPages) return;
     setCurrentPage(page);
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const handleCategorySelect = (slug: string | null) => {
+    setSelectedCategory(slug);
+    setCurrentPage(1);
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -327,7 +360,7 @@ const BlogListingSection: FC<BlogListingSectionProps> = ({
                 ))
               ) : (
                 <div className="rounded-[20px] border border-[#8d8d8d] bg-[#efefef] p-6 text-center text-[#555]">
-                  No blogs found.
+                  No blogs found{selectedCategory ? " for this category" : ""}.
                 </div>
               )}
             </div>
@@ -347,7 +380,11 @@ const BlogListingSection: FC<BlogListingSectionProps> = ({
           {/* Sidebar */}
           <aside className="space-y-5">
             {categories.length > 0 && (
-              <CategoriesList categories={categories} />
+              <CategoriesList
+                categories={categories}
+                selectedCategory={selectedCategory}
+                onCategorySelect={handleCategorySelect}
+              />
             )}
             {recentPosts.length > 0 && (
               <RecentPostsList recentPosts={recentPosts} />
