@@ -353,13 +353,10 @@ const nextConfig: NextConfig = {
         source: "/banjara-hills-manikonda-generic",
         destination: "/banjara-hills-manikonda-generic/index.html",
       },
+
       {
-        source: "/a-kompally-generic",
-        destination: "/a-kompally-generic/index.html",
-      },
-      {
-        source: "/a-kompally-generic",
-        destination: "/a-kompally-generic/index.html",
+        source: "/kompally-generic",
+        destination: "/kompally-generic/index.html",
       },
       {
         source: "/a-generic",

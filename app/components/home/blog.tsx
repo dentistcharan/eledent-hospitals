@@ -31,7 +31,7 @@ type ApiPost = {
 };
 
 type ApiResponse = {
-  success: boolean;
+  success?: boolean;
   message?: string;
   data?: {
     hero?: {
@@ -45,7 +45,10 @@ type ApiResponse = {
   };
 };
 
-const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/blogs`;
+const API_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL
+    ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/blogs`
+    : "https://cms.eledenthospitals.com/wp-json/custom/v1/blogs";
 
 function formatDate(dateString?: string): string {
   if (!dateString) return "No date";
@@ -110,10 +113,6 @@ export default function BlogMain(): JSX.Element {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
-          throw new Error("API base URL is missing in environment variables.");
-        }
-
         const response = await fetch(API_URL, {
           method: "GET",
           cache: "no-store",
@@ -124,10 +123,6 @@ export default function BlogMain(): JSX.Element {
         }
 
         const result: ApiResponse = await response.json();
-
-        if (!result.success) {
-          throw new Error(result.message || "API returned unsuccessful response.");
-        }
 
         const hero = result.data?.hero;
         const posts = result.data?.listingSection?.posts || [];
