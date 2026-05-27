@@ -26,6 +26,12 @@ export default function OverValue({ data }: Props) {
         valueItems,
     } = data;
 
+    const hasContent =
+        (leftTitle && leftTitle.trim().length > 0) ||
+        (Array.isArray(valueItems) && valueItems.length > 0);
+
+    if (!hasContent) return null;
+
     return (
         <section className="w-full bg-white lg:pb-10">
             <div className="mx-auto max-w-7xl px-6">

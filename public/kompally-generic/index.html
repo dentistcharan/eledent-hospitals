@@ -43,6 +43,7 @@
             position: relative;
             z-index: 9999;
         }
+
         @media (min-width: 768px) {
             #phone-strip-wrapper.is-sticky {
                 display: flex;
@@ -51,16 +52,25 @@
                 left: 0;
                 right: 0;
                 border-radius: 0 0 18px 18px;
-                box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+                box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
                 animation: stripSlideDown 0.3s ease;
                 width: 40%;
                 margin: auto;
             }
         }
+
         @keyframes stripSlideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to   { transform: translateY(0);     opacity: 1; }
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
+
         #phone-strip-wrapper .strip-inner {
             display: flex;
             justify-content: center;
@@ -69,7 +79,11 @@
             scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
         }
-        #phone-strip-wrapper .strip-inner::-webkit-scrollbar { display: none; }
+
+        #phone-strip-wrapper .strip-inner::-webkit-scrollbar {
+            display: none;
+        }
+
         #phone-strip-wrapper .strip-item {
             display: flex;
             flex-direction: column;
@@ -78,14 +92,21 @@
             padding: 10px 28px;
             color: #fff;
             text-decoration: none;
-            border-right: 1px solid rgba(255,255,255,0.28);
+            border-right: 1px solid rgba(255, 255, 255, 0.28);
             white-space: nowrap;
             flex: 1;
             min-width: 130px;
             transition: background 0.2s ease;
         }
-        #phone-strip-wrapper .strip-item:last-child { border-right: none; }
-        #phone-strip-wrapper .strip-item:hover { background: rgba(255,255,255,0.12); }
+
+        #phone-strip-wrapper .strip-item:last-child {
+            border-right: none;
+        }
+
+        #phone-strip-wrapper .strip-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
         .strip-location {
             font-size: 10.5px;
             font-weight: 700;
@@ -94,6 +115,7 @@
             opacity: 0.88;
             margin-bottom: 3px;
         }
+
         .strip-number-row {
             display: flex;
             align-items: center;
@@ -101,7 +123,11 @@
             font-size: 13px;
             font-weight: 600;
         }
-        .strip-number-row i { font-size: 11px; opacity: 0.9; }
+
+        .strip-number-row i {
+            font-size: 11px;
+            opacity: 0.9;
+        }
     </style>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -119,20 +145,20 @@
 
     <!-- Google Tag Manager -->
     <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');
     </script>
     <!-- End Google Tag Manager -->
 
@@ -431,7 +457,7 @@
                 <div class="col-lg-5">
                     <div class="imp-cost-lft">
                         <div class="heading">
-                            <h2> #1 Dental Clinic in  Kompally </h2>
+                            <h2> #1 Dental Clinic in Kompally </h2>
                         </div>
                         <!-- <div class="limited-offer">
                             <p>(Kondapur, Kukatpally, Banjara Hills,, Manikonda)</p>
@@ -1000,7 +1026,8 @@
                                     <div class="accordion-body">
                                         Yes, at <strong>Eledent</strong>, many dental procedures can be completed in a
                                         single visit.
-                                        Our clinics in Kondapur, Kukatpally, Banjara Hills, Kompally, and Manikonda  use digital
+                                        Our clinics in Kondapur, Kukatpally, Banjara Hills, Kompally, and Manikonda use
+                                        digital
                                         scanning,
                                         CAD-CAM technology, and same-day chairside systems to complete treatments like
                                         root canals,
@@ -1407,29 +1434,32 @@
     </script>
 
     <!-- ══ MOBILE BOTTOM BAR ══════════════════════════════════════════════ -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 h-14 grid grid-cols-3 shadow-[0_-2px_16px_rgba(0,0,0,.18)]">
+    <div
+        class="md:hidden fixed bottom-0 left-0 right-0 z-50 h-14 grid grid-cols-3 shadow-[0_-2px_16px_rgba(0,0,0,.18)]">
         <button type="button" onclick="openCallModal()"
             class="flex flex-col items-center justify-center gap-0.5 bg-[#e14b4b] text-white font-bold text-xs">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
             </svg>
             Call
         </button>
         <a href="https://api.whatsapp.com/send/?phone=917799769994&text=" target="_blank" rel="noopener"
             class="flex flex-col items-center justify-center gap-0.5 bg-[#25D366] text-white font-bold text-xs">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.52 3.48A11.94 11.94 0 0012.01 0C5.38 0 .02 5.36.02 12c0 2.12.55 4.19 1.6 6.02L0 24l6.17-1.62A11.96 11.96 0 0012.01 24c6.63 0 11.99-5.36 11.99-12 0-3.2-1.25-6.21-3.48-8.52zM12 21.82c-1.81 0-3.57-.49-5.1-1.41l-.36-.21-3.66.96.98-3.57-.23-.37A9.8 9.8 0 012.2 12C2.2 6.6 6.6 2.2 12 2.2c2.61 0 5.06 1.02 6.91 2.86A9.72 9.72 0 0121.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.45-7.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.46-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.6.14-.14.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.2-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.52s1.08 2.93 1.23 3.13c.15.2 2.13 3.26 5.17 4.57.72.31 1.28.5 1.72.64.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/>
+                <path
+                    d="M20.52 3.48A11.94 11.94 0 0012.01 0C5.38 0 .02 5.36.02 12c0 2.12.55 4.19 1.6 6.02L0 24l6.17-1.62A11.96 11.96 0 0012.01 24c6.63 0 11.99-5.36 11.99-12 0-3.2-1.25-6.21-3.48-8.52zM12 21.82c-1.81 0-3.57-.49-5.1-1.41l-.36-.21-3.66.96.98-3.57-.23-.37A9.8 9.8 0 012.2 12C2.2 6.6 6.6 2.2 12 2.2c2.61 0 5.06 1.02 6.91 2.86A9.72 9.72 0 0121.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.45-7.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.46-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.6.14-.14.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.2-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.52s1.08 2.93 1.23 3.13c.15.2 2.13 3.26 5.17 4.57.72.31 1.28.5 1.72.64.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z" />
             </svg>
             WhatsApp
         </a>
         <button onclick="document.getElementById('book-appointment').scrollIntoView({behavior:'smooth'})"
             class="flex flex-col items-center justify-center gap-0.5 bg-[#E87733] text-white font-bold text-xs">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" stroke-linecap="round"/>
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" stroke-linecap="round" />
             </svg>
             Book Now
         </button>
@@ -1440,23 +1470,35 @@
     <div class="fixed right-0 top-1/2 z-50 hidden -translate-y-1/2 flex-col items-end gap-0 sm:block lg:block">
         <button type="button" onclick="openCallModal()" aria-label="Call Now"
             class="group mr-0 flex h-[56px] w-[52px] items-center justify-center rounded-tl-[14px] bg-[#e14b4b] shadow-lg transition hover:bg-[#cf3f3f]">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-white">
-                <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                <path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
             </svg>
         </button>
-        <a href="https://api.whatsapp.com/send/?phone=917799769994&text=" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+        <a href="https://api.whatsapp.com/send/?phone=917799769994&text=" target="_blank" rel="noopener noreferrer"
+            aria-label="WhatsApp"
             class="group mr-0 flex h-[56px] w-[52px] items-center justify-center bg-[#25D366] shadow-lg transition hover:bg-[#1ebe5d]">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" class="text-white">
-                <path d="M20.52 3.48A11.94 11.94 0 0012.01 0C5.38 0 .02 5.36.02 12c0 2.12.55 4.19 1.6 6.02L0 24l6.17-1.62A11.96 11.96 0 0012.01 24c6.63 0 11.99-5.36 11.99-12 0-3.2-1.25-6.21-3.48-8.52zM12 21.82c-1.81 0-3.57-.49-5.1-1.41l-.36-.21-3.66.96.98-3.57-.23-.37A9.8 9.8 0 012.2 12C2.2 6.6 6.6 2.2 12 2.2c2.61 0 5.06 1.02 6.91 2.86A9.72 9.72 0 0121.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.45-7.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.46-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.6.14-.14.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.2-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.52s1.08 2.93 1.23 3.13c.15.2 2.13 3.26 5.17 4.57.72.31 1.28.5 1.72.64.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/>
+                <path
+                    d="M20.52 3.48A11.94 11.94 0 0012.01 0C5.38 0 .02 5.36.02 12c0 2.12.55 4.19 1.6 6.02L0 24l6.17-1.62A11.96 11.96 0 0012.01 24c6.63 0 11.99-5.36 11.99-12 0-3.2-1.25-6.21-3.48-8.52zM12 21.82c-1.81 0-3.57-.49-5.1-1.41l-.36-.21-3.66.96.98-3.57-.23-.37A9.8 9.8 0 012.2 12C2.2 6.6 6.6 2.2 12 2.2c2.61 0 5.06 1.02 6.91 2.86A9.72 9.72 0 0121.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.45-7.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.46-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.6.14-.14.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.2-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.52s1.08 2.93 1.23 3.13c.15.2 2.13 3.26 5.17 4.57.72.31 1.28.5 1.72.64.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z" />
             </svg>
         </a>
-        <button type="button" onclick="document.getElementById('book-appointment').scrollIntoView({behavior:'smooth'})" aria-label="Book Appointment"
+        <button type="button" onclick="document.getElementById('book-appointment').scrollIntoView({behavior:'smooth'})"
+            aria-label="Book Appointment"
             class="group mr-0 flex h-[56px] w-[52px] items-center justify-center rounded-bl-[14px] bg-[#E87733] shadow-lg transition hover:bg-[#cf6428]">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="text-white">
-                <path d="M8 2v4"/><path d="M16 2v4"/>
-                <rect width="18" height="18" x="3" y="4" rx="2"/>
-                <path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/>
-                <path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                <path d="M8 2v4" />
+                <path d="M16 2v4" />
+                <rect width="18" height="18" x="3" y="4" rx="2" />
+                <path d="M3 10h18" />
+                <path d="M8 14h.01" />
+                <path d="M12 14h.01" />
+                <path d="M16 14h.01" />
+                <path d="M8 18h.01" />
+                <path d="M12 18h.01" />
+                <path d="M16 18h.01" />
             </svg>
         </button>
     </div>
@@ -1473,8 +1515,9 @@
                 </div>
                 <button onclick="closeCallModal()"
                     class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-                    <svg class="w-4 h-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <path d="M18 6L6 18M6 6l12 12"/>
+                    <svg class="w-4 h-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M18 6L6 18M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -1485,9 +1528,12 @@
                         <p class="font-semibold text-sm text-gray-900 group-hover:text-[#E87733]">Kompally</p>
                         <p class="text-xs text-gray-500">075 5718 8080</p>
                     </div>
-                    <div class="flex items-center gap-2 bg-[#e14b4b] text-white text-xs font-semibold px-3 py-1.5 rounded-lg">
-                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    <div
+                        class="flex items-center gap-2 bg-[#e14b4b] text-white text-xs font-semibold px-3 py-1.5 rounded-lg">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
                         </svg>
                         Call
                     </div>
@@ -1509,7 +1555,7 @@
             m.style.display = 'none';
             document.body.style.overflow = '';
         }
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') { closeCallModal(); }
         });
 
