@@ -1,1901 +1,1314 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <base href="/kompally-generic/" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <title>Best Dental Clinic in Banjara Hills | Eledent International Digital Dentistry</title>
-  <meta name="description"
-    content="Eledent is a trusted digital dental hospital in Banjara Hills. Get painless dental treatments including implants, Invisalign, root canals, and smile makeovers with expert care." />
-  <meta name="robots" content="noindex,nofollow">
-  <link rel="canonical" href="https://eledenthospitals.com/dental-generic">
-  <meta property="og:title" content="Dentist in Banjara Hills — Eledent Dental Hospital">
-  <meta property="og:description"
-    content="Same-day dental appointments at Eledent Banjara Hills. 30,000+ patients treated. 4.9★ rated. Painless treatments.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://eledenthospitals.com/dental-generic">
+    <base href="/kompally-generic/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eledent Hospital</title>
+    <meta name="description"
+        content="Experience exceptional dental care at our best clinic in Ghatkopar East. Skilled professionals, advanced treatments, and a healthy, confident smile awaits you." />
+    <META NAME="robots" CONTENT="noindex,nofollow">
+    <link rel="icon" href="images/fav-icon.png" sizes="32x32" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: { DEFAULT: '#E87733', dark: '#cf6428', light: '#FFF4EC', lighter: '#FFF8F3' },
-            dark: { DEFAULT: '#171717', 2: '#2d2d2d', 3: '#484848' },
-          },
-          fontFamily: {
-            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+        rel="stylesheet">
 
-    .acc-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .35s ease;
-    }
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css?<?php echo time(); ?>" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css?<?php echo time(); ?>" />
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-    .faq-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .30s ease;
-    }
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');
+    </script>
+    <!-- End Google Tag Manager -->
 
-    .chevron-open {
-      transform: rotate(180deg);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    #hero {
-      background-image:
-        url("hero-banner.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    select {
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 12px center;
-    }
-
-    /* Treatment accordion */
-    .treat-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-    }
-
-    /* Scroll popup */
-    #scroll-popup {
-      animation: popFadeIn 0.3s ease;
-    }
-
-    .popup-card {
-      animation: popSlideUp 0.35s ease;
-    }
-
-    @keyframes popFadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes popSlideUp {
-      from {
-        opacity: 0;
-        transform: translateY(24px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ── Treatment section — mobile swipe slider ── */
-    #treat-slider-wrap {
-      overflow: hidden;
-    }
-
-    #treat-track {
-      width: 100%;
-      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .treat-nav-wrap {
-      display: none;
-    }
-
-    @media (max-width: 767px) {
-      #treat-track {
-        display: flex;
-      }
-
-      .treat-slide {
-        min-width: 100%;
-        width: 100%;
-        flex-shrink: 0;
-        box-sizing: border-box;
-      }
-
-      .treat-slide>.grid {
-        border-bottom: none !important;
-        padding-top: 1.5rem !important;
-        padding-bottom: 0.5rem !important;
-      }
-
-      .treat-slide img {
-        height: 13rem !important;
-      }
-
-      .treat-nav-wrap {
-        display: flex;
-      }
-    }
-
-    @media (min-width: 768px) {
-      #treat-track {
-        display: block;
-      }
-
-      .treat-slide {
-        display: block;
-        min-width: unset;
-      }
-    }
-  </style>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-          'gtm.start':
-            new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');</script>
-  <!-- End Google Tag Manager -->
-
-  <!-- Font Awesome for phone icons in branch strip -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous">
-
-  <style>
-    /* ── Branch Phone Strip ───────────────────────── */
-    #phone-strip-wrapper {
-      display: none;
-      /* hidden until hero is scrolled past */
-      justify-content: center;
-      background: linear-gradient(90deg, #e8782e 0%, #c75d1e 100%);
-      border-radius: 0 0 18px 18px;
-      position: relative;
-      z-index: 40;
-    }
-
-    @media (min-width: 768px) {
-      #phone-strip-wrapper.is-sticky {
-        display: flex;
-        position: fixed;
-        top: 56px;
-        left: 0;
-        right: 0;
-        border-radius: 0 0 18px 18px;
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
-        animation: stripSlideDown 0.3s ease;
-        width: 70%;
-        margin: auto;
-      }
-    }
-
-    @keyframes stripSlideDown {
-      from {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .sidebar-bx-inr {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      max-width: 960px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .sidebar-bx-inr::-webkit-scrollbar {
-      display: none;
-    }
-
-    .sidebar-bx-inr .item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 28px;
-      color: #fff;
-      text-decoration: none;
-      border-right: 1px solid rgba(255, 255, 255, 0.28);
-      white-space: nowrap;
-      flex: 1;
-      min-width: 130px;
-      transition: background 0.2s ease;
-    }
-
-    .sidebar-bx-inr .item:last-child {
-      border-right: none;
-    }
-
-    .sidebar-bx-inr .item:hover {
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    .strip-location {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      opacity: 0.88;
-      margin-bottom: 3px;
-    }
-
-    .strip-number-row {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .strip-number-row i {
-      font-size: 11px;
-      opacity: 0.9;
-    }
-
-    /* ── Offer Banner (Hero Left) ─────────────────── */
-    .offer-price-box {
-      display: inline-flex;
-      align-items: baseline;
-      background: #fff;
-      border-radius: 10px;
-      padding: 10px 20px 10px 16px;
-      margin: 10px 0 18px;
-    }
-
-    .offer-price-box .offer-rupee {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: #111;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 1;
-    }
-
-    .offer-price-box .offer-amount {
-      font-size: 2.8rem;
-      font-weight: 900;
-      color: #111;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 1;
-    }
-
-    .offer-price-box .offer-plan-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #444;
-      padding-bottom: 4px;
-      margin-left: 8px;
-      line-height: 1.3;
-      align-self: flex-end;
-    }
-
-    .offer-benefit-icon {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-    }
-
-    /* ── GHL Iframe Form ──────────────────────────── */
-    .ghl-iframe-wrap {
-      width: 100%;
-    }
-
-    .ghl-iframe-wrap iframe {
-      width: 100%;
-      height: 442px;
-      border: none;
-      border-radius: 4px;
-      display: block;
-    }
-
-    .discount-info {
-      font-size: 0.875rem;
-      color: #555;
-    }
-
-    .discount-info span {
-      font-weight: 700;
-      color: #E87733;
-    }
-
-    @media (max-width: 640px) {
-      .sidebar-bx-inr {
-        justify-content: flex-start;
-      }
-
-      .sidebar-bx-inr .item {
-        min-width: 118px;
-        padding: 8px 16px;
-      }
-
-      .strip-location {
-        font-size: 9.5px;
-      }
-
-      .strip-number-row {
-        font-size: 12px;
-      }
-
-      .offer-price-box .offer-amount {
-        font-size: 2.2rem;
-      }
-    }
-  </style>
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"How do I book an appointment at Eledent Banjara Hills?","acceptedAnswer":{"@type":"Answer","text":"Fill the form at the top of this page — our team calls back within 30 minutes. Walk in or call +91 77997 19994."}},
-    {"@type":"Question","name":"Is dental treatment painful at Eledent?","acceptedAnswer":{"@type":"Answer","text":"Most procedures use local anaesthesia and microscopic precision. Conscious sedation available for anxious patients."}},
-    {"@type":"Question","name":"What are the operating hours?","acceptedAnswer":{"@type":"Answer","text":"Mon–Sat 9 AM–9 PM, Sunday 9 AM–8 PM at both Banjara Hills branches."}},
-    {"@type":"Question","name":"How much does a root canal cost at Eledent?","acceptedAnswer":{"@type":"Answer","text":"Root canal treatment starts at ₹4,500 per tooth. Exact price shared in writing after your free consultation."}}
-  ]}
-  </script>
 </head>
 
-<body class="bg-white text-gray-900 antialiased">
+<body>
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W49C7DC" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W49C7DC" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-  <!-- ══ STICKY HEADER ════════════════════════════════════════════════ -->
-  <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100 h-14 flex items-center">
-    <div class="max-w-6xl mx-auto px-5 w-full flex items-center justify-between">
-      <a href="/dental-generic" class="flex items-center gap-2.5">
-        <img src="https://eledenthospitals.com/White-Logo1.png" alt="Eledent" class="h-8 hidden"
-          onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')">
+    <header class="header-area">
+        <div class="container">
+            <div class="header-inner">
+                <div class="top-lft-logo"><img src="images/logo.png" class="img-fluid"></div>
+                <div class="appointment-header ">
+                    <div class="apt-contact">
+                        <p class="apt-call-info">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+91 77997 19994">+91 77997 19994</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <img src="https://eledenthospitals.com/kondapur-generic/images/logo.png" alt="Eledent" class="lg:w-40 w-28">
 
-      </a>
-      <a href="tel:+917799719994"
-        class="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg font-heading font-semibold text-sm transition-colors whitespace-nowrap">
-        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <path
-            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-        </svg>
-        Call: +91 77997 19994
-      </a>
+    <section class="home-banner-area banner-down">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+
+                    <div class="banner-img mob-view">
+                        <img src="images/banner-mob-1.jpg" alt="Banner" class="img-fluid w-100">
+                    </div>
+
+                    <!-- <div class="banner-lft-cnt text-left" data-aos="fade-right" data-aos-duration="1000">
+    <h2>Join Eledent’s ₹499 Annual Plan <br>
+
+    </h2>
+    <h3>
+        Unlock ₹25,000+ Worth of Benefits Instantly!</h3>
+
+    <h4>Get Advanced Smile Correction Done Within 12 Hours! </h4>
+
+
+    <ul>
+        <li>Unlimited Consultations + Free X-Rays*</li>
+        <li> Exclusive Member Discounts on Implants & Aligners*</li>
+    </ul>
+
+    <div class="appointment-header appoint-head">
+        <div class="apt-contact">
+            <p class="apt-call-info mb-0 text-white"> <a href="#book-appointment">Book Now</a></p>
+        </div>
     </div>
-  </header>
 
-  <!-- ══ HERO ══════════════════════════════════════════════════════════ -->
-  <section id="hero" class="bg-dark py-14 md:py-20 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-5 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_550px] gap-10 items-center">
+</div> -->
 
-        <!-- Offer Banner -->
-        <div class="text-white">
+                </div>
+                <div class="col-lg-5">
+                    <div id="book-appointment" class="book-appointment">
+                        <h2>Book an Appointment</h2>
+                        <p>Fill the form </p>
 
-          <p class="text-white lg:text-3xl text-lg font-heading font-semibold mb-3">Join Eledent's</p>
+                        <p class="discount-info"> Get <span> 10% Discount </span> on all Dental Treatments </p>
+                        <iframe src="https://api.leadconnectorhq.com/widget/form/Uhab57NWt1eIEcZmGjda"
+                            style="width:100%;height:100%;border:none;border-radius:3px"
+                            id="inline-Uhab57NWt1eIEcZmGjda" data-layout="{'id':'INLINE'}"
+                            data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated"
+                            data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                            data-form-name="Kondapur-Generic Google Ads LP" data-height="580"
+                            data-layout-iframe-id="inline-Uhab57NWt1eIEcZmGjda" data-form-id="Uhab57NWt1eIEcZmGjda"
+                            title="Kondapur-Generic Google Ads LP">
+                        </iframe>
+                        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
-          <div class="offer-price-box">
-            <span class="offer-rupee">₹</span>
-            <span class="offer-amount">499/-</span>
-            <span class="offer-plan-label">Annual<br>Plan</span>
-          </div>
-
-          <h1 class="font-heading font-extrabold text-[29px] lg:text-5xl leading-relaxed  my-4 text-white">
-            Unlock ₹25,000+ Worth<br>of Benefits Instantly!
-          </h1>
-
-          <p class="text-white/90 text-base lg:text-xl mb-5">
-            Get Advanced Smile Correction Done Within 12 Hours!
-          </p>
-
-          <hr class="border-white/30 mb-5">
-
-          <div class="flex flex-wrap gap-6">
-            <div class="flex items-center gap-3">
-              <svg class="offer-benefit-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="6" y="10" width="36" height="28" rx="4" stroke="white" stroke-width="2.5" />
-                <line x1="6" y1="19" x2="42" y2="19" stroke="white" stroke-width="2.5" />
-                <line x1="14" y1="28" x2="26" y2="28" stroke="white" stroke-width="2.5" />
-                <line x1="14" y1="33" x2="22" y2="33" stroke="white" stroke-width="2.5" />
-                <rect x="19" y="6" width="10" height="9" rx="2" fill="none" stroke="white" stroke-width="2.5" />
-              </svg>
-              <span class="text-white lg:text-base text-sm font-semibold italic leading-snug">Unlimited
-                Consultations<br>+ Free
-                X-Rays*</span>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center gap-3">
-              <svg class="offer-benefit-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="24" cy="24" r="18" stroke="white" stroke-width="2.5" />
-                <circle cx="18" cy="19" r="3" stroke="white" stroke-width="2" />
-                <circle cx="30" cy="29" r="3" stroke="white" stroke-width="2" />
-                <line x1="31" y1="17" x2="17" y2="31" stroke="white" stroke-width="2.5" stroke-linecap="round" />
-              </svg>
-              <span class="text-white lg:text-base text-sm font-semibold italic leading-snug">Exclusive Member
-                Discounts<br>on
-                Implants &amp; Aligners*</span>
-            </div>
-          </div>
         </div>
+    </section>
 
-        <!-- Book Appointment — GHL iframe form -->
-        <div id="booking-form-card" class="bg-white rounded-2xl p-5 md:p-7 shadow-2xl">
-          <h2 class="font-heading font-bold text-center text-2xl text-primary mb-1">Book an Appointment</h2>
-          <p class="text-center text-sm text-gray-500 mb-1">Fill the form</p>
-          <p class="discount-info text-center mb-4">Get <span>10% Discount</span> on all Dental Treatments</p>
 
-          <div class="ghl-iframe-wrap">
-            <iframe src="https://api.leadconnectorhq.com/widget/form/ZzVS2MuoJXiHa2Adxh9Q"
-              id="inline-ZzVS2MuoJXiHa2Adxh9Q" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow"
-              data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
-              data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Generic Google Ads LP"
-              data-height="442" data-layout-iframe-id="inline-ZzVS2MuoJXiHa2Adxh9Q" data-form-id="ZzVS2MuoJXiHa2Adxh9Q"
-              title="Generic Google Ads LP">
-            </iframe>
-          </div>
-          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-
-          <p class="text-center mt-3 text-xs text-gray-400">
-            Or call us now: <a href="tel:+917799719994" class="text-primary font-semibold underline">+91 77997 19994</a>
-          </p>
+    <section class="offer-area">
+        <div class="container">
+            <div class="heading text-center mb-5">
+                <h2>Save Big on Implants <strong>&</strong> Invisalign</h2>
+                <h3>Best Quality Dental - Now at 30% Less Cost</h3>
+                <h4>Hurry Up - Offers Ending Soon</h4>
+                <h5>Just <span>43</span> Slots Left!</h5>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="offer-img">
+                        <img src="images/offer-img-1.jpg" alt="Implant Offer" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="offer-img">
+                        <img src="images/offer-img-2.jpg" alt="Implant Offer" class="img-fluid">
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-      </div>
-    </div>
-  </section>
 
-  <!-- ══ BRANCHES ══════════════════════════════════════════════════════ -->
-  <section id="branches" class="lg:py-16 py-10 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-5">
-      <div class="mb-10">
-        <span class="text-lg font-bold tracking-widest uppercase text-primary">Find Us</span>
-        <h2 class="font-heading font-bold text-2xl lg:text-3xl text-gray-900 mt-4 mb-0 tracking-tight">Visit Eledent — 5
-          Branches Across Hyderabad</h2>
-        <div class="w-12 h-1 bg-primary rounded mt-3"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <!-- Hyderabad -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-primary hover:shadow-md transition-shadow">
-          <span
-            class="inline-block bg-primary/10 text-primary text-sm font-bold tracking-wide uppercase px-3 py-1 rounded-full mb-4">Kondapur</span>
-          <h3 class="font-heading font-bold text-lg text-gray-900 mb-4">Eledent Dental Hospital, Kondapur</h3>
-          <div class="space-y-3 text-sm text-gray-500">
-            <div class="flex items-start gap-3">
-              <svg class="w-4 h-4 shrink-0 mt-0.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span>3rd floor, K1 Primo Building, Bus Stop, above Ratnadeep Super Market, Hanuman Nagar, Kondapur,
-                Hyderabad, Telangana 500084
-
-              </span>
+    <section class="excellence-dentistry" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="heading text-center">
+                <h2>100% Pain-Free Dental Solutions
+                </h2>
+                <p>
+                    Kondapur | Manikonda | Kukatpally | Banjara Hills | Kompally
+                </p>
             </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-4 h-4 shrink-0 mt-0.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <span>Mon – Sat: 9 AM – 9 PM · Sun: 9 AM – 8 PM</span>
+            <div class="excellence-slide">
+                <div class="owl-carousel excellence-owl owl-theme">
+                    <div class="item">
+                        <div class="excel-bx excel-bx-1">
+                            <h3>Dental Implants</h3>
+                            <ul>
+                                <li>American Implant Systems</li>
+                                <li>Pain-Free Guided Implantology</li>
+                                <li>Suture-Free Quick Healing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="excel-bx excel-bx-2">
+                            <h3>Braces & Aligners</h3>
+                            <ul>
+                                <li>Clear Aligner Options</li>
+                                <li>Digital Smile Planning</li>
+                                <li>Comfortable Orthodontic Care</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="excel-bx excel-bx-3">
+                            <h3>Dental Crowns</h3>
+                            <ul>
+                                <li>CAD-CAM Precision Fit</li>
+                                <li>Zirconia & Ceramic Options</li>
+                                <li>Same-Day CEREC Crown</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="excel-bx excel-bx-4">
+                            <h3>Atraumatic Extraction</h3>
+                            <ul>
+                                <li>Non-Surgical, Gentle Tooth Removal</li>
+                                <li>Bone-Preserving Technique</li>
+                                <li>Fast Recovery, Immediate Healing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="excel-bx excel-bx-5">
+                            <h3>Dental Fillings</h3>
+                            <ul>
+                                <li>Tooth-Colored Restorations</li>
+                                <li>Cavity Sealing Precision</li>
+                                <li>Same-Day Durable Results</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="excel-bx excel-bx-6">
+                            <h3>Root Canal Treatment</h3>
+                            <ul>
+                                <li>Microscopic Precision Treatment</li>
+                                <li>One-Visit, Permanent Fix</li>
+                                <li>Preserves Natural Tooth</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="excel-bx excel-bx-7">
+                            <h3>Single Visit Dentistry</h3>
+                            <ul>
+                                <li>Same-Day Crowns & Fillings</li>
+                                <li>Quick Chairside Procedures</li>
+                                <li>Time-Efficient Dental Care</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="excel-bx excel-bx-8">
+                            <h3>Teeth Whitening</h3>
+                            <ul>
+                                <li>Safe Instant Whitening</li>
+                                <li>Sensitivity-Free Formulas</li>
+                                <li>Brighter Smile In One Visit</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="excel-bx excel-bx-9">
+                            <h3>Conscious Sedation</h3>
+                            <ul>
+                                <li>Relaxed Painless Experience</li>
+                                <li>Ideal For Anxious Patients</li>
+                                <li>Doctor-Monitored Sedation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="excel-bx excel-bx-10">
+                            <h3>Microscopic Dentistry</h3>
+                            <ul>
+                                <li>High-Magnification Precision</li>
+                                <li>Enhanced Visibility And Detail</li>
+                                <li>Conservative Tooth Preservation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="excel-bx excel-bx-11">
+                            <h3>Guided Biofilm Therapy (GBT)</h3>
+                            <ul>
+                                <li>Touchless Tooth Cleaning</li>
+                                <li>Air-Flow Plaque Removal</li>
+                                <li>Gentle Gum-Friendly Treatment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
-          <div class="flex gap-2 mt-5">
-            <a href="https://maps.app.goo.gl/ggSks1Y7dkWKVy3m8" target="_blank" rel="noopener"
-              class="flex-1 flex items-center justify-center gap-1.5 py-2 border-2 border-primary text-primary rounded-lg font-heading font-semibold text-sm hover:bg-primary hover:text-white transition-all">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              Directions
-            </a>
-            <a href="tel:07557188078"
-              class="flex-1 flex items-center justify-center gap-1.5 py-2 bg-primary text-white rounded-lg font-heading font-semibold text-sm hover:bg-primary-dark transition-colors">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path
-                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-              </svg>
-              Call
-            </a>
-          </div>
         </div>
+    </section>
 
-        <!-- Hyderabad -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-primary hover:shadow-md transition-shadow">
-          <span
-            class="inline-block bg-primary/10 text-primary text-sm font-bold tracking-wide uppercase px-3 py-1 rounded-full mb-4">Kukatpally
-            KPHB</span>
-          <h3 class="font-heading font-bold text-lg text-gray-900 mb-4">Eledent Dental Hospital, Kukatpally</h3>
-          <div class="space-y-3 text-sm text-gray-500">
-            <div class="flex items-start gap-3">
-              <svg class="w-4 h-4 shrink-0 mt-0.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span> 1st Floor, MIG-160, Rd Number 1, opp. Holisitic Hospital, above Lenskart, Kukatpally Housing Board
-                Colony, K P H B Phase 1, Kukatpally, Hyderabad, Telangana 500072</span>
+    <!-- <section class="ext-info" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="ext-bx">
+                        <img src="images/ext-info-1.png" alt="Quick" class="img-fluid">
+                        <p class="ext-bx-p1"> Durable</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="ext-bx">
+                        <img src="images/ext-info-2.png" alt="Quick" class="img-fluid">
+                        <p class="ext-bx-p1">Affordable</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="ext-bx">
+                        <img src="images/ext-info-3.png" alt="Quick" class="img-fluid">
+                        <p class="ext-bx-p1">Natural-Looking</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6">
+                    <div class="ext-bx">
+                        <img src="images/ext-info-4.png" alt="Quick" class="img-fluid">
+                        <p class="ext-bx-p1">Convenient</p>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-4 h-4 shrink-0 mt-0.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <span>Mon – Sat: 9 AM – 9 PM · Sun: 9 AM – 8 PM</span>
-            </div>
-          </div>
-          <div class="flex gap-2 mt-5">
-            <a href="https://maps.app.goo.gl/au396wYXvUvbuD3u9" target="_blank" rel="noopener"
-              class="flex-1 flex items-center justify-center gap-1.5 py-2 border-2 border-primary text-primary rounded-lg font-heading font-semibold text-sm hover:bg-primary hover:text-white transition-all">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              Directions
-            </a>
-            <a href="tel:07557188081"
-              class="flex-1 flex items-center justify-center gap-1.5 py-2 bg-primary text-white rounded-lg font-heading font-semibold text-sm hover:bg-primary-dark transition-colors">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path
-                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-              </svg>
-              Call
-            </a>
-          </div>
         </div>
+    </section> -->
 
-        <!-- Banjara Hills -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-primary hover:shadow-md transition-shadow">
-          <span
-            class="inline-block bg-primary/10 text-primary text-sm font-bold tracking-wide uppercase px-3 py-1 rounded-full mb-4">Banjara
-            Hills</span>
-          <h3 class="font-heading font-bold text-lg text-gray-900 mb-4">Eledent Dental Hospital, Banjara Hills</h3>
-          <div class="space-y-3 text-sm text-gray-500">
-            <div class="flex items-start gap-3">
-              <svg class="w-4 h-4 shrink-0 mt-0.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span> Eledent International, Raichandani Construction, Rd Number 12, Sri Ram Nagar Colony, Banjara Hills,
-                Hyderabad, Telangana 500034
-              </span>
+
+    <section class="dental-imp-cost" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="imp-cost-lft">
+                        <div class="heading">
+                            <h2> #1 Dental Clinic in  Kompally </h2>
+                        </div>
+                        <!-- <div class="limited-offer">
+                            <p>(Kondapur, Kukatpally, Banjara Hills,, Manikonda)</p>
+                        </div> -->
+                        <ul class="clinic-info">
+                            <ul>
+                                <li><strong>Services Offered:</strong><br> Implants, RCT, Aligners, Crowns, Teeth
+                                    Whitening, GBT</li>
+                                <li><strong>Treatment Approach:</strong><br> Painless, Minimal-Trauma, Digital Fit,
+                                    Same-Day Finish</li>
+                                <li><strong>Who’s It For:</strong><br> Kids, Adults & Senior Patients</li>
+                                <li><strong>Key Benefits:</strong><br> Invisible, Natural Appearance, Lasting Results
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="imp-cost-rht cost-slide">
+                        <div class="owl-carousel owl-cost">
+                            <div class="item">
+                                <div class="pricecos-bx">
+                                    <img src="images/implants.png" alt="RCT" class="img-fluid">
+                                    <h4>Dental Implants</h4>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pricecos-bx">
+                                    <img src="images/aligners.png" alt="Braces" class="img-fluid">
+                                    <h4>Braces & Aligners</h4>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pricecos-bx">
+                                    <img src="images/crowns.png" alt="Crowns" class="img-fluid">
+                                    <h4>Dental Crowns</h4>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pricecos-bx">
+                                    <img src="images/extraction.png" alt="Extraction" class="img-fluid">
+                                    <h4>Atraumatic Extraction</h4>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pricecos-bx">
+                                    <img src="images/fillings.png" alt="Fillings" class="img-fluid">
+                                    <h4>Dental Fillings</h4>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pricecos-bx">
+                                    <img src="images/rct-treat-img.jpg" alt="RCT" class="img-fluid">
+                                    <h4>Root Canal Treatment</h4>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pricecos-bx">
+                                    <img src="images/single-dentistry-img.jpg" alt="Single Visit" class="img-fluid">
+                                    <h4>Single Visit Dentistry</h4>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pricecos-bx">
+                                    <img src="images/white-teeth.jpg" alt="Whitening" class="img-fluid">
+                                    <h4>Teeth Whitening</h4>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pricecos-bx">
+                                    <img src="images/conscious.png" alt="Sedation" class="img-fluid">
+                                    <h4>Conscious Sedation</h4>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pricecos-bx">
+                                    <img src="images/microscopicd.png" alt="Microscopic" class="img-fluid">
+                                    <h4>Microscopic Dentistry</h4>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pricecos-bx">
+                                    <img src="images/gbt.png" alt="GBT" class="img-fluid">
+                                    <h4>Guided Biofilm Therapy (GBT)</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-4 h-4 shrink-0 mt-0.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <span>Mon – Sat: 9 AM – 9 PM · Sun: 9 AM – 8 PM</span>
-            </div>
-          </div>
-          <div class="flex gap-2 mt-5">
-            <a href="https://maps.app.goo.gl/owtCXRukoeUkEeoZ7" target="_blank" rel="noopener"
-              class="flex-1 flex items-center justify-center gap-1.5 py-2 border-2 border-primary text-primary rounded-lg font-heading font-semibold text-sm hover:bg-primary hover:text-white transition-all">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              Directions
-            </a>
-            <a href="tel:07557188082"
-              class="flex-1 flex items-center justify-center gap-1.5 py-2 bg-primary text-white rounded-lg font-heading font-semibold text-sm hover:bg-primary-dark transition-colors">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path
-                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-              </svg>
-              Call
-            </a>
-          </div>
         </div>
+    </section>
 
-        <!-- Manikonda -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-primary hover:shadow-md transition-shadow">
-          <span
-            class="inline-block bg-primary/10 text-primary text-sm font-bold tracking-wide uppercase px-3 py-1 rounded-full mb-4">Manikonda</span>
-          <h3 class="font-heading font-bold text-lg text-gray-900 mb-4">Eledent Dental Hospital, Manikonda</h3>
-          <div class="space-y-3 text-sm text-gray-500">
-            <div class="flex items-start gap-3">
-              <svg class="w-4 h-4 shrink-0 mt-0.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span> 1st Floor, Sunshine Regulas building, Manikonda Rd, above KFC, Muppas Panchavati Colony, Hyderabad,
-                Telangana 500089
-              </span>
+
+    <div class="wd-nbn">
+
+        <a href="tel:+91 77997 19994" class="talk-to-cd">
+            <img src="images/call_icon.png" alt="">
+            <div>
+                <p>Need help? Talk to our dentists</p>
+                <span>+91 77997 19994</span>
             </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-4 h-4 shrink-0 mt-0.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <span>Mon – Sat: 9 AM – 9 PM · Sun: 9 AM – 8 PM</span>
-            </div>
-          </div>
-          <div class="flex gap-2 mt-5">
-            <a href="https://maps.app.goo.gl/DxrPtnrAwmC3TmDa9" target="_blank" rel="noopener"
-              class="flex-1 flex items-center justify-center gap-1.5 py-2 border-2 border-primary text-primary rounded-lg font-heading font-semibold text-sm hover:bg-primary hover:text-white transition-all">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              Directions
-            </a>
-            <a href="tel:07557188079"
-              class="flex-1 flex items-center justify-center gap-1.5 py-2 bg-primary text-white rounded-lg font-heading font-semibold text-sm hover:bg-primary-dark transition-colors">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path
-                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-              </svg>
-              Call
-            </a>
-          </div>
-        </div>
 
-        <!-- Kompally -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-primary hover:shadow-md transition-shadow">
-          <span
-            class="inline-block bg-primary/10 text-primary text-sm font-bold tracking-wide uppercase px-3 py-1 rounded-full mb-4">Kompally</span>
-          <h3 class="font-heading font-bold text-lg text-gray-900 mb-4">Eledent Dental Hospital, Kompally</h3>
-          <div class="space-y-3 text-sm text-gray-500">
-            <div class="flex items-start gap-3">
-              <svg class="w-4 h-4 shrink-0 mt-0.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span> GF2H+M9, Ramraju Nagar, Jeedimetla, Hyderabad, Secunderabad, Telangana 500067 </span>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg class="w-4 h-4 shrink-0 mt-0.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <span>Mon – Sat: 9 AM – 9 PM · Sun: 9 AM – 8 PM</span>
-            </div>
-          </div>
-          <div class="flex gap-2 mt-5">
-            <a href="https://maps.app.goo.gl/5Q9C1cGaadpesTRz6" target="_blank" rel="noopener"
-              class="flex-1 flex items-center justify-center gap-1.5 py-2 border-2 border-primary text-primary rounded-lg font-heading font-semibold text-sm hover:bg-primary hover:text-white transition-all">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              Directions
-            </a>
-            <a href="tel:07557188080"
-              class="flex-1 flex items-center justify-center gap-1.5 py-2 bg-primary text-white rounded-lg font-heading font-semibold text-sm hover:bg-primary-dark transition-colors">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path
-                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-              </svg>
-              Call
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ WHY ELEDENT ════════════════════════════════════════════════════ -->
-  <section id="why" class="lg:py-16 py-10 bg-white">
-    <div class="max-w-7xl mx-auto px-5">
-      <div class="mb-10">
-        <span class="text-lg font-bold tracking-widest uppercase text-primary">Why Us</span>
-        <h2 class="font-heading font-bold text-2xl lg:text-3xl text-gray-900 mt-2 tracking-tight leading-tight">Why
-          30,000+ Patients Choose Eledent<br class="hidden md:block"> in Kompally</h2>
-        <div class="w-12 h-1 bg-primary rounded mt-3"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-        <!-- 6 feature cards -->
-        <div class="bg-gray-50 rounded-xl p-4 md:p-6 hover:shadow-md hover:-translate-y-0.5 transition-all">
-          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3 class="font-heading text-lg font-semibold text-gray-900 mb-1.5">Painless treatments</h3>
-          <p class="text-base text-gray-500 leading-snug">Microscopic precision. Conscious sedation available for
-            anxious
-            patients.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-4 md:p-6 hover:shadow-md hover:-translate-y-0.5 transition-all">
-          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="4" width="18" height="18" rx="2" />
-              <line x1="16" y1="2" x2="16" y2="6" />
-              <line x1="8" y1="2" x2="8" y2="6" />
-              <line x1="3" y1="10" x2="21" y2="10" />
-            </svg>
-          </div>
-          <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">Same-day appointments</h3>
-          <p class="text-base text-gray-500 leading-snug">Walk-in or book online. Most consultations seen the same day.
-          </p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-4 md:p-6 hover:shadow-md hover:-translate-y-0.5 transition-all">
-          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-          </div>
-          <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">Single-visit dentistry</h3>
-          <p class="text-base text-gray-500 leading-snug">Root canals, crowns, fillings often completed in one sitting.
-          </p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-4 md:p-6 hover:shadow-md hover:-translate-y-0.5 transition-all">
-          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg>
-          </div>
-          <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">4.9★ rated by 5,000+ patients</h3>
-          <p class="text-base text-gray-500 leading-snug">Hyderabad's most-reviewed dental hospital chain.</p>
-        </div>
-
-
-      </div>
-
-      <!-- Doctor block -->
-
-    </div>
-  </section>
-
-  <!-- ══ TREATMENTS ════════════════════════════════════════════════════ -->
-  <section id="treatments" class="py-4 lg:pt-16 pt-8 bg-orange-50">
-    <div class="max-w-7xl mx-auto px-5">
-      <div class="mb-10 text-center">
-        <span class="text-lg font-bold tracking-widest uppercase text-primary">What We Treat</span>
-        <h2 class="font-heading font-bold text-2xl lg:text-3xl text-gray-900 my-4 tracking-tight">Painless Dental
-          Treatments at Our Kompally Branch</h2>
-
-        <p class="text-gray-500 text-base leading-relaxed text-center mb-4 mx-auto max-w-5xl">
-          From a routine cleaning to a same-day root canal, Eledent's dentists in Kompally use
-          microscopic
-          precision and digital diagnostics for safe, comfortable, long-lasting results. Most procedures are completed
-          in
-          a single visit. Walk in or book online.
-        </p>
-      </div>
-
-
-      <!-- Treatment slider: mobile = 1-up swipe; desktop = stacked list -->
-      <div id="treat-slider-wrap">
-        <div id="treat-track">
-
-          <!-- Slide 01: RCT -->
-          <div class="treat-slide">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-8 border-b border-gray-200">
-              <div class="relative">
-                <img src="rct-treat-img.png" alt="Root Canal Treatment at Eledent Kompally" loading="lazy"
-                  class="w-full h-80 lg:h-[28rem] object-cover rounded-2xl shadow-xl">
-              </div>
-              <div>
-                <span
-                  class="inline-block bg-primary text-white text-xs font-bold tracking-wider uppercase px-3 py-1 rounded mb-4">Root
-                  Canal Treatment</span>
-                <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
-                  What is <span class="text-primary">Root Canal Treatment</span> in Kompally?
-                </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">Saving a damaged or infected tooth doesn't have
-                  to mean weeks of pain or multiple visits.</p>
-                <ul class="space-y-2.5 mb-5">
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Microscopic precision under high
-                    magnification</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Single-visit RCT for most cases
-                  </li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Minimal pain — local anaesthesia +
-                    conscious sedation if needed</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Same-day crown placement available
-                    (CAD/CAM)</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>27,000+ root canals successfully
-                    completed at Eledent</li>
-                </ul>
-                <a href="#booking-form-card"
-                  class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Get RCT Quote <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 02: Extraction -->
-          <div class="treat-slide">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14 border-b border-gray-200">
-              <div class="md:order-2 relative">
-                <img src="wisdom.jpg" alt="Tooth Extraction at Eledent Kompally" loading="lazy"
-                  class="w-full h-80 lg:h-[28rem] object-cover rounded-2xl shadow-xl">
-              </div>
-              <div class="md:order-1">
-                <span
-                  class="inline-block bg-primary text-white text-xs font-bold tracking-wider uppercase px-3 py-1 rounded mb-4">Tooth
-                  Extraction</span>
-                <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
-                  Tooth Extraction &amp; <span class="text-primary">Wisdom Tooth Removal</span> in Kompally
-                </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">Whether it's a damaged tooth or an impacted
-                  wisdom tooth, our dentists use atraumatic extraction techniques that minimize trauma to the bone.
-                  Faster healing, less pain, and bone preservation for any future restoration.</p>
-                <ul class="space-y-2.5 mb-5">
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Atraumatic, bone-preserving
-                    technique</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Suture-free in most cases</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Conscious sedation available for
-                    anxious patients</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Same-day procedure — walk in for
-                    severe pain</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Detailed aftercare instructions and
-                    follow-up</li>
-                </ul>
-                <a href="#booking-form-card"
-                  class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Book Extraction Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 03: Whitening -->
-          <div class="treat-slide">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14 border-b border-gray-200">
-              <div class="relative">
-                <img src="white-teeth-.png" alt="Teeth Whitening at Eledent Kompally" loading="lazy"
-                  class="w-full h-80 lg:h-[28rem] object-cover rounded-2xl shadow-xl">
-              </div>
-              <div>
-                <span
-                  class="inline-block border border-primary text-primary text-xs font-bold tracking-wider uppercase px-3 py-1 rounded mb-4">✦
-                  Cosmetic Dentistry &amp; Smile Enhancement</span>
-                <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
-                  What is <span class="text-primary">Teeth Whitening</span> at Eledent Kompally?
-                </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">Coffee, tea, smoking, or aging can dull your
-                  smile. Eledent's in-office teeth whitening uses sensitivity-free formulas to deliver visible results
-                  in a single visit. Doctor-supervised, safe for enamel, and gentler than over-the-counter strips.</p>
-                <ul class="space-y-2.5 mb-5">
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Visible whitening in a single
-                    60-minute visit</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Sensitivity-free professional
-                    formulas</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Doctor-supervised — no enamel
-                    damage</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Custom take-home trays for
-                    maintenance</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Combine with scaling &amp;
-                    polishing for maximum effect</li>
-                </ul>
-                <a href="#booking-form-card"
-                  class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Brighten Your Smile <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 04: Crowns -->
-          <div class="treat-slide">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14 border-b border-gray-200">
-              <div class="md:order-2 relative">
-                <img src="dental-crowns.jpg" alt="Dental Crowns at Eledent Kompally" loading="lazy"
-                  class="w-full h-80 lg:h-[28rem] object-cover rounded-2xl shadow-xl">
-              </div>
-              <div class="md:order-1">
-                <span
-                  class="inline-block bg-primary text-white text-xs font-bold tracking-wider uppercase px-3 py-1 rounded mb-4">Dental
-                  Crowns</span>
-                <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
-                  <span class="text-primary">Dental Crowns</span> — CAD/CAM, Zirconia &amp; Ceramic in Kompally
-                </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">When a tooth is cracked, severely decayed, or
-                  has had a root canal, a crown restores its strength and appearance. Eledent uses CAD/CAM digital
-                  scanning and same-day milling to deliver precision-fit crowns without temporaries.</p>
-                <ul class="space-y-2.5 mb-5">
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Same-day CEREC crowns — no second
-                    visit needed</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Zirconia and ceramic options
-                    available</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>CAD/CAM digital fit — precision
-                    matched to your bite</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Backed by Eledent's standard
-                    restoration warranty</li>
-                </ul>
-                <a href="#booking-form-card"
-                  class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Book Crown Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 05: Fillings -->
-          <div class="treat-slide">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14 border-b border-gray-200">
-              <div class="relative">
-                <img src="dental-fillings.jpg" alt="Dental Fillings at Eledent Kompally" loading="lazy"
-                  class="w-full h-80 lg:h-[28rem] object-cover rounded-2xl shadow-xl">
-              </div>
-              <div>
-                <span
-                  class="inline-block bg-primary text-white text-xs font-bold tracking-wider uppercase px-3 py-1 rounded mb-4">Dental
-                  Fillings</span>
-                <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
-                  <span class="text-primary">Dental Fillings</span> (Tooth-Colored Restorations) in Kompally
-                </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">Cavities don't wait. At Eledent, we use
-                  tooth-colored composite fillings that match your natural tooth, seal the cavity, and restore chewing
-                  function — usually in a single visit. No metal, no obvious fix.</p>
-                <ul class="space-y-2.5 mb-5">
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Tooth-colored composite — invisible
-                    restoration</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Single-visit completion</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Cavity sealing precision under
-                    magnification</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Safe for sensitive teeth</li>
-                </ul>
-                <a href="#booking-form-card"
-                  class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Book Filling Appointment <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 06: Scaling / GBT -->
-          <div class="treat-slide">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14 border-b border-gray-200">
-              <div class="md:order-2 relative">
-                <img src="teeth-cleaning-scaling.jpg" alt="Teeth Cleaning and Scaling at Eledent Kompally"
-                  loading="lazy" class="w-full h-80 lg:h-[28rem] object-cover rounded-2xl shadow-xl">
-              </div>
-              <div class="md:order-1">
-                <span
-                  class="inline-block bg-primary text-white text-xs font-bold tracking-wider uppercase px-3 py-1 rounded mb-4">Scaling
-                  &amp; Cleaning</span>
-                <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
-                  <span class="text-primary">Teeth Cleaning, Scaling</span> &amp; Guided Biofilm Therapy at Eledent
-                </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">Plaque, tartar, and stains build up regardless
-                  of how well you brush. Routine scaling prevents gum disease. At Eledent, we offer touchless Guided
-                  Biofilm Therapy (GBT) — gentler than traditional scaling and more effective.</p>
-                <ul class="space-y-2.5 mb-5">
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Touchless GBT cleaning — no metal
-                    scraping</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Air-flow plaque removal —
-                    gum-friendly</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Removes coffee, tea, and tobacco
-                    stains</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Combine with whitening for full
-                    smile refresh</li>
-                </ul>
-                <a href="#booking-form-card"
-                  class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Book Cleaning Appointment <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 07: Checkup -->
-          <div class="treat-slide">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14">
-              <div class="relative">
-                <img src="dental-checkups.jpg" alt="Dental Checkups at Eledent Kompally" loading="lazy"
-                  class="w-full h-80 lg:h-[28rem] object-cover rounded-2xl shadow-xl">
-              </div>
-              <div>
-                <span
-                  class="inline-block bg-primary text-white text-xs font-bold tracking-wider uppercase px-3 py-1 rounded mb-4">Dental
-                  Checkup</span>
-                <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
-                  <span class="text-primary">Dental Checkups</span> &amp; Single-Visit Dentistry in Kompally
-                </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">A 20-minute checkup catches problems before they
-                  become procedures. Your first dental consultation at Eledent is free — including a visual exam,
-                  digital X-ray (if needed), and a personalized treatment plan with transparent pricing.</p>
-                <ul class="space-y-2.5 mb-5">
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Free first consultation for new
-                    patients</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Digital X-ray and 3D scan when
-                    clinically needed</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Treatment plan with itemized cost —
-                    no surprises</li>
-                  <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Single-visit completion for most
-                    procedures</li>
-                </ul>
-                <a href="#booking-form-card"
-                  class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Book Free Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /treat-track -->
-      </div><!-- /treat-slider-wrap -->
-
-      <!-- Mobile slider nav: prev · dots · next (hidden on desktop) -->
-      <div class="treat-nav-wrap items-center justify-center gap-4 mt-5 mb-2">
-        <button id="treat-prev" aria-label="Previous treatment"
-          class="w-10 h-10 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
-        </button>
-        <div class="flex items-center gap-2">
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-primary transition-colors" data-i="0"
-            aria-label="Slide 1"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="1"
-            aria-label="Slide 2"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="2"
-            aria-label="Slide 3"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="3"
-            aria-label="Slide 4"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="4"
-            aria-label="Slide 5"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="5"
-            aria-label="Slide 6"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="6"
-            aria-label="Slide 7"></button>
-        </div>
-        <button id="treat-next" aria-label="Next treatment"
-          class="w-10 h-10 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M9 18l6-6-6-6" />
-          </svg>
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-
-
-
-  <!-- ══ REVIEWS ════════════════════════════════════════════════════════ -->
-  <section id="reviews" class="lg:py-16 py-8 bg-white">
-    <div class="max-w-7xl mx-auto px-5">
-      <div class="mb-10">
-        <span class="text-base font-bold tracking-widest uppercase text-primary">Patient Stories</span>
-        <h2 class="font-heading font-bold text-3xl text-gray-900 mt-2 tracking-tight">What Our Patients Say</h2>
-        <div class="w-12 h-1 bg-primary rounded mt-3"></div>
-      </div>
-
-      <!-- Mobile: horizontal snap-scroll slider · Desktop (sm+): 2-col/3-col grid -->
-      <div class="relative -mx-5 sm:mx-0">
-        <div id="reviews-track"
-          class="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 overflow-x-auto sm:overflow-visible px-5 sm:px-0 pb-3 sm:pb-0"
-          style="scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory">
-
-          <div data-review class="bg-gray-50 rounded-xl p-5 border-l-4 border-primary shrink-0 w-[82vw] sm:w-auto"
-            style="scroll-snap-align:start">
-            <div class="text-yellow-400 text-base mb-3">★★★★★</div>
-            <p class="text-sm text-gray-700 italic leading-relaxed mb-4">"One of the best dental experiences I’ve had.
-              The doctor is highly skilled, patient, and very caring towards every patient. He takes time to understand
-              the problem and provides the right treatment with great attention and care. The clinic atmosphere is
-              hygienic and welcoming. Highly recommended."</p>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white font-heading text-xs font-bold shrink-0">
-                MK</div>
-              <div>
-                <div class="text-sm font-semibold text-gray-800">Manoj Kumar</div>
-                <div class="text-xs text-gray-400">Dental Care · Kompally</div>
-              </div>
-            </div>
-          </div>
-
-          <div data-review class="bg-gray-50 rounded-xl p-5 border-l-4 border-primary shrink-0 w-[82vw] sm:w-auto"
-            style="scroll-snap-align:start">
-            <div class="text-yellow-400 text-base mb-3">★★★★★</div>
-            <p class="text-sm text-gray-700 italic leading-relaxed mb-4">"The root canal treatment was smooth and quick.
-              The staff made me feel comfortable. I am very satisfied with the care I received. Thank you, Eledent
-              Hospitals Kompally."</p>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white font-heading text-xs font-bold shrink-0">
-                GG</div>
-              <div>
-                <div class="text-sm font-semibold text-gray-800">Guddi Gangamma</div>
-                <div class="text-xs text-gray-400">Root Canal · Kompally</div>
-              </div>
-            </div>
-          </div>
-
-          <div data-review class="bg-gray-50 rounded-xl p-5 border-l-4 border-primary shrink-0 w-[82vw] sm:w-auto"
-            style="scroll-snap-align:start">
-            <div class="text-yellow-400 text-base mb-3">★★★★★</div>
-            <p class="text-sm text-gray-700 italic leading-relaxed mb-4">"I visited Eledent Dental Hospital Kompally
-              Branch for my root canal and crown treatment, and I am extremely satisfied with the entire experience. Dr.
-              Ashok handled my treatment very professionally and explained each step clearly. The procedure was smooth,
-              painless, and done with great care."</p>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white font-heading text-xs font-bold shrink-0">
-                GS</div>
-              <div>
-                <div class="text-sm font-semibold text-gray-800">G Swathi</div>
-                <div class="text-xs text-gray-400">Root Canal & Crown · Kompally</div>
-              </div>
-            </div>
-          </div>
-
-          <div data-review class="bg-gray-50 rounded-xl p-5 border-l-4 border-primary shrink-0 w-[82vw] sm:w-auto"
-            style="scroll-snap-align:start">
-            <div class="text-yellow-400 text-base mb-3">★★★★★</div>
-            <p class="text-sm text-gray-700 italic leading-relaxed mb-4">"I visited Eledent Dental Hospital, Kompally
-              for dental filling treatment, and I am very much satisfied with the service provided. Dr. Priyanka
-              explained the procedure clearly and completed the treatment smoothly and painlessly."</p>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white font-heading text-xs font-bold shrink-0">
-                SS</div>
-              <div>
-                <div class="text-sm font-semibold text-gray-800">Sandhya Sandy</div>
-                <div class="text-xs text-gray-400">Dental Filling · Kompally</div>
-              </div>
-            </div>
-          </div>
-
-          <div data-review class="bg-gray-50 rounded-xl p-5 border-l-4 border-primary shrink-0 w-[82vw] sm:w-auto"
-            style="scroll-snap-align:start">
-            <div class="text-yellow-400 text-base mb-3">★★★★★</div>
-            <p class="text-sm text-gray-700 italic leading-relaxed mb-4">"A truly outstanding dental experience at
-              Eledent Kompally. I had an exceptional experience here. Had third molar extraction done with Dr. Ashok
-              Kumar. It was painless and very comfortable during and after extraction."</p>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white font-heading text-xs font-bold shrink-0">
-                MM</div>
-              <div>
-                <div class="text-sm font-semibold text-gray-800">Malathi M</div>
-                <div class="text-xs text-gray-400">Third Molar Extraction · Kompally</div>
-              </div>
-            </div>
-          </div>
-
-          <div data-review class="bg-gray-50 rounded-xl p-5 border-l-4 border-primary shrink-0 w-[82vw] sm:w-auto"
-            style="scroll-snap-align:start">
-            <div class="text-yellow-400 text-base mb-3">★★★★★</div>
-            <p class="text-sm text-gray-700 italic leading-relaxed mb-4">"I recently had an excellent experience. Dr.
-              Ashok garu checked my gums and suggested a tooth extraction, explaining everything in a clear and
-              reassuring way. Dr. Sathish handled the extraction with great care and made the whole experience
-              comfortable."</p>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white font-heading text-xs font-bold shrink-0">
-                SS</div>
-              <div>
-                <div class="text-sm font-semibold text-gray-800">Sumithra Singh</div>
-                <div class="text-xs text-gray-400">Tooth Extraction · Kompally</div>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-
-        <!-- Dot indicators — mobile only -->
-        <div id="reviews-dots" class="sm:hidden flex justify-center gap-2 mt-4 px-5"></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══ FAQ ════════════════════════════════════════════════════════════ -->
-  <section id="faq" class="lg:py-16 py-10 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-5">
-      <div class="mb-10">
-        <span class="text-base font-bold tracking-widest uppercase text-primary">FAQ</span>
-        <h2 class="font-heading font-bold text-3xl text-gray-900 mt-2 tracking-tight">Frequently Asked Questions</h2>
-        <div class="w-12 h-1 bg-primary rounded mt-3"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-1 gap-3" id="faq-accordion">
-
-        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
-          <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left gap-3">
-            <span class="font-heading font-semibold text-base text-gray-800 leading-snug">What's the difference between
-              scaling and GBT?</span>
-            <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div class="faq-body">
-            <div class="px-5 pb-4 text-base text-gray-500 leading-relaxed">Traditional scaling uses metal instruments to
-              scrape plaque. Guided Biofilm Therapy (GBT) uses an air-flow technique — no metal contact. GBT is gentler
-              and recommended for patients with gum sensitivity.</div>
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
-          <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left gap-3">
-            <span class="font-heading font-semibold text-base text-gray-800 leading-snug">Is single-visit dentistry
-              safe?</span>
-            <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div class="faq-body">
-            <div class="px-5 pb-4 text-base text-gray-500 leading-relaxed">Yes. Single-visit treatments use the same
-              materials and clinical protocols as multi-visit procedures. In-house CAD/CAM technology and microscopic
-              precision allow completion in one sitting — faster, cheaper, and clinically equivalent.</div>
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
-          <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left gap-3">
-            <span class="font-heading font-semibold text-base text-gray-800 leading-snug">How quickly can I get an
-              appointment?</span>
-            <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div class="faq-body">
-            <div class="px-5 pb-4 text-base text-gray-500 leading-relaxed">Most patients are seen the same day. Walk in
-              during clinic hours for emergencies. For routine appointments, fill the form above or call +91 77997 19994
-              and we'll book you within 24 hours.</div>
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
-          <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left gap-3">
-            <span class="font-heading font-semibold text-base text-gray-800 leading-snug">What is the cost of dental
-              braces in Hyderabad, and what affects it?</span>
-            <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div class="faq-body">
-            <div class="px-5 pb-4 text-base text-gray-500 leading-relaxed">Per-arch fees: Basic Metal ₹35,000 · Basic
-              Ceramic ₹65,000 · Self-Ligating Metal ₹55,000 · Self-Ligating Ceramic ₹85,000 · Damon Metal ₹95,000 ·
-              Damon Ceramic ₹1,05,000. Price varies based on bite complexity, crowding severity, aesthetic preference,
-              and treatment duration.</div>
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
-          <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left gap-3">
-            <span class="font-heading font-semibold text-base text-gray-800 leading-snug">Which braces are best — metal,
-              ceramic, self-ligating, or Damon?</span>
-            <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div class="faq-body">
-            <div class="px-5 pb-4 text-base text-gray-500 leading-relaxed">Metal braces are most affordable and suitable
-              for all cases. Ceramic are tooth-colored for better aesthetics. Self-ligating use a sliding mechanism
-              needing fewer adjustments. Damon braces move teeth faster with less friction. Our orthodontist recommends
-              the best option based on your bite and preference.</div>
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
-          <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left gap-3">
-            <span class="font-heading font-semibold text-base text-gray-800 leading-snug">How long does braces treatment
-              take, and how often are review visits?</span>
-            <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div class="faq-body">
-            <div class="px-5 pb-4 text-base text-gray-500 leading-relaxed">Treatment typically takes 12–24 months
-              depending on crowding or spacing severity. Review visits are scheduled every 4–6 weeks for wire
-              adjustments and progress checks. Most patients visit 8–12 times over the full treatment duration.</div>
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
-          <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left gap-3">
-            <span class="font-heading font-semibold text-base text-gray-800 leading-snug">Are ceramic or self-ligating
-              braces faster or more comfortable than metal?</span>
-            <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div class="faq-body">
-            <div class="px-5 pb-4 text-base text-gray-500 leading-relaxed">Self-ligating braces can reduce treatment
-              time by 20–30% and require fewer adjustment visits. Ceramic braces offer the same clinical effectiveness
-              as metal with better aesthetics. The right choice depends on your specific case — our orthodontist will
-              advise at consultation.</div>
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden" data-faq>
-          <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left gap-3">
-            <span class="font-heading font-semibold text-base text-gray-800 leading-snug">Can I choose clear (aesthetic)
-              braces and still get effective results?</span>
-            <svg class="w-5 h-5 shrink-0 text-gray-400 transition-transform duration-300" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div class="faq-body">
-            <div class="px-5 pb-4 text-base text-gray-500 leading-relaxed">Yes. Ceramic, self-ligating ceramic, and
-              Damon ceramic braces all deliver results clinically equivalent to metal braces. They are popular among
-              working professionals and students who prefer a less visible appliance during treatment.</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ FINAL CTA ══════════════════════════════════════════════════════ -->
-  <section class="lg:py-20 py-10 bg-orange-50 text-center">
-    <div class="max-w-3xl mx-auto px-5">
-      <h2 class="font-heading font-extrabold text-3xl lg:text-3xl text-black mb-4 tracking-tight">Ready to Visit Eledent
-        Or Kompally?</h2>
-      <p class="text-black text-lg mb-8">Same-day appointments. Painless treatments. Transparent pricing.</p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <button onclick="document.getElementById('booking-form-card').scrollIntoView({behavior:'smooth'})"
-          class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-8 py-4 rounded-xl text-base transition-all hover:-translate-y-0.5">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <rect x="3" y="4" width="18" height="18" rx="2" />
-            <line x1="16" y1="2" x2="16" y2="6" />
-            <line x1="8" y1="2" x2="8" y2="6" />
-            <line x1="3" y1="10" x2="21" y2="10" />
-          </svg>
-          Book Online — Get 10% Off
-        </button>
-        <a href="tel:075 5718 8080"
-          class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-black text-black font-heading font-semibold px-8 py-4 rounded-xl text-base transition-all">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path
-              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-          </svg>
-          Call 075 5718 8080
         </a>
-      </div>
     </div>
-  </section>
 
-  <!-- ══ FOOTER ══════════════════════════════════════════════════════════ -->
-  <footer class="bg-gradient-to-br from-orange-400 via-orange-600 to-primary text-white lg:pt-12 pt-8 pb-6">
-    <div class="max-w-7xl mx-auto px-5">
-      <div class="grid grid-cols-1 md:grid-cols-1 gap-12 pb-8 border-b border-white/80 mb-8">
+    <section class="section-70 indabout">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 col-md-7">
+                    <div class="image1" data-aos="fade-right" data-aos-duration="1000">
+                        <a class="practoratings" href="https://maps.app.goo.gl/i3pruv34yKCXJtiNA" target="_blank">
+                            <ul>
+                                <li>
+                                    <img src="https://inwhitedental.in/wp-content/uploads/2024/11/google.png" alt="">
+                                </li>
+                                <li>
+                                    Google Ratings
+                                    <span>
+                                        <strong>
+                                            4.9
+                                        </strong>
+                                        <i class="fa fa-star">
+                                        </i>
+                                        <i class="fa fa-star">
+                                        </i>
+                                        <i class="fa fa-star">
+                                        </i>
+                                        <i class="fa fa-star">
+                                        </i>
+                                        <i class="fa fa-star">
+                                        </i>
+                                    </span>
+                                </li>
+                            </ul>
+                        </a>
+                        <img src="images/dr-ashok-image.png" alt="Doctor" class="img-fluid">
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-          <div>
-            <h4 class="font-heading font-bold text-white text-lg mb-1.5">Kondapur</h4>
-            <p class="text-white text-sm leading-relaxed mb-1.5 line-clamp-4"> 3rd floor, K1 Primo Building, Bus Stop,
-              above Ratnadeep Super Market, Hanuman Nagar, Kondapur, Hyderabad, Telangana 500084
-            </p>
-            <a href="tel:07557188078" class="text-white/90 text-sm hover:text-white block mb-1">075 5718
-              8078</a>
-            <a href="https://maps.app.goo.gl/ad8UwqCV9JXWM7J38" target="_blank" rel="noopener"
-              class="text-white/80 text-sm hover:text-white underline">View
-              Location</a>
-          </div>
-          <div>
-            <h4 class="font-heading font-bold text-white text-lg mb-1.5">Kukatpally KPHB</h4>
-            <p class="text-sm leading-relaxed mb-1.5 line-clamp-5"> 1st Floor, MIG-160, Rd Number 1, opp. Holisitic
-              Hospital, above Lenskart, Kukatpally Housing Board Colony, K P H B Phase 1, Kukatpally, Hyderabad,
-              Telangana 500072 </p>
-            <a href="tel:07557188081" class="text-white/80 text-sm hover:text-white block mb-1">075 5718
-              8081</a>
-            <a href="https://maps.app.goo.gl/UthgyMuwCHMbuA5L7" target="_blank" rel="noopener"
-              class="text-white text-sm hover:text-white underline">View
-              Location</a>
-          </div>
-          <div>
-            <h4 class="font-heading font-bold text-white text-lg mb-1.5">Banjara Hills</h4>
-            <p class="text-sm leading-relaxed mb-1.5 line-clamp-5"> Eledent International, Raichandani Construction, Rd
-              Number 12, Sri Ram Nagar Colony, Banjara Hills, Hyderabad, Telangana 500034
-            </p>
-            <a href="tel:07557188082" class="text-white/80 text-sm hover:text-white block mb-1">075 5718
-              8082</a>
-            <a href="https://maps.app.goo.gl/PYssQqFKMvH5mnLe9" target="_blank" rel="noopener"
-              class="text-white text-sm hover:text-white underline">View
-              Location</a>
-          </div>
-          <div>
-            <h4 class="font-heading font-bold text-white text-lg mb-1.5">Manikonda</h4>
-            <p class="text-sm leading-relaxed mb-1.5 line-clamp-5">1st Floor, Sunshine Regulas building, Manikonda Rd,
-              above KFC, Muppas Panchavati Colony, Hyderabad, Telangana 500089
-            </p>
-            <a href="tel:07557188079" class="text-white/80 text-sm hover:text-white block mb-1">075 5718
-              8079</a>
-            <a href="https://maps.app.goo.gl/SWhjt5rDWA8ViMt86" target="_blank" rel="noopener"
-              class="text-white text-sm hover:text-white underline">View
-              Location</a>
-          </div>
-          <div>
-            <h4 class="font-heading font-bold text-white text-lg mb-1.5">Kompally</h4>
-            <p class="text-sm leading-relaxed mb-1.5 line-clamp-5"> GF2H+M9, Ramraju Nagar, Jeedimetla, Hyderabad,
-              Secunderabad, Telangana 500067 </p>
-            <a href="tel:07557188080" class="text-white/80 text-sm hover:text-white block mb-1">075 5718
-              8080</a>
-            <a href="https://maps.app.goo.gl/nVKQ3zWe4J5EqsF1A" target="_blank" rel="noopener"
-              class="text-white text-sm hover:text-white underline">View
-              Location</a>
-          </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="heading">
+                        <h2>
+                            Kompally's Most Advanced and Premium Dentistry
+                        </h2>
+                    </div>
+
+                    <p>
+                        Rated 4.8 stars on Google, our dentists at Eledent Multispeciality Dental Care deliver advanced,
+                        painless dental treatments using international-standard precision and care. From implants to
+                        root canals, every procedure is performed under microscopic guidance and 3D digital accuracy for
+                        safe and long-lasting results. <br><br>
+                        We use American implant systems, guided biofilm therapy, and advanced sterilization protocols to
+                        ensure complete comfort and safety at every visit. With suture-free implants, conscious
+                        sedation, and single-visit dentistry, Eledent redefines what truly pain-free dentistry means.
+                        Each treatment is personalized, transparent, and backed by our commitment to clinical
+                        excellence. <br><br>
+                        Your search for "dental hospital near me" ends here—visit us or reach out for bookings.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
-        <div class="flex gap-5">
-          <a href="https://eledenthospitals.com/privacy-policy" target="_blank" rel="noopener"
-            class="text-base text-white/90 hover:text-white transition-colors">Privacy Policy</a>
-          <a href="https://eledenthospitals.com/terms-and-conditions" target="_blank" rel="noopener"
-            class="text-base text-white/90 hover:text-white transition-colors">Terms</a>
-          <a href="https://eledenthospitals.com" target="_blank" rel="noopener"
-            class="text-base text-white/90 hover:text-white transition-colors">Main Site</a>
+    </section>
+
+    <section class="why-choose-area">
+        <div class="container">
+            <div class="heading text-center" data-aos="fade-up" data-aos-duration="1000">
+                <h2> Rated 4.8★ <br> Precision Comfort Care </h2>
+
+                <hr style="margin: 18px auto 20px;">
+
+                <p> Single-Sitting Dentistry <br> Experience Painless, Advanced & Precision-Driven <br> Dental Clinic
+                    Near You. </p>
+            </div>
+            <div class="row why-choose-row align-items-center">
+                <div class="col-lg-6">
+                    <div class="row justify-content-center">
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="/dental-generic/images/why-ic-bx-img-1.png" alt="" class="img-fluid">
+                                <p>4.8★<br>Google Rating</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="/dental-generic/images/why-ic-bx-img-2.png" alt="" class="img-fluid">
+                                <p>30K+<br>Dental Cases Treated</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-3.png" alt="" class="img-fluid">
+                                <p>27K+<br>Root Canals Done</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-4.png" alt="" class="img-fluid">
+                                <p>22K+<br>Dental Implants Done</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-5.png" alt="" class="img-fluid">
+                                <p>5K+<br>Digital Smile Designing Done</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-6.png" alt="" class="img-fluid">
+                                <p>9.5K+<br>Braces Delivered</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-7.png" alt="" class="img-fluid">
+                                <p>Single-Visit<br>Dentistry</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-8.png" alt="" class="img-fluid">
+                                <p>Touchless<br>Scaling</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="why-ic-bx">
+                                <img src="images/why-ic-bx-img-9.png" alt="" class="img-fluid">
+                                <p>Microscopic &<br>Guided-Precision</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-lg-6">
+                    <div class="why-rgt-img" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="images/Dental Service.jpg" alt="why choose" class="img-fluid">
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="text-base text-white/90">&copy; 2026 Eledent Hospitals. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- ══ MOBILE BOTTOM BAR ══════════════════════════════════════════════ -->
-  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 h-14 grid grid-cols-3 shadow-[0_-2px_16px_rgba(0,0,0,.18)]">
-
-    <a href="tel:07557188080" aria-label="Call Now"
-      class="flex flex-col items-center justify-center gap-0.5 bg-[#e14b4b] text-white font-heading font-bold text-xs transition hover:bg-[#cf3f3f]">
-      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path
-          d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-      </svg>
-      Call
-    </a>
-
-    <a href="https://api.whatsapp.com/send/?phone=917799739994&text=" target="_blank" rel="noopener"
-      class="flex flex-col items-center justify-center gap-0.5 bg-[#25D366] text-white font-heading font-bold text-xs">
-      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-        <path
-          d="M20.52 3.48A11.94 11.94 0 0012.01 0C5.38 0 .02 5.36.02 12c0 2.12.55 4.19 1.6 6.02L0 24l6.17-1.62A11.96 11.96 0 0012.01 24c6.63 0 11.99-5.36 11.99-12 0-3.2-1.25-6.21-3.48-8.52zM12 21.82c-1.81 0-3.57-.49-5.1-1.41l-.36-.21-3.66.96.98-3.57-.23-.37A9.8 9.8 0 012.2 12C2.2 6.6 6.6 2.2 12 2.2c2.61 0 5.06 1.02 6.91 2.86A9.72 9.72 0 0121.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.45-7.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.46-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.6.14-.14.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.2-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.52s1.08 2.93 1.23 3.13c.15.2 2.13 3.26 5.17 4.57.72.31 1.28.5 1.72.64.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z" />
-      </svg>
-      WhatsApp
-    </a>
-    <button onclick="document.getElementById('booking-form-card').scrollIntoView({behavior:'smooth'})"
-      class="flex flex-col items-center justify-center gap-0.5 bg-primary text-white font-heading font-bold text-xs">
-      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
-        <rect x="3" y="4" width="18" height="18" rx="2" />
-        <line x1="16" y1="2" x2="16" y2="6" />
-        <line x1="8" y1="2" x2="8" y2="6" />
-        <line x1="3" y1="10" x2="21" y2="10" />
-        <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" stroke-linecap="round" />
-      </svg>
-      Book Now
-    </button>
-  </div>
-  <div class="md:hidden h-14"></div>
-
-  <!-- ══ DESKTOP FLOATING SIDEBAR ═════════════════════════════════════ -->
-  <div class="fixed right-0 top-1/2 z-50 hidden -translate-y-1/2 flex-col items-end gap-0 sm:block lg:block">
-    <a href="tel:07557188080" aria-label="Call Now"
-      class="group mr-0 flex h-[56px] w-[52px] items-center justify-center rounded-tl-[14px] bg-[#e14b4b] shadow-lg transition hover:bg-[#cf3f3f]">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-white"
-        aria-hidden="true">
-        <path
-          d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
-        </path>
-      </svg>
-    </a>
-    <a href="https://api.whatsapp.com/send/?phone=917799739994&text=" target="_blank" rel="noopener noreferrer"
-      aria-label="WhatsApp"
-      class="group mr-0 flex h-[56px] w-[52px] items-center justify-center bg-[#25D366] shadow-lg transition hover:bg-[#1ebe5d]">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"
-        class="text-white">
-        <path
-          d="M20.52 3.48A11.94 11.94 0 0012.01 0C5.38 0 .02 5.36.02 12c0 2.12.55 4.19 1.6 6.02L0 24l6.17-1.62A11.96 11.96 0 0012.01 24c6.63 0 11.99-5.36 11.99-12 0-3.2-1.25-6.21-3.48-8.52zM12 21.82c-1.81 0-3.57-.49-5.1-1.41l-.36-.21-3.66.96.98-3.57-.23-.37A9.8 9.8 0 012.2 12C2.2 6.6 6.6 2.2 12 2.2c2.61 0 5.06 1.02 6.91 2.86A9.72 9.72 0 0121.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.45-7.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.46-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.6.14-.14.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.2-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.52s1.08 2.93 1.23 3.13c.15.2 2.13 3.26 5.17 4.57.72.31 1.28.5 1.72.64.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z" />
-      </svg>
-    </a>
-    <button type="button" onclick="document.getElementById('booking-form-card').scrollIntoView({behavior:'smooth'})"
-      aria-label="Book Appointment"
-      class="group mr-0 flex h-[56px] w-[52px] items-center justify-center rounded-bl-[14px] bg-[#E87733] shadow-lg transition hover:bg-[#cf6428]">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="text-white"
-        aria-hidden="true">
-        <path d="M8 2v4" />
-        <path d="M16 2v4" />
-        <rect width="18" height="18" x="3" y="4" rx="2" />
-        <path d="M3 10h18" />
-        <path d="M8 14h.01" />
-        <path d="M12 14h.01" />
-        <path d="M16 14h.01" />
-        <path d="M8 18h.01" />
-        <path d="M12 18h.01" />
-        <path d="M16 18h.01" />
-      </svg>
-    </button>
-  </div>
-
-  <!-- ══ SCROLL FORM MODAL ════════════════════════════════════════════ -->
-  <div id="form-modal" style="display:none" class="fixed inset-0 z-[400] flex items-center justify-center p-4">
-    <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeFormModal()"></div>
-    <!-- Card -->
-    <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md max-h-[92vh] overflow-y-auto">
-      <!-- Close button -->
-      <button onclick="closeFormModal()"
-        class="absolute top-3 right-3 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors shadow">
-        <svg class="w-4 h-4 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <path d="M18 6L6 18M6 6l12 12" />
-        </svg>
-      </button>
-      <!-- Form content -->
-      <div class="p-5 md:p-7 pt-6">
-        <h2 class="font-heading font-bold text-center text-2xl text-primary mb-1">Book an Appointment</h2>
-        <p class="text-center text-sm text-gray-500 mb-1">Fill the form</p>
-        <p class="discount-info text-center mb-4">Get <span>10% Discount</span> on all Dental Treatments</p>
-        <div class="ghl-iframe-wrap">
-          <iframe src="https://api.leadconnectorhq.com/widget/form/ZzVS2MuoJXiHa2Adxh9Q"
-            id="inline-ZzVS2MuoJXiHa2Adxh9Q" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow"
-            data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
-            data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Generic Google Ads LP"
-            data-height="442" data-layout-iframe-id="inline-ZzVS2MuoJXiHa2Adxh9Q" data-form-id="ZzVS2MuoJXiHa2Adxh9Q"
-            title="Generic Google Ads LP">
-          </iframe>
-        </div>
-        <p class="text-center mt-3 text-xs text-gray-400">
-          Or call us now: <a href="tel:+917799719994" class="text-primary font-semibold underline">+91 77997 19994</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ CALL LOCATION MODAL ══════════════════════════════════════════ -->
-  <div id="call-modal" style="display:none"
-    class="fixed inset-0 z-[300] flex items-end sm:items-center justify-center p-0 sm:p-4">
-    <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeCallModal()"></div>
-    <!-- Card -->
-    <div class="relative bg-white w-full sm:max-w-sm rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden">
-      <!-- Header -->
-      <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-        <div>
-          <p class="font-heading font-bold text-base text-gray-900">Choose a Branch to Call</p>
-          <p class="text-xs text-gray-500 mt-0.5">Tap any location to call directly</p>
-        </div>
-        <button onclick="closeCallModal()"
-          class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-          <svg class="w-4 h-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M18 6L6 18M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <!-- Location list -->
-      <div class="divide-y divide-gray-100">
-
-        <a href="tel:07557188079"
-          class="flex items-center justify-between px-5 py-3.5 hover:bg-orange-50 transition-colors group">
-          <div>
-            <p class="font-heading font-semibold text-sm text-gray-900 group-hover:text-primary">Manikonda</p>
-            <p class="text-xs text-gray-500">075 5718 8079</p>
-          </div>
-          <div class="flex items-center gap-2 bg-[#e14b4b] text-white text-xs font-semibold px-3 py-1.5 rounded-lg">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path
-                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-            </svg>
-            Call
-          </div>
-        </a>
-
-        <a href="tel:07557188082"
-          class="flex items-center justify-between px-5 py-3.5 hover:bg-orange-50 transition-colors group">
-          <div>
-            <p class="font-heading font-semibold text-sm text-gray-900 group-hover:text-primary">Banjara Hills</p>
-            <p class="text-xs text-gray-500">075 5718 8082</p>
-          </div>
-          <div class="flex items-center gap-2 bg-[#e14b4b] text-white text-xs font-semibold px-3 py-1.5 rounded-lg">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path
-                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-            </svg>
-            Call
-          </div>
-        </a>
-      </div>
-      <!-- Safe-area spacer for mobile home indicator -->
-      <div class="h-safe-bottom sm:hidden" style="height: env(safe-area-inset-bottom, 12px)"></div>
-    </div>
-  </div>
-
-  <!-- ══ JAVASCRIPT ═════════════════════════════════════════════════════ -->
-  <script>
-    // ── Form modal ────────────────────────────────────────────────────
-    function openFormModal() {
-      var m = document.getElementById('form-modal');
-      m.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-    function closeFormModal() {
-      var m = document.getElementById('form-modal');
-      m.style.display = 'none';
-      document.body.style.overflow = '';
-    }
-
-    // Trigger once after 40% page scroll
-    (function () {
-      var triggered = false;
-      function onScrollForm() {
-        if (triggered) return;
-        var scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        if (scrolled >= 0.40) {
-          triggered = true;
-          openFormModal();
-          window.removeEventListener('scroll', onScrollForm);
+    <style>
+        .docs-owl .owl-nav {
+            text-align: center;
+            margin-top: 30px;
         }
-      }
-      window.addEventListener('scroll', onScrollForm, { passive: true });
-    })();
 
-    // ── Call location modal ────────────────────────────────────────────
-    function openCallModal() {
-      var m = document.getElementById('call-modal');
-      m.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-    function closeCallModal() {
-      var m = document.getElementById('call-modal');
-      m.style.display = 'none';
-      document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') { closeFormModal(); closeCallModal(); }
-    });
-
-    // ── Sticky phone strip ─────────────────────────────────────────────
-    (function () {
-      var strip = document.getElementById('phone-strip-wrapper');
-      var spacer = document.getElementById('strip-spacer');
-      var hero = document.getElementById('hero');
-      if (!strip || !spacer || !hero) return;
-
-      var HEADER_H = 56; // matches h-14
-      var stripH = strip.offsetHeight;
-
-      function onScroll() {
-        var heroBottom = hero.getBoundingClientRect().bottom;
-        if (heroBottom <= HEADER_H) {
-          if (!strip.classList.contains('is-sticky')) {
-            strip.classList.add('is-sticky');
-            /* strip was display:none in normal flow (0 height) so no spacer needed */
-          }
-        } else {
-          if (strip.classList.contains('is-sticky')) {
-            strip.classList.remove('is-sticky');
-          }
+        .docs-owl .owl-nav button.owl-next,
+        .docs-owl .owl-nav button.owl-prev {
+            width: 35px;
+            height: 35px;
+            border: solid 1px #000;
+            border-radius: 100px;
+            margin-left: 10px;
         }
-      }
+    </style>
 
-      window.addEventListener('scroll', onScroll, { passive: true });
-    })();
+    <section class="clinic-near-you">
+        <div class="container">
+            <div class="row align-items-center">
 
-    // ── FAQ accordion ──────────────────────────────────────────────────
-    document.querySelectorAll('[data-faq]').forEach(function (item) {
-      var btn = item.querySelector('.faq-trigger');
-      var body = item.querySelector('.faq-body');
-      var chevron = btn.querySelector('svg');
-      btn.addEventListener('click', function () {
-        var open = item.classList.toggle('open');
-        body.style.maxHeight = open ? body.scrollHeight + 'px' : '0';
-        chevron.classList.toggle('chevron-open', open);
-        btn.setAttribute('aria-expanded', String(open));
-      });
-    });
+                <!-- Left Column: Clinic Details -->
+                <div class="col-lg-6">
+                    <div class="find-dental-near-bx">
 
-    // ── Reviews slider dots (mobile only) ─────────────────────────────
-    (function () {
-      var track = document.getElementById('reviews-track');
-      var dotsWrap = document.getElementById('reviews-dots');
-      if (!track || !dotsWrap) return;
-      var cards = track.querySelectorAll('[data-review]');
-      var total = cards.length;
-      var dots = [];
-      for (var i = 0; i < total; i++) {
-        var d = document.createElement('button');
-        d.className = i === 0 ? 'w-5 h-2 rounded-full bg-primary transition-all' : 'w-2 h-2 rounded-full bg-gray-300 transition-all';
-        d.setAttribute('aria-label', 'Review ' + (i + 1));
-        (function (idx) {
-          d.addEventListener('click', function () {
-            cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-          });
-        })(i);
-        dotsWrap.appendChild(d);
-        dots.push(d);
-      }
-      var ticking = false;
-      track.addEventListener('scroll', function () {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(function () {
-          var gap = 16;
-          var cardW = cards[0] ? cards[0].offsetWidth + gap : 1;
-          var active = Math.min(total - 1, Math.round(track.scrollLeft / cardW));
-          dots.forEach(function (dot, i) {
-            dot.className = i === active
-              ? 'w-5 h-2 rounded-full bg-primary transition-all'
-              : 'w-2 h-2 rounded-full bg-gray-300 transition-all';
-          });
-          ticking = false;
+                        <div class="heading">
+                            <h2>Book Your Consultation at Eledent International <br>Digital Dentistry!</h2>
+                            <hr>
+                        </div>
+
+                        <!-- 🔽 Location Dropdown (added, no design change) -->
+                        <div class="mb-3 location-select ">
+                            <label for="locationSelect" class="form-label text-white">Choose clinic location</label>
+                            <select id="locationSelect" class="form-select" aria-label="Select clinic location">
+                                <option value="lok1" selected>Kondapur</option>
+                                <option value="lok2">Kukatpally</option>
+                                <option value="lok3">Banjara Hills</option>
+                                <option value="lok4">Manikonda, Hyderabad</option>
+                                <option value="lok5"> Kompally, Hyderabad </option>
+                            </select>
+                        </div>
+
+                        <div class="clinic-address mt-4">
+                            <div class="info-add mb-3">
+                                <a id="emailLink" href="mailto:contact@eledenthospitals.com">
+                                    <p><i class="fas fa-envelope me-2"></i> contact@eledenthospitals.com</p>
+                                </a>
+                            </div>
+
+                            <div class="info-add mb-3">
+                                <a id="phoneLink" href="tel:+91 77997 19994">
+                                    <p><i class="fa-solid fa-phone me-2"></i> +91 77997 19994</p>
+                                </a>
+                            </div>
+
+                            <div class="info-add">
+                                <p id="addressText">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    Kondapur, Kukatpally, Banjara Hills & <br>Manikonda, Hyderabad
+                                </p>
+                            </div>
+
+                            <div class="cnt-us-btn">
+                                <a href="#book-appointment">Contact Us</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Column: Map (DESIGN UNCHANGED) -->
+                <div class="col-lg-6">
+                    <div class="loc-map" id="Inwhite_map">
+                        <iframe id="mapFrame"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2826547225085!2d78.3607!3d17.4507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93b2e879b8a9%3A0x69c92f2f8ecbc30f!2sEledent%20Dental%20Hospital!5e0!3m2!1sen!2sin!4v1730873999024!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section class="section-70 indtestimonials mt-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <h2>Our Patient Says</h2>
+                    <p>
+                        Discover what our patients have to say about their exceptional experiences
+                        at Dr. Ruchi’s Multispeciality Dental Clinic
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="ind-testi-owl owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="indtestimonials1">
+                                <p class="add-read-more show-less-content">
+                                    “I highly recommend this dental clinic for anyone seeking expert dental care and
+                                    transformative results. I recently underwent a smile transformation treatment, and I
+                                    am extremely satisfied with the outcome and feeling super confident with my new
+                                    smile.”
+                                    <span class="read-more"></span>
+                                    <span class="read-less"></span>
+                                </p>
+
+                                <h5>
+                                    Pavithra Astra
+
+                                    <span>
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                            class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="indtestimonials1">
+                                <p class="add-read-more show-less-content">
+                                    “Hands down one of the best dental clinics out there!! I was extremely traumatized
+                                    by my previous dental experience to a point where i endured the pain. When it got
+                                    overwhelming i came across Dr. Ruchi’s dental clinic. She empathised with my
+                                    situation and made this whole journey a pleasant experience. I got my wisdom tooth
+                                    pulled, did my root canal and fillings.”
+                                    <span class="read-more"></span>
+                                    <span class="read-less"></span>
+                                </p>
+
+                                <h5>
+                                    Jothika
+                                    <span>
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                            class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="indtestimonials1">
+                                <p class="add-read-more show-less-content">
+                                    “I had an outstanding experience with Dr. Ruchi, who is truly an excellent dentist.
+                                    Her professionalism, expertise, and gentle approach made my dental visit incredibly
+                                    comfortable. She takes the time to explain every procedure, ensuring that her
+                                    patients feel informed and at ease. “
+                                    <span class="read-more"></span>
+                                    <span class="read-less"></span>
+                                </p>
+
+                                <h5>
+                                    Sriridhanya Balakrishnan
+                                    <span>
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                            class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="indtestimonials1">
+                                <p class="add-read-more show-less-content">
+                                    “I had an incredible experience at Dr. Ruchi’s Dental Care with Dr. Ruchi and Dr.
+                                    Anu. Their expertise in Invisalign treatment and smile makeover is truly
+                                    commendable. From the very first consultation, they explained every step in detail,
+                                    ensuring I was comfortable and well-informed.”
+                                    <span class="read-more"></span>
+                                    <span class="read-less"></span>
+                                </p>
+
+                                <h5>
+                                    Kiruthika Nagaraj
+                                    <span>
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                            class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <div class="wd-nbn">
+
+        <a href="tel:+91 77997 19994" class="talk-to-cd">
+            <img src="images/call_icon.png" alt="">
+            <div>
+                <p>Need help? Talk to our dentists</p>
+                <span>+91 77997 19994</span>
+            </div>
+
+        </a>
+    </div>
+
+
+
+    <section class="gogle-review">
+        <div class="container">
+            <div class="heading text-center">
+                <div class="image1 gogle-review-img" data-aos="fade-right" data-aos-duration="1000">
+                    <a class="practoratings"
+                        href="https://www.google.com/maps/place/Smile+Couture+Dental+Clinic,+Andheri+West/data=!4m7!3m6!1s0x3be7b7002fc1af7f:0x246eb06ecd2f9033!8m2!3d19.1468056!4d72.8305242!16s%2Fg%2F11trx6nyjz!19sChIJf6_BLwC35zsRM5AvzW6wbiQ?authuser=0&amp;hl=en&amp;rclk=1"
+                        target="_blank">
+                        <ul>
+                            <li>
+                                <img src="https://inwhitedental.in/wp-content/uploads/2024/11/google.png" alt="">
+                            </li>
+                            <li>
+                                Google Ratings
+                                <span>
+                                    <strong>
+                                        4.9
+                                    </strong>
+                                    <i class="fa fa-star">
+                                    </i>
+                                    <i class="fa fa-star">
+                                    </i>
+                                    <i class="fa fa-star">
+                                    </i>
+                                    <i class="fa fa-star">
+                                    </i>
+                                    <i class="fa fa-star">
+                                    </i>
+                                </span>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <h2 data-aos="fade-up" data-aos-duration="1000">You Can hear about us from our <br>Happy Patient's</h2>
+            </div>
+            <div class="row">
+                <div class="owl-carousel gogle-review-owl">
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-1.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-2.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-3.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-4.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-5.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="gogle-review-inr">
+                            <img src="images/google-review-6.jpeg" alt="Review" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="faq-about-plan-area faq-inner aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="blog-faq">
+                        <div class="heading text-center">
+                            <h2>FAQ’S</h2>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                            <!-- Question 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        1. Can I Get My Dental Treatment Done in a Single Visit in Hyderabad?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes, at <strong>Eledent</strong>, many dental procedures can be completed in a
+                                        single visit.
+                                        Our clinics in Kondapur, Kukatpally, Banjara Hills, Kompally, and Manikonda  use digital
+                                        scanning,
+                                        CAD-CAM technology, and same-day chairside systems to complete treatments like
+                                        root canals,
+                                        crowns, and fillings quickly and accurately. The approach saves time while
+                                        ensuring comfort
+                                        and precision, so you can walk out smiling the same day.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 2 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        2. Are Dental Treatments at Eledent Really Painless?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes. <strong>Eledent</strong> uses microscopic dentistry, conscious sedation,
+                                        and computer-guided anesthesia to make each procedure safe and virtually
+                                        pain-free.
+                                        Our dentists are trained to use gentle techniques that minimize anxiety, making
+                                        your experience
+                                        calm, comfortable, and stress-free from start to finish.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 3 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        3. What Makes Eledent Different from Other Dental Clinics in Hyderabad?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Eledent</strong> combines American implant systems, microscopic
+                                        precision,
+                                        and guided biofilm therapy (GBT) in a fully digital setup. Every treatment is
+                                        personalized,
+                                        transparent, and affordable, handled by experienced MDS dentists using
+                                        world-class technology.
+                                        With same-day treatments, suture-free implants, and pain-free care, Eledent sets
+                                        new standards
+                                        in modern dentistry.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 4 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        4. What Is Guided Biofilm Therapy (GBT)?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Guided Biofilm Therapy is an advanced, touchless tooth-cleaning technique that
+                                        removes plaque
+                                        and stains using controlled air-flow and gentle water pressure. It’s safer for
+                                        enamel and gums,
+                                        making it ideal for sensitive patients or those seeking a deep clean without
+                                        discomfort.
+                                        <strong>Eledent</strong> uses GBT for preventive cleaning, gum health, and
+                                        long-term oral hygiene.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 5 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFive" aria-expanded="false"
+                                        aria-controls="collapseFive">
+                                        5. What Should I Expect During My First Dental Visit at Eledent?
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Your first visit includes a complete oral check-up, digital X-rays, and a
+                                        personalized treatment plan
+                                        prepared by your dentist. You’ll understand every step before treatment begins.
+                                        If suitable, some
+                                        procedures can even be completed during the same visit, thanks to
+                                        <strong>Eledent’s</strong> digital
+                                        workflow and single-visit technology.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer-area" style=" background-color: #f37326; ">
+        <div class="container-fluid">
+            <div class="bottom-footer">
+                <div class="inner-foot-botm">
+                    <div class="foot-prcy">
+                        <p>Copyright ©
+                            <?php echo date('Y'); ?> Dental. All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Modal popup -->
+
+
+    <!-- ========== Sticy Btn ========== -->
+
+    <div class="stiky-btn-inr">
+        <div class="sticky-btn sticky-call-btn" style="opacity: 1; visibility: visible;">
+            <a href="tel:+91 77997 19994">
+                <i class="fa-solid fa-phone-volume"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ========== Sticy Btn End ========== -->
+
+
+    <!-- Popup HTML -->
+    <div id="book-popup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <h2>Book an Appointment</h2>
+            <p>Fill the form </p>
+
+            <p class="discount-info"> Get <span> 10% Discount </span> on all Dental Treatments </p>
+            <div class="iframe-wrapper">
+                <iframe src="https://api.leadconnectorhq.com/widget/form/Uhab57NWt1eIEcZmGjda"
+                    style="width:100%;height:100%;border:none;border-radius:3px" id="inline-Uhab57NWt1eIEcZmGjda"
+                    data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+                    data-activation-type="alwaysActivated" data-activation-value=""
+                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                    data-form-name="Kondapur-Generic Google Ads LP" data-height="580"
+                    data-layout-iframe-id="inline-Uhab57NWt1eIEcZmGjda" data-form-id="Uhab57NWt1eIEcZmGjda"
+                    title="Kondapur-Generic Google Ads LP">
+                </iframe>
+                <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup CSS -->
+    <style>
+        /* Overlay background */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Popup box */
+        .popup-content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px 20px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            /* never exceed screen height */
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: popIn 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        div#book-popup h2 {
+            color: #f37326;
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        div#book-popup p {
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+
+        /* Scroll area inside popup */
+        .iframe-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            max-height: 90vh;
+            /* control scroll inside popup */
+            border-radius: 6px;
+        }
+
+        /* Hide default scroll bar */
+        .iframe-wrapper::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .iframe-wrapper::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+
+        /* Iframe fills wrapper */
+        .iframe-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 6px;
+        }
+
+        /* Close button */
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 26px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        /* Animation */
+        @keyframes popIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive adjustment */
+        @media (max-width: 600px) {
+            .popup-content {
+                padding: 15px;
+            }
+
+            .iframe-wrapper {
+                max-height: 65vh;
+            }
+        }
+    </style>
+
+    <!-- Popup jQuery Logic -->
+    <script>
+        $(document).ready(function () {
+            let shown = false;
+
+            $(window).on('scroll', function () {
+                let scrollTop = $(window).scrollTop();
+                let docHeight = $(document).height();
+                let winHeight = $(window).height();
+                let scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+                if (scrollPercent >= 50 && !shown) {
+                    $('#book-popup').fadeIn(400);
+                    shown = true;
+                }
+            });
+
+            $('.popup-close').click(function () {
+                $('#book-popup').fadeOut(400);
+            });
         });
-      }, { passive: true });
-    })();
-  </script>
-  <script>
-    window.addEventListener('message', function (event) {
-      if (Array.isArray(event.data) && event.data[0] === 'set-sticky-contacts') {
-        window.location.href = '/kompally-generic/thankyou.html';
-      }
-    });
-  </script>
-  <!-- Treatment section mobile slider -->
-  <script>
-    (function () {
-      var track = document.getElementById('treat-track');
-      var navWrap = document.querySelector('.treat-nav-wrap');
-      if (!track || !navWrap) return;
+    </script>
 
-      var slides = track.querySelectorAll('.treat-slide');
-      var dots = document.querySelectorAll('.treat-dot');
-      var total = slides.length;
-      var current = 0;
-      var isMobile = false;
+    <!-- Modal popup end -->
 
-      function goTo(n) {
-        current = (n + total) % total;
-        track.style.transform = 'translateX(-' + (current * 100) + '%)';
-        dots.forEach(function (d, i) {
-          d.classList.toggle('bg-primary', i === current);
-          d.classList.toggle('bg-gray-300', i !== current);
-        });
-      }
 
-      function checkMode() {
-        var mobile = window.innerWidth < 768;
-        if (mobile !== isMobile) {
-          isMobile = mobile;
-          if (!mobile) {
-            track.style.transform = '';
-          } else {
-            goTo(current);
-          }
+    <!-- <div class="support-icon"> <a
+            href="https://api.whatsapp.com/send/?phone=919025227544&text&type=phone_number&app_absent=0"
+            target="blank"><img src="images/whatsapp.webp" alt="whatsapp logo"></a>
+    </div> -->
+    <style>
+        .support-icon {
+            position: fixed;
+            right: 20px;
+            z-index: 99;
+            bottom: 50px;
+            transition: all 1s;
+            width: 60px;
+            height: 60px;
         }
-      }
 
-      document.getElementById('treat-prev').addEventListener('click', function () { goTo(current - 1); });
-      document.getElementById('treat-next').addEventListener('click', function () { goTo(current + 1); });
-      dots.forEach(function (d, i) {
-        d.addEventListener('click', function () { goTo(i); });
-      });
+        .support-icon img {
+            width: 100%;
+        }
+    </style>
 
-      var touchStartX = 0;
-      track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
-      track.addEventListener('touchend', function (e) {
-        var diff = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
-      });
 
-      checkMode();
-      window.addEventListener('resize', checkMode);
-    })();
-  </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/style.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        const locations = {
+            lok1: {
+                name: "Kondapur",
+                email: "contact@eledenthospitals.com",
+                phoneDisplay: "+91 77997 19994",
+                phoneHref: "+91 77997 19994",
+                address: "3rd floor, K1 Primo Building, Bus Stop, above Ratnadeep Super Market, Hanuman Nagar, Kondapur, Hyderabad, Telangana 500084",
+                mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.914913802494!2d78.36494657341167!3d17.46378610060324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93b416b4bccf%3A0x15b1ff8695f6c6bc!2sEledent%20Hospitals!5e0!3m2!1sen!2sin!4v1762769669064!5m2!1sen!2sin"
+            },
+            lok2: {
+                name: "Kukatpally",
+                email: "contact@eledenthospitals.com",
+                phoneDisplay: "+91 77997 19994",
+                phoneHref: "+91 77997 19994",
+                address: "1st Floor, MIG-160, Rd Number 1, opp. Holisitic Hospital, above Lenskart, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072",
+                mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.3937135040715!2d78.40010300000002!3d17.4887093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9168e7312983%3A0xa5487cc1cfe97883!2sEledent%20Dental%20Hospitals%20%7C%20Best%20Dental%20Clinic%20in%20Kukatpally%20%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1762423645447!5m2!1sen!2sin"
+
+
+            },
+            lok3: {
+                name: "Banjara Hills",
+                email: "contact@eledenthospitals.com",
+                phoneDisplay: "+91 77997 19994",
+                phoneHref: "+91 77997 19994",
+                address: "Eledent International, Raichandani Construction, Road No. 12, Sri Ram Nagar Colony, Banjara Hills, Hyderabad, Telangana 500028",
+                mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.0825709648816!2d78.44431209999999!3d17.407824599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb972b403a6e6b%3A0xaa8b6579aef62687!2sEledent%20Dental%20Hospitals%20%7C%20Best%20Dental%20Clinic%20In%20Banjara%20Hills%20%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1762423583687!5m2!1sen!2sin"
+            },
+            lok4: {
+                name: "Manikonda, Hyderabad",
+                email: "contact@eledenthospitals.com",
+                phoneDisplay: "+91 77997 19994",
+                phoneHref: "+91 77997 19994",
+                address: "1st Floor, Sunshine Regulas building, Manikonda Rd, above KFC, Muppas Panchavati Colony, Hyderabad, Telangana 500089",
+                mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.1012388783433!2d78.38461989999999!3d17.4069285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb974deee7daeb%3A0x1429e2d8eef72393!2sEledent%20Dental%20Hospital%20%7C%20Advanced%20Dental%20Implant%20clinic%20in%20Manikonda%20%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1762423722569!5m2!1sen!2sin"
+
+            },
+            lok5: {
+                name: "Kompally, Hyderabad",
+                email: "contact@eledenthospitals.com",
+                phoneDisplay: "+91 77997 69994",
+                phoneHref: "+91 77997 69994",
+                address: "GF2H+M9, Ramraju Nagar, Jeedimetla, Hyderabad, Secunderabad, Telangana 500067 ",
+                mapSrc: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7610.244531607014!2d78.47839!3d17.501676!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910742dffe69%3A0x77ec8dc5e6302755!2sEledent%20international%20digital%20dentistry!5e0!3m2!1sen!2sin!4v1770377326859!5m2!1sen!2sin"
+
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const select = document.getElementById("locationSelect");
+            select.addEventListener("change", onLocationChange);
+            select.value = "lok5"; // Default Kompally
+            onLocationChange();
+        });
+
+        function onLocationChange() {
+            const select = document.getElementById("locationSelect");
+            const key = select.value;
+            const data = locations[key];
+            if (!data) return;
+
+            document.getElementById("emailLink").href = "mailto:" + data.email;
+            document.getElementById("emailLink").querySelector("p").innerHTML =
+                '<i class="fas fa-envelope me-2"></i> ' + data.email;
+
+            const phoneLink = document.getElementById("phoneLink");
+            phoneLink.href = "tel:" + data.phoneHref;
+            phoneLink.querySelector("p").innerHTML =
+                '<i class="fa-solid fa-phone me-2"></i> ' + data.phoneDisplay;
+
+            const addressText = document.getElementById("addressText");
+            addressText.innerHTML =
+                '<i class="fas fa-map-marker-alt me-2"></i> ' + data.address;
+
+            // ✅ Update map (no design change)
+            document.getElementById("mapFrame").src = data.mapSrc;
+        }
+    </script>
+
 </body>
 
 </html>

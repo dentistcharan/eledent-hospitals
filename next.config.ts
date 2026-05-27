@@ -359,6 +359,10 @@ const nextConfig: NextConfig = {
         destination: "/kompally-generic/index.html",
       },
       {
+        source: "/a-kompally-generic",
+        destination: "/a-kompally-generic/index.html",
+      },
+      {
         source: "/a-generic",
         destination: "/a-generic/index.html",
       },
