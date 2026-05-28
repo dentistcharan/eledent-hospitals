@@ -19,7 +19,7 @@ export default function AboutUs() {
     <div>
       <Navbar />
       <main>
-        <AboutHero />
+        {/* <AboutHero /> */}
         <AboutDetails />
         <MissionVision />
         <WhyChosse />
