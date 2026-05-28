@@ -5,9 +5,15 @@ import DoctorsHero from "../components/doctors/doctors-hero";
 import DoctorsList from "../components/doctors/doctors-list";
 import BookingAportment from "../components/comman/booking-aportment";
 
+const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://eledenthospitals.com";
+
 export const metadata: Metadata = {
     title: "Our Doctors | Eledent Dental Hospital",
     description: "Meet our team of experienced dental specialists at Eledent Dental Hospital, Hyderabad.",
+    alternates: {
+        canonical: `${siteUrl}/doctors`,
+    },
 };
 
 export default function DoctorsPage() {

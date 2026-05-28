@@ -119,6 +119,7 @@ export default function Footer(): JSX.Element {
     const quickLinks: FooterLink[] = [
         { name: "Home", href: "/" },
         { name: "About Us", href: "/about-us" },
+        { name: "Doctors", href: "/doctors" },
         { name: "Dental Tourism", href: "/dental-tourism" },
         { name: "Technology", href: "/technology" },
         { name: "Facilities", href: "/facility" },

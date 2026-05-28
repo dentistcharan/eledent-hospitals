@@ -12,6 +12,9 @@ export async function generateStaticParams() {
     return DOCTORS.map((d) => ({ slug: d.slug }));
 }
 
+const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://eledenthospitals.com";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const doctor = DOCTORS.find((d) => d.slug === slug);
@@ -19,6 +22,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: `${doctor.name} | Eledent Dental Hospital`,
         description: `${doctor.name}, ${doctor.education} – ${doctor.post} with ${doctor.experience} at Eledent Dental Hospital, ${doctor.branch}.`,
+        alternates: {
+            canonical: `${siteUrl}/doctors/${slug}`,
+        },
     };
 }
 
