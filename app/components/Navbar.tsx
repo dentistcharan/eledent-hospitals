@@ -513,7 +513,7 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between border-b border-gray-200 p-4">
                 <Image
-                  src="/White-Logo.webp"
+                  src="/White-Logo1.png"
                   alt="Eledent logo"
                   className="w-24"
                   width={500}
