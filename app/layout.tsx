@@ -17,8 +17,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
+const siteUrl = "https://eledenthospitals.com";
 
 const organizationSchema = {
   "@context": "https://schema.org",
