@@ -73,6 +73,7 @@ build
 .env
 .env.*
 !.env.example
+!.env.local
 
 # ===============================
 # Next.js specific
