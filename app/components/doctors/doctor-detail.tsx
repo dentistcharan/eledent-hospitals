@@ -173,7 +173,7 @@ export default function DoctorDetail({ doctor }: { doctor: Doctor }) {
                                         src={doctor.image}
                                         alt={doctor.name}
                                         fill
-                                        className="object-cover object-center"
+                                        className="object-cover object-top"
                                         priority
                                     />
                                 ) : (
