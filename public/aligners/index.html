@@ -1350,15 +1350,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <button onclick="closeScrollPopup()" style="background:none;border:none;cursor:pointer;color:#666;font-size:24px;line-height:1;padding:4px 8px;">&times;</button>
             </div>
             <div style="padding:16px 20px 20px;">
-                <iframe src="https://api.leadconnectorhq.com/widget/form/OL00jqx0uad1lQkgc422"
+                <iframe src="" id="popup-form-iframe"
                     style="width:100%;border:none;border-radius:8px;min-height:640px;"
-                    id="popup-OL00jqx0uad1lQkgc422"
-                    data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
-                    data-activation-type="alwaysActivated" data-activation-value=""
-                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
-                    data-form-name="Dental Aligner" data-height="706"
-                    data-layout-iframe-id="popup-OL00jqx0uad1lQkgc422" data-form-id="OL00jqx0uad1lQkgc422"
-                    title="Dental Aligner">
+                    title="Dental Aligner" allow="autoplay">
                 </iframe>
             </div>
         </div>
@@ -1380,6 +1374,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 var scrolled = window.pageYOffset + window.innerHeight;
                 var total = document.documentElement.scrollHeight;
                 if (scrolled / total >= 0.4) {
+                    var pi = document.getElementById('popup-form-iframe');
+                    if (pi && !pi.getAttribute('src')) {
+                        pi.setAttribute('src', 'https://api.leadconnectorhq.com/widget/form/OL00jqx0uad1lQkgc422');
+                    }
                     overlay.style.display = 'flex';
                     sessionStorage.setItem('scrollPopupShown', '1');
                     window.removeEventListener('scroll', checkPopup);

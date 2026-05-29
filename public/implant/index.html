@@ -1540,13 +1540,9 @@
                     style="background:none;border:none;cursor:pointer;color:#666;font-size:24px;line-height:1;padding:4px 8px;">&times;</button>
             </div>
             <div style="padding:16px 20px 20px;">
-                <iframe src="https://api.leadconnectorhq.com/widget/form/Fw5Wqmb2kOFhFSTEdFy3"
-                    style="width:100%;border:none;border-radius:8px;min-height:640px;" id="popup-Fw5Wqmb2kOFhFSTEdFy3"
-                    data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
-                    data-activation-type="alwaysActivated" data-activation-value=""
-                    data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Dental Implant"
-                    data-height="706" data-layout-iframe-id="popup-Fw5Wqmb2kOFhFSTEdFy3"
-                    data-form-id="Fw5Wqmb2kOFhFSTEdFy3" title="Dental Implant">
+                <iframe src="" id="popup-form-iframe"
+                    style="width:100%;border:none;border-radius:8px;min-height:640px;"
+                    title="Dental Implant" allow="autoplay">
                 </iframe>
             </div>
         </div>
@@ -1592,6 +1588,7 @@
         // Form validation and submission
         (function () {
             var form = document.getElementById('consultation-form');
+            if (!form) return;
             var successMsg = document.getElementById('form-success');
             var submitBtn = document.getElementById('form-submit-btn');
 
@@ -1674,6 +1671,10 @@
                 var total = document.documentElement.scrollHeight - window.innerHeight;
                 if (total > 0 && scrolled / total >= 0.4) {
                     shown = true;
+                    var pi = document.getElementById('popup-form-iframe');
+                    if (pi && !pi.getAttribute('src')) {
+                        pi.setAttribute('src', 'https://api.leadconnectorhq.com/widget/form/Fw5Wqmb2kOFhFSTEdFy3');
+                    }
                     overlay.style.display = 'flex';
                     window.removeEventListener('scroll', checkPopup);
                 }

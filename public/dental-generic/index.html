@@ -1059,8 +1059,8 @@
 
 
             <div class="iframe-wrapper">
-                <iframe src="https://api.leadconnectorhq.com/widget/form/pDce9nK7M2lAZoylmNVC"
-                    title="Generic Google Ads LP" allow="autoplay" loading="lazy"></iframe>
+                <iframe src="" id="popup-form-iframe"
+                    title="Generic Google Ads LP" allow="autoplay"></iframe>
             </div>
         </div>
     </div>
@@ -1184,6 +1184,9 @@
                 let scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
                 if (scrollPercent >= 50 && !shown) {
+                    if (!$('#popup-form-iframe').attr('src')) {
+                        $('#popup-form-iframe').attr('src', 'https://api.leadconnectorhq.com/widget/form/pDce9nK7M2lAZoylmNVC');
+                    }
                     $('#book-popup').fadeIn(400);
                     shown = true;
                 }
@@ -1305,6 +1308,62 @@
             document.getElementById("mapFrame").src = data.mapSrc;
         }
     </script>
+
+    <!-- WhatsApp Floating Button -->
+    <style>
+        .wa-float-btn {
+            position: fixed;
+            right: 10px;
+            bottom: 30px;
+            z-index: 9998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0;
+            border-radius: 50%;
+            transition: filter 0.2s;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+        }
+        .wa-float-btn i {
+            font-size: 30px;
+            line-height: 1;
+        }
+        .wa-float-btn:hover {
+            filter: brightness(1.12);
+            color: #fff;
+            text-decoration: none;
+        }
+        @media (max-width: 767px) {
+            .wa-float-btn {
+                top: auto !important;
+                bottom: 70px !important;
+                right: 10px !important;
+                transform: none !important;
+                width: 55px !important;
+                height: 55px !important;
+                min-width: 55px !important;
+                min-height: 55px !important;
+                max-width: 55px !important;
+                max-height: 55px !important;
+                padding: 0 !important;
+                border-radius: 50% !important;
+            }
+            .wa-float-btn i {
+                font-size: 24px !important;
+                margin: 0 !important;
+                line-height: 1 !important;
+            }
+        }
+    </style>
+    <a href="https://wa.me/917799739994" target="_blank" class="wa-float-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
 
 </body>
 
