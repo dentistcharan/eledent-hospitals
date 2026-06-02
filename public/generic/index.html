@@ -9,12 +9,12 @@
   <meta name="description"
     content="Eledent is Hyderabad's leading digital dental hospital. Get painless dental treatments including implants, Invisalign, root canals, and smile makeovers across multiple Hyderabad locations." />
   <META NAME="robots" CONTENT="noindex,nofollow">
-  <link rel="canonical" href="https://eledenthospitals.com/dental-generic">
+  <link rel="canonical" href="https://eledenthospitals.com/generic">
   <meta property="og:title" content="Dentist in Hyderabad — Eledent Dental Hospital">
   <meta property="og:description"
     content="Same-day dental appointments at Eledent Hyderabad. 30,000+ patients treated. 4.9★ rated. Painless treatments.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://eledenthospitals.com/dental-generic">
+  <meta property="og:url" content="https://eledenthospitals.com/generic">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,24 +136,58 @@
 
     /* ── Treatment section — mobile swipe slider ── */
     #treat-slider-wrap {
-      overflow: hidden; /* always clip — prevents other slides bleeding into page layout */
+      overflow: hidden;
+      /* always clip — prevents other slides bleeding into page layout */
     }
+
     #treat-track {
-      width: 100%; /* explicit width so min-width:100% on slides resolves correctly */
+      width: 100%;
+      /* explicit width so min-width:100% on slides resolves correctly */
       transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .treat-nav-wrap { display: none; } /* hidden on desktop */
+
+    .treat-nav-wrap {
+      display: none;
+    }
+
+    /* hidden on desktop */
 
     @media (max-width: 767px) {
-      #treat-track { display: flex; }
-      .treat-slide { min-width: 100%; width: 100%; flex-shrink: 0; box-sizing: border-box; }
-      .treat-slide > .grid { border-bottom: none !important; padding-top: 1.5rem !important; padding-bottom: 0.5rem !important; }
-      .treat-slide img { height: 13rem !important; }
-      .treat-nav-wrap { display: flex; }
+      #treat-track {
+        display: flex;
+      }
+
+      .treat-slide {
+        min-width: 100%;
+        width: 100%;
+        flex-shrink: 0;
+        box-sizing: border-box;
+      }
+
+      .treat-slide>.grid {
+        border-bottom: none !important;
+        padding-top: 1.5rem !important;
+        padding-bottom: 0.5rem !important;
+      }
+
+      .treat-slide img {
+        height: 13rem !important;
+      }
+
+      .treat-nav-wrap {
+        display: flex;
+      }
     }
+
     @media (min-width: 768px) {
-      #treat-track { display: block; }
-      .treat-slide { display: block; min-width: unset; }
+      #treat-track {
+        display: block;
+      }
+
+      .treat-slide {
+        display: block;
+        min-width: unset;
+      }
     }
   </style>
 
@@ -852,24 +886,32 @@
                 <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
                   What is <span class="text-primary">Root Canal Treatment</span> in Hyderabad?
                 </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">Saving a damaged or infected tooth doesn't have to
+                <p class="text-gray-500 text-base leading-relaxed mb-5">Saving a damaged or infected tooth doesn't have
+                  to
                   mean weeks of pain or multiple visits.</p>
                 <ul class="space-y-2.5 mb-5">
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Microscopic precision under high magnification</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Microscopic precision under high
+                    magnification</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Single-visit RCT for most cases</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Single-visit RCT for most cases
+                  </li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Minimal pain — local anaesthesia + conscious sedation if needed</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Minimal pain — local anaesthesia +
+                    conscious sedation if needed</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Same-day crown placement available (CAD/CAM)</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Same-day crown placement available
+                    (CAD/CAM)</li>
                   <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>27,000+ root canals successfully completed at Eledent</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>27,000+ root canals successfully
+                    completed at Eledent</li>
                 </ul>
                 <a href="#booking-form-card"
                   class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Get RCT Quote <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                  Get RCT Quote <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
               </div>
@@ -890,25 +932,33 @@
                 <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
                   Tooth Extraction &amp; <span class="text-primary">Wisdom Tooth Removal</span> in Hyderabad
                 </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">Whether it's a damaged tooth or an impacted wisdom
-                  tooth, our dentists use atraumatic extraction techniques that minimize trauma to the bone. Faster healing,
+                <p class="text-gray-500 text-base leading-relaxed mb-5">Whether it's a damaged tooth or an impacted
+                  wisdom
+                  tooth, our dentists use atraumatic extraction techniques that minimize trauma to the bone. Faster
+                  healing,
                   less pain, and bone preservation for any future restoration.</p>
                 <ul class="space-y-2.5 mb-5">
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Atraumatic, bone-preserving technique</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Atraumatic, bone-preserving
+                    technique</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
                       class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Suture-free in most cases</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Conscious sedation available for anxious patients</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Conscious sedation available for
+                    anxious patients</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Same-day procedure — walk in for severe pain</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Same-day procedure — walk in for
+                    severe pain</li>
                   <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Detailed aftercare instructions and follow-up</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Detailed aftercare instructions and
+                    follow-up</li>
                 </ul>
                 <a href="#booking-form-card"
                   class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Book Extraction Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                  Book Extraction Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
               </div>
@@ -929,25 +979,34 @@
                 <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
                   What is <span class="text-primary">Teeth Whitening</span> at Eledent Hyderabad?
                 </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">Coffee, tea, smoking, or aging can dull your smile.
-                  Eledent's in-office teeth whitening uses sensitivity-free formulas to deliver visible results in a single
+                <p class="text-gray-500 text-base leading-relaxed mb-5">Coffee, tea, smoking, or aging can dull your
+                  smile.
+                  Eledent's in-office teeth whitening uses sensitivity-free formulas to deliver visible results in a
+                  single
                   visit. Doctor-supervised, safe for enamel, and gentler than over-the-counter strips.</p>
                 <ul class="space-y-2.5 mb-5">
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Visible whitening in a single 60-minute visit</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Visible whitening in a single
+                    60-minute visit</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Sensitivity-free professional formulas</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Sensitivity-free professional
+                    formulas</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Doctor-supervised — no enamel damage</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Doctor-supervised — no enamel
+                    damage</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Custom take-home trays for maintenance</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Custom take-home trays for
+                    maintenance</li>
                   <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Combine with scaling &amp; polishing for maximum effect</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Combine with scaling &amp;
+                    polishing for maximum effect</li>
                 </ul>
                 <a href="#booking-form-card"
                   class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Brighten Your Smile <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                  Brighten Your Smile <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
               </div>
@@ -968,23 +1027,31 @@
                 <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
                   <span class="text-primary">Dental Crowns</span> — CAD/CAM, Zirconia &amp; Ceramic in Hyderabad
                 </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">When a tooth is cracked, severely decayed, or has had a
-                  root canal, a crown restores its strength and appearance. Eledent uses CAD/CAM digital scanning and same-day
+                <p class="text-gray-500 text-base leading-relaxed mb-5">When a tooth is cracked, severely decayed, or
+                  has had a
+                  root canal, a crown restores its strength and appearance. Eledent uses CAD/CAM digital scanning and
+                  same-day
                   milling to deliver precision-fit crowns without temporaries.</p>
                 <ul class="space-y-2.5 mb-5">
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Same-day CEREC crowns — no second visit needed</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Same-day CEREC crowns — no second
+                    visit needed</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Zirconia and ceramic options available</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Zirconia and ceramic options
+                    available</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>CAD/CAM digital fit — precision matched to your bite</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>CAD/CAM digital fit — precision
+                    matched to your bite</li>
                   <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Backed by Eledent's standard restoration warranty</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Backed by Eledent's standard
+                    restoration warranty</li>
                 </ul>
                 <a href="#booking-form-card"
                   class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Book Crown Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                  Book Crown Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
               </div>
@@ -1005,23 +1072,29 @@
                 <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
                   <span class="text-primary">Dental Fillings</span> (Tooth-Colored Restorations) in Hyderabad
                 </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">Cavities don't wait. At Eledent, we use tooth-colored
-                  composite fillings that match your natural tooth, seal the cavity, and restore chewing function — usually in
+                <p class="text-gray-500 text-base leading-relaxed mb-5">Cavities don't wait. At Eledent, we use
+                  tooth-colored
+                  composite fillings that match your natural tooth, seal the cavity, and restore chewing function —
+                  usually in
                   a single visit. No metal, no obvious fix.</p>
                 <ul class="space-y-2.5 mb-5">
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Tooth-colored composite — invisible restoration</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Tooth-colored composite — invisible
+                    restoration</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
                       class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Single-visit completion</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Cavity sealing precision under magnification</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Cavity sealing precision under
+                    magnification</li>
                   <li class="flex items-start gap-3 text-base text-gray-700"><span
                       class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Safe for sensitive teeth</li>
                 </ul>
                 <a href="#booking-form-card"
                   class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Book Filling Appointment <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                  Book Filling Appointment <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
               </div>
@@ -1032,8 +1105,8 @@
           <div class="treat-slide">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center py-14 border-b border-gray-200">
               <div class="md:order-2 relative">
-                <img src="teeth-cleaning-scaling.jpg" alt="Teeth Cleaning and Scaling at Eledent Hyderabad" loading="lazy"
-                  class="w-full h-80 lg:h-[28rem] object-cover rounded-2xl shadow-xl">
+                <img src="teeth-cleaning-scaling.jpg" alt="Teeth Cleaning and Scaling at Eledent Hyderabad"
+                  loading="lazy" class="w-full h-80 lg:h-[28rem] object-cover rounded-2xl shadow-xl">
               </div>
               <div class="md:order-1">
                 <span
@@ -1042,23 +1115,31 @@
                 <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
                   <span class="text-primary">Teeth Cleaning, Scaling</span> &amp; Guided Biofilm Therapy at Eledent
                 </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">Plaque, tartar, and stains build up regardless of how
-                  well you brush. Routine scaling prevents gum disease. At Eledent, we offer touchless Guided Biofilm Therapy
+                <p class="text-gray-500 text-base leading-relaxed mb-5">Plaque, tartar, and stains build up regardless
+                  of how
+                  well you brush. Routine scaling prevents gum disease. At Eledent, we offer touchless Guided Biofilm
+                  Therapy
                   (GBT) — gentler than traditional scaling and more effective.</p>
                 <ul class="space-y-2.5 mb-5">
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Touchless GBT cleaning — no metal scraping</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Touchless GBT cleaning — no metal
+                    scraping</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Air-flow plaque removal — gum-friendly</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Air-flow plaque removal —
+                    gum-friendly</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Removes coffee, tea, and tobacco stains</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Removes coffee, tea, and tobacco
+                    stains</li>
                   <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Combine with whitening for full smile refresh</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Combine with whitening for full
+                    smile refresh</li>
                 </ul>
                 <a href="#booking-form-card"
                   class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Book Cleaning Appointment <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                  Book Cleaning Appointment <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
               </div>
@@ -1079,23 +1160,31 @@
                 <h3 class="font-heading font-bold text-2xl md:text-3xl text-gray-900 mb-4 leading-snug">
                   <span class="text-primary">Dental Checkups</span> &amp; Single-Visit Dentistry in Hyderabad
                 </h3>
-                <p class="text-gray-500 text-base leading-relaxed mb-5">A 20-minute checkup catches problems before they become
-                  procedures. Your first dental consultation at Eledent is free — including a visual exam, digital X-ray (if
+                <p class="text-gray-500 text-base leading-relaxed mb-5">A 20-minute checkup catches problems before they
+                  become
+                  procedures. Your first dental consultation at Eledent is free — including a visual exam, digital X-ray
+                  (if
                   needed), and a personalized treatment plan with transparent pricing.</p>
                 <ul class="space-y-2.5 mb-5">
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Free first consultation for new patients</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Free first consultation for new
+                    patients</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Digital X-ray and 3D scan when clinically needed</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Digital X-ray and 3D scan when
+                    clinically needed</li>
                   <li class="flex items-start gap-3 text-base text-gray-700 pb-2.5 border-b border-gray-100"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Treatment plan with itemized cost — no surprises</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Treatment plan with itemized cost —
+                    no surprises</li>
                   <li class="flex items-start gap-3 text-base text-gray-700"><span
-                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Single-visit completion for most procedures</li>
+                      class="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5"></span>Single-visit completion for most
+                    procedures</li>
                 </ul>
                 <a href="#booking-form-card"
                   class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5">
-                  Book Free Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                  Book Free Consultation <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
               </div>
@@ -1114,13 +1203,20 @@
           </svg>
         </button>
         <div class="flex items-center gap-2">
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-primary transition-colors" data-i="0" aria-label="Slide 1"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="1" aria-label="Slide 2"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="2" aria-label="Slide 3"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="3" aria-label="Slide 4"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="4" aria-label="Slide 5"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="5" aria-label="Slide 6"></button>
-          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="6" aria-label="Slide 7"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-primary transition-colors" data-i="0"
+            aria-label="Slide 1"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="1"
+            aria-label="Slide 2"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="2"
+            aria-label="Slide 3"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="3"
+            aria-label="Slide 4"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="4"
+            aria-label="Slide 5"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="5"
+            aria-label="Slide 6"></button>
+          <button class="treat-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" data-i="6"
+            aria-label="Slide 7"></button>
         </div>
         <button id="treat-next" aria-label="Next treatment"
           class="w-10 h-10 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors">
@@ -1556,7 +1652,7 @@
         <a href="tel:07557188078"
           class="flex items-center justify-between px-5 py-3.5 hover:bg-orange-50 transition-colors group">
           <div>
-                    <div class="cbm-branch">Kondapur</div>
+            <div class="cbm-branch">Kondapur</div>
             <p class="text-xs text-gray-500">075 5718 8078</p>
           </div>
           <div class="flex items-center gap-2 bg-[#e14b4b] text-white text-xs font-semibold px-3 py-1.5 rounded-lg">
