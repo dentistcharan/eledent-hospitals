@@ -32,7 +32,7 @@ export default function HomeTestimonial() {
                     "Good experience overall. Modern setup, quick appointment, and the treatment was smooth.",
                 author: "Priya Sharma",
                 role: "Delhi",
-                rating: 4.8,
+                rating: 4.9,
                 image:
                     "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=70",
             },

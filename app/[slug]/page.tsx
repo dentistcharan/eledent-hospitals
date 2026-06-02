@@ -72,7 +72,7 @@ const locationSchemas: Record<string, object[]> = {
       paymentAccepted: "Cash, Credit Card, UPI",
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.8",
+        ratingValue: "4.9",
         reviewCount: "680",
         bestRating: "5",
         worstRating: "1",
