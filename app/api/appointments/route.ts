@@ -12,6 +12,8 @@ export async function POST(req: NextRequest) {
       locationId,
       message,
       captchaToken,
+      pageUrl,
+      pageName,
     } = body;
 
     if (!name || !phone || !date || !locationId || !captchaToken) {
@@ -79,6 +81,8 @@ export async function POST(req: NextRequest) {
         date,
         locationId,
         message,
+        pageUrl,
+        pageName,
       }),
     });
 

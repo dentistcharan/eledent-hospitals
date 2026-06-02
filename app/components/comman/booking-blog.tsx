@@ -121,6 +121,8 @@ const BookingBlog: FC = () => {
           locationId: formData.locationId,
           message: formData.message.trim(),
           captchaToken,
+          pageUrl: window.location.href,
+          pageName: document.title,
         }),
       });
 
