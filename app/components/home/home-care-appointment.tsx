@@ -1,5 +1,6 @@
 "use client";
 
+import Script from "next/script";
 import type { JSX } from "react";
 
 export default function BookingOverlapSection(): JSX.Element {
@@ -68,115 +69,41 @@ export default function BookingOverlapSection(): JSX.Element {
                                     </div>
                                 </div>
 
-                                {/* WHITE FORM CARD (OVERLAP) */}
+                                {/* IFRAME FORM CARD (OVERLAP) */}
                                 <div
                                     className="
-                    relative z-20 w-full max-w-[560px] rounded-[18px] bg-white px-10 py-10
+                    relative z-20 w-full max-w-[560px] rounded-[18px] bg-white overflow-hidden
                     shadow-[0_22px_70px_-45px_rgba(15,23,42,0.45)]
                     lg:-ml-16
                   "
                                 >
-                                    {/* top blue-ish soft highlight like screenshot */}
                                     <div className="pointer-events-none absolute -top-10 left-1/2 h-24 w-[85%] -translate-x-1/2 rounded-[20px] bg-sky-100/60 blur-2xl" />
-
-                                    <h3 className="text-[16px] font-semibold text-slate-900">Book An Appointment</h3>
-
-                                    <form className="mt-6 space-y-5">
-                                        {/* Name + Email */}
-                                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                            <Field label="Name" placeholder="Full Name" />
-                                            <Field label="Email" placeholder="Email Address" type="email" />
-                                        </div>
-
-                                        {/* Phone + Date */}
-                                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                            <Field label="Phone" placeholder="Phone Number" type="tel" />
-                                            <Field label="Date" placeholder="Booking Date" type="text" />
-                                        </div>
-
-                                        {/* Doctor select */}
-                                        <div>
-                                            <label className="text-[12px] font-medium text-slate-600">Doctor</label>
-                                            <div className="relative mt-2">
-                                                <select className="w-full appearance-none rounded-[14px] border border-slate-200 bg-white px-4 py-3 pr-10 text-[13px] text-slate-700 outline-none focus:border-[#f47200] focus:ring-4 focus:ring-[#f47200]/15">
-                                                    <option>Find Doctors</option>
-                                                    <option>Cardiologist</option>
-                                                    <option>Orthopedic</option>
-                                                    <option>General Physician</option>
-                                                </select>
-                                                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
-                                                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
-                                                        <path
-                                                            d="M7 10l5 5 5-5"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        {/* Message */}
-                                        <div>
-                                            <label className="text-[12px] font-medium text-slate-600">Message</label>
-                                            <textarea
-                                                rows={4}
-                                                placeholder="Your Message"
-                                                className="mt-2 w-full rounded-[14px] border border-slate-200 bg-white px-4 py-3 text-[13px] text-slate-700 outline-none placeholder:text-slate-400 focus:border-[#f47200] focus:ring-4 focus:ring-[#f47200]/15"
-                                            />
-                                        </div>
-
-                                        {/* CTA like screenshot */}
-                                        <button
-                                            type="button"
-                                            className="inline-flex items-center gap-2 rounded-full bg-[#f47200] px-5 py-2.5 text-[12px] font-semibold text-white shadow-[0_18px_35px_-25px_rgba(244,114,0,0.9)] transition hover:brightness-95"
-                                        >
-                                            Send Appointments
-                                            <span className="grid h-6 w-6 place-items-center rounded-full bg-white/20">
-                                                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
-                                                    <path
-                                                        d="M9 18l6-6-6-6"
-                                                        stroke="currentColor"
-                                                        strokeWidth={2}
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                    />
-                                                </svg>
-                                            </span>
-                                        </button>
-                                    </form>
+                                    <iframe
+                                        src="https://api.leadconnectorhq.com/widget/form/q8QBSGUnldocQANsAzWU"
+                                        style={{ width: "100%", height: "852px", border: "none", borderRadius: "18px" }}
+                                        id="inline-q8QBSGUnldocQANsAzWU-homecare"
+                                        data-layout="{'id':'INLINE'}"
+                                        data-trigger-type="alwaysShow"
+                                        data-trigger-value=""
+                                        data-activation-type="alwaysActivated"
+                                        data-activation-value=""
+                                        data-deactivation-type="neverDeactivate"
+                                        data-deactivation-value=""
+                                        data-form-name="Website Lead Form"
+                                        data-height="852"
+                                        data-layout-iframe-id="inline-q8QBSGUnldocQANsAzWU-homecare"
+                                        data-form-id="q8QBSGUnldocQANsAzWU"
+                                        title="Website Lead Form"
+                                    />
                                 </div>
                             </div>
 
-                            {/* small soft base shadow */}
                             <div className="pointer-events-none mx-auto mt-8 hidden h-10 w-[560px] rounded-full bg-slate-200/60 blur-xl lg:block" />
                         </div>
                     </div>
                 </div>
             </div>
+            <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
         </section>
-    );
-}
-
-function Field({
-    label,
-    placeholder,
-    type = "text",
-}: {
-    label: string;
-    placeholder: string;
-    type?: string;
-}): JSX.Element {
-    return (
-        <div>
-            <label className="text-[12px] font-medium text-slate-600">{label}</label>
-            <input
-                type={type}
-                placeholder={placeholder}
-                className="mt-2 w-full rounded-[14px] border border-slate-200 bg-white px-4 py-3 text-[13px] text-slate-700 outline-none placeholder:text-slate-400 focus:border-[#f47200] focus:ring-4 focus:ring-[#f47200]/15"
-            />
-        </div>
     );
 }

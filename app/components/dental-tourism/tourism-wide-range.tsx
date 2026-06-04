@@ -51,7 +51,7 @@ const TourismWideRange: FC = () => {
   }, []);
 
   return (
-    <section className="w-full">
+    <section className="w-full flex justify-center">
       <div className="mx-auto max-w-7xl mx-4 lg:mx-10 bg-[#e9eaeb] py-14 sm:py-12 px-4 lg:px-20 lg:rounded-2xl">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-xl lg:text-4xl font-semibold text-black">
@@ -92,7 +92,7 @@ const TourismWideRange: FC = () => {
                         src={item.imageSrc}
                         alt={item.imageAlt || item.title}
                         fill
-                        
+
                         className="object-cover"
                         unoptimized
                       />

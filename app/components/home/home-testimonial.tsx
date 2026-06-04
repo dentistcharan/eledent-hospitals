@@ -52,13 +52,7 @@ export default function HomeTestimonial() {
 
     const videoTestimonials = useMemo<VideoTestimonial[]>(
         () => [
-            {
-                title: "Comfortable treatment experience",
-                author: "Ananya Verma",
-                role: "Hyderabad",
-                youtubeId: "oGFZWgHvW",
-                image: "/testimonials/testimonial-video-1.jpg",
-            },
+          
             {
                 title: "Quick appointment, great staff",
                 author: "Sahil Mehta",
