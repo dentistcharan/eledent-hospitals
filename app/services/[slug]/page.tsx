@@ -15,6 +15,7 @@ import OverValue from "@/app/components/services-details/value";
 import { getMetadataByPath } from "@/lib/metadata";
 import JsonLd from "@/app/components/JsonLd";
 import { buildServiceFaqSchema, faqSchemas } from "@/lib/faq-schemas";
+import AfterBefore from "@/app/components/services-details/after-before";
 
 type PageProps = {
   params: Promise<{
@@ -125,7 +126,7 @@ export default async function ServicesDetailsPage({ params }: PageProps) {
         {hasData(service.value) ? <OverValue data={service.value} /> : null}
 
         {/* Before/After tabhi show hoga jab data aaye */}
-        {/* {hasData(service.beforeAfter) ? <AfterBefore data={service.beforeAfter} /> : null} */}
+        {hasData(service.beforeAfter) ? <AfterBefore data={service.beforeAfter} /> : null}
 
         <CommanTestimonial />
 

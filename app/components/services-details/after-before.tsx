@@ -22,8 +22,8 @@ export default function AfterBefore({ data }: Props): JSX.Element | null {
               <p className="mt-1 lg:text-xl font-semibold text-black">{data.subheading}</p>
             </div>
 
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {data.items.map((item, idx) => (
+            <div className="grid grid-cols-3 gap-5">
+              {data.items.slice(0, 3).map((item, idx) => (
                 <BeforeAfterCard key={idx} item={item} cardHeightClass={(data as any).cardHeightClass} />
               ))}
             </div>
@@ -89,7 +89,7 @@ function BeforeAfterCard({
           src={item.beforeSrc}
           alt={item.alt ? `Before - ${item.alt}` : "Before"}
           fill
-             unoptimized
+          unoptimized
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover"
         />
@@ -105,7 +105,7 @@ function BeforeAfterCard({
           src={item.afterSrc}
           alt={item.alt ? `After - ${item.alt}` : "After"}
           fill
-             unoptimized
+          unoptimized
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover"
         />
