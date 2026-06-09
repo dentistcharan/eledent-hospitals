@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { fetchDoctors, generateDoctorSlug } from "@/lib/doctors-api";
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://eledenthospitals.com/"
@@ -222,6 +223,7 @@ async function getBlogs() {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const today = new Date();
   const blogs = await getBlogs();
+  const doctors = await fetchDoctors();
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.map((page) => ({
     url: `${baseUrl}${page.route}`,
@@ -258,12 +260,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: blog.priority,
   }));
 
+  const doctorEntries: MetadataRoute.Sitemap = doctors.map((doctor) => ({
+    url: `${baseUrl}/doctors/${generateDoctorSlug(doctor.name)}`,
+    lastModified: today,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   const allEntries = [
     ...staticEntries,
     ...serviceEntries,
     ...locationEntries,
     ...localSeoEntries,
     ...blogEntries,
+    ...doctorEntries,
   ];
 
   const uniqueEntries = Array.from(
