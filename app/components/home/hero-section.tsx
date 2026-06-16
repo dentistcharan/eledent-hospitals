@@ -16,6 +16,7 @@ const desktopHeroImages = [
     "/home/home-banner-2.jpg",
     "/home/home-banner-3.jpg",
     "/home/home-banner-4.jpg",
+    "/home/eledent-home-6.jpg",
 ];
 
 const mobileHeroImages = [
@@ -24,6 +25,7 @@ const mobileHeroImages = [
     "/home/Eledent-Home-Mob-3.jpg",
     "/home/Eledent-Home-Mob-4.jpg",
     "/home/Eledent-Home-Mob-5.jpg",
+    "/home/Eledent-Home-Mob-6.png",
 
 ];
 
