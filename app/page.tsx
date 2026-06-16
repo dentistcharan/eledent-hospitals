@@ -14,10 +14,12 @@ import HomeFaq from "./components/home/home-faq";
 import Footer from "./components/Footer";
 import BookingAportment from "./components/comman/booking-aportment";
 import AwardsSection from "./components/home/award";
+import FacilitiesAccordion from "./components/home/facilities-accordion";
 
 export async function generateMetadata(): Promise<Metadata> {
   return await getMetadataByPath("/");
 }
+
 export default function Home() {
   return (
     <div>
@@ -27,6 +29,7 @@ export default function Home() {
         <HeroSection />
         <AboutUs />
         <OurSpecialties />
+        <FacilitiesAccordion />
         <MakeAppointment />
         <HomeServices />
         <HomeTestimonial />
