@@ -213,6 +213,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/services/dental-veneers-in-kondapur-2",
+        destination: "/services/dental-veneers-in-kondapur",
+        permanent: true,
+      },
+      {
         source: "/dentist-in-kondapur",
         destination: "/best-dentist-in-kondapur",
         permanent: true,
