@@ -21,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://api.leadconnectorhq.com">
+    <link rel="preconnect" href="https://link.msgsndr.com">
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
     <!-- Google Tag Manager -->
@@ -2066,6 +2067,15 @@
     <!-- ══ JAVASCRIPT ═════════════════════════════════════════════════════ -->
     <script>
         // ── Form modal ────────────────────────────────────────────────────
+        function loadGhlEmbed() {
+            if (window.__ghlEmbedLoaded) return;
+            window.__ghlEmbedLoaded = true;
+            var s = document.createElement('script');
+            s.src = 'https://link.msgsndr.com/js/form_embed.js';
+            s.async = true;
+            document.head.appendChild(s);
+        }
+
         function loadDeferredIframe(root) {
             var iframe = root && root.querySelector ? root.querySelector('iframe[data-src]') : null;
             if (iframe && !iframe.src) {
@@ -2075,7 +2085,12 @@
                     iframe.parentElement.classList.add('is-loaded');
                 }
             }
+            loadGhlEmbed();
         }
+
+        window.addEventListener('load', function () {
+            setTimeout(loadGhlEmbed, 1200);
+        });
 
         function openFormModal() {
             var m = document.getElementById('form-modal');
