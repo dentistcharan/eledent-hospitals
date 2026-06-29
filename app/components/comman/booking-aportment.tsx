@@ -3,8 +3,22 @@
 import Image from "next/image";
 import Script from "next/script";
 import type { FC } from "react";
+import { useEffect, useState } from "react";
 
 const BookingAportment: FC = () => {
+  const [viewport, setViewport] = useState<"mobile" | "desktop" | null>(null);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const updateViewport = () =>
+      setViewport(mediaQuery.matches ? "desktop" : "mobile");
+
+    updateViewport();
+    mediaQuery.addEventListener("change", updateViewport);
+
+    return () => mediaQuery.removeEventListener("change", updateViewport);
+  }, []);
+
   return (
     <section className="lg:pb-20 pb-10 px-4 sm:px-8 lg:px-24 mt-6">
       <div className="lg:max-w-7xl mx-auto relative">
@@ -29,7 +43,7 @@ const BookingAportment: FC = () => {
                     src="/services-main/support.png"
                     alt="Support"
                     fill
-                    unoptimized
+                    sizes="40px"
                     className="object-cover rounded-full p-2"
                   />
                 </div>
@@ -63,9 +77,10 @@ const BookingAportment: FC = () => {
           {/* Desktop Form */}
           <div className="lg:absolute right-10 top-1/2 lg:-translate-y-1/2 w-[440px] z-20 hidden lg:block">
             <div className="relative rounded-[20px] shadow-2xl overflow-hidden bg-white p-10">
-              <iframe
+              {viewport === "desktop" && <iframe
                 src="https://api.leadconnectorhq.com/widget/form/q8QBSGUnldocQANsAzWU"
                 style={{ width: "100%", height: "852px", border: "none", borderRadius: "20px" }}
+                loading="lazy"
                 id="inline-q8QBSGUnldocQANsAzWU"
                 data-layout="{'id':'INLINE'}"
                 data-trigger-type="alwaysShow"
@@ -79,7 +94,7 @@ const BookingAportment: FC = () => {
                 data-layout-iframe-id="inline-q8QBSGUnldocQANsAzWU"
                 data-form-id="q8QBSGUnldocQANsAzWU"
                 title="Website Lead Form"
-              />
+              />}
             </div>
           </div>
 
@@ -89,9 +104,10 @@ const BookingAportment: FC = () => {
         {/* Mobile Form */}
         <div className="z-20 lg:hidden block">
           <div className="bg-white shadow-2xl">
-            <iframe
+            {viewport === "mobile" && <iframe
               src="https://api.leadconnectorhq.com/widget/form/q8QBSGUnldocQANsAzWU"
               style={{ width: "100%", height: "852px", border: "none" }}
+              loading="lazy"
               id="inline-q8QBSGUnldocQANsAzWU-mob"
               data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
@@ -105,11 +121,13 @@ const BookingAportment: FC = () => {
               data-layout-iframe-id="inline-q8QBSGUnldocQANsAzWU-mob"
               data-form-id="q8QBSGUnldocQANsAzWU"
               title="Website Lead Form"
-            />
+            />}
           </div>
         </div>
       </div>
-      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
+      {viewport && (
+        <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
+      )}
     </section>
   );
 };

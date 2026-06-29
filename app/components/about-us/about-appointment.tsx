@@ -52,7 +52,6 @@ export default function AboutAppointment({
                   alt=""
                   fill
                   className="object-cover object-bottom opacity-90"
-                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/0 via-white/40 to-white" />
               </div>

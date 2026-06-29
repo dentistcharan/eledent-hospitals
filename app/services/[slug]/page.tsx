@@ -67,7 +67,7 @@ async function getServiceBySlug(slug: string): Promise<ServiceResponse | null> {
   )}`;
 
   try {
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url, { next: { revalidate: 3600 } });
 
     if (!res.ok) return null;
 

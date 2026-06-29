@@ -17,8 +17,7 @@ type ServicesApiResponse = {
   data: Service[];
 };
 
-const API_URL =
-  "https://cms.eledenthospitals.com/wp-json/custom/v1/services";
+const API_URL = "/api/services";
 
 const TourismWideRange: FC = () => {
   const [services, setServices] = useState<Service[]>([]);
@@ -30,7 +29,6 @@ const TourismWideRange: FC = () => {
       try {
         const res = await fetch(API_URL, {
           method: "GET",
-          cache: "no-store",
         });
 
         if (!res.ok) {
@@ -92,9 +90,8 @@ const TourismWideRange: FC = () => {
                         src={item.imageSrc}
                         alt={item.imageAlt || item.title}
                         fill
-
+                        sizes="(min-width: 1024px) 350px, (min-width: 640px) 50vw, calc(100vw - 2rem)"
                         className="object-cover"
-                        unoptimized
                       />
                     </div>
 

@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 
@@ -146,7 +144,6 @@ const CorporateTieUpEmployees: FC = () => {
                             alt="Corporate dental tie-up for employees"
                             width={1200}
                             height={1000}
-                            priority
                             className="w-full h-[320px] lg:h-[560px] object-cover"
                         />
                     </div>

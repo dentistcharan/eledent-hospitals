@@ -1,128 +1,30 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronRight, ChevronLeft } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useMemo, useState } from "react";
+import type {
+    SpecialtiesData,
+    SpecialtyItem,
+} from "@/lib/specialties-api";
 
-type Service = {
-    _id?: string;
-    slug?: string;
-    title: string;
-    image: string;
-    detailImage: string;
-    description: string[];
-};
-
-type SpecialtiesData = {
-    sectionTitle?: string;
-    sideImage?: string;
-    sideText?: string;
-    bgImage?: string;
-    services?: Service[];
-};
-
-type ApiResponse =
-    | {
-        success?: boolean;
-        data?: SpecialtiesData;
-    }
-    | SpecialtiesData
-    | Record<string, any>;
-
-const FALLBACK_SIDE_IMAGE = "/home/special-img.png";
-const FALLBACK_BG_IMAGE = "/home/specialties-image.png";
-const FALLBACK_SIDE_TEXT =
-    "Advanced Dental Treatments With Modern Dentistry By Experienced Specialists";
-
-export default function OurSpecialties() {
-    const router = useRouter();
-
-    const [sectionTitle, setSectionTitle] = useState("Our Specialities ");
-    const [sideImage, setSideImage] = useState(FALLBACK_SIDE_IMAGE);
-    const [sideText, setSideText] = useState(FALLBACK_SIDE_TEXT);
-    const [bgImage, setBgImage] = useState(FALLBACK_BG_IMAGE);
-    const [services, setServices] = useState<Service[]>([]);
+export default function OurSpecialties({
+    initialData,
+}: {
+    initialData: SpecialtiesData | null;
+}) {
+    const sectionTitle = initialData?.sectionTitle ?? "Our Specialties";
+    const sideImage = initialData?.sideImage ?? "";
+    const sideText = initialData?.sideText ?? "";
+    const bgImage = initialData?.bgImage ?? "";
+    const [services] = useState<SpecialtyItem[]>(initialData?.services ?? []);
     const [activeService, setActiveService] = useState(0);
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState("");
+    const loading = false;
+    const error = initialData ? "" : "Unable to load specialties right now.";
 
     const cardsPerSlide = 3;
-
-    useEffect(() => {
-        const fetchSpecialties = async () => {
-            try {
-                setLoading(true);
-                setError("");
-
-                const res = await fetch(
-                    "https://cms.eledenthospitals.com/wp-json/custom/v2/specialties",
-                    {
-                        method: "GET",
-                        cache: "no-store",
-                    }
-                );
-
-                if (!res.ok) {
-                    throw new Error(`Failed to fetch specialties: ${res.status}`);
-                }
-
-                const result: ApiResponse = await res.json();
-
-                const rawPayload =
-                    typeof result === "object" &&
-                        result !== null &&
-                        "data" in result &&
-                        result.data
-                        ? result.data
-                        : result;
-
-                if (!rawPayload || typeof rawPayload !== "object") {
-                    throw new Error("Invalid API response");
-                }
-
-                const normalizedServices: Service[] = Array.isArray(rawPayload.services)
-                    ? rawPayload.services.map((item: any) => ({
-                        _id: item?._id || item?.id || item?.title,
-                        slug: item?.slug || item?.urlSlug || "",
-                        title: item?.title || "",
-                        image: item?.image || item?.cardImage || "",
-                        detailImage:
-                            item?.detailImage || item?.detail_image || item?.image || "",
-                        description: Array.isArray(item?.description)
-                            ? item.description
-                            : typeof item?.description === "string"
-                                ? [item.description]
-                                : [],
-                    }))
-                    : [];
-
-                setSectionTitle(
-                    rawPayload.sectionTitle ||
-                    rawPayload.section_title ||
-                    "Our Specialties"
-                );
-                setSideImage(
-                    rawPayload.sideImage || rawPayload.side_image || FALLBACK_SIDE_IMAGE
-                );
-                setSideText(
-                    rawPayload.sideText || rawPayload.side_text || FALLBACK_SIDE_TEXT
-                );
-                setBgImage(rawPayload.bgImage || rawPayload.bg_image || FALLBACK_BG_IMAGE);
-                setServices(normalizedServices);
-                setActiveService(0);
-                setCurrentSlide(0);
-            } catch (err) {
-                console.error(err);
-                setError("Unable to load specialties right now.");
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchSpecialties();
-    }, []);
 
     const totalSlides = Math.ceil(services.length / cardsPerSlide);
 
@@ -136,22 +38,6 @@ export default function OurSpecialties() {
     const handleServiceClick = (index: number) => {
         setActiveService(index);
         setCurrentSlide(Math.floor(index / cardsPerSlide));
-    };
-
-    const handleReadMore = () => {
-        if (!active) return;
-
-        if (active.slug) {
-            router.push(`/specialties/${active.slug}`);
-            return;
-        }
-
-        if (active._id) {
-            router.push(`/specialties/${active._id}`);
-            return;
-        }
-
-        console.error("No slug or id found for this service");
     };
 
     const goPrev = () => {
@@ -173,27 +59,26 @@ export default function OurSpecialties() {
     return (
         <section className="relative px-4 pb-4 pt-4 sm:px-6 md:px-8 lg:px-20 lg:pt-24">
             <div className="relative overflow-hidden rounded-3xl py-6 lg:bg-[#f9fbff] lg:px-6 lg:py-10">
-                <div className="pointer-events-none absolute -bottom-10 right-0 hidden h-full w-[75%] lg:block">
+                {bgImage && <div className="pointer-events-none absolute -bottom-10 right-0 hidden h-full w-[75%] lg:block">
                     <Image
                         src={bgImage}
                         alt=""
                         fill
-                           unoptimized
+                        sizes="(min-width: 1024px) 75vw, 1px"
                         className="object-cover object-bottom object-right opacity-60"
                     />
-                </div>
+                </div>}
 
                 <div className="relative mx-auto max-w-[1240px]">
                     <div className="grid gap-6 lg:grid-cols-[380px_1fr] lg:gap-12">
                         <div className="relative h-[280px] overflow-hidden rounded-2xl bg-white shadow-xl sm:h-[360px] lg:h-[700px]">
-                            <Image
+                            {sideImage ? <Image
                                 src={sideImage}
                                 alt="Specialties"
-                                   unoptimized
                                 fill
+                                sizes="(min-width: 1024px) 380px, calc(100vw - 2rem)"
                                 className="h-full w-full object-cover"
-                                priority
-                            />
+                            /> : null}
 
                             <div className="absolute bottom-4 left-4 right-4 rounded-[16px] bg-[#e67735] px-4 py-3 text-white sm:bottom-5 sm:left-6 sm:right-6 sm:px-6 sm:py-4 lg:bottom-10 lg:py-5">
                                 <p className="text-center text-sm font-medium leading-snug sm:text-lg lg:text-[24px]">
@@ -235,20 +120,17 @@ export default function OurSpecialties() {
                                                     <p key={`${active.title}-${i}`}>{p}</p>
                                                 ))}
                                             </div>
-                                            <a href="/services">
-                                                <button
-                                                    type="button"
-
-                                                    className="mt-6 inline-flex items-center gap-3 rounded-full bg-[#2F2F2F] px-5 py-2.5 text-sm text-white sm:text-base"
-                                                >
+                                            <Link
+                                                href="/services"
+                                                className="mt-6 inline-flex items-center gap-3 rounded-full bg-[#2F2F2F] px-5 py-2.5 text-sm text-white sm:text-base"
+                                            >
 
                                                     Read More
                                                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#FF8A3D] text-black">
                                                         <ChevronRight size={18} />
                                                     </span>
 
-                                                </button>
-                                            </a>
+                                            </Link>
                                         </div>
 
                                         <div className="h-[240px] overflow-hidden rounded-[16px] bg-white shadow-lg sm:h-[300px] lg:h-[320px]">
@@ -258,7 +140,7 @@ export default function OurSpecialties() {
                                                     alt={active.title}
                                                     width={1000}
                                                     height={1000}
-                                                       unoptimized
+                                                    sizes="(min-width: 1024px) 340px, calc(100vw - 2rem)"
                                                     className="h-full w-full object-cover"
                                                 />
                                             ) : (

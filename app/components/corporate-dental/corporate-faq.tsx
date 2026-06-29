@@ -58,7 +58,6 @@ export default function CorporateFaq(): JSX.Element {
                         src="/about-us/faq-image.png"
                         alt="FAQ Background"
                         fill
-                        priority
                         className="object-cover"
                     />
                     <div className="absolute inset-0 " />

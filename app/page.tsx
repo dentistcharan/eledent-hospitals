@@ -15,23 +15,30 @@ import Footer from "./components/Footer";
 import BookingAportment from "./components/comman/booking-aportment";
 import AwardsSection from "./components/home/award";
 import FacilitiesAccordion from "./components/home/facilities-accordion";
+import { getServicesData } from "@/lib/services-api";
+import { getSpecialtiesData } from "@/lib/specialties-api";
 
 export async function generateMetadata(): Promise<Metadata> {
   return await getMetadataByPath("/");
 }
 
-export default function Home() {
+export default async function Home() {
+  const [services, specialties] = await Promise.all([
+    getServicesData(),
+    getSpecialtiesData(),
+  ]);
+
   return (
     <div>
       <FaqSchema path="/" />
-      <Navbar />
+      <Navbar initialServices={services} />
       <main>
         <HeroSection />
         <AboutUs />
-        <OurSpecialties />
+        <OurSpecialties initialData={specialties} />
         <FacilitiesAccordion />
         <MakeAppointment />
-        <HomeServices />
+        <HomeServices initialServices={services} />
         <HomeTestimonial />
         <HealthPatner />
         <div>
@@ -40,7 +47,7 @@ export default function Home() {
         <BlogMain />
         <AwardsSection />
         <HomeFaq />
-        <Footer />
+        <Footer initialServices={services} />
       </main>
     </div>
   );

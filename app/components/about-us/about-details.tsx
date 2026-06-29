@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 import type { LucideIcon } from "lucide-react";
@@ -93,7 +91,6 @@ const AboutDetails: FC = () => {
               alt="About Eledent"
               width={900}
               height={900}
-              priority
               className="w-full h-[530px] object-cover"
             />
 
@@ -105,7 +102,6 @@ const AboutDetails: FC = () => {
                   src="/about-us/about-2bg.png"
                   alt="Background"
                   fill
-                  priority
                   className="object-cover"
                 />
 
@@ -120,7 +116,6 @@ const AboutDetails: FC = () => {
                       alt="Icon"
                       width={112}
                       height={112}
-                      priority
                       className="lg:w-14 lg:h-14 w-10 h-10 object-contain"
                     />
                   </div>

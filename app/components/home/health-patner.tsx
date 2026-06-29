@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { JSX } from "react";
 
@@ -159,9 +157,8 @@ export default function HealthPatner(): JSX.Element {
                                         src="/about-us/why-choose-us.png"
                                         alt="Doctor"
                                         fill
-                                        unoptimized
+                                        sizes="(min-width: 640px) 300px, 260px"
                                         className="rounded-2xl object-contain"
-                                        priority
                                     />
                                 </div>
 

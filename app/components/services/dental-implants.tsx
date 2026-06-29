@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 type Props = {
@@ -41,9 +39,7 @@ export default function DentalImplantsSection({
                   alt="Dental implants illustration"
                   width={900}
                   height={900}
-                     unoptimized
                   className="h-auto w-full object-contain"
-                  priority
                 />
               </div>
 

@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import BookingModel from "./comman/booking-model";
+import type { ServiceItem } from "@/lib/services-api";
 
 type NavLinkItem = {
   type: "link";
@@ -30,20 +31,18 @@ type NavDropdownItem = {
 
 type NavItem = NavLinkItem | NavDropdownItem;
 
-type ApiService =
-  | {
-    id?: number | string;
-    name?: string;
-    title?: string;
-    slug?: string;
-    link?: string;
-    url?: string;
-    href?: string;
-    post_name?: string;
-    post_title?: string;
-    service_name?: string;
-  }
-  | any;
+type ApiService = {
+  id?: number | string;
+  name?: string;
+  title?: string;
+  slug?: string;
+  link?: string;
+  url?: string;
+  href?: string;
+  post_name?: string;
+  post_title?: string;
+  service_name?: string;
+};
 
 function toSlug(input: string) {
   return input
@@ -54,7 +53,61 @@ function toSlug(input: string) {
     .replace(/(^-|-$)/g, "");
 }
 
-export default function Navbar() {
+function normalizeServices(data: unknown) {
+  const response = data as {
+    data?: ApiService[];
+    services?: ApiService[];
+  };
+  const list: ApiService[] = Array.isArray(data)
+    ? data
+    : Array.isArray(response?.data)
+      ? response.data
+      : Array.isArray(response?.services)
+        ? response.services
+        : [];
+
+  return list
+    .map((service) => {
+      const name = String(
+        service.name ||
+        service.title ||
+        service.service_name ||
+        service.post_title ||
+        ""
+      ).trim();
+
+      if (!name) return null;
+
+      const direct =
+        (typeof service.href === "string" && service.href) ||
+        (typeof service.link === "string" && service.link) ||
+        (typeof service.url === "string" && service.url);
+
+      let href = "";
+      if (direct) {
+        try {
+          href = new URL(direct).pathname || direct;
+        } catch {
+          href = direct;
+        }
+      } else {
+        const slug = String(
+          service.slug || service.post_name || toSlug(name)
+        ).trim();
+        href = `/services/${slug}`;
+      }
+
+      return { name, href };
+    })
+    .filter((item): item is { name: string; href: string } => item !== null)
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export default function Navbar({
+  initialServices,
+}: {
+  initialServices?: ServiceItem[];
+}) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -70,64 +123,23 @@ export default function Navbar() {
 
   const [servicesItems, setServicesItems] = useState<
     { name: string; href: string }[]
-  >([]);
-  const [servicesLoading, setServicesLoading] = useState(true);
+  >(() => normalizeServices(initialServices));
+  const [servicesLoading, setServicesLoading] = useState(
+    initialServices === undefined
+  );
 
   useEffect(() => {
+    if (initialServices !== undefined) return;
+
     let cancelled = false;
 
     async function loadServices() {
       try {
         setServicesLoading(true);
 
-        const res = await fetch(
-          "https://cms.eledenthospitals.com/wp-json/custom/v1/services",
-          { cache: "no-store" }
-        );
-
-        const data: ApiService[] = await res.json();
-
-        const list: ApiService[] = Array.isArray(data)
-          ? data
-          : Array.isArray((data as any)?.data)
-            ? (data as any).data
-            : Array.isArray((data as any)?.services)
-              ? (data as any).services
-              : [];
-
-        const mapped = list
-          .map((s) => {
-            const label = String(
-              s?.name || s?.title || s?.service_name || s?.post_title || ""
-            ).trim();
-
-            if (!label) return null;
-
-            const direct =
-              (typeof s?.href === "string" && s.href) ||
-              (typeof s?.link === "string" && s.link) ||
-              (typeof s?.url === "string" && s.url);
-
-            let href = "";
-            if (direct) {
-              try {
-                const u = new URL(direct);
-                href = u.pathname || direct;
-              } catch {
-                href = direct;
-              }
-            } else {
-              const slug = String(
-                s?.slug || s?.post_name || toSlug(label)
-              ).trim();
-              href = `/services/${slug}`;
-            }
-
-            return { name: label, href };
-          })
-          .filter(Boolean) as { name: string; href: string }[];
-
-        mapped.sort((a, b) => a.name.localeCompare(b.name));
+        const res = await fetch("/api/services");
+        const data: unknown = await res.json();
+        const mapped = normalizeServices(data);
 
         if (!cancelled) setServicesItems(mapped);
       } catch {
@@ -142,7 +154,7 @@ export default function Navbar() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [initialServices]);
 
   useEffect(() => {
     if (mobileMenuOpen || appointmentModalOpen) {
@@ -250,10 +262,8 @@ export default function Navbar() {
                   src="/NABH-logo.png"
                   alt="Eledent logo"
                   className="w-10 lg:w-10"
-                  width={500}
-                  height={500}
-                  unoptimized
-                  priority
+                  width={40}
+                  height={42}
                 />
 
 
@@ -270,9 +280,8 @@ export default function Navbar() {
                   src="/home/instagram.png"
                   alt="Instagram"
                   className="h-3 w-3 sm:h-5 sm:w-5"
-                  width={500}
-                  height={500}
-                  priority
+                  width={20}
+                  height={20}
                 />
               </a>
 
@@ -287,9 +296,8 @@ export default function Navbar() {
                   src="/home/facebook.png"
                   alt="Facebook"
                   className="h-3 w-3 sm:h-5 sm:w-5"
-                  width={500}
-                  height={500}
-                  priority
+                  width={20}
+                  height={20}
                 />
               </a>
 
@@ -304,9 +312,8 @@ export default function Navbar() {
                   src="/home/youtube.png"
                   alt="YouTube"
                   className="h-3 w-3 sm:h-5 sm:w-5"
-                  width={500}
-                  height={500}
-                  priority
+                  width={20}
+                  height={20}
                 />
               </a>
 
@@ -322,8 +329,8 @@ export default function Navbar() {
                 src="/White-Logo1.png"
                 alt="Eledent logo"
                 className="w-28 sm:w-28 lg:w-40"
-                width={500}
-                height={500}
+                width={229}
+                height={59}
                 priority
               />
 
@@ -516,9 +523,8 @@ export default function Navbar() {
                   src="/White-Logo1.png"
                   alt="Eledent logo"
                   className="w-24"
-                  width={500}
-                  height={500}
-                  priority
+                  width={229}
+                  height={59}
                 />
                 <button
                   onClick={() => setMobileMenuOpen(false)}

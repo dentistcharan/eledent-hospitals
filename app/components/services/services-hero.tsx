@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { PhoneCall, Clock } from "lucide-react";
@@ -16,7 +14,6 @@ export default function ServicesHero() {
                         alt="Services banner"
                         fill
                         priority
-                           unoptimized
                         className="object-cover rounded-3xl"
                         sizes="(max-width: 768px) 100vw, 1100px"
                     />

@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 import type { LucideIcon } from "lucide-react";
@@ -133,7 +131,6 @@ const PracticalDentalBenefits: FC = () => {
               alt="Corporate Dental Benefits — professional smiling"
               width={1500}
               height={1500}
-              priority
               className="w-full h-[360px] lg:h-[500px] object-cover object-top"
             />
 
@@ -158,7 +155,6 @@ const WhatWeOffer: FC = () => {
             alt="Corporate handshake — dental tie-up"
             width={800}
             height={600}
-            priority
             className="w-full h-[380px] lg:h-[630px] object-cover"
           />
         </div>

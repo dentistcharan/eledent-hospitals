@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 
@@ -38,7 +36,6 @@ const JourneyDigitalDentistry: FC = () => {
                                 alt="Journey at Eledent International Digital Dentistry"
                                 fill
                                 className="object-contain"
-                                priority
                             />
                         </div>
                     </div>

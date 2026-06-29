@@ -41,10 +41,6 @@ const SERVICES_API_URL = "/api/services";
 const FALLBACK_IMAGE = "/images/placeholder-service.jpg";
 const FALLBACK_ICON = "/images/default-service-icon.png";
 
-function isExternalUrl(url?: string): boolean {
-  return !!url && /^https?:\/\//i.test(url);
-}
-
 export default function DentalServices(): JSX.Element {
   const [cards, setCards] = useState<ServiceCardItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -60,7 +56,6 @@ export default function DentalServices(): JSX.Element {
 
         const response = await fetch(SERVICES_API_URL, {
           method: "GET",
-          cache: "no-store",
         });
 
         if (!response.ok) {
@@ -301,7 +296,6 @@ function ServiceCard({
           src={currentImage}
           alt={imageAlt || title}
           fill
-          unoptimized={isExternalUrl(currentImage)}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="rounded-[18px] object-cover object-center p-2 transition-transform duration-500 group-hover:scale-105"
           onError={() => setCurrentImage(FALLBACK_IMAGE)}
@@ -316,7 +310,6 @@ function ServiceCard({
                 src={currentIcon}
                 alt={`${title} icon`}
                 fill
-                unoptimized={isExternalUrl(currentIcon)}
                 sizes="32px"
                 className="object-contain invert"
                 onError={() => setCurrentIcon(FALLBACK_ICON)}

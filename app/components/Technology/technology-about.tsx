@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 
@@ -237,7 +235,6 @@ const TechnologyAbout: FC = () => {
                       src={sec.imageSrc}
                       alt={sec.imageAlt}
                       fill
-                      priority
                       className={sec.imageFit === "cover" ? "object-cover" : "object-contain"}
 
                     />

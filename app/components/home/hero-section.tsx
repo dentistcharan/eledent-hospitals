@@ -6,45 +6,27 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useAppointmentModal } from "@/app/context/AppointmentModalContext";
-import { useEffect, useState } from "react";
 
 import "swiper/css";
 
-const desktopHeroImages = [
-    "/home/home-banner.jpg",
-    "/home/home-banner-1.jpg",
-    "/home/home-banner-2.jpg",
-    "/home/home-banner-3.jpg",
-    "/home/home-banner-4.jpg",
-    "/home/eledent-home-6.jpg",
+const heroImages = [
+    { desktop: "/home/home-banner.jpg", mobile: "/home/Eledent-Home-Mob-1.jpg" },
+    { desktop: "/home/home-banner-1.jpg", mobile: "/home/Eledent-Home-Mob-2.jpg" },
+    { desktop: "/home/home-banner-2.jpg", mobile: "/home/Eledent-Home-Mob-3.jpg" },
+    { desktop: "/home/home-banner-3.jpg", mobile: "/home/Eledent-Home-Mob-4.jpg" },
+    { desktop: "/home/home-banner-4.jpg", mobile: "/home/Eledent-Home-Mob-5.jpg" },
+    { desktop: "/home/eledent-home-6.jpg", mobile: "/home/Eledent-Home-Mob-6.png" },
 ];
 
-const mobileHeroImages = [
-    "/home/Eledent-Home-Mob-1.jpg",
-    "/home/Eledent-Home-Mob-2.jpg",
-    "/home/Eledent-Home-Mob-3.jpg",
-    "/home/Eledent-Home-Mob-4.jpg",
-    "/home/Eledent-Home-Mob-5.jpg",
-    "/home/Eledent-Home-Mob-6.png",
-
-];
+function mobileImageSrcSet(src: string) {
+    const encodedSrc = encodeURIComponent(src);
+    return [640, 750, 828]
+        .map((width) => `/_next/image?url=${encodedSrc}&w=${width}&q=75 ${width}w`)
+        .join(", ");
+}
 
 export default function HeroSection() {
     const { openModal } = useAppointmentModal();
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const checkScreen = () => {
-            setIsMobile(window.innerWidth < 1024);
-        };
-
-        checkScreen();
-        window.addEventListener("resize", checkScreen);
-
-        return () => window.removeEventListener("resize", checkScreen);
-    }, []);
-
-    const heroImages = isMobile ? mobileHeroImages : desktopHeroImages;
 
     return (
         <div className="my-6 lg:my-12 mx-4 lg:mx-24 lg:mt-40 mt-36">
@@ -69,13 +51,22 @@ export default function HeroSection() {
                             {heroImages.map((image, index) => (
                                 <SwiperSlide key={index}>
                                     <div className="relative h-[350px] lg:h-[500px] w-full">
-                                        <Image
-                                            src={image}
-                                            alt={`Hero slide ${index + 1}`}
-                                            fill
-                                            priority={index === 0}
-                                            className="object-cover object-top rounded-2xl"
-                                        />
+                                        <picture>
+                                            <source
+                                                media="(max-width: 1023px)"
+                                                srcSet={mobileImageSrcSet(image.mobile)}
+                                                sizes="100vw"
+                                            />
+                                            <Image
+                                                src={image.desktop}
+                                                alt={`Hero slide ${index + 1}`}
+                                                fill
+                                                sizes="(max-width: 1023px) 100vw, calc(100vw - 12rem)"
+                                                loading={index === 0 ? "eager" : "lazy"}
+                                                fetchPriority={index === 0 ? "high" : "auto"}
+                                                className="object-cover object-top rounded-2xl"
+                                            />
+                                        </picture>
                                     </div>
                                 </SwiperSlide>
                             ))}

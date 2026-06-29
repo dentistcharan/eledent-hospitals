@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 
@@ -129,7 +127,6 @@ const TourismAbout: FC = () => {
                           width={500}
                           height={500}
                           className="w-full h-[450px] object-contain"
-                          priority
                         />
                       </div>
                     </div>
@@ -149,7 +146,6 @@ const TourismAbout: FC = () => {
                         width={500}
                         height={500}
                         className="w-full h-[450px] object-cover"
-                        priority
                       />
                     </div>
 

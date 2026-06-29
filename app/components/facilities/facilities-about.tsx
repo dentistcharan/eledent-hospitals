@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 
@@ -187,7 +185,6 @@ const FacilitiesAbouts: FC = () => {
                         width={img.width}
                         height={img.height}
                         className={img.className}
-                        priority
                       />
                     </div>
                   </div>
@@ -209,7 +206,6 @@ const FacilitiesAbouts: FC = () => {
                         width={img.width}
                         height={img.height}
                         className={img.className}
-                        priority
                       />
                     </div>
                   </div>
@@ -243,7 +239,6 @@ const FacilitiesAbouts: FC = () => {
                       width={img.width}
                       height={img.height}
                       className={img.className}
-                      priority
                     />
                   </div>
                 </div>

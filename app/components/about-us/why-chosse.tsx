@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { JSX } from "react";
 
@@ -113,7 +111,6 @@ export default function WhyChoose(): JSX.Element {
                                 src="/about-us/why-choose-us.png"
                                 alt="Doctor"
                                 fill
-                                priority
                                 className="object-contain"
                             />
                         </div>
@@ -134,7 +131,6 @@ export default function WhyChoose(): JSX.Element {
                                     src="/about-us/why-choose-us.png"
                                     alt="Doctor"
                                     fill
-                                    priority
                                     className="object-contain"
                                 />
                             </div>
