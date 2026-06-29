@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 type OverviewPart = {
@@ -118,9 +116,7 @@ export default function DentalImplantsSection({ data }: Props) {
                   alt={imageAlt}
                   width={900}
                   height={900}
-                     unoptimized
                   className="h-auto lg:h-[480px] w-full object-cover"
-                  priority
                 />
               </div>
             </div>
@@ -131,9 +127,7 @@ export default function DentalImplantsSection({ data }: Props) {
                 alt={imageAlt}
                 width={900}
                 height={900}
-                   unoptimized
                 className="h-auto w-full object-contain"
-                priority
               />
             </div>
           </div>

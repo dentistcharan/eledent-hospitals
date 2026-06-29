@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 
@@ -53,7 +51,6 @@ const VisaAccommodation: FC = () => {
                                     alt="Visa Travel and Accommodation"
                                     fill
                                     className="object-contain"
-                                    priority
                                 />
                             </div>
                         </div>

@@ -51,7 +51,6 @@ export default function BlogDetailsFaq({
             src={backgroundImage}
             alt="FAQ Background"
             fill
-            priority
             className="object-cover"
           />
         </div>

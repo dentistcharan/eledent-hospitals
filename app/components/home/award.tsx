@@ -137,7 +137,7 @@ function AwardCard({ award }: { award: AwardItem }): JSX.Element {
                     src={award.image}
                     alt={award.alt}
                     fill
-                    unoptimized
+                    sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, calc(100vw - 2rem)"
                     className="object-cover"
                 />
 

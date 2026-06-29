@@ -78,7 +78,6 @@ export default function AboutFaq(): JSX.Element {
                         src="/about-us/faq-image.png"
                         alt="FAQ Background"
                         fill
-                        priority
                         className="object-cover"
                     />
                     {/* make bg very subtle + fade into white on right */}

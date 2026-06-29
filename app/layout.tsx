@@ -368,7 +368,7 @@ export default function RootLayout({
           {JSON.stringify(organizationSchema)}
         </Script>
 
-        <Script id="gtm-script" strategy="afterInteractive">
+        <Script id="gtm-script" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){
               w[l]=w[l]||[];

@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import type { JSX } from "react";
 
 type BlogCard = {
@@ -103,63 +100,48 @@ function normalizeBlogHref(href?: string): string {
   return path;
 }
 
-export default function BlogMain(): JSX.Element {
-  const [cards, setCards] = useState<BlogCard[]>([]);
-  const [heading, setHeading] = useState(" Blog");
-  const [subtitle, setSubtitle] = useState("");
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string>("");
+export default async function BlogMain(): Promise<JSX.Element> {
+  let cards: BlogCard[] = [];
+  let heading = "Our Blog";
+  let subtitle = "";
+  let error = "";
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const response = await fetch(API_URL, {
-          method: "GET",
-          cache: "no-store",
-        });
+  try {
+    const response = await fetch(API_URL, {
+      next: { revalidate: 3600 },
+    });
 
-        if (!response.ok) {
-          throw new Error("Failed to fetch blogs.");
-        }
+    if (!response.ok) {
+      throw new Error("Failed to fetch blogs.");
+    }
 
-        const result: ApiResponse = await response.json();
+    const result: ApiResponse = await response.json();
+    const hero = result.data?.hero;
+    const posts = result.data?.listingSection?.posts || [];
+    const blogsPerPage = result.data?.listingSection?.blogsPerPage || 3;
 
-        const hero = result.data?.hero;
-        const posts = result.data?.listingSection?.posts || [];
-        const blogsPerPage = result.data?.listingSection?.blogsPerPage || 3;
-
-        setHeading(hero?.title || "Our Blog");
-        setSubtitle(hero?.subtitle || "");
-
-        const latestBlogs: BlogCard[] = [...posts]
-          .sort((a, b) => {
-            const dateA = new Date(a.date || "").getTime();
-            const dateB = new Date(b.date || "").getTime();
-            return dateB - dateA;
-          })
-          .slice(0, blogsPerPage > 0 ? blogsPerPage : 3)
-          .map((item) => ({
-            id: item.id,
-            img: item.image || "/home/home-blog.png",
-            date: formatDate(item.date),
-            title: item.title || "Untitled Blog",
-            desc: item.description || "No description available.",
-            author: "Admin Rose",
-            // ✅ href is now always a valid /blogs/[slug] path
-            href: normalizeBlogHref(item.href),
-          }));
-
-        setCards(latestBlogs);
-      } catch (err) {
-        console.error("Blog fetch error:", err);
-        setError("Unable to load blogs right now.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBlogs();
-  }, []);
+    heading = hero?.title || "Our Blog";
+    subtitle = hero?.subtitle || "";
+    cards = [...posts]
+      .sort((a, b) => {
+        const dateA = new Date(a.date || "").getTime();
+        const dateB = new Date(b.date || "").getTime();
+        return dateB - dateA;
+      })
+      .slice(0, blogsPerPage > 0 ? blogsPerPage : 3)
+      .map((item) => ({
+        id: item.id,
+        img: item.image || "/home/home-blog.png",
+        date: formatDate(item.date),
+        title: item.title || "Untitled Blog",
+        desc: item.description || "No description available.",
+        author: "Admin Rose",
+        href: normalizeBlogHref(item.href),
+      }));
+  } catch (fetchError) {
+    console.error("Blog fetch error:", fetchError);
+    error = "Unable to load blogs right now.";
+  }
 
   return (
     <section className="w-full bg-white pt-0 lg:py-16 lg:pt-10">
@@ -184,20 +166,14 @@ export default function BlogMain(): JSX.Element {
         </div>
 
         {/* States */}
-        {loading && (
-          <div className="mt-10 text-center text-sm text-slate-500">
-            Loading blogs...
-          </div>
-        )}
-
         {error && (
           <div className="mt-10 text-center text-sm text-red-500">{error}</div>
         )}
 
         {/* Blog grid */}
-        {!loading && !error && cards.length > 0 && (
+        {!error && cards.length > 0 && (
           <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-            {cards.map((c, idx) => (
+            {cards.map((c) => (
               <article
                 key={c.id}
                 className="rounded-[10px] bg-white shadow-[0_18px_50px_-34px_rgba(15,30,42,0.85)] lg:shadow-[0_10px_30px_rgba(0,0,0,0.15)]"
@@ -209,9 +185,7 @@ export default function BlogMain(): JSX.Element {
                       src={c.img}
                       alt={c.title}
                       fill
-                      
-                      priority={idx === 0}
-                      unoptimized
+                      sizes="(min-width: 1024px) 350px, (min-width: 768px) 50vw, calc(100vw - 2rem)"
                     />
                   </div>
                   <div className="absolute bottom-0 right-0 rounded-tl-[6px] bg-[#f47200] px-4 py-1.5 text-xs font-medium text-white">
@@ -299,7 +273,7 @@ export default function BlogMain(): JSX.Element {
           </div>
         )}
 
-        {!loading && !error && cards.length === 0 && (
+        {!error && cards.length === 0 && (
           <div className="mt-10 text-center text-sm text-slate-500">
             No blogs found.
           </div>

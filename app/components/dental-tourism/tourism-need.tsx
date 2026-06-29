@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 
@@ -37,7 +35,6 @@ const TourismNeed: FC = () => {
                                     alt="Dental tourism"
                                     fill
                                     className="object-cover"
-                                    priority
                                 />
                             </div>
                         </div>

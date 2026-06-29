@@ -1,4 +1,3 @@
-"use client";
 import { Building2, Zap, HeartPulse, ShieldCheck, Info } from "lucide-react";
 
 const facilities = [

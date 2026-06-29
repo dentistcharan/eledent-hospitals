@@ -88,7 +88,6 @@ export default function TechnologyFaq(): JSX.Element {
                         src="/about-us/faq-image.png"
                         alt="FAQ Background"
                         fill
-                        priority
                         className="object-cover"
                     />
 

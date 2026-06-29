@@ -1,29 +1,29 @@
-"use client";
-
 import { PhoneCall } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, type JSX } from "react";
+import type { JSX } from "react";
+import {
+    getServicesData,
+    type ServiceItem,
+} from "@/lib/services-api";
 
 type FooterLink = {
     name: string;
     href: string;
 };
 
-type ApiItem =
-    | {
-        id?: number | string;
-        name?: string;
-        title?: string;
-        slug?: string;
-        link?: string;
-        url?: string;
-        href?: string;
-        post_name?: string;
-        post_title?: string;
-        service_name?: string;
-    }
-    | any;
+type ApiItem = {
+    id?: number | string;
+    name?: string;
+    title?: string;
+    slug?: string;
+    link?: string;
+    url?: string;
+    href?: string;
+    post_name?: string;
+    post_title?: string;
+    service_name?: string;
+};
 
 function toSlug(input: string) {
     return input
@@ -34,87 +34,64 @@ function toSlug(input: string) {
         .replace(/(^-|-$)/g, "");
 }
 
-export default function Footer(): JSX.Element {
-    const [servicesItems, setServicesItems] = useState<FooterLink[]>([]);
-    const [loading, setLoading] = useState(true);
+function normalizeServices(data: unknown): FooterLink[] {
+    const response = data as {
+        data?: ApiItem[];
+        services?: ApiItem[];
+    };
+    const list: ApiItem[] = Array.isArray(data)
+        ? data
+        : Array.isArray(response?.data)
+            ? response.data
+            : Array.isArray(response?.services)
+                ? response.services
+                : [];
 
-    useEffect(() => {
-        let cancelled = false;
+    return list
+        .map((service) => {
+            const name = String(
+                service.name ||
+                service.title ||
+                service.service_name ||
+                service.post_title ||
+                ""
+            ).trim();
 
-        async function loadServices() {
-            try {
-                setLoading(true);
+            if (!name) return null;
 
-                const res = await fetch(
-                    "https://cms.eledenthospitals.com/wp-json/custom/v1/services",
-                    { cache: "no-store" }
-                );
+            const direct =
+                (typeof service.href === "string" && service.href) ||
+                (typeof service.link === "string" && service.link) ||
+                (typeof service.url === "string" && service.url);
 
-                const data: ApiItem[] = await res.json();
-
-                const list: ApiItem[] = Array.isArray(data)
-                    ? data
-                    : Array.isArray((data as any)?.data)
-                        ? (data as any).data
-                        : Array.isArray((data as any)?.services)
-                            ? (data as any).services
-                            : [];
-
-                const mapped = list
-                    .map((s) => {
-                        const label = String(
-                            s?.name ||
-                            s?.title ||
-                            s?.service_name ||
-                            s?.post_title ||
-                            ""
-                        ).trim();
-
-                        if (!label) return null;
-
-                        const direct =
-                            (typeof s?.href === "string" && s.href) ||
-                            (typeof s?.link === "string" && s.link) ||
-                            (typeof s?.url === "string" && s.url);
-
-                        let href = "";
-
-                        if (direct) {
-                            try {
-                                const u = new URL(direct);
-                                href = u.pathname || direct;
-                            } catch {
-                                href = direct;
-                            }
-                        } else {
-                            const slug = String(
-                                s?.slug || s?.post_name || toSlug(label)
-                            ).trim();
-                            href = `/services/${slug}`;
-                        }
-
-                        return { name: label, href };
-                    })
-                    .filter(Boolean) as FooterLink[];
-
-                mapped.sort((a, b) => a.name.localeCompare(b.name));
-
-                if (!cancelled) {
-                    setServicesItems(mapped.slice(0, 10));
+            let href = "";
+            if (direct) {
+                try {
+                    href = new URL(direct).pathname || direct;
+                } catch {
+                    href = direct;
                 }
-            } catch {
-                if (!cancelled) setServicesItems([]);
-            } finally {
-                if (!cancelled) setLoading(false);
+            } else {
+                const slug = String(
+                    service.slug || service.post_name || toSlug(name)
+                ).trim();
+                href = `/services/${slug}`;
             }
-        }
 
-        loadServices();
+            return { name, href };
+        })
+        .filter((item): item is FooterLink => item !== null)
+        .sort((a, b) => a.name.localeCompare(b.name));
+}
 
-        return () => {
-            cancelled = true;
-        };
-    }, []);
+export default async function Footer({
+    initialServices,
+}: {
+    initialServices?: ServiceItem[];
+}): Promise<JSX.Element> {
+    const services = initialServices ?? await getServicesData();
+    const servicesItems = normalizeServices(services).slice(0, 10);
+    const loading = false;
 
     const quickLinks: FooterLink[] = [
         { name: "Home", href: "/" },
@@ -152,14 +129,13 @@ export default function Footer(): JSX.Element {
                                     width={220}
                                     height={80}
                                     className="w-[150px] sm:w-[180px]"
-                                    priority
                                 />
                             </Link>
                         </div>
 
                         <div className="text-right text-white lg:block hidden">
                             <h3 className="text-lg font-medium leading-snug">
-                                <a href="/">© 2026 ELEDENT HOSPITALS LLP.</a> All rights reserved.
+                                <Link href="/">© 2026 ELEDENT HOSPITALS LLP.</Link> All rights reserved.
                             </h3>
                         </div>
                     </div>
@@ -269,10 +245,8 @@ export default function Footer(): JSX.Element {
                                         src="/home/facebook.png"
                                         alt="Facebook"
                                         className="h-3 w-3 sm:h-6 sm:w-6"
-                                        width={500}
-                                        height={500}
-                                        unoptimized
-                                        priority
+                                        width={24}
+                                        height={24}
                                     />
                                 </a>
 
@@ -287,9 +261,8 @@ export default function Footer(): JSX.Element {
                                         src="/home/instagram.png"
                                         alt="Instagram"
                                         className="h-3 w-3 sm:h-6 sm:w-6"
-                                        width={500}
-                                        height={500}
-                                        priority
+                                        width={24}
+                                        height={24}
                                     />
                                 </a>
 
@@ -304,9 +277,8 @@ export default function Footer(): JSX.Element {
                                         src="/home/youtube.png"
                                         alt="YouTube"
                                         className="h-3 w-3 sm:h-6 sm:w-6"
-                                        width={500}
-                                        height={500}
-                                        priority
+                                        width={24}
+                                        height={24}
                                     />
                                 </a>
 
@@ -320,10 +292,8 @@ export default function Footer(): JSX.Element {
                                         src="/NABH-logo.png"
                                         alt="Eledent logo"
                                         className="w-10 lg:w-24"
-                                        width={500}
-                                        height={500}
-                                        unoptimized
-                                        priority
+                                        width={96}
+                                        height={101}
                                     />
 
 
@@ -335,7 +305,7 @@ export default function Footer(): JSX.Element {
                 </div>
                 <div className="bg-gradient-to-b from-[#e46d2b] to-[#E87733] py-4 text-center text-white lg:mb-0 mb-16">
                     <h3 className="text-base leading-snug">
-                        <a href="/">© 2026 ELEDENT HOSPITALS LLP.</a> All rights reserved.
+                        <Link href="/">© 2026 ELEDENT HOSPITALS LLP.</Link> All rights reserved.
                     </h3>
                 </div>
             </div>

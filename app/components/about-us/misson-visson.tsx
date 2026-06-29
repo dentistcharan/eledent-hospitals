@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 
@@ -74,7 +72,6 @@ const MissionVision: FC = () => {
                                                         alt={item.title}
                                                         width={900}
                                                         height={900}
-                                                        priority
                                                         className="w-5 "
                                                     />
 

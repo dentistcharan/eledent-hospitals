@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 import type { LocationData } from "@/lib/location-api";
@@ -33,8 +31,6 @@ const LocationAbout: FC<Props> = ({ location }) => {
                 src={location.aboutImageSrc}
                 alt={location.aboutImageAlt}
                 fill
-   unoptimized
-                priority
                 className="object-cover"
               />
             </div>

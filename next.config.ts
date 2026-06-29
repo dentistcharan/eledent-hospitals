@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   },
 
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",
@@ -39,6 +40,22 @@ const nextConfig: NextConfig = {
         pathname: "/insightOpinion/wp-content/uploads/**",
       },
     ],
+  },
+
+  async headers() {
+    return [
+      {
+        source:
+          "/:path*.:ext(jpg|jpeg|png|webp|avif|svg|woff|woff2|ttf|css|js)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value:
+              "public, max-age=604800, stale-while-revalidate=2592000",
+          },
+        ],
+      },
+    ];
   },
 
   async redirects() {

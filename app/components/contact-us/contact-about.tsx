@@ -124,9 +124,7 @@ export default function LocationMapsSection() {
           process.env.NEXT_PUBLIC_API_BASE_URL ||
           "https://cms.eledenthospitals.com/wp-json/custom/v1";
 
-        const response = await fetch(`${baseUrl}/locations`, {
-          cache: "no-store",
-        });
+        const response = await fetch(`${baseUrl}/locations`);
 
         if (!response.ok) {
           throw new Error(`Failed to fetch locations: ${response.status}`);

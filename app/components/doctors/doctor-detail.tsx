@@ -137,7 +137,6 @@ export default function DoctorDetail({ doctor }: { doctor: Doctor }) {
                         src="/about-us/about-us.jpg"
                         alt={doctor.name}
                         fill
-                        priority
                         className="object-cover"
                     />
                     <div className="absolute inset-0 bg-black/75" />
@@ -174,7 +173,6 @@ export default function DoctorDetail({ doctor }: { doctor: Doctor }) {
                                         alt={doctor.name}
                                         fill
                                         className="object-cover object-top"
-                                        priority
                                     />
                                 ) : (
                                     <div className="absolute inset-0 flex items-center justify-center">

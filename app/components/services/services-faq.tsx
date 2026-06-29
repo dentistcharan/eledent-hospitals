@@ -70,8 +70,6 @@ export default function ServicesFaq(): JSX.Element {
             src="/about-us/faq-image.png"
             alt="FAQ Background"
             fill
-               unoptimized
-            priority
             className="object-cover object-left"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/25 to-white" />

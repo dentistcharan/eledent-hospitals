@@ -3,15 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-type ServiceItem = {
-    imageSrc: string;
-    imageAlt: string;
-    iconSrc: string;
-    title: string;
-    description: string;
-    slug: string;
-};
+import type { ServiceItem } from "@/lib/services-api";
 
 function ServiceCard({
     label,
@@ -58,8 +50,8 @@ function ServiceCard({
                     src={image}
                     alt={label}
                     fill
+                    sizes="64px"
                     className="object-contain p-3 transition-all duration-300 ease-out group-hover:scale-110"
-                    unoptimized
                 />
             </div>
 
@@ -77,17 +69,21 @@ function ServiceCard({
     );
 }
 
-export default function HomeServicesStatic() {
-    const [services, setServices] = useState<ServiceItem[]>([]);
+export default function HomeServicesStatic({
+    initialServices,
+}: {
+    initialServices?: ServiceItem[];
+}) {
+    const [services, setServices] = useState<ServiceItem[]>(initialServices ?? []);
     const [activeIndex, setActiveIndex] = useState(0);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(initialServices === undefined);
 
     useEffect(() => {
+        if (initialServices !== undefined) return;
+
         const fetchServices = async () => {
             try {
-                const res = await fetch(
-                    "https://cms.eledenthospitals.com/wp-json/custom/v1/services"
-                );
+                const res = await fetch("/api/services");
                 const data = await res.json();
                 setServices(data?.data || []);
             } catch (error) {
@@ -98,7 +94,7 @@ export default function HomeServicesStatic() {
         };
 
         fetchServices();
-    }, []);
+    }, [initialServices]);
 
     return (
         <section className="relative w-full bg-white overflow-hidden lg:pt-14 pt-4">
