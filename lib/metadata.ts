@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { unstable_cache } from "next/cache";
 
 const siteUrl = "https://eledenthospitals.com";
 
@@ -11,37 +12,37 @@ type MetaEntry = {
   description: string;
 };
 
-async function fetchMetaMap(): Promise<Record<string, MetaEntry>> {
-  try {
-    const res = await fetch(
-      "https://cms.eledenthospitals.com/wp-json/custom/v2/meta-data",
-      {
-        next: { revalidate: 3600 },
+const fetchMetaMap = unstable_cache(
+  async (): Promise<Record<string, MetaEntry>> => {
+    try {
+      const res = await fetch(
+        "https://cms.eledenthospitals.com/wp-json/custom/v2/meta-data",
+        { cache: "no-store" }
+      );
+
+      if (!res.ok) {
+        throw new Error(`Meta API fetch failed with status ${res.status}`);
       }
-    );
 
-    if (!res.ok) {
-      throw new Error(`API fetch failed with status ${res.status}`);
+      const data: { path: string; title: string; description: string }[] =
+        await res.json();
+
+      return data.reduce((acc, item) => {
+        const cleanPath = item.path.replace(/\/$/, "") || "/";
+        acc[cleanPath] = {
+          title: item.title.trim(),
+          description: item.description.trim(),
+        };
+        return acc;
+      }, {} as Record<string, MetaEntry>);
+    } catch (error) {
+      console.error("Meta API error:", error);
+      return {};
     }
-
-    const data: { path: string; title: string; description: string }[] =
-      await res.json();
-
-    return data.reduce((acc, item) => {
-      const cleanPath = item.path.replace(/\/$/, "") || "/";
-
-      acc[cleanPath] = {
-        title: item.title,
-        description: item.description,
-      };
-
-      return acc;
-    }, {} as Record<string, MetaEntry>);
-  } catch (error) {
-    console.error("Meta API error:", error);
-    return {};
-  }
-}
+  },
+  ["eledent-meta-map"],
+  { revalidate: 3600, tags: ["meta-map"] }
+);
 
 export async function getMetadataByPath(path: string): Promise<Metadata> {
   const cleanPath = path.replace(/\/$/, "") || "/";
