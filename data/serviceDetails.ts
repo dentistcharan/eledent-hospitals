@@ -138,6 +138,7 @@ export type BeforeAfterSection = {
     heading: string;
     subheading: string;
     items: BeforeAfterItem[];
+    cardHeightClass?: string;
 };
 
 /* =========================

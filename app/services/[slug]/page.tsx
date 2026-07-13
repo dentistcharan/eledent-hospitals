@@ -16,6 +16,7 @@ import { getMetadataByPath } from "@/lib/metadata";
 import JsonLd from "@/app/components/JsonLd";
 import { buildServiceFaqSchema, faqSchemas } from "@/lib/faq-schemas";
 import AfterBefore from "@/app/components/services-details/after-before";
+import type { BeforeAfterItem, BeforeAfterSection } from "@/data/serviceDetails";
 
 type PageProps = {
   params: Promise<{
@@ -59,6 +60,26 @@ function hasData(value: any): boolean {
   }
 
   return true;
+}
+
+function isBeforeAfterItem(item: unknown): item is BeforeAfterItem {
+  if (!item || typeof item !== "object") return false;
+
+  const candidate = item as Partial<BeforeAfterItem>;
+
+  return (
+    typeof candidate.beforeSrc === "string" &&
+    candidate.beforeSrc.trim().length > 0 &&
+    typeof candidate.afterSrc === "string" &&
+    candidate.afterSrc.trim().length > 0
+  );
+}
+
+function hasBeforeAfterData(value: unknown): value is BeforeAfterSection {
+  if (!value || typeof value !== "object") return false;
+
+  const items = (value as { items?: unknown }).items;
+  return Array.isArray(items) && items.some(isBeforeAfterItem);
 }
 
 async function getServiceBySlug(slug: string): Promise<ServiceResponse | null> {
@@ -125,8 +146,9 @@ export default async function ServicesDetailsPage({ params }: PageProps) {
 
         {hasData(service.value) ? <OverValue data={service.value} /> : null}
 
-        {/* Before/After tabhi show hoga jab data aaye */}
-        {hasData(service.beforeAfter) ? <AfterBefore data={service.beforeAfter} /> : null}
+        {hasBeforeAfterData(service.beforeAfter) ? (
+          <AfterBefore data={service.beforeAfter} />
+        ) : null}
 
         <CommanTestimonial />
 

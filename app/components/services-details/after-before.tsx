@@ -12,6 +12,19 @@ type Props = {
 export default function AfterBefore({ data }: Props): JSX.Element | null {
   if (!data) return null;
 
+  const items = Array.isArray(data.items)
+    ? data.items.filter(
+        (item) =>
+          typeof item?.beforeSrc === "string" &&
+          item.beforeSrc.trim().length > 0 &&
+          typeof item?.afterSrc === "string" &&
+          item.afterSrc.trim().length > 0
+      )
+    : [];
+
+  // Hide the complete section unless the API provides a usable image pair.
+  if (items.length === 0) return null;
+
   return (
     <section className="w-full bg-white pb-10">
       <div className="mx-auto max-w-7xl lg:px-6 px-4">
@@ -23,8 +36,8 @@ export default function AfterBefore({ data }: Props): JSX.Element | null {
             </div>
 
             <div className="grid grid-cols-3 gap-5">
-              {data.items.slice(0, 3).map((item, idx) => (
-                <BeforeAfterCard key={idx} item={item} cardHeightClass={(data as any).cardHeightClass} />
+              {items.slice(0, 3).map((item, idx) => (
+                <BeforeAfterCard key={idx} item={item} cardHeightClass={data.cardHeightClass} />
               ))}
             </div>
           </div>
