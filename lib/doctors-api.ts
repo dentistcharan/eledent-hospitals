@@ -55,7 +55,7 @@ export async function fetchDoctors(): Promise<ApiDoctor[]> {
   try {
     const res = await fetch(
       "https://cms.eledenthospitals.com/wp-json/custom/v2/doctors",
-      { next: { revalidate: 3600 } }
+      { cache: "no-store" }
     );
     if (!res.ok) return [];
     const json = await res.json();
@@ -69,7 +69,7 @@ export async function fetchDoctorBySlug(slug: string): Promise<ApiDoctorDetail |
   try {
     const res = await fetch(
       `https://cms.eledenthospitals.com/wp-json/custom/v1/doctor/${slug}`,
-      { next: { revalidate: 3600 } }
+      { cache: "no-store" }
     );
     if (!res.ok) return null;
     const json = await res.json();

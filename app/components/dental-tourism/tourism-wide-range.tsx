@@ -29,6 +29,7 @@ const TourismWideRange: FC = () => {
       try {
         const res = await fetch(API_URL, {
           method: "GET",
+          cache: "no-store",
         });
 
         if (!res.ok) {

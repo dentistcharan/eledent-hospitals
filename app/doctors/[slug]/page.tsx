@@ -3,16 +3,11 @@ import { notFound } from "next/navigation";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import DoctorDetail from "../../components/doctors/doctor-detail";
-import { fetchDoctors, fetchDoctorBySlug, generateDoctorSlug } from "@/lib/doctors-api";
+import { fetchDoctorBySlug } from "@/lib/doctors-api";
 import type { Doctor } from "@/lib/doctors-data";
 import BookingAportment from "@/app/components/comman/booking-aportment";
 
 type Props = { params: Promise<{ slug: string }> };
-
-export async function generateStaticParams() {
-    const doctors = await fetchDoctors();
-    return doctors.map((d) => ({ slug: generateDoctorSlug(d.name) }));
-}
 
 const siteUrl = "https://eledenthospitals.com";
 

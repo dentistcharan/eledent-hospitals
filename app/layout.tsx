@@ -4,6 +4,9 @@ import Script from "next/script";
 import "./globals.css";
 import { AppointmentModalProvider } from "@/app/context/AppointmentModalContext";
 
+// CMS content must be resolved at request time so CRM edits do not require a rebuild.
+export const dynamic = "force-dynamic";
+
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
