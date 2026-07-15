@@ -16,7 +16,7 @@ async function getBlogPageData() {
     const res = await fetch(
       "https://cms.eledenthospitals.com/wp-json/custom/v1/blogs",
       {
-        next: { revalidate: 60 },
+        cache: "no-store",
       }
     );
 

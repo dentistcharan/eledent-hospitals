@@ -137,7 +137,7 @@ export default function Navbar({
       try {
         setServicesLoading(true);
 
-        const res = await fetch("/api/services");
+        const res = await fetch("/api/services", { cache: "no-store" });
         const data: unknown = await res.json();
         const mapped = normalizeServices(data);
 

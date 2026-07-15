@@ -53,7 +53,8 @@ export default function RelatedBlogsSection({
         setLoading(true);
 
         const res = await fetch(
-          "https://cms.eledenthospitals.com/wp-json/custom/v1/blogs"
+          "https://cms.eledenthospitals.com/wp-json/custom/v1/blogs",
+          { cache: "no-store" }
         );
 
         if (!res.ok) {

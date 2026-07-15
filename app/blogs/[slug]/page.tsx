@@ -91,7 +91,7 @@ async function getRawBlogData(slug: string) {
     const res = await fetch(
       `https://cms.eledenthospitals.com/wp-json/custom/v1/${slug}`,
       {
-        next: { revalidate: 60 },
+        cache: "no-store",
       }
     );
 
@@ -111,7 +111,7 @@ async function getRecentBlogs(currentSlug: string): Promise<RecentArticle[]> {
 
       "https://cms.eledenthospitals.com/wp-json/wp/v2/posts?per_page=8&_embed",
       {
-        next: { revalidate: 60 },
+        cache: "no-store",
       }
     );
 

@@ -56,6 +56,7 @@ export default function DentalServices(): JSX.Element {
 
         const response = await fetch(SERVICES_API_URL, {
           method: "GET",
+          cache: "no-store",
         });
 
         if (!response.ok) {

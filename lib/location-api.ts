@@ -86,7 +86,7 @@ export async function getLocationBySlug(
 ): Promise<LocationData | null> {
   try {
     const res = await fetch(`${BASE_URL}/${slug}`, {
-      next: { revalidate: 60 },
+      cache: "no-store",
     });
 
     if (!res.ok) {
