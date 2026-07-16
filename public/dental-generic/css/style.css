@@ -203,7 +203,7 @@ ul {
 .home-banner-area {
     background-color: #fff6f0;
     padding: 170px 0px 60px;
-    background-image: url('../images/banner-02.png');
+    background-image: url('../images/banner-02.webp');
     background-repeat: no-repeat;
     width: 100%;
     background-position: 50% 50%;
@@ -386,48 +386,48 @@ ul {
 }
 
 .excel-bx-1 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/implants.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/implants.webp);
 }
 
 .excel-bx-2 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/aligners.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/aligners.webp);
 }
 
 .excel-bx-3 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/crowns.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/crowns.webp);
 }
 
 .excel-bx-4 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/extraction.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/extraction.webp);
 }
 
 .excel-bx-5 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/fillings.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/fillings.webp);
 }
 
 .excel-bx-6 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/rct-treat-img.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/rct-treat-img.webp);
 }
 
 .excel-bx-7 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/single-dentistry-img.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/single-dentistry-img.webp);
 }
 
 .excel-bx-8 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/white-teeth-.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/white-teeth-.webp);
 }
 
 .excel-bx-9 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/conscious.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/conscious.webp);
 }
 
 .excel-bx-10 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/microscopicd.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/microscopicd.webp);
 }
 
 
 .excel-bx-11 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/gbt.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/gbt.webp);
 }
 
 
@@ -747,7 +747,7 @@ section.team-of-doctor .row {
 
 .clinic-near-you {
     background: #f37326;
-    background-image: url(../images/clinic-near-me.png);
+    background-image: url(../images/clinic-near-me.webp);
     background-repeat: no-repeat;
     padding: 60px 0px 60px;
     width: 100%;
