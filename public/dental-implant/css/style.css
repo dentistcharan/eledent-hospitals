@@ -199,7 +199,7 @@ ul {
 .home-banner-area {
     background-color: #fff6f0;
     padding: 170px 0px 60px;
-    background-image: url('../images/banner-bg.png');
+    background-image: url('../images/banner-bg.webp');
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
@@ -383,31 +383,31 @@ ul {
 }
 
 .excel-bx-1 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/single-tooth.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/single-tooth.webp);
 }
 
 .excel-bx-2 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/multiple.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/multiple.webp);
 }
 
 .excel-bx-3 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/all-on-4.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/all-on-4.webp);
 }
 
 .excel-bx-4 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/all-on-6.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/all-on-6.webp);
 }
 
 .excel-bx-5 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/full-mouth.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/full-mouth.webp);
 }
 
 .excel-bx-6 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/same-day.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/same-day.webp);
 }
 
 .excel-bx-7 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/zygomatic.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/zygomatic.webp);
 }
 
 
@@ -727,7 +727,7 @@ section.team-of-doctor .row {
 
 .clinic-near-you {
     background: #f37326;
-    background-image: url(../images/clinic-near-me.png);
+    background-image: url(../images/clinic-near-me.webp);
     background-repeat: no-repeat;
     padding: 60px 0px 60px;
     width: 100%;

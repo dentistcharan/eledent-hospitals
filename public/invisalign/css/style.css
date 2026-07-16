@@ -200,7 +200,7 @@ ul {
 .home-banner-area {
     background-color: #fff6f0;
     padding: 170px 0px 60px;
-    background-image: url('../images/banner-bg.png');
+    background-image: url('../images/banner-bg.webp');
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
@@ -389,23 +389,23 @@ ul {
 }
 
 .excel-bx-1 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/Invisalign.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/Invisalign.webp);
 }
 
 .excel-bx-2 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/Invisalign-lite.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/Invisalign-lite.webp);
 }
 
 .excel-bx-3 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/express-aligners.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/express-aligners.webp);
 }
 
 .excel-bx-4 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/teen-aligners.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/teen-aligners.webp);
 }
 
 .excel-bx-5 {
-    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/retainer-aligners.png);
+    background-image: linear-gradient(rgb(0 0 0 / 23%), #f373268a), url(../images/retainer-aligners.webp);
 }
 
 
@@ -725,7 +725,7 @@ section.team-of-doctor .row {
 
 .clinic-near-you {
     background: #f37326;
-    background-image: url(../images/clinic-near-me.png);
+    background-image: url(../images/clinic-near-me.webp);
     background-repeat: no-repeat;
     padding: 60px 0px 60px;
     width: 100%;
