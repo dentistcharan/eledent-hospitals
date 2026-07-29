@@ -1615,12 +1615,8 @@
         <p class="text-center text-sm text-gray-500 mb-1">Fill the form</p>
         <p class="discount-info text-center mb-4">Get <span>10% Discount</span> on all Dental Treatments</p>
         <div class="ghl-iframe-wrap">
-          <iframe loading="lazy" src="https://api.leadconnectorhq.com/widget/form/YaGTzAtgwE32NeFcTNkt"
-            id="inline-YaGTzAtgwE32NeFcTNkt" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow"
-            data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
-            data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Generic Google Ads LP"
-            data-height="442" data-layout-iframe-id="inline-YaGTzAtgwE32NeFcTNkt" data-form-id="YaGTzAtgwE32NeFcTNkt"
-            title="Generic Google Ads LP">
+          <iframe src="" id="popup-YaGTzAtgwE32NeFcTNkt" title="Generic Google Ads LP"
+            style="background:#fff">
           </iframe>
         </div>
         <p class="text-center mt-3 text-xs text-gray-400">
@@ -1733,6 +1729,10 @@
     // ── Form modal ────────────────────────────────────────────────────
     function openFormModal() {
       var m = document.getElementById('form-modal');
+      var popupIframe = document.getElementById('popup-YaGTzAtgwE32NeFcTNkt');
+      if (!popupIframe.getAttribute('src')) {
+        popupIframe.setAttribute('src', 'https://api.leadconnectorhq.com/widget/form/YaGTzAtgwE32NeFcTNkt');
+      }
       m.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }

@@ -1052,7 +1052,7 @@
 
             <p class="discount-info"> Get <span> 10% Discount </span> on all Dental Treatments </p>
             <div class="iframe-wrapper">
-                <iframe loading="lazy" src="" id="popup-form-iframe"
+                <iframe src="" id="popup-form-iframe"
                     style="width:100%;height:100%;border:none;border-radius:3px"
                     title="Book Appointment" allow="autoplay">
                 </iframe>
@@ -1109,8 +1109,8 @@
         .iframe-wrapper {
             flex: 1;
             overflow-y: auto;
-            max-height: 90vh;
-            /* control scroll inside popup */
+            min-height: 442px;
+            max-height: calc(90vh - 170px);
             border-radius: 6px;
         }
 
@@ -1127,9 +1127,12 @@
         /* Iframe fills wrapper */
         .iframe-wrapper iframe {
             width: 100%;
-            height: 100%;
+            height: 442px;
+            min-height: 442px;
             border: none;
             border-radius: 6px;
+            display: block;
+            background: #fff;
         }
 
         /* Close button */
@@ -1162,7 +1165,12 @@
             }
 
             .iframe-wrapper {
+                min-height: min(442px, 65vh);
                 max-height: 65vh;
+            }
+
+            .iframe-wrapper iframe {
+                height: 442px;
             }
         }
     </style>
@@ -1173,6 +1181,20 @@
         $(document).ready(function () {
             let shown = false;
 
+            function showPopup() {
+                if (!$('#popup-form-iframe').attr('src')) {
+                    $('#popup-form-iframe').attr('src', 'https://api.leadconnectorhq.com/widget/form/HVv92BDMQZDdIsgeCSYy');
+                }
+
+                $('#book-popup').stop(true, true).css({ display: 'flex', opacity: 0 }).animate({ opacity: 1 }, 400);
+            }
+
+            function hidePopup() {
+                $('#book-popup').stop(true, true).animate({ opacity: 0 }, 300, function () {
+                    $(this).css('display', 'none');
+                });
+            }
+
             $(window).on('scroll', function () {
                 let scrollTop = $(window).scrollTop();
                 let docHeight = $(document).height();
@@ -1180,16 +1202,17 @@
                 let scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
                 if (scrollPercent >= 50 && !shown) {
-                    if (!$('#popup-form-iframe').attr('src')) {
-                        $('#popup-form-iframe').attr('src', 'https://api.leadconnectorhq.com/widget/form/HVv92BDMQZDdIsgeCSYy');
-                    }
-                    $('#book-popup').fadeIn(400);
+                    showPopup();
                     shown = true;
                 }
             });
 
             $('.popup-close').click(function () {
-                $('#book-popup').fadeOut(400);
+                hidePopup();
+            });
+
+            $('#book-popup').click(function (event) {
+                if (event.target === this) hidePopup();
             });
         });
     </script>
