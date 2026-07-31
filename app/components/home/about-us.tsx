@@ -22,9 +22,9 @@ export default function AboutUs() {
                             About
                         </div>
 
-                        <h2 className="text-2xl lg:text-[30px] font-bold text-primary leading-tight mb-2">
+                        <h1 className="text-2xl lg:text-[30px] font-bold text-primary leading-tight mb-2">
                             Eledent Dental Hospital
-                        </h2>
+                        </h1>
 
                         <p className="text-lg sm:text-xl text-gray-800 font-medium mb-4">
                             Best Dental Clinic in Hyderabad
