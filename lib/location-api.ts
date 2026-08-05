@@ -81,6 +81,19 @@ type LocationApiResponse = {
 const BASE_URL =
   "https://cms.eledenthospitals.com/wp-json/custom/v1/locations";
 
+export async function getLocations(): Promise<LocationData[]> {
+  try {
+    const res = await fetch(BASE_URL, { cache: "no-store" });
+
+    if (!res.ok) return [];
+
+    const json: LocationApiResponse = await res.json();
+    return json.success && Array.isArray(json.data) ? json.data : [];
+  } catch {
+    return [];
+  }
+}
+
 export async function getLocationBySlug(
   slug: string
 ): Promise<LocationData | null> {
