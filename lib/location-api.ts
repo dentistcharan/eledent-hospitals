@@ -75,11 +75,36 @@ export type LocationData = {
 type LocationApiResponse = {
   success: boolean;
   count: number;
-  data: LocationData[];
+  data: Array<Partial<LocationData> & { id?: string; href?: string }>;
 };
 
 const BASE_URL =
   "https://cms.eledenthospitals.com/wp-json/custom/v1/locations";
+
+export async function getLocations(): Promise<LocationData[]> {
+  try {
+    const res = await fetch(BASE_URL, { cache: "no-store" });
+
+    if (!res.ok) return [];
+
+    const json: LocationApiResponse = await res.json();
+    if (!json.success || !Array.isArray(json.data)) return [];
+
+    return json.data
+      .map((location) => {
+        const hrefSlug = location.href
+          ?.replace(/^https?:\/\/[^/]+/i, "")
+          .replace(/^\/?location\//, "")
+          .replace(/^\/+|\/+$/g, "");
+        const slug = location.slug?.trim() || location.id?.trim() || hrefSlug;
+
+        return slug ? ({ ...location, slug } as LocationData) : null;
+      })
+      .filter((location): location is LocationData => location !== null);
+  } catch {
+    return [];
+  }
+}
 
 export async function getLocationBySlug(
   slug: string
@@ -100,7 +125,7 @@ export async function getLocationBySlug(
       return null;
     }
 
-    return json.data[0];
+    return json.data[0] as LocationData;
   } catch (error) {
     console.error("Failed to fetch location:", error);
     return null;
