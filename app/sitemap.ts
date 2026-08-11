@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { fetchDoctors, generateDoctorSlug } from "@/lib/doctors-api";
 import { getLocations } from "@/lib/location-api";
-import { getServicesData } from "@/lib/services-api";
+import { getAllServiceSlugs } from "@/lib/services-api";
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://eledenthospitals.com/"
@@ -74,14 +74,13 @@ async function getBlogs(): Promise<BlogSitemapItem[]> {
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const today = new Date();
-  const [blogs, doctors, cmsServices, cmsLocations] = await Promise.all([
+  const [blogs, doctors, services, cmsLocations] = await Promise.all([
     getBlogs(),
     fetchDoctors(),
-    getServicesData(),
+    getAllServiceSlugs(),
     getLocations(),
   ]);
 
-  const serviceSlugs = cmsServices.map((service) => service.slug);
   const locationSlugs = cmsLocations.map((location) => location.slug);
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.map((page) => ({
@@ -91,9 +90,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: page.priority,
   }));
 
-  const serviceEntries: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
-    url: `${baseUrl}/services/${slug}`,
-    lastModified: today,
+  const serviceEntries: MetadataRoute.Sitemap = services.map((service) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date(service.updatedAt),
     changeFrequency: "monthly",
     priority: 0.8,
   }));
