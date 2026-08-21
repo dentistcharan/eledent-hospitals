@@ -13,6 +13,7 @@ import LocationTrust from "@/app/components/location/location-trust";
 import Navbar from "@/app/components/Navbar";
 import { getLocationBySlug } from "@/lib/location-api";
 import { getMetadataByPath } from "@/lib/metadata";
+import { getServicesData } from "@/lib/services-api";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -849,11 +850,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function LocationPage({ params }: Props) {
   const { slug } = await params;
-  const location = await getLocationBySlug(slug);
+  const [location, publicServices] = await Promise.all([
+    getLocationBySlug(slug),
+    getServicesData(),
+  ]);
 
   if (!location) {
     notFound();
   }
+
+  // The location API also contains backend-only service pages. Build this
+  // section exclusively from the curated public-services endpoint so those
+  // pages remain available without being exposed in the website UI.
+  const visibleLocationServices = publicServices.map((service) => ({
+    label: service.title,
+    href: `/services/${service.slug}`,
+    icon: service.iconSrc || null,
+  }));
 
   const hasTransportData =
     !!location?.city?.trim() &&
@@ -871,7 +884,7 @@ export default async function LocationPage({ params }: Props) {
         </Script>
       ) : null}
 
-      <Navbar />
+      <Navbar initialServices={publicServices} />
 
       <main>
         <LocationHero
@@ -882,7 +895,7 @@ export default async function LocationPage({ params }: Props) {
 
         <LocationAbout location={location} />
 
-        <LocationServices services={location.services} />
+        <LocationServices services={visibleLocationServices} />
 
         <LocationTrust
           city={location.city}
@@ -903,7 +916,7 @@ export default async function LocationPage({ params }: Props) {
         <LocationFaq faqs={location.faqs} />
       </main>
 
-      <Footer />
+      <Footer initialServices={publicServices} />
     </div>
   );
 }
