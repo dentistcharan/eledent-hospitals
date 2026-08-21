@@ -11,6 +11,8 @@ type MetaEntry = {
   description: string;
 };
 
+type MetadataFallback = Partial<MetaEntry>;
+
 async function fetchMetaMap(): Promise<Record<string, MetaEntry>> {
   try {
     const res = await fetch(
@@ -39,18 +41,26 @@ async function fetchMetaMap(): Promise<Record<string, MetaEntry>> {
   }
 }
 
-export async function getMetadataByPath(path: string): Promise<Metadata> {
+export async function getMetadataByPath(
+  path: string,
+  fallback: MetadataFallback = {}
+): Promise<Metadata> {
   const cleanPath = path.replace(/\/$/, "") || "/";
   const metaMap = await fetchMetaMap();
   const current = metaMap[cleanPath];
 
-  const title = current?.title || defaultTitle;
-  const description = current?.description || defaultDescription;
+  const title = current?.title || fallback.title || defaultTitle;
+  const description =
+    current?.description || fallback.description || defaultDescription;
   const canonicalUrl = cleanPath === "/" ? siteUrl : `${siteUrl}${cleanPath}`;
 
   return {
     title,
     description,
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: {
       canonical: canonicalUrl,
     },

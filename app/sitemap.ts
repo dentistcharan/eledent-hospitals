@@ -7,6 +7,11 @@ const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://eledenthospitals.com/"
 ).replace(/\/$/, "");
 
+// This route is backed by live CMS inventories. Keep it dynamic so a newly
+// published service or location can appear without rebuilding the website.
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // CORE / STATIC PAGES
 const staticPages = [
   { route: "", changeFrequency: "weekly" as const, priority: 1.0 },
@@ -73,7 +78,6 @@ async function getBlogs(): Promise<BlogSitemapItem[]> {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const today = new Date();
   const [blogs, doctors, services, cmsLocations] = await Promise.all([
     getBlogs(),
     fetchDoctors(),
@@ -85,7 +89,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.map((page) => ({
     url: `${baseUrl}${page.route}`,
-    lastModified: today,
     changeFrequency: page.changeFrequency,
     priority: page.priority,
   }));
@@ -99,7 +102,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const locationEntries: MetadataRoute.Sitemap = locationSlugs.map((location) => ({
     url: `${baseUrl}/${location}`,
-    lastModified: today,
     changeFrequency: "monthly",
     priority: 0.8,
   }));
@@ -113,7 +115,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const doctorEntries: MetadataRoute.Sitemap = doctors.map((doctor) => ({
     url: `${baseUrl}/doctors/${generateDoctorSlug(doctor.name)}`,
-    lastModified: today,
     changeFrequency: "monthly",
     priority: 0.7,
   }));

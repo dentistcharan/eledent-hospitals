@@ -835,7 +835,16 @@ const locationSchemas: Record<string, object[]> = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  return getMetadataByPath(`/${slug}`);
+  const pageName = slug
+    .split("-")
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  return getMetadataByPath(`/${slug}`, {
+    title: `${pageName} | Eledent Dental Hospitals`,
+    description: `Visit Eledent Dental Hospitals for ${pageName} in Hyderabad. Explore our dental care, specialist services, facilities, and appointment options.`,
+  });
 }
 
 export default async function LocationPage({ params }: Props) {
