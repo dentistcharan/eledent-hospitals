@@ -104,7 +104,16 @@ async function getServiceBySlug(slug: string): Promise<ServiceResponse | null> {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  return getMetadataByPath(`/services/${slug}`);
+  const serviceName = slug
+    .split("-")
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  return getMetadataByPath(`/services/${slug}`, {
+    title: `${serviceName} | Eledent Dental Hospitals`,
+    description: `Learn about ${serviceName} at Eledent Dental Hospitals in Hyderabad. Explore treatment details, benefits, and book an appointment with our dental team.`,
+  });
 }
 
 export default async function ServicesDetailsPage({ params }: PageProps) {
