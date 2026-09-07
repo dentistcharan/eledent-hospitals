@@ -863,6 +863,14 @@ section.team-of-doctor .row {
     padding: 20px 50px 20px 0px;
 }
 
+/* Tailwind's CDN script (loaded for other components on this page) generates
+   its own utility class ".collapse { visibility: collapse }", which collides
+   with Bootstrap's accordion ".collapse" class and keeps the opened answer
+   invisible. Restore normal visibility for the accordion specifically. */
+.faq-inner .accordion-collapse.collapse {
+    visibility: visible;
+}
+
 .faq-about-plan-area .blog-faq .accordion-body {
     background-color: #fff;
     border-left: none;
