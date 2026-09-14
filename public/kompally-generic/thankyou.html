@@ -43,6 +43,7 @@
             },
         }
     </script>
+
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
                 w[l] = w[l] || []; w[l].push({
@@ -53,6 +54,11 @@
                         'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
             })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');</script>
     <!-- End Google Tag Manager -->
+
+     <!-- OpenAI lead event. -->
+    <script>
+        oaiq("measure", "lead_created", { type: "customer_action" });
+    </script>
 
 </head>
 
@@ -179,10 +185,7 @@
 
     </section>
 
-    <!-- OpenAI lead event. -->
-    <script>
-        oaiq("measure", "lead_created", { type: "customer_action" });
-    </script>
+   
 </body>
 
 </html>
