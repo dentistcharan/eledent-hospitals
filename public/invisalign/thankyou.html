@@ -43,6 +43,11 @@
             },
         }
     </script>
+     <!-- OpenAI lead event. -->
+    <script>
+        oaiq("measure", "lead_created", { type: "customer_action" });
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
                 w[l] = w[l] || []; w[l].push({
@@ -179,10 +184,7 @@
 
     </section>
 
-    <!-- OpenAI lead event. -->
-    <script>
-        oaiq("measure", "lead_created", { type: "customer_action" });
-    </script>
+   
 </body>
 
 </html>
