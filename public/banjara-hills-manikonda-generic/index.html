@@ -8,6 +8,21 @@
   <base href="/banjara-hills-manikonda-generic/" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <!-- OpenAI pixel: initialize tracking. -->
+  <script>
+      !function (w, d, s, u) {
+          if (w.oaiq) return;
+          var q = function () { q.q.push(arguments); };
+          q.q = [];
+          w.oaiq = q;
+          var j = d.createElement(s);
+          j.async = 1;
+          j.src = u;
+          var f = d.getElementsByTagName(s)[0];
+          f.parentNode.insertBefore(j, f);
+      }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+      oaiq("init", { pixelId: "4bFkRNsGsTDskfdoNsRwLJ", debug: true });
+  </script>
   <title>Best Dental Clinic in Banjara Hills & Manikonda | Eledent International Digital Dentistry</title>
   <meta name="description"
     content="Eledent is a trusted digital dental hospital in Banjara Hills & Manikonda. Get painless dental treatments including implants, Invisalign, root canals, and smile makeovers with expert care." />
@@ -1994,6 +2009,10 @@
       checkMode();
       window.addEventListener('resize', checkMode);
     })();
+  </script>
+  <!-- OpenAI lead event. -->
+  <script>
+      oaiq("measure", "lead_created", { type: "customer_action" });
   </script>
 </body>
 

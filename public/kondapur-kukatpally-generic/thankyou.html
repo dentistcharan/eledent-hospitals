@@ -5,6 +5,21 @@
     <base href="/implant/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <!-- OpenAI pixel: initialize tracking. -->
+    <script>
+        !function (w, d, s, u) {
+            if (w.oaiq) return;
+            var q = function () { q.q.push(arguments); };
+            q.q = [];
+            w.oaiq = q;
+            var j = d.createElement(s);
+            j.async = 1;
+            j.src = u;
+            var f = d.getElementsByTagName(s)[0];
+            f.parentNode.insertBefore(j, f);
+        }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+        oaiq("init", { pixelId: "4bFkRNsGsTDskfdoNsRwLJ", debug: true });
+    </script>
     <title> Best Dental Clinic in Kondapur & Kukatpally Hyderabad | Eledent International Digital Dentistry </title>
     <meta name="description"
         content=" Visit Eledent's dental clinic in Kondapur & Kukatpally Hyderabad for expert dental care. Same-day painless root canals, implants, teeth whitening, and complete digital dental solutions by MDS dentists. ">
@@ -177,6 +192,10 @@
 
     </section>
 
+    <!-- OpenAI lead event. -->
+    <script>
+        oaiq("measure", "lead_created", { type: "customer_action" });
+    </script>
 </body>
 
 </html>
