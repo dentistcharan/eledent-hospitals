@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:landing-pixel": "node scripts/test-landing-pixel.mjs"
   },
   "dependencies": {
     "autoprefixer": "^10.5.0",

@@ -8,6 +8,21 @@
     <base href="/aligners/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <!-- OpenAI pixel: initialize tracking. -->
+    <script>
+        !function (w, d, s, u) {
+            if (w.oaiq) return;
+            var q = function () { q.q.push(arguments); };
+            q.q = [];
+            w.oaiq = q;
+            var j = d.createElement(s);
+            j.async = 1;
+            j.src = u;
+            var f = d.getElementsByTagName(s)[0];
+            f.parentNode.insertBefore(j, f);
+        }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+        oaiq("init", { pixelId: "4bFkRNsGsTDskfdoNsRwLJ", debug: true });
+    </script>
     <title>Invisalign, Clear Aligners &amp; Braces in Hyderabad | Eledent</title>
     <meta name="description"
         content="Straighten your teeth at Eledent - Invisalign, clear aligners &amp; braces across 5 Hyderabad clinics. Free 3D smile preview. 9,500+ smiles created." />
@@ -1413,6 +1428,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
             });
         })();
+    </script>
+    <!-- OpenAI lead event. -->
+    <script>
+        oaiq("measure", "lead_created", { type: "customer_action" });
     </script>
 </body>
 

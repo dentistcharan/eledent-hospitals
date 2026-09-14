@@ -9,6 +9,21 @@
     <base href="/dental-implant/" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- OpenAI pixel: initialize tracking. -->
+    <script>
+        !function (w, d, s, u) {
+            if (w.oaiq) return;
+            var q = function () { q.q.push(arguments); };
+            q.q = [];
+            w.oaiq = q;
+            var j = d.createElement(s);
+            j.async = 1;
+            j.src = u;
+            var f = d.getElementsByTagName(s)[0];
+            f.parentNode.insertBefore(j, f);
+        }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+        oaiq("init", { pixelId: "4bFkRNsGsTDskfdoNsRwLJ", debug: true });
+    </script>
     <title>Dental Implants in Hyderabad | Best Implant Dentist | Eledent Dental Hospitals</title>
     <meta name="description"
         content="Get advanced dental implants in Hyderabad at Eledent Dental Hospitals. Suture-free, same-day implants by expert implantologists across Kondapur, Kukatpally, Banjara Hills, Manikonda &amp; Kompally. Book a free consultation today!" />
@@ -1248,6 +1263,10 @@
         WhatsApp
     </a>
 
+    <!-- OpenAI lead event. -->
+    <script>
+        oaiq("measure", "lead_created", { type: "customer_action" });
+    </script>
 </body>
 
 </html>
