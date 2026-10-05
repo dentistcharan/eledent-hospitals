@@ -352,6 +352,10 @@ const nextConfig: NextConfig = {
         destination: "/invisalign/index.html",
       },
       {
+        source: "/braces",
+        destination: "/braces/index.html",
+      },
+      {
         source: "/kukatpally-generic",
         destination: "/kukatpally-generic/index.html",
       },
