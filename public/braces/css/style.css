@@ -297,7 +297,7 @@ ul {
 .book-appointment h2 {
     color: #f37326;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 23px;
     line-height: 40px;
     margin-bottom: 6px;
     text-align: center;
@@ -712,6 +712,14 @@ section.team-of-doctor .row {
     border-radius: 100px 0;
     margin-left: -10px;
     margin-top: 10px;
+}
+
+.why-rgt-img .offer-banner-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
 }
 
 /*========== end why choose area =========*/
