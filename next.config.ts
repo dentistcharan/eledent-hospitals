@@ -60,6 +60,47 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // SEO audit: preserve authority for legacy URLs instead of serving 404s.
+      {
+        source: "/services/pediatric-dentistry",
+        destination: "/services/pediatric-dentistry-in-hyderabad",
+        permanent: true,
+      },
+      {
+        source: "/locations/banjara-hills",
+        destination: "/banjara-hills",
+        permanent: true,
+      },
+      {
+        source: "/locations/kukatpally",
+        destination: "/kukatpally",
+        permanent: true,
+      },
+      {
+        source: "/services/dental-implants-in-hyderabad",
+        destination: "/services/advanced-and-painless-dental-implants",
+        permanent: true,
+      },
+      {
+        source: "/dental-veneers-cost-in-hyderabad",
+        destination: "/blogs/dental-veneers-cost-in-hyderabad",
+        permanent: true,
+      },
+      {
+        source: "/services/flexi-denture-clinic-in-hyderabad",
+        destination: "/services/flexi-denture-treatment-in-hyderabad",
+        permanent: true,
+      },
+      {
+        source: "/services/gum-care-treatment",
+        destination: "/services/laser-gum-treatment-hyderabad",
+        permanent: true,
+      },
+      {
+        source: "/services/smile-makeover-in-kondapur",
+        destination: "/services/smile-makeover-hyderabad",
+        permanent: true,
+      },
       {
         source: "/location/:slug",
         destination: "/:slug",

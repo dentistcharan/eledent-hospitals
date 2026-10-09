@@ -17,11 +17,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!detail) return {};
 
     const name = detail.seo.title || detail.basicInfo.name;
+    const canonicalUrl = `${siteUrl}/doctors/${slug}`;
     return {
         title: `${name} | Eledent Dental Hospital`,
         description: detail.seo.description,
         alternates: {
-            canonical: `${siteUrl}/doctors/${slug}`,
+            canonical: canonicalUrl,
+        },
+        openGraph: {
+            title: `${name} | Eledent Dental Hospital`,
+            description: detail.seo.description,
+            url: canonicalUrl,
+            siteName: "Eledent Dental Hospitals",
+            type: "website",
+            images: detail.basicInfo.profileImage
+                ? [{ url: detail.basicInfo.profileImage, alt: name }]
+                : undefined,
         },
     };
 }
