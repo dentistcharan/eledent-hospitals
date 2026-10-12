@@ -1,22 +1,24 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { getMetadataByPath } from "@/lib/metadata";
 import Navbar from "./components/Navbar";
 import FaqSchema from "./components/FaqSchema";
 import HeroSection from "./components/home/hero-section";
 import AboutUs from "./components/home/about-us";
 import OurSpecialties from "./components/home/our-specialties";
-import MakeAppointment from "./components/home/make-appointment";
-import HomeServices from "./components/home/home-services";
-import HomeTestimonial from "./components/home/home-testimonial";
 import HealthPatner from "./components/home/health-patner";
 import BlogMain from "./components/home/blog";
-import HomeFaq from "./components/home/home-faq";
 import Footer from "./components/Footer";
-import BookingAportment from "./components/comman/booking-aportment";
-import AwardsSection from "./components/home/award";
 import FacilitiesAccordion from "./components/home/facilities-accordion";
 import { getServicesData } from "@/lib/services-api";
 import { getSpecialtiesData } from "@/lib/specialties-api";
+
+const MakeAppointment = dynamic(() => import("./components/home/make-appointment"));
+const HomeServices = dynamic(() => import("./components/home/home-services"));
+const HomeTestimonial = dynamic(() => import("./components/home/home-testimonial"));
+const BookingAportment = dynamic(() => import("./components/comman/booking-aportment"));
+const AwardsSection = dynamic(() => import("./components/home/award"));
+const HomeFaq = dynamic(() => import("./components/home/home-faq"));
 
 export async function generateMetadata(): Promise<Metadata> {
   return await getMetadataByPath("/");

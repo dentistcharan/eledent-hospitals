@@ -109,7 +109,7 @@ const BookingTourism: FC = () => {
           </div>
         </div>
       </div>
-      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
+      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
     </section>
   );
 };

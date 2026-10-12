@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BookingBlog from "../comman/booking-blog";
+import { normalizeCmsHtml } from "@/lib/normalize-cms-html";
 
 type RecentArticle = {
   id: number;
@@ -156,7 +157,7 @@ export default function BlogDetailsAbout({
 
                 [&_tbody_tr]:align-top
               "
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
+              dangerouslySetInnerHTML={{ __html: normalizeCmsHtml(htmlContent) }}
             />
           </div>
 

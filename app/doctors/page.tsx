@@ -10,16 +10,21 @@ const siteUrl =
 
 export const metadata: Metadata = {
     title: "Our Doctors | Eledent Dental Hospital",
-    description: "Meet the experienced dental doctors at Eledent Dental Hospital. Explore our specialists, their expertise, and dental care services to find the right dentist for your needs.",
+    description: "Meet the experienced dentists at Eledent Dental Hospital, Hyderabad. Explore our specialists and their expertise to find the right dentist for your needs.",
     alternates: {
         canonical: `${siteUrl}/doctors`,
     },
     openGraph: {
         title: "Our Doctors | Eledent Dental Hospital",
-        description: "Meet the experienced dental doctors at Eledent Dental Hospital. Explore our specialists, their expertise, and dental care services to find the right dentist for your needs.",
+        description: "Meet the experienced dentists at Eledent Dental Hospital, Hyderabad. Explore our specialists and their expertise to find the right dentist for your needs.",
         url: `${siteUrl}/doctors`,
         siteName: "Eledent Dental Hospitals",
         type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Our Doctors | Eledent Dental Hospital",
+        description: "Meet the experienced dentists at Eledent Dental Hospital, Hyderabad. Explore our specialists and their expertise to find the right dentist for your needs.",
     },
 };
 
