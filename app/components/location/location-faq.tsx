@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { JSX } from "react";
 import type { FaqItem } from "@/lib/location-api";
 
@@ -22,13 +22,13 @@ export default function LocationFaq({
 }: Props): JSX.Element {
   const [openId, setOpenId] = useState<string | null>(faqs?.[0]?.id ?? null);
 
-  useEffect(() => {
-    setOpenId(faqs?.[0]?.id ?? null);
-  }, [faqs]);
-
-  const toggleFaq = (id: string) => setOpenId((p) => (p === id ? null : id));
-
   if (!faqs || faqs.length === 0) return <></>;
+
+  const effectiveOpenId = openId === null || faqs.some((faq) => faq.id === openId)
+    ? openId
+    : faqs[0].id;
+  const toggleFaq = (id: string) =>
+    setOpenId(effectiveOpenId === id ? null : id);
 
   return (
     <section className="relative w-full overflow-hidden bg-white lg:py-24 py-6">
@@ -66,7 +66,7 @@ export default function LocationFaq({
 
           <div className="space-y-5">
             {faqs.map((faq) => {
-              const isOpen = openId === faq.id;
+              const isOpen = effectiveOpenId === faq.id;
 
               return (
                 <div

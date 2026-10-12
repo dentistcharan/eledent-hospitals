@@ -43,6 +43,7 @@ export type LocationHighlight = {
 
 export type LocationData = {
   slug: string;
+  name?: string;
   city: string;
   addressLines: string[];
   mapEmbedSrc: string;
@@ -67,6 +68,8 @@ export type LocationData = {
   testimonials?: TestimonialItem[];
 
   locationHighlights?: LocationHighlight[];
+  transportSectionLabel?: string;
+  transportSectionTitle?: string;
 
   faqIntroText: string;
   faqs: FaqItem[];

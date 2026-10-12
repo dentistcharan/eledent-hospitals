@@ -201,14 +201,9 @@ function DentalServicesGrid({
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(cards.length / cardsPerPage);
-  const start = (currentPage - 1) * cardsPerPage;
+  const safeCurrentPage = Math.min(currentPage, Math.max(totalPages, 1));
+  const start = (safeCurrentPage - 1) * cardsPerPage;
   const visibleCards = cards.slice(start, start + cardsPerPage);
-
-  useEffect(() => {
-    if (currentPage > totalPages && totalPages > 0) {
-      setCurrentPage(1);
-    }
-  }, [currentPage, totalPages]);
 
   return (
     <section className="w-full px-4 sm:px-6 lg:px-20">
@@ -235,8 +230,8 @@ function DentalServicesGrid({
             <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:mt-8">
               <button
                 type="button"
-                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                disabled={currentPage === 1}
+                onClick={() => setCurrentPage(Math.max(1, safeCurrentPage - 1))}
+                disabled={safeCurrentPage === 1}
                 aria-label="Previous page"
                 className="flex h-9 w-9 items-center justify-center rounded-md border border-gray-300 bg-white text-gray-600 transition hover:border-[#F47A20] hover:text-[#F47A20] disabled:cursor-not-allowed disabled:opacity-40 sm:h-10 sm:w-10"
               >
@@ -249,10 +244,10 @@ function DentalServicesGrid({
                   type="button"
                   onClick={() => setCurrentPage(pg)}
                   aria-label={`Go to page ${pg}`}
-                  aria-current={pg === currentPage ? "page" : undefined}
+                  aria-current={pg === safeCurrentPage ? "page" : undefined}
                   className={[
                     "flex h-9 w-9 items-center justify-center rounded-md border text-sm font-semibold transition sm:h-10 sm:w-10",
-                    pg === currentPage
+                    pg === safeCurrentPage
                       ? "border-[#F47A20] bg-[#F47A20] text-white"
                       : "border-gray-300 bg-white text-gray-700 hover:border-[#F47A20] hover:text-[#F47A20]",
                   ].join(" ")}
@@ -263,8 +258,10 @@ function DentalServicesGrid({
 
               <button
                 type="button"
-                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                disabled={currentPage === totalPages}
+                onClick={() =>
+                  setCurrentPage(Math.min(totalPages, safeCurrentPage + 1))
+                }
+                disabled={safeCurrentPage === totalPages}
                 aria-label="Next page"
                 className="flex h-9 w-9 items-center justify-center rounded-md border border-gray-300 bg-white text-gray-600 transition hover:border-[#F47A20] hover:text-[#F47A20] disabled:cursor-not-allowed disabled:opacity-40 sm:h-10 sm:w-10"
               >

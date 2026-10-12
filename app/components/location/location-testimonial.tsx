@@ -37,27 +37,22 @@ export default function LocationTestimonial({ data = [] }: Props) {
     }, []);
 
     const totalSlides = Math.ceil(testimonialImages.length / itemsPerSlide);
-
-    useEffect(() => {
-        if (currentSlide >= totalSlides && totalSlides > 0) {
-            setCurrentSlide(0);
-        }
-    }, [currentSlide, totalSlides]);
+    const safeCurrentSlide = Math.min(currentSlide, Math.max(totalSlides - 1, 0));
 
     const handlePrev = () => {
         if (!totalSlides) return;
-        setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+        setCurrentSlide(safeCurrentSlide === 0 ? totalSlides - 1 : safeCurrentSlide - 1);
     };
 
     const handleNext = () => {
         if (!totalSlides) return;
-        setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+        setCurrentSlide(safeCurrentSlide === totalSlides - 1 ? 0 : safeCurrentSlide + 1);
     };
 
     const visibleImages = useMemo(() => {
         if (!testimonialImages.length) return [];
 
-        const start = currentSlide * itemsPerSlide;
+        const start = safeCurrentSlide * itemsPerSlide;
         const result: TestimonialItem[] = [];
 
         for (let i = 0; i < itemsPerSlide; i++) {
@@ -66,7 +61,7 @@ export default function LocationTestimonial({ data = [] }: Props) {
         }
 
         return result;
-    }, [testimonialImages, currentSlide, itemsPerSlide]);
+    }, [testimonialImages, safeCurrentSlide, itemsPerSlide]);
 
     if (!testimonialImages.length) return null;
 
@@ -126,7 +121,7 @@ export default function LocationTestimonial({ data = [] }: Props) {
                                 {Array.from({ length: totalSlides }).map((_, i) => (
                                     <span
                                         key={i}
-                                        className={`h-2.5 w-2.5 rounded-full ${currentSlide === i ? "bg-orange-500" : "bg-gray-300"
+                                        className={`h-2.5 w-2.5 rounded-full ${safeCurrentSlide === i ? "bg-orange-500" : "bg-gray-300"
                                             }`}
                                     />
                                 ))}

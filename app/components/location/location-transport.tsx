@@ -25,10 +25,7 @@ const defaultCards: InfoCard[] = [
 ];
 
 const LocationTransport: FC<Props> = ({ location }) => {
-  const root = location as any;
-
-  // Agar API response data array ke andar actual object bhej raha hai
-  const data = Array.isArray(root?.data) ? root.data[0] : root;
+  const data = location;
 
   const sectionLabel =
     data?.transportSectionLabel || "A Landmark Address for Refined Urban Living";
@@ -37,11 +34,11 @@ const LocationTransport: FC<Props> = ({ location }) => {
 
   const cards: InfoCard[] =
     Array.isArray(data?.locationHighlights) && data.locationHighlights.length > 0
-      ? data.locationHighlights.map((item: any) => ({
+      ? data.locationHighlights.map((item) => ({
         title: item?.title || "",
         icon: item?.icon || "",
         places: Array.isArray(item?.places)
-          ? item.places.map((place: any) => ({
+          ? item.places.map((place) => ({
             name: place?.name || "",
             distance: place?.distance || "",
           }))

@@ -104,9 +104,9 @@ export default function ThankYou() {
               <div className="mt-8 text-center">
                 <p className="text-sm text-[#6b7280]">
                   Thank you for choosing{" "}
-                  <a href="/" className="font-semibold text-[#E87733]">
+                  <Link href="/" className="font-semibold text-[#E87733]">
                     Eledent Hospitals
-                  </a>
+                  </Link>
                   . We look forward to helping you smile better.
                 </p>
               </div>

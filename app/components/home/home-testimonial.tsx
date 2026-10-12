@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 type TextTestimonial = {
     text: string;
@@ -74,35 +74,22 @@ export default function HomeTestimonial() {
     const hasTextTestimonials = textTestimonials.length > 0;
     const hasVideoTestimonials = videoTestimonials.length > 0;
 
-    const getDefaultTab = (): "text" | "video" => {
-        if (hasTextTestimonials) return "text";
-        return "video";
-    };
-
-    const [activeTab, setActiveTab] = useState<"text" | "video">(getDefaultTab());
+    const [selectedTab, setSelectedTab] = useState<"text" | "video">(
+        hasTextTestimonials ? "text" : "video"
+    );
     const [currentIndex, setCurrentIndex] = useState(0);
-
-    useEffect(() => {
-        if (activeTab === "text" && !hasTextTestimonials && hasVideoTestimonials) {
-            setActiveTab("video");
-            setCurrentIndex(0);
-        }
-
-        if (activeTab === "video" && !hasVideoTestimonials && hasTextTestimonials) {
-            setActiveTab("text");
-            setCurrentIndex(0);
-        }
-    }, [activeTab, hasTextTestimonials, hasVideoTestimonials]);
+    const activeTab =
+        selectedTab === "text" && hasTextTestimonials
+            ? "text"
+            : selectedTab === "video" && hasVideoTestimonials
+                ? "video"
+                : hasTextTestimonials
+                    ? "text"
+                    : "video";
 
     const activeList = activeTab === "text" ? textTestimonials : videoTestimonials;
     const max = activeList.length;
     const safeIndex = max > 0 ? Math.min(currentIndex, max - 1) : 0;
-
-    useEffect(() => {
-        if (currentIndex >= max && max > 0) {
-            setCurrentIndex(0);
-        }
-    }, [currentIndex, max]);
 
     const handlePrev = () => {
         if (max === 0) return;
@@ -136,7 +123,7 @@ export default function HomeTestimonial() {
                             {hasTextTestimonials && (
                                 <button
                                     onClick={() => {
-                                        setActiveTab("text");
+                                        setSelectedTab("text");
                                         setCurrentIndex(0);
                                     }}
                                     className={`rounded-full px-6 py-2 lg:text-[15px] text-xs font-semibold transition ${activeTab === "text"
@@ -151,7 +138,7 @@ export default function HomeTestimonial() {
                             {hasVideoTestimonials && (
                                 <button
                                     onClick={() => {
-                                        setActiveTab("video");
+                                        setSelectedTab("video");
                                         setCurrentIndex(0);
                                     }}
                                     className={`rounded-full px-6 py-2 lg:text-[15px] text-xs font-semibold transition ${activeTab === "video"

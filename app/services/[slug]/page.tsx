@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ComponentProps } from "react";
 import { notFound } from "next/navigation";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -26,17 +27,15 @@ type PageProps = {
 
 type ServiceResponse = {
   slug: string;
-  hero?: any;
-  overview?: any;
-  appointment?: any;
-  count?: any;
-  procedure?: any;
-  value?: any;
-  beforeAfter?: any;
-  testimonials?: any;
-  planSection?: any;
-  ctaSection?: any;
-  faq?: any;
+  hero?: ComponentProps<typeof ServicesHero>["data"];
+  overview?: ComponentProps<typeof DentalImplants>["data"];
+  appointment?: unknown;
+  count?: ComponentProps<typeof ServicesCount>["data"];
+  procedure?: ComponentProps<typeof PlacementProcedure>["procedureBlock"];
+  value?: ComponentProps<typeof OverValue>["data"];
+  beforeAfter?: unknown;
+  ctaSection?: ComponentProps<typeof CommanTopRated>["data"];
+  faq?: ComponentProps<typeof ServicesFaq>["data"];
   category?: {
     id?: string;
     label?: string;
@@ -44,7 +43,7 @@ type ServiceResponse = {
   };
 };
 
-function hasData(value: any): boolean {
+function hasData(value: unknown): boolean {
   if (value === null || value === undefined) return false;
 
   if (typeof value === "string") {
@@ -136,15 +135,16 @@ export default async function ServicesDetailsPage({ params }: PageProps) {
       <Navbar />
 
       <main>
-        {hasData(service.hero) ? <ServicesHero data={service.hero} /> : null}
+        {service.hero && hasData(service.hero) ? (
+          <ServicesHero data={service.hero} />
+        ) : null}
 
         {hasData(service.overview) ? (
           <DentalImplants data={service.overview} />
         ) : null}
 
         {hasData(service.appointment) ? (
-          // @ts-ignore: ServicesAportment props are not typed here; passing data anyway
-          <ServicesAportment data={service.appointment} />
+          <ServicesAportment />
         ) : null}
 
         {hasData(service.count) ? <ServicesCount data={service.count} /> : null}
