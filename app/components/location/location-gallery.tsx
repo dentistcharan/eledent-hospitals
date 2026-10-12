@@ -10,6 +10,7 @@ export type GalleryItem = {
 };
 
 function clampIndex(i: number, len: number) {
+  if (len === 0) return 0;
   return (i + len) % len;
 }
 
@@ -18,44 +19,39 @@ export default function LocationGallery({ gallery }: { gallery: GalleryItem[] })
   const [open, setOpen] = React.useState(false);
   const [paused, setPaused] = React.useState(false);
 
-  // ✅ slug change / gallery change -> reset
-  React.useEffect(() => {
-    setActive(0);
-    setOpen(false);
-  }, [gallery]);
-
-  if (!gallery || gallery.length === 0) return null;
+  const galleryLength = gallery?.length ?? 0;
+  const activeIndex = clampIndex(active, galleryLength);
 
   const close = () => setOpen(false);
 
   const prev = React.useCallback(
-    () => setActive((p) => clampIndex(p - 1, gallery.length)),
-    [gallery.length]
+    () => setActive((p) => clampIndex(p - 1, galleryLength)),
+    [galleryLength]
   );
 
   const next = React.useCallback(
-    () => setActive((p) => clampIndex(p + 1, gallery.length)),
-    [gallery.length]
+    () => setActive((p) => clampIndex(p + 1, galleryLength)),
+    [galleryLength]
   );
 
   // ✅ autoplay
   React.useEffect(() => {
     if (open || paused) return;
-    if (gallery.length <= 1) return;
+    if (galleryLength <= 1) return;
 
     const t = window.setInterval(() => {
-      setActive((p) => clampIndex(p + 1, gallery.length));
+      setActive((p) => clampIndex(p + 1, galleryLength));
     }, 3000);
 
     return () => window.clearInterval(t);
-  }, [open, paused, gallery.length]);
+  }, [open, paused, galleryLength]);
 
-  const leftIndex = clampIndex(active - 1, gallery.length);
-  const rightIndex = clampIndex(active + 1, gallery.length);
+  const leftIndex = clampIndex(activeIndex - 1, galleryLength);
+  const rightIndex = clampIndex(activeIndex + 1, galleryLength);
 
   const cards = [
     { idx: leftIndex, position: "left" as const },
-    { idx: active, position: "center" as const },
+    { idx: activeIndex, position: "center" as const },
     { idx: rightIndex, position: "right" as const },
   ];
 
@@ -87,6 +83,8 @@ export default function LocationGallery({ gallery }: { gallery: GalleryItem[] })
       document.body.style.overflow = prevOverflow;
     };
   }, [open]);
+
+  if (galleryLength === 0) return null;
 
   return (
     <section className="relative w-full bg-white overflow-hidden">
@@ -181,7 +179,7 @@ export default function LocationGallery({ gallery }: { gallery: GalleryItem[] })
                   aria-label={`Go to image ${i + 1}`}
                   className={[
                     "h-2 w-2 rounded-full transition-all",
-                    i === active ? "bg-[#f36d00]" : "bg-black/25",
+                    i === activeIndex ? "bg-[#f36d00]" : "bg-black/25",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f36d00]/35",
                   ].join(" ")}
                 />
@@ -236,8 +234,8 @@ export default function LocationGallery({ gallery }: { gallery: GalleryItem[] })
 
             <div className="relative mx-auto aspect-[16/10] w-full overflow-hidden rounded-[16px] bg-black shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
               <Image
-                src={gallery[active].src}
-                alt={gallery[active].alt}
+                src={gallery[activeIndex].src}
+                alt={gallery[activeIndex].alt}
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 1000px"
@@ -245,7 +243,7 @@ export default function LocationGallery({ gallery }: { gallery: GalleryItem[] })
             </div>
 
             <div className="mt-4 text-center text-sm text-white/90">
-              {active + 1} / {gallery.length}
+              {activeIndex + 1} / {gallery.length}
             </div>
 
             {gallery.length > 1 && (
@@ -258,7 +256,7 @@ export default function LocationGallery({ gallery }: { gallery: GalleryItem[] })
                     aria-label={`Open image ${i + 1}`}
                     className={[
                       "h-2 w-2 rounded-full transition-all",
-                      i === active ? "bg-[#f36d00]" : "bg-white/35",
+                      i === activeIndex ? "bg-[#f36d00]" : "bg-white/35",
                     ].join(" ")}
                   />
                 ))}

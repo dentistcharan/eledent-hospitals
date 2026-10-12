@@ -50,6 +50,21 @@ type WpPost = {
   };
 };
 
+type WpSeoPost = {
+  excerpt?: { rendered?: string };
+  yoast_head_json?: {
+    title?: string;
+    description?: string;
+    og_title?: string;
+    og_description?: string;
+    og_image?: Array<{ url?: string }>;
+    twitter_title?: string;
+    twitter_description?: string;
+  };
+};
+
+const CMS_URL = "https://cms.eledenthospitals.com";
+
 function stripHtml(html: string) {
   return html
     .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "")
@@ -86,10 +101,34 @@ function extractFirstParagraph(html: string) {
   return match?.[2] ? stripHtml(decodeHtml(match[2])) : "";
 }
 
+function trimDescription(value: string, maxLength = 155) {
+  const clean = stripHtml(decodeHtml(value));
+  if (clean.length <= maxLength) return clean;
+  return clean.slice(0, maxLength).replace(/\s+\S*$/, "").trim();
+}
+
+async function getWpSeoPost(slug: string): Promise<WpSeoPost | null> {
+  try {
+    const query = new URLSearchParams({
+      slug,
+      _fields: "excerpt,yoast_head_json",
+    });
+    const res = await fetch(`${CMS_URL}/wp-json/wp/v2/posts?${query}`, {
+      cache: "no-store",
+    });
+    if (!res.ok) return null;
+    const posts = (await res.json()) as WpSeoPost[];
+    return posts[0] ?? null;
+  } catch (error) {
+    console.error("Failed to fetch blog SEO metadata:", error);
+    return null;
+  }
+}
+
 async function getRawBlogData(slug: string) {
   try {
     const res = await fetch(
-      `https://cms.eledenthospitals.com/wp-json/custom/v1/${slug}`,
+      `${CMS_URL}/wp-json/custom/v1/${slug}`,
       {
         cache: "no-store",
       }
@@ -142,33 +181,50 @@ export async function generateMetadata({
   const { slug } = await params;
 
   const path = `/blogs/${slug}`;
-  const metadata = await getMetadataByPath(path);
+  const [metadata, seoPost, rawBlogData] = await Promise.all([
+    getMetadataByPath(path),
+    getWpSeoPost(slug),
+    getRawBlogData(slug),
+  ]);
 
-  // fallback if API metadata is missing or default
-  if (
-    metadata.title === "Eledent Dental Hospitals" ||
-    metadata.description ===
-    "Eledent Dental Hospitals offers advanced dental care, painless treatments, expert dentists, and modern technology across Hyderabad."
-  ) {
-    const rawBlogData = await getRawBlogData(slug);
-
-    if (!rawBlogData) {
-      return {
-        title: "Blog Not Found - Eledent Dental Hospitals",
-        description: "The requested blog could not be found.",
-      };
-    }
-
+  if (!rawBlogData) {
     return {
-      ...metadata,
-      title: `${slugToTitle(slug)} - Eledent Dental Hospitals`,
-      description:
-        extractFirstParagraph(rawBlogData.content) ||
-        "Read expert dental insights, treatment guidance, and oral health information from Eledent Dental Hospitals.",
+      title: "Blog Not Found - Eledent Dental Hospitals",
+      description: "The requested blog could not be found.",
     };
   }
 
-  return metadata;
+  const yoast = seoPost?.yoast_head_json;
+  const description =
+    yoast?.description?.trim() ||
+    trimDescription(seoPost?.excerpt?.rendered || "") ||
+    trimDescription(extractFirstParagraph(rawBlogData.content)) ||
+    "Read expert dental insights, treatment guidance, and oral health information from Eledent Dental Hospitals.";
+  const title =
+    yoast?.title?.trim() ||
+    `${slugToTitle(slug)} - Eledent Dental Hospitals`;
+  const canonicalUrl = `https://eledenthospitals.com${path}`;
+  const image = yoast?.og_image?.[0]?.url || rawBlogData.image || undefined;
+
+  return {
+    ...metadata,
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      ...metadata.openGraph,
+      title: yoast?.og_title?.trim() || title,
+      description,
+      url: canonicalUrl,
+      images: image ? [{ url: image }] : metadata.openGraph?.images,
+    },
+    twitter: {
+      ...metadata.twitter,
+      title: yoast?.twitter_title?.trim() || yoast?.og_title?.trim() || title,
+      description,
+      images: image ? [image] : metadata.twitter?.images,
+    },
+  };
 }
 
 export default async function BlogDetailPage({

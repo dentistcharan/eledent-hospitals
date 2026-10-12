@@ -191,7 +191,7 @@ export default function MakeAppointmentStatic() {
         },
     ];
 
-    const statsBgImage = "/services/stats-bg.png";
+    const statsBgImage = "/services/service-count-bg.png";
 
     return (
         <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

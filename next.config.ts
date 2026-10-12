@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import path from "path";
 
 const nextConfig: NextConfig = {
+  trailingSlash: false,
   turbopack: {
     root: path.join(__dirname),
   },
@@ -60,6 +61,18 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "header", key: "x-forwarded-proto", value: "http" }],
+        destination: "https://eledenthospitals.com/:path*",
+        statusCode: 301,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.eledenthospitals.com" }],
+        destination: "https://eledenthospitals.com/:path*",
+        statusCode: 301,
+      },
       // SEO audit: preserve authority for legacy URLs instead of serving 404s.
       {
         source: "/services/pediatric-dentistry",

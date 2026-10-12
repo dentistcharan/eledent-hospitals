@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { normalizeCmsHtml } from "@/lib/normalize-cms-html";
 
 type OverviewPart = {
   text: string;
@@ -73,7 +74,7 @@ export default function DentalImplantsSection({ data }: Props) {
             {intro ? (
               <div
                 className="wp-body-content mt-4 max-w-2xl"
-                dangerouslySetInnerHTML={{ __html: intro }}
+                dangerouslySetInnerHTML={{ __html: normalizeCmsHtml(intro) }}
               />
             ) : null}
 
@@ -82,7 +83,7 @@ export default function DentalImplantsSection({ data }: Props) {
                 {partsTitle ? (
                   <div
                     className="wp-parts-title"
-                    dangerouslySetInnerHTML={{ __html: partsTitle }}
+                    dangerouslySetInnerHTML={{ __html: normalizeCmsHtml(partsTitle) }}
                   />
                 ) : null}
 
@@ -92,7 +93,7 @@ export default function DentalImplantsSection({ data }: Props) {
                       <li
                         key={index}
                         className="wp-list-item"
-                        dangerouslySetInnerHTML={{ __html: item.text }}
+                        dangerouslySetInnerHTML={{ __html: normalizeCmsHtml(item.text) }}
                       />
                     ))}
                   </ol>
@@ -103,7 +104,7 @@ export default function DentalImplantsSection({ data }: Props) {
             {conclusion ? (
               <div
                 className="wp-body-content mt-5 max-w-2xl text-sm text-[#6b7280]"
-                dangerouslySetInnerHTML={{ __html: conclusion }}
+                dangerouslySetInnerHTML={{ __html: normalizeCmsHtml(conclusion) }}
               />
             ) : null}
           </div>

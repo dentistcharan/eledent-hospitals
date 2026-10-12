@@ -61,7 +61,8 @@ export default function HeroSection() {
                                                 src={image.desktop}
                                                 alt={`Hero slide ${index + 1}`}
                                                 fill
-                                                sizes="(max-width: 1023px) 100vw, calc(100vw - 12rem)"
+                                                sizes="100vw"
+                                                priority={index === 0}
                                                 loading={index === 0 ? "eager" : "lazy"}
                                                 fetchPriority={index === 0 ? "high" : "auto"}
                                                 className="object-cover object-top rounded-2xl"

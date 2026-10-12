@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { FC, ReactNode } from "react";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import BookingBlog from "../comman/booking-blog";
 
 type BlogPost = {
@@ -318,17 +318,12 @@ const BlogListingSection: FC<BlogListingSectionProps> = ({
   }, [posts, selectedCategory]);
 
   const totalPages = Math.ceil(filteredPosts.length / perPage);
+  const safeCurrentPage = Math.min(currentPage, Math.max(totalPages, 1));
 
   const currentBlogs = useMemo(() => {
-    const start = (currentPage - 1) * perPage;
+    const start = (safeCurrentPage - 1) * perPage;
     return filteredPosts.slice(start, start + perPage);
-  }, [currentPage, filteredPosts, perPage]);
-
-  useEffect(() => {
-    if (currentPage > totalPages && totalPages > 0) {
-      setCurrentPage(1);
-    }
-  }, [currentPage, totalPages]);
+  }, [safeCurrentPage, filteredPosts, perPage]);
 
   const handlePageChange = (page: number) => {
     if (page < 1 || page > totalPages) return;
@@ -368,7 +363,7 @@ const BlogListingSection: FC<BlogListingSectionProps> = ({
             <div className="block pb-2 pt-12 lg:hidden">
               {totalPages > 1 && (
                 <BlogPagination
-                  currentPage={currentPage}
+                  currentPage={safeCurrentPage}
                   totalPages={totalPages}
                   onPageChange={handlePageChange}
                 />
