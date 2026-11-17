@@ -17,7 +17,7 @@ async function fetchMetaMap(): Promise<Record<string, MetaEntry>> {
   try {
     const res = await fetch(
       "https://cms.eledenthospitals.com/wp-json/custom/v2/meta-data",
-      { cache: "no-store" }
+      { next: { revalidate: 300 } }
     );
 
     if (!res.ok) {

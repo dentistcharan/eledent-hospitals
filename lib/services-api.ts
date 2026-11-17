@@ -64,7 +64,7 @@ export async function getServicesData(): Promise<ServiceItem[]> {
   try {
     const response = await fetch(SERVICES_URL, {
       headers: { Accept: "application/json" },
-      cache: "no-store",
+      next: { revalidate: 300 },
     });
 
     if (!response.ok) {

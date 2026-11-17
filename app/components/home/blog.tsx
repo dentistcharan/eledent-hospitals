@@ -108,7 +108,7 @@ export default async function BlogMain(): Promise<JSX.Element> {
 
   try {
     const response = await fetch(API_URL, {
-      cache: "no-store",
+      next: { revalidate: 300 },
     });
 
     if (!response.ok) {

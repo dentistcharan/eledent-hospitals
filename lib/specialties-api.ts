@@ -51,7 +51,7 @@ export async function getSpecialtiesData(): Promise<SpecialtiesData | null> {
   try {
     const response = await fetch(SPECIALTIES_URL, {
       headers: { Accept: "application/json" },
-      cache: "no-store",
+      next: { revalidate: 300 },
     });
 
     if (!response.ok) {

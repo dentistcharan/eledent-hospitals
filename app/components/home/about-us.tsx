@@ -1,5 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import LiteYouTube from "./lite-youtube";
 
 export default function AboutUs() {
     return (
@@ -10,9 +11,10 @@ export default function AboutUs() {
                     {/* IMAGE */}
                     <div className="relative">
                         <div className="relative rounded-xl overflow-hidden shadow-2xl group cursor-pointer">
-                            <div>
-                                <iframe className="w-full h-[280px] lg:h-[400px]" src="https://www.youtube-nocookie.com/embed/JrqoTfgYkLE?si=zJBiKkx4xKdiWGz0" title="YouTube video player" loading="lazy" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                            </div>
+                            <LiteYouTube
+                                videoId="JrqoTfgYkLE"
+                                title="Eledent Dental Hospital video"
+                            />
                         </div>
                     </div>
 
