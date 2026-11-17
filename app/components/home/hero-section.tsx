@@ -3,11 +3,8 @@
 import { PhoneCall, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { useEffect, useState } from "react";
 import { useAppointmentModal } from "@/app/context/AppointmentModalContext";
-
-import "swiper/css";
 
 const heroImages = [
     { desktop: "/home/home-banner.jpg", mobile: "/home/Eledent-Home-Mob-1.jpg" },
@@ -27,6 +24,44 @@ function mobileImageSrcSet(src: string) {
 
 export default function HeroSection() {
     const { openModal } = useAppointmentModal();
+    const [activeSlide, setActiveSlide] = useState(0);
+
+    useEffect(() => {
+        let interval: number | undefined;
+        let started = false;
+
+        const startCarousel = () => {
+            if (started) return;
+            started = true;
+
+            interval = window.setInterval(() => {
+                setActiveSlide((current) => (current + 1) % heroImages.length);
+            }, 2500);
+
+            window.removeEventListener("pointerdown", startCarousel);
+            window.removeEventListener("keydown", startCarousel);
+            window.removeEventListener("touchstart", startCarousel);
+            window.removeEventListener("scroll", startCarousel);
+        };
+
+        window.addEventListener("pointerdown", startCarousel, { passive: true });
+        window.addEventListener("keydown", startCarousel, { passive: true });
+        window.addEventListener("touchstart", startCarousel, { passive: true });
+        window.addEventListener("scroll", startCarousel, { passive: true });
+
+        const fallback = window.setTimeout(startCarousel, 15000);
+
+        return () => {
+            window.clearTimeout(fallback);
+            if (interval) window.clearInterval(interval);
+            window.removeEventListener("pointerdown", startCarousel);
+            window.removeEventListener("keydown", startCarousel);
+            window.removeEventListener("touchstart", startCarousel);
+            window.removeEventListener("scroll", startCarousel);
+        };
+    }, []);
+
+    const activeImage = heroImages[activeSlide];
 
     return (
         <div className="my-6 lg:my-12 mx-4 lg:mx-24 lg:mt-40 mt-36">
@@ -35,43 +70,24 @@ export default function HeroSection() {
 
                 <Link href="/" className="block h-full">
                     <div className="relative z-20 h-full lg:max-w-7xl mx-auto flex items-center justify-center">
-                        <Swiper
-                            modules={[Autoplay]}
-                            slidesPerView={1}
-                            loop={true}
-                            speed={900}
-                            autoplay={{
-                                delay: 2500,
-                                disableOnInteraction: false,
-                                pauseOnMouseEnter: false,
-                            }}
-                            allowTouchMove={true}
-                            className="h-full w-full"
-                        >
-                            {heroImages.map((image, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="relative h-[350px] lg:h-[500px] w-full">
-                                        <picture>
-                                            <source
-                                                media="(max-width: 1023px)"
-                                                srcSet={mobileImageSrcSet(image.mobile)}
-                                                sizes="100vw"
-                                            />
-                                            <Image
-                                                src={image.desktop}
-                                                alt={`Hero slide ${index + 1}`}
-                                                fill
-                                                sizes="100vw"
-                                                priority={index === 0}
-                                                loading={index === 0 ? "eager" : "lazy"}
-                                                fetchPriority={index === 0 ? "high" : "auto"}
-                                                className="object-cover object-top rounded-2xl"
-                                            />
-                                        </picture>
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
+                        <div className="relative h-[350px] w-full lg:h-[500px]">
+                            <picture key={activeSlide}>
+                                <source
+                                    media="(max-width: 1023px)"
+                                    srcSet={mobileImageSrcSet(activeImage.mobile)}
+                                    sizes="100vw"
+                                />
+                                <Image
+                                    src={activeImage.desktop}
+                                    alt={`Hero slide ${activeSlide + 1}`}
+                                    fill
+                                    sizes="100vw"
+                                    loading={activeSlide === 0 ? "eager" : "lazy"}
+                                    fetchPriority={activeSlide === 0 ? "high" : "auto"}
+                                    className="rounded-2xl object-cover object-top"
+                                />
+                            </picture>
+                        </div>
                     </div>
                 </Link>
 

@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
 
   images: {
     formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 31536000,
     remotePatterns: [
       {
         protocol: "https",
@@ -47,12 +48,20 @@ const nextConfig: NextConfig = {
     return [
       {
         source:
-          "/:path*.:ext(jpg|jpeg|png|webp|avif|svg|woff|woff2|ttf|css|js)",
+          "/:path*.:ext(jpg|jpeg|png|webp|avif|svg|woff|woff2|ttf)",
         headers: [
           {
             key: "Cache-Control",
-            value:
-              "public, max-age=604800, stale-while-revalidate=2592000",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/:path*.:ext(css|js)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=2592000, stale-while-revalidate=31536000",
           },
         ],
       },
