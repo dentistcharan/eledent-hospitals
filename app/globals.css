@@ -24,6 +24,12 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Skip layout/paint work for homepage sections until they approach the viewport. */
+main > :nth-child(n + 3) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
 html,
 body {
   background-color: #ffffff !important;

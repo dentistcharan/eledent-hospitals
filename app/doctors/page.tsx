@@ -7,6 +7,7 @@ import BookingAportment from "../components/comman/booking-aportment";
 
 const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://eledenthospitals.com";
+const featuredImage = `${siteUrl}/about-us/about-us.jpg`;
 
 export const metadata: Metadata = {
     title: "Our Doctors | Eledent Dental Hospital",
@@ -20,11 +21,20 @@ export const metadata: Metadata = {
         url: `${siteUrl}/doctors`,
         siteName: "Eledent Dental Hospitals",
         type: "website",
+        images: [
+            {
+                url: featuredImage,
+                width: 1568,
+                height: 420,
+                alt: "Our Doctors at Eledent Dental Hospital",
+            },
+        ],
     },
     twitter: {
         card: "summary_large_image",
         title: "Our Doctors | Eledent Dental Hospital",
         description: "Meet the experienced dentists at Eledent Dental Hospital, Hyderabad. Explore our specialists and their expertise to find the right dentist for your needs.",
+        images: [featuredImage],
     },
 };
 
