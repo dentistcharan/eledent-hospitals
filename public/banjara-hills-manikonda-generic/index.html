@@ -2,28 +2,13 @@
 <html lang="en">
 
 <head>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin>
     <link rel="preconnect" href="https://link.msgsndr.com" crossorigin>
   <base href="/banjara-hills-manikonda-generic/" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <link rel="preload" as="image" href="hero-banner.jpg" fetchpriority="high">
-  <!-- OpenAI pixel: initialize tracking. -->
-  <script>
-      !function (w, d, s, u) {
-          if (w.oaiq) return;
-          var q = function () { q.q.push(arguments); };
-          q.q = [];
-          w.oaiq = q;
-          var j = d.createElement(s);
-          j.async = 1;
-          j.src = u;
-          var f = d.getElementsByTagName(s)[0];
-          f.parentNode.insertBefore(j, f);
-      }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
-      oaiq("init", { pixelId: "4bFkRNsGsTDskfdoNsRwLJ", debug: true });
-  </script>
+    <script src="/js/deferred-marketing.js" defer></script>
   <title>Best Dental Clinic in Banjara Hills & Manikonda | Eledent International Digital Dentistry</title>
   <meta name="description"
     content="Eledent is a trusted digital dental hospital in Banjara Hills & Manikonda. Get painless dental treatments including implants, Invisalign, root canals, and smile makeovers with expert care." />
@@ -35,41 +20,11 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://eledenthospitals.com/banjara-hills-manikonda-generic">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');</script>
-  <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="/fonts/landing-fonts.css">
+    <link rel="stylesheet" href="tailwind-static.css">
 
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: { DEFAULT: '#E87733', dark: '#cf6428', light: '#FFF4EC', lighter: '#FFF8F3' },
-            dark: { DEFAULT: '#171717', 2: '#2d2d2d', 3: '#484848' },
-          },
-          fontFamily: {
-            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
+
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -210,7 +165,7 @@
   </style>
 
   <!-- Font Awesome for phone icons in branch strip -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  <link rel="stylesheet" href="/vendor/fontawesome/all.min.css"
     crossorigin="anonymous">
 
   <style>
@@ -523,7 +478,7 @@
           <p class="discount-info text-center mb-4">Get <span>10% Discount</span> on all Dental Treatments</p>
 
           <div class="ghl-iframe-wrap">
-            <iframe loading="lazy" src="https://api.leadconnectorhq.com/widget/form/qe9FzOFM7R6aHXVjZJpE"
+            <iframe loading="lazy" data-deferred-src="https://api.leadconnectorhq.com/widget/form/qe9FzOFM7R6aHXVjZJpE"
               id="inline-qe9FzOFM7R6aHXVjZJpE" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow"
               data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
               data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Generic Google Ads LP"
@@ -531,7 +486,7 @@
               title="Generic Google Ads LP">
             </iframe>
           </div>
-          <script defer src="https://link.msgsndr.com/js/form_embed.js"></script>
+          <script defer data-deferred-src="https://link.msgsndr.com/js/form_embed.js"></script>
 
           <p class="text-center mt-3 text-xs text-gray-400">
             Or call us now: <a href="tel:+917799719994" class="text-primary font-semibold underline">+91 77997 19994</a>
@@ -1758,7 +1713,7 @@
         <p class="text-center text-sm text-gray-500 mb-1">Fill the form</p>
         <p class="discount-info text-center mb-4">Get <span>10% Discount</span> on all Dental Treatments</p>
         <div class="ghl-iframe-wrap">
-          <iframe loading="eager" src="https://api.leadconnectorhq.com/widget/form/qe9FzOFM7R6aHXVjZJpE"
+          <iframe loading="eager" data-deferred-src="https://api.leadconnectorhq.com/widget/form/qe9FzOFM7R6aHXVjZJpE"
             id="modal-qe9FzOFM7R6aHXVjZJpE" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow"
             data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
             data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Generic Google Ads LP"

@@ -10,61 +10,21 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- OpenAI pixel: initialize tracking. -->
-    <script>
-        !function (w, d, s, u) {
-            if (w.oaiq) return;
-            var q = function () { q.q.push(arguments); };
-            q.q = [];
-            w.oaiq = q;
-            var j = d.createElement(s);
-            j.async = 1;
-            j.src = u;
-            var f = d.getElementsByTagName(s)[0];
-            f.parentNode.insertBefore(j, f);
-        }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
-        oaiq("init", { pixelId: "4bFkRNsGsTDskfdoNsRwLJ", debug: true });
-    </script>
+    <link rel="preload" as="image" href="images/offer-img-1.webp" fetchpriority="high">
+    <script src="/js/deferred-marketing.js" defer></script>
     <title>Book a Dental Consultation in Hyderabad | Eledent Dental Hospitals</title>
     <meta name="description"
         content="Visit Eledent Dental Hospitals in Hyderabad for expert dental consultation. Painless treatments, advanced technology &amp; experienced MDS dentists across 5 locations. Book your visit today!" />
     <META NAME="robots" CONTENT="noindex,nofollow">
     <link rel="icon" href="images/fav-icon.png" sizes="32x32" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="/fonts/landing-fonts.css">
 
     <link rel="stylesheet" type="text/css" href="css/performance-bundle.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="/vendor/fontawesome/all.min.css">
+    <link href="/vendor/aos/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/flatpickr/flatpickr.min.css">
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');
-    </script>
-    <!-- End Google Tag Manager -->
 
 </head>
 
@@ -94,7 +54,7 @@
     
     <section class="home-banner-area banner-down">
         <div class="banner-img">
-                <img fetchpriority="high" src="images/banner-1.jpg" alt="Banner" class="img-fluid w-100" />
+                <img fetchpriority="high" src="images/banner-1.jpg" width="1396" height="650" alt="Banner" class="img-fluid w-100" />
         </div>
 </section>
 
@@ -141,12 +101,12 @@
 		<div class="row align-items-center">
 			<div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
 				<div class="offer-img">
-					<img loading="lazy" decoding="async" src="images/offer-img-1.jpg" alt="Implant Offer" class="img-fluid">
+					<img loading="eager" fetchpriority="high" decoding="async" src="images/offer-img-1.webp" width="736" height="736" alt="Implant Offer" class="img-fluid">
 				</div>
 			</div>
 			<div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
 				<div class="offer-img">
-					<img loading="lazy" decoding="async" src="images/offer-img-2.jpg" alt="Implant Offer" class="img-fluid">
+					<img loading="lazy" decoding="async" src="images/offer-img-2.webp" width="736" height="736" alt="Implant Offer" class="img-fluid">
 				</div>
 			</div>
 		</div>
@@ -1049,7 +1009,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/style.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/vendor/aos/aos.js"></script>
     <script>
         AOS.init();
     </script>

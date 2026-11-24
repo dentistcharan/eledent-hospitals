@@ -9,21 +9,7 @@
     <base href="/dental-generic/" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- OpenAI pixel: initialize tracking. -->
-    <script>
-        !function (w, d, s, u) {
-            if (w.oaiq) return;
-            var q = function () { q.q.push(arguments); };
-            q.q = [];
-            w.oaiq = q;
-            var j = d.createElement(s);
-            j.async = 1;
-            j.src = u;
-            var f = d.getElementsByTagName(s)[0];
-            f.parentNode.insertBefore(j, f);
-        }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
-        oaiq("init", { pixelId: "4bFkRNsGsTDskfdoNsRwLJ", debug: true });
-    </script>
+    <script src="/js/deferred-marketing.js" defer></script>
     <title>Best Dental Hospital in Hyderabad | Eledent Dental Hospitals</title>
     <meta name="description"
         content="Eledent Dental Hospitals offers advanced, painless dental care in Hyderabad. Expert dentists, modern technology, dental implants, root canal, braces &amp; smile makeovers across 5 locations. Book your appointment today!" />
@@ -32,40 +18,13 @@
     <link rel="preload" as="image" href="images/banner-02.webp" media="(min-width: 768px)" fetchpriority="high">
     <link rel="preload" as="image" href="images/banner-mob-1.webp" media="(max-width: 767px)" fetchpriority="high">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="/fonts/landing-fonts.css">
 
     <link rel="stylesheet" type="text/css" href="css/performance-bundle.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="/vendor/fontawesome/all.min.css">
+    <link href="/vendor/aos/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/flatpickr/flatpickr.min.css">
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');
-    </script>
-    <!-- End Google Tag Manager -->
 
 </head>
 
@@ -134,7 +93,7 @@
                         <p class="discount-info"> Get <span> 10% Discount </span> on all Dental Treatments </p>
 
 
-                        <iframe loading="lazy" src="https://api.leadconnectorhq.com/widget/form/pDce9nK7M2lAZoylmNVC"
+                        <iframe loading="lazy" data-deferred-src="https://api.leadconnectorhq.com/widget/form/pDce9nK7M2lAZoylmNVC"
                             style="width:100%;height:100%;border:none;border-radius:3px"
                             id="inline-pDce9nK7M2lAZoylmNVC" data-layout="{'id':'INLINE'}"
                             data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated"
@@ -143,7 +102,7 @@
                             data-layout-iframe-id="inline-pDce9nK7M2lAZoylmNVC" data-form-id="pDce9nK7M2lAZoylmNVC"
                             title="Generic Google Ads LP">
                         </iframe>
-                        <script defer src="https://link.msgsndr.com/js/form_embed.js"></script>
+                        <script defer data-deferred-src="https://link.msgsndr.com/js/form_embed.js"></script>
 
                     </div>
                 </div>
@@ -1265,7 +1224,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/style.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/vendor/aos/aos.js"></script>
     <script>
         AOS.init();
     </script>
