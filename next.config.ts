@@ -3,6 +3,9 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
+  // Landing-page ad URLs are commonly shared with a trailing slash. Serve
+  // both forms directly so Lighthouse and real visitors avoid a redirect.
+  skipTrailingSlashRedirect: true,
   turbopack: {
     root: path.join(__dirname),
   },

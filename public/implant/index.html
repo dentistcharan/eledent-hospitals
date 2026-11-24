@@ -2,27 +2,12 @@
 <html lang="en">
 
 <head>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin>
     <link rel="preconnect" href="https://link.msgsndr.com" crossorigin>
     <base href="/implant/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <!-- OpenAI pixel: initialize tracking. -->
-    <script>
-        !function (w, d, s, u) {
-            if (w.oaiq) return;
-            var q = function () { q.q.push(arguments); };
-            q.q = [];
-            w.oaiq = q;
-            var j = d.createElement(s);
-            j.async = 1;
-            j.src = u;
-            var f = d.getElementsByTagName(s)[0];
-            f.parentNode.insertBefore(j, f);
-        }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
-        oaiq("init", { pixelId: "4bFkRNsGsTDskfdoNsRwLJ", debug: true });
-    </script>
+    <script src="/js/deferred-marketing.js" defer></script>
     <title>Dental Implants &amp; Dentures in Hyderabad | Eledent</title>
     <meta name="description"
         content="Permanent dental implants and dentures at Eledent — 5 Hyderabad clinics. Single, full-mouth &amp; All-on-4 implants. Free consultation. From Rs 15,000. 22,000+ implants placed." />
@@ -33,30 +18,9 @@
         content="Permanent tooth replacement at 5 Eledent clinics across Hyderabad. Implants from Rs 15,000 Free consultation." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://eledenthospitals.com/implant" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            DEFAULT: '#e87733',
-                            dark: '#094f85',
-                            light: '#fff7ed',
-                        },
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                },
-            },
-        }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
+    <link rel="stylesheet" href="tailwind-static.css">
+    <link rel="stylesheet" href="/vendor/fontawesome/all.min.css" />
+    <link rel="stylesheet" href="/fonts/landing-fonts.css">
     <style>
         html {
             scroll-behavior: smooth;
@@ -315,16 +279,6 @@
         }
     </style>
     <!-- GTM: Connect GTM-W49C7DC before launch -->
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-                w[l] = w[l] || []; w[l].push({
-                    'gtm.start':
-                        new Date().getTime(), event: 'gtm.js'
-                }); var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');</script>
-    <!-- End Google Tag Manager -->
 
 </head>
 
@@ -460,7 +414,7 @@
                         calls within 30 minutes during clinic hours.</p>
                     <p style="text-align:center;margin-bottom:12px;font-size:13px;color:#333;">Get <strong
                             style="color:#f37326;">10% Discount</strong> on all Dental Treatments</p>
-                    <iframe loading="lazy" src="https://api.leadconnectorhq.com/widget/form/Fw5Wqmb2kOFhFSTEdFy3"
+                    <iframe loading="lazy" data-deferred-src="https://api.leadconnectorhq.com/widget/form/Fw5Wqmb2kOFhFSTEdFy3"
                         style="width:100%;height:100%;border:none;border-radius:8px" id="inline-Fw5Wqmb2kOFhFSTEdFy3"
                         data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
                         data-activation-type="alwaysActivated" data-activation-value=""
@@ -469,7 +423,7 @@
                         data-layout-iframe-id="inline-Fw5Wqmb2kOFhFSTEdFy3" data-form-id="Fw5Wqmb2kOFhFSTEdFy3"
                         title="Dental Implant">
                     </iframe>
-                    <script defer src="https://link.msgsndr.com/js/form_embed.js"></script>
+                    <script defer data-deferred-src="https://link.msgsndr.com/js/form_embed.js"></script>
                 </div>
             </div>
         </div>

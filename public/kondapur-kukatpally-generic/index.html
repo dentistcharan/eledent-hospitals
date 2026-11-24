@@ -5,21 +5,7 @@
     <base href="/kondapur-kukatpally-generic/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    <!-- OpenAI pixel: initialize tracking. -->
-    <script>
-        !function (w, d, s, u) {
-            if (w.oaiq) return;
-            var q = function () { q.q.push(arguments); };
-            q.q = [];
-            w.oaiq = q;
-            var j = d.createElement(s);
-            j.async = 1;
-            j.src = u;
-            var f = d.getElementsByTagName(s)[0];
-            f.parentNode.insertBefore(j, f);
-        }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
-        oaiq("init", { pixelId: "4bFkRNsGsTDskfdoNsRwLJ", debug: true });
-    </script>
+    <script src="/js/deferred-marketing.js" defer></script>
     <title> Best Dental Clinic in Kondapur & Kukatpally Hyderabad | Eledent International Digital Dentistry </title>
     <meta name="description"
         content=" Visit Eledent's dental clinic in Kondapur & Kukatpally Hyderabad for expert dental care. Same-day painless root canals, implants, teeth whitening, and complete digital dental solutions by MDS dentists. ">
@@ -33,42 +19,7 @@
 
     <link rel="preload" as="image" href="hero-banner-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
     <link rel="preload" as="image" href="hero-banner.webp" media="(min-width: 768px)" fetchpriority="high">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://api.leadconnectorhq.com">
-    <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
-    <!-- Google Tag Manager -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        (function (w, d, s, l, i) {
-            function loadGtm() {
-                if (w.__gtmLoaded) return;
-                w.__gtmLoaded = true;
-                var f = d.getElementsByTagName(s)[0];
-                var j = d.createElement(s);
-                var dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            }
-            ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (eventName) {
-                w.addEventListener(eventName, loadGtm, { once: true, passive: true });
-            });
-            w.addEventListener('load', function () {
-                setTimeout(loadGtm, 15000);
-            });
-        })(window, document, 'script', 'dataLayer', 'GTM-W49C7DC');
-    </script>
-    <!-- End Google Tag Manager -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/fonts/landing-fonts.css">
     </noscript>
     <style>
         body {
@@ -571,7 +522,7 @@
                     <p class="discount-info text-center mb-4">Get <span>10% Discount</span> on all Dental Treatments</p>
 
                     <div class="ghl-iframe-wrap">
-                        <iframe src="https://api.leadconnectorhq.com/widget/form/7LyhbdlmO8a3W1TBm8KZ"
+                        <iframe data-deferred-src="https://api.leadconnectorhq.com/widget/form/7LyhbdlmO8a3W1TBm8KZ"
                             id="inline-7LyhbdlmO8a3W1TBm8KZ" data-layout="{'id':'INLINE'}"
                             data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated"
                             data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value=""
