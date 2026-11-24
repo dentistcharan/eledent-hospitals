@@ -3,8 +3,9 @@
 
   window.dataLayer = window.dataLayer || [];
 
-  var loaded = false;
-  var interactionEvents = ["pointerdown", "touchstart", "keydown"];
+  var marketingLoaded = false;
+  var embedsLoaded = false;
+  var interactionEvents = ["pointerdown", "touchstart", "keydown", "scroll"];
 
   function appendScript(src) {
     var script = document.createElement("script");
@@ -14,12 +15,8 @@
   }
 
   function loadMarketing() {
-    if (loaded) return;
-    loaded = true;
-
-    interactionEvents.forEach(function (eventName) {
-      window.removeEventListener(eventName, loadMarketing);
-    });
+    if (marketingLoaded) return;
+    marketingLoaded = true;
 
     window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
     appendScript("https://www.googletagmanager.com/gtm.js?id=GTM-W49C7DC");
@@ -39,6 +36,9 @@
   }
 
   function loadDeferredEmbeds() {
+    if (embedsLoaded) return;
+    embedsLoaded = true;
+
     document.querySelectorAll("[data-deferred-src]").forEach(function (element) {
       if (!element.getAttribute("src")) {
         element.setAttribute("src", element.getAttribute("data-deferred-src"));
@@ -47,16 +47,21 @@
     });
   }
 
-  interactionEvents.forEach(function (eventName) {
-    window.addEventListener(eventName, loadMarketing, {
-      once: true,
-      passive: true,
+  function handleInteraction() {
+    interactionEvents.forEach(function (eventName) {
+      window.removeEventListener(eventName, handleInteraction);
     });
-    window.addEventListener(eventName, loadDeferredEmbeds, {
+    loadMarketing();
+    loadDeferredEmbeds();
+  }
+
+  interactionEvents.forEach(function (eventName) {
+    window.addEventListener(eventName, handleInteraction, {
       once: true,
       passive: true,
     });
   });
 
+  window.setTimeout(loadDeferredEmbeds, 4000);
   window.setTimeout(loadMarketing, 30000);
 })();

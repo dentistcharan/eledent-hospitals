@@ -34,7 +34,7 @@ const locationDetails: Record<
   },
   manikonda: {
     phoneNumber: "77996 59994",
-    visitingHours: "Mon - Sun 10 AM to 8 PM",
+    visitingHours: "Mon - Sun 9 AM to 8 PM",
   },
   "banjara-hills": {
     phoneNumber: "77996 49994",
