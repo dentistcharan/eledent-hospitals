@@ -115,7 +115,7 @@ export default function HeroSection() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-gray-300 mb-1">Visiting Hours</p>
-                                    <p className="text-xl font-medium text-white">Mon - Sun 9 AM to 9 PM</p>
+                                    <p className="text-xl font-medium text-white">Mon - Sun 9 AM to 8 PM</p>
                                 </div>
                             </div>
 
@@ -149,7 +149,7 @@ export default function HeroSection() {
                                     <div className="min-w-0">
                                         <p className="text-sm text-gray-300">Visiting Hours</p>
                                         <p className="text-base font-medium text-white truncate">
-                                            Monday to Sunday, 9 AM to 9 PM
+                                            Monday to Sunday, 9 AM to 8 PM
                                         </p>
                                     </div>
                                 </div>

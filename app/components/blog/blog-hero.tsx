@@ -22,7 +22,7 @@ export default function BlogHero({
   phoneLabel = "Need a Dental Service?",
   phoneNumber = "+91 7799619994",
   hoursLabel = "Visiting Hours",
-  visitingHours = "Mon - Sun 9 AM to 9 PM",
+  visitingHours = "Mon - Sun 9 AM to 8 PM",
   ctaText = "Book Appointment",
 }: BlogHeroProps) {
   const { openModal } = useAppointmentModal();

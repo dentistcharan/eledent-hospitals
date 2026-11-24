@@ -133,7 +133,7 @@ body {
 }
 
 .home-about-bg {
-  background: url("/home/home-about-bg.png") no-repeat;
+  background: url("/home/home-about-bg.webp") no-repeat;
   background-size: contain;
   background-position: left;
 }

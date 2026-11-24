@@ -79,7 +79,7 @@ export default function ThankYou() {
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-[#6b7280] sm:text-base">
                   For urgent queries, feel free to call us directly during clinic
-                  hours from <span className="font-medium text-[#374151]">09:00 AM to 09:00 PM</span>.
+                  hours from <span className="font-medium text-[#374151]">09:00 AM to 08:00 PM</span>.
                 </p>
 
                 <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">

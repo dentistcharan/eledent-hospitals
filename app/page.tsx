@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { preload } from "react-dom";
 import { getMetadataByPath } from "@/lib/metadata";
 import Navbar from "./components/Navbar";
 import FaqSchema from "./components/FaqSchema";
@@ -25,6 +26,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
+  preload("/_next/image?url=%2Fhome%2FEledent-Home-Mob-1.jpg&w=750&q=75", {
+    as: "image",
+    fetchPriority: "high",
+    media: "(max-width: 1023px)",
+  });
+
   const [services, specialties] = await Promise.all([
     getServicesData(),
     getSpecialtiesData(),

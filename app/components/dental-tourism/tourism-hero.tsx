@@ -14,7 +14,7 @@ const heroData = {
     phoneLabel: "Need Dental Assistance?",
     phoneNumber: "+91 7799619994",
     hoursLabel: "Visiting Hours",
-    visitingHours: "Mon - Sun 9 AM to 9 PM",
+    visitingHours: "Mon - Sun 9 AM to 8 PM",
     ctaText: "Book An Appointment",
     ctaHref: "/contact",
 };

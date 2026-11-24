@@ -68,7 +68,7 @@ const BookingAportment: FC = () => {
 
                 <div className="w-full flex justify-between">
                   <p>Mon–Sun</p>
-                  <p>9:00am – 9:00pm</p>
+                  <p>9:00am – 8:00pm</p>
                 </div>
               </div>
             </div>
