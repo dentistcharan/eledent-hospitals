@@ -252,7 +252,7 @@ export default function Navbar({
 
               <span className="inline-flex items-center gap-1.5 sm:gap-2">
                 <Clock className="h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4" />
-                <span className="whitespace-nowrap">09:00 am to 09:00 pm</span>
+                <span className="whitespace-nowrap">09:00 am to 08:00 PM</span>
               </span>
             </div>
 

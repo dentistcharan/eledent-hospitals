@@ -24,7 +24,7 @@ export default function ContactFaq(): JSX.Element {
             id: 2,
             question: " What are the working hours of Eledent Dental Hospital in Hyderabad?",
             answer:
-                " Eledent Dental Hospital is open Monday to Sunday, from 09:00 AM to 09:00 PM. You can contact the team, book an appointment, or plan your visit during these hours. ",
+                " Eledent Dental Hospital is open Monday to Sunday, from 09:00 AM to 08:00 PM. You can contact the team, book an appointment, or plan your visit during these hours. ",
         },
         {
             id: 3,

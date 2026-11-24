@@ -30,7 +30,7 @@ const locationDetails: Record<
   },
   kukatpally: {
     phoneNumber: "90598 90578",
-    visitingHours: "Mon - Sun 9 AM to 9 PM",
+    visitingHours: "Mon - Sun 9 AM to 8 PM",
   },
   manikonda: {
     phoneNumber: "77996 59994",
@@ -38,11 +38,11 @@ const locationDetails: Record<
   },
   "banjara-hills": {
     phoneNumber: "77996 49994",
-    visitingHours: "Mon - Sun 9:30 AM to 9 PM",
+    visitingHours: "Mon - Sun 9 AM to 8 PM",
   },
   kompally: {
     phoneNumber: "77997 69994",
-    visitingHours: "Mon - Sun 9 AM to 9 PM",
+    visitingHours: "Mon - Sun 9 AM to 8 PM",
   },
 };
 
@@ -77,7 +77,7 @@ export default function LocationHero({
 
   const locationInfo = locationDetails[normalizedSlug] || {
     phoneNumber: "+91 7799619994",
-    visitingHours: "Mon - Sun 9 AM to 9 PM",
+    visitingHours: "Mon - Sun 9 AM to 8 PM",
   };
 
   const finalBannerSrc =

@@ -194,7 +194,7 @@ const TermsDetails: FC = () => {
 
       <div className="text-[#7f90a3] lg:text-base text-sm leading-8">
         <p>Eledent Hospitals LLP</p>
-        <p>09:00 AM TO 9:00 PM</p>
+        <p>09:00 AM TO 8:00 PM</p>
         <p>contact@eledenthospitals.com</p>
         <p>  (+91) 7799619994</p>
       </div>

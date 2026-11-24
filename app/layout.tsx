@@ -53,7 +53,7 @@ const organizationSchema = {
         "Sunday",
       ],
       opens: "09:00",
-      closes: "21:00",
+      closes: "20:00",
     },
   },
   openingHoursSpecification: {
@@ -68,7 +68,7 @@ const organizationSchema = {
       "Sunday",
     ],
     opens: "09:00",
-    closes: "21:00",
+    closes: "20:00",
   },
   sameAs: [
     "https://www.facebook.com/EledentHospitals/",
@@ -175,7 +175,7 @@ const organizationSchema = {
           "Sunday",
         ],
         opens: "09:00",
-        closes: "21:00",
+        closes: "20:00",
       },
     },
     {
@@ -203,7 +203,7 @@ const organizationSchema = {
           "Sunday",
         ],
         opens: "09:00",
-        closes: "21:00",
+        closes: "20:00",
       },
     },
     {
@@ -231,7 +231,7 @@ const organizationSchema = {
           "Sunday",
         ],
         opens: "09:00",
-        closes: "21:00",
+        closes: "20:00",
       },
     },
     {
@@ -259,7 +259,7 @@ const organizationSchema = {
           "Sunday",
         ],
         opens: "09:00",
-        closes: "21:00",
+        closes: "20:00",
       },
     },
     {
@@ -287,7 +287,7 @@ const organizationSchema = {
           "Sunday",
         ],
         opens: "09:00",
-        closes: "21:00",
+        closes: "20:00",
       },
     },
   ],

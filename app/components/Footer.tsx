@@ -216,7 +216,7 @@ export default async function Footer({
                             <h3 className="text-xl font-semibold opacity-90">Contact Us</h3>
 
                             <div className="mt-4 space-y-2 text-[15px] leading-5">
-                                <div className="opacity-95">09:00 AM To 09:00 PM</div>
+                                <div className="opacity-95">09:00 AM To 08:00 PM</div>
 
                                 <a
                                     href="mailto:contact@eledenthospitals.com"

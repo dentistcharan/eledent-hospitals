@@ -39,14 +39,14 @@ const ServicesAportment: FC = () => {
               <div className="text-[15px] max-w-[300px]">
                 <div className="w-full flex justify-between">
                   <p>Mon–Fri</p>
-                  <p>8:00am – 6:00pm</p>
+                  <p>9:00am – 8:00pm</p>
                 </div>
 
                 <hr className="h-[1px] bg-white/70 w-full my-2" />
 
                 <div className="w-full flex justify-between">
                   <p>Sat–Sun</p>
-                  <p>9:00am – 4:00pm</p>
+                  <p>9:00am – 8:00pm</p>
                 </div>
               </div>
             </div>
